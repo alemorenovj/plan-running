@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Plan de running: movilidad, fuerza, prevencion y drills de carrera, con rutinas antes/despues y biblioteca.">
+<meta name="theme-color" content="#efece4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131618" media="(prefers-color-scheme: dark)">
+</head>
+<body>
+<title>Plan de running v3 &#183; Semana, ejercicios y biblioteca</title>
+<style>
+  :root{
+    color-scheme: light dark;
+    --paper:#efece4; --card:#f7f5ef; --ink:#1c1e1f; --ink2:#54585a; --ink3:#8a8d8b;
+    --line:rgba(28,30,31,.12); --line2:rgba(28,30,31,.22);
+    --amber:#d9741a; --ambersoft:rgba(217,116,26,.12);
+    --go:#1c8f63; --gosoft:rgba(28,143,99,.12);
+    --ind:#3a5bd0; --indsoft:rgba(58,91,208,.12);
+    --shadow:0 1px 2px rgba(28,30,31,.05), 0 8px 30px rgba(28,30,31,.06);
+    --disp:-apple-system,"SF Pro Display",system-ui,"Segoe UI",Roboto,sans-serif;
+    --body:-apple-system,"SF Pro Text",system-ui,"Segoe UI",Roboto,sans-serif;
+    --serif:Georgia,"Times New Roman",serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#131618; --card:#1a1e21; --ink:#eef0f0; --ink2:#a3a9ac; --ink3:#6d7377;
+      --line:rgba(238,240,240,.11); --line2:rgba(238,240,240,.2);
+      --amber:#f0993f; --ambersoft:rgba(240,153,63,.14);
+      --go:#3fc48c; --gosoft:rgba(63,196,140,.14);
+      --ind:#7d9bff; --indsoft:rgba(125,155,255,.15);
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 34px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"]{
+    --paper:#efece4; --card:#f7f5ef; --ink:#1c1e1f; --ink2:#54585a; --ink3:#8a8d8b;
+    --line:rgba(28,30,31,.12); --line2:rgba(28,30,31,.22);
+    --amber:#d9741a; --ambersoft:rgba(217,116,26,.12);
+    --go:#1c8f63; --gosoft:rgba(28,143,99,.12);
+    --ind:#3a5bd0; --indsoft:rgba(58,91,208,.12);
+    --shadow:0 1px 2px rgba(28,30,31,.05), 0 8px 30px rgba(28,30,31,.06);
+  }
+  :root[data-theme="dark"]{
+    --paper:#131618; --card:#1a1e21; --ink:#eef0f0; --ink2:#a3a9ac; --ink3:#6d7377;
+    --line:rgba(238,240,240,.11); --line2:rgba(238,240,240,.2);
+    --amber:#f0993f; --ambersoft:rgba(240,153,63,.14);
+    --go:#3fc48c; --gosoft:rgba(63,196,140,.14);
+    --ind:#7d9bff; --indsoft:rgba(125,155,255,.15);
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 34px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;letter-spacing:-.005em}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px 90px}
+  a{color:inherit}
+  h1,h2,h3{font-family:var(--disp);letter-spacing:-.03em;text-wrap:balance;margin:0}
+  p{margin:0}
+  .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink3)}
+
+  /* ---- hero ---- */
+  header{padding:56px 0 26px}
+  .kicker{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+  .kicker .dot{width:9px;height:9px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px var(--ambersoft)}
+  h1{font-size:clamp(32px,6.4vw,52px);font-weight:800;line-height:1.03}
+  h1 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+  .lede{margin-top:20px;font-size:18.5px;line-height:1.55;color:var(--ink2);max-width:66ch}
+  .lede b{color:var(--ink);font-weight:600}
+
+  /* ---- tabs nav ---- */
+  .tabs{position:sticky;top:0;z-index:30;background:var(--paper);
+    padding:12px 0;margin-bottom:8px;border-bottom:1px solid var(--line)}
+  .tablist{display:flex;gap:8px;flex-wrap:wrap}
+  .tabbtn{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink2);background:var(--card);border:1px solid var(--line);border-radius:99px;
+    padding:9px 16px;cursor:pointer;font-weight:600;transition:border-color .15s,color .15s,background .15s}
+  .tabbtn:hover{border-color:var(--line2)}
+  .tabbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+  .tabbtn[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  section.panel{padding:34px 0 10px}
+  section.panel.hide{display:none}
+  .snum{font-family:var(--mono);font-size:12px;color:var(--amber);letter-spacing:.1em}
+  h2{font-size:clamp(23px,4.4vw,30px);font-weight:800;margin:10px 0 6px}
+  .sintro{color:var(--ink2);font-size:16.5px;max-width:66ch;margin-bottom:24px}
+  .block{padding-bottom:38px;margin-bottom:34px;border-bottom:1px solid var(--line)}
+  .block:last-child{border-bottom:none}
+
+  /* ---- cards ---- */
+  .icard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow)}
+  .icard .lab{display:flex;align-items:center;gap:9px;margin-bottom:8px;flex-wrap:wrap}
+  .pill{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+    padding:4px 9px;border-radius:6px;font-weight:600}
+  .p-str{background:var(--gosoft);color:var(--go)}
+  .p-tec{background:var(--ambersoft);color:var(--amber)}
+  .p-mob{background:var(--indsoft);color:var(--ind)}
+  .icard h3{font-size:18px;font-weight:700;letter-spacing:-.02em}
+  .icard p{color:var(--ink2);font-size:15.5px;margin-top:4px}
+  .icard b{color:var(--ink);font-weight:600}
+
+  /* ---- base fija ---- */
+  .base{background:linear-gradient(180deg,var(--ambersoft),transparent);border:1px solid var(--line2);
+    border-radius:16px;padding:22px 24px}
+  .base h3{font-size:19px;font-weight:800;letter-spacing:-.02em}
+  .base .skel{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px}
+  .base .sk{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 13px}
+  .base .sk .d{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
+  .base .sk .t{font-size:14px;color:var(--ink);margin-top:4px;font-weight:600;line-height:1.35}
+  .base .sk .s{font-size:12.5px;color:var(--ink2);margin-top:2px}
+
+  /* ---- capas ---- */
+  .capas{display:grid;gap:14px;margin-top:6px}
+  .capa{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow)}
+  .capa .top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+  .capa .nm{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--ink)}
+  .capa .freq{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+    padding:4px 9px;border-radius:6px;font-weight:600}
+  .f-mob{background:var(--indsoft);color:var(--ind)}
+  .f-str{background:var(--gosoft);color:var(--go)}
+  .f-dr{background:var(--ambersoft);color:var(--amber)}
+  .capa p{color:var(--ink2);font-size:15px;margin-top:2px}
+  .capa .exrow{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+
+  /* ---- inline exercise link ---- */
+  .exlink{font:inherit;font-size:13px;font-weight:600;color:var(--ink);background:var(--paper);
+    border:1px solid var(--line2);border-radius:99px;padding:5px 11px;cursor:pointer;letter-spacing:-.01em;
+    transition:border-color .15s,background .15s}
+  .exlink:hover{border-color:var(--amber);background:var(--ambersoft)}
+  .exlink:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+  .exlink::before{content:"\2197\00a0";color:var(--ink3);font-family:var(--mono);font-size:11px}
+
+  /* ---- semana ejemplo strip ---- */
+  .exlabel{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);
+    display:inline-block;margin-bottom:12px;border:1px dashed var(--line2);border-radius:6px;padding:4px 9px}
+  .wkstrip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(104px,1fr);gap:7px;
+    overflow-x:auto;padding-bottom:8px}
+  .wkday{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 11px 13px;
+    min-height:150px;display:flex;flex-direction:column;gap:6px}
+  .wkday .dd{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:2px}
+  .wkday.anchor{border-color:var(--line2)}
+  .wtag{font-family:var(--mono);font-size:10px;letter-spacing:.03em;text-transform:uppercase;font-weight:600;
+    padding:4px 7px;border-radius:6px;line-height:1.2}
+  .wt-run{background:var(--ambersoft);color:var(--amber);border:1px solid transparent}
+  .wt-str{background:var(--gosoft);color:var(--go);border:1px solid transparent}
+  .wt-layer{background:transparent;color:var(--ink2);border:1px dashed var(--line2)}
+  .wt-rest{background:rgba(138,141,139,.14);color:var(--ink2);border:1px solid transparent}
+  .wklegend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px}
+  .wklegend span{font-family:var(--mono);font-size:11px;color:var(--ink2);display:flex;align-items:center;gap:6px}
+  .wklegend .sw{width:11px;height:11px;border-radius:3px;flex:0 0 auto}
+  .sw-run{background:var(--amber)} .sw-str{background:var(--go)}
+  .sw-layer{border:1px dashed var(--line2)}
+
+  .note{font-size:14px;color:var(--ink2);font-style:italic;font-family:var(--serif);
+    background:var(--card);border:1px solid var(--line);border-left:3px solid var(--amber);
+    border-radius:10px;padding:13px 16px;margin-top:6px}
+
+  /* ---- rutinas antes/despues ---- */
+  .rutctx{color:var(--ink2);font-size:15.5px;max-width:66ch;margin-bottom:18px}
+  .rutctx b{color:var(--ink);font-weight:600}
+  .rutgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .rutina{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow)}
+  .rutina .rtop{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:2px}
+  .rutina h3{font-size:16px;font-weight:800;letter-spacing:-.02em}
+  .rutina .rdur{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.04em}
+  .rutina .rrule{font-size:13.5px;color:var(--ink2);font-style:italic;font-family:var(--serif);margin:6px 0 12px}
+  .rutina ol{margin:0;padding-left:20px;display:grid;gap:9px}
+  .rutina li{font-size:14.5px;color:var(--ink);line-height:1.55}
+  .rutina .exlink{margin:0 1px}
+
+  /* ---- ejercicios grid ---- */
+  .exgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .ex{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:14px 16px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;
+    cursor:pointer;text-align:left;font:inherit;color:inherit;transition:border-color .15s,transform .15s}
+  .ex:hover{border-color:var(--line2);transform:translateY(-1px)}
+  .ex:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+  .exfig{border-radius:12px;padding:6px;margin-bottom:12px;display:flex;align-items:center;justify-content:center}
+  .exfig.g-mob{background:var(--indsoft)}
+  .exfig.g-str{background:var(--gosoft)}
+  .exfig.g-dr{background:var(--ambersoft)}
+  .exfig svg{width:100%;height:auto;max-height:110px;color:var(--ink)}
+  .exlab{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+  .gpill{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+    padding:3px 8px;border-radius:5px;font-weight:600}
+  .gp-mob{background:var(--indsoft);color:var(--ind)}
+  .gp-str{background:var(--gosoft);color:var(--go)}
+  .gp-dr{background:var(--ambersoft);color:var(--amber)}
+  .ex h3{font-size:16px;font-weight:800;letter-spacing:-.02em}
+  .ex .dose{font-family:var(--mono);font-size:11.5px;color:var(--ink2);margin-top:6px;letter-spacing:.02em}
+  .ex .open{font-family:var(--mono);font-size:10.5px;color:var(--amber);margin-top:8px;letter-spacing:.06em;text-transform:uppercase}
+
+  /* ---- slide-over sheet ---- */
+  .sheet[hidden]{display:none}
+  .sheet{position:fixed;inset:0;z-index:60}
+  .sheet-bd{position:absolute;inset:0;background:rgba(10,12,13,.5);opacity:0;transition:opacity .25s ease}
+  .sheet.show .sheet-bd{opacity:1}
+  .sheet-panel{position:absolute;top:0;right:0;height:100%;width:min(560px,100%);
+    background:var(--paper);border-left:1px solid var(--line2);box-shadow:-12px 0 40px rgba(0,0,0,.22);
+    overflow-y:auto;padding:26px 26px 60px;transform:translateX(100%);transition:transform .28s ease}
+  .sheet.show .sheet-panel{transform:translateX(0)}
+  .sheet-x{position:sticky;top:0;float:right;margin:-6px -6px 0 0;width:38px;height:38px;border-radius:99px;
+    border:1px solid var(--line2);background:var(--card);color:var(--ink);font-size:20px;line-height:1;
+    cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .sheet-x:hover{border-color:var(--amber)}
+  .sheet-x:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+  .sh-eyebrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+  .sheet h3.sh-title{font-size:23px;font-weight:800;letter-spacing:-.025em;line-height:1.1}
+  .sh-meta{font-family:var(--mono);font-size:11.5px;color:var(--ink2);margin-top:8px;letter-spacing:.02em}
+  .sh-when{font-family:var(--mono);font-size:10.5px;color:var(--ink3);margin-top:3px;text-transform:uppercase;letter-spacing:.04em}
+  .seqrow{display:flex;gap:10px;margin:20px 0 4px;overflow-x:auto;padding-bottom:6px}
+  .seqframe{flex:0 0 auto;width:150px}
+  .seqbox{border-radius:12px;padding:6px;display:flex;align-items:center;justify-content:center}
+  .seqbox.g-mob{background:var(--indsoft)} .seqbox.g-str{background:var(--gosoft)} .seqbox.g-dr{background:var(--ambersoft)}
+  .seqbox svg{width:100%;height:auto;color:var(--ink)}
+  .seqcap{font-family:var(--mono);font-size:10.5px;color:var(--ink2);margin-top:7px;line-height:1.4;letter-spacing:.01em}
+  .sh-h4{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);
+    margin:22px 0 8px}
+  .sheet ol,.sheet ul{margin:0;padding-left:20px;display:grid;gap:7px}
+  .sheet li{font-size:15px;color:var(--ink);line-height:1.45}
+  .sheet .why{color:var(--ink2);font-size:15px;line-height:1.55}
+  .sh-more{display:inline-block;margin-top:22px;font-family:var(--mono);font-size:12px;font-weight:600;
+    letter-spacing:.03em;color:var(--ink);background:var(--card);border:1px solid var(--line2);
+    border-radius:99px;padding:9px 15px;cursor:pointer}
+  .sh-more:hover{border-color:var(--amber);background:var(--ambersoft)}
+  .sh-more:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+  /* ---- biblioteca ---- */
+  .libwrap{display:grid;grid-template-columns:210px 1fr;gap:30px;align-items:start}
+  .toc{position:sticky;top:78px}
+  .toc .tochead{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:10px}
+  .toc ol{list-style:none;margin:0;padding:0;display:grid;gap:2px;counter-reset:t}
+  .toc li{counter-increment:t}
+  .toc button{width:100%;text-align:left;font:inherit;font-size:14px;color:var(--ink2);background:none;
+    border:none;border-left:2px solid var(--line);padding:6px 0 6px 12px;cursor:pointer;line-height:1.35;letter-spacing:-.01em}
+  .toc button::before{content:counter(t) ". ";font-family:var(--mono);font-size:11px;color:var(--ink3)}
+  .toc button:hover{color:var(--ink);border-left-color:var(--amber)}
+  .toc button:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+  .toc-m{display:none}
+  .tema{padding-bottom:30px;margin-bottom:30px;border-bottom:1px solid var(--line);scroll-margin-top:82px}
+  .tema:last-child{border-bottom:none}
+  .tema .tk{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+  .tema h3{font-size:clamp(20px,3.4vw,25px);font-family:var(--serif);font-style:italic;font-weight:400;
+    letter-spacing:-.01em;margin:5px 0 12px;line-height:1.15}
+  .tema p{color:var(--ink2);font-size:16px;line-height:1.6;margin-bottom:12px;max-width:64ch}
+  .tema p b{color:var(--ink);font-weight:600}
+  .stat{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--go);border-radius:12px;
+    padding:14px 16px;margin:14px 0}
+  .stat .big{font-family:var(--disp);font-weight:800;font-size:26px;letter-spacing:-.02em;color:var(--ink);line-height:1}
+  .stat .cap{font-size:13.5px;color:var(--ink2);margin-top:5px}
+  .srcline{display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin:6px 12px 6px 0;
+    padding:9px 13px;border:1px solid var(--line);border-radius:10px;background:var(--card);box-shadow:var(--shadow);
+    transition:border-color .15s,transform .15s}
+  .srcline:hover{border-color:var(--line2);transform:translateY(-1px)}
+  .srcline:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+  .srcline .h{font-family:var(--mono);font-size:11.5px;color:var(--ink);letter-spacing:.01em}
+  .srcline .a{color:var(--ink3);font-family:var(--mono);font-size:12px}
+  .relwrap{margin-top:16px}
+  .relwrap .rl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+  .relchips{display:flex;flex-wrap:wrap;gap:7px}
+
+  footer{padding:40px 0 0;color:var(--ink3);font-size:13px;line-height:1.6;border-top:1px solid var(--line);margin-top:20px}
+  footer .mono{font-family:var(--mono);font-size:11px;letter-spacing:.04em;margin-top:12px}
+  .disc{font-size:12.5px;color:var(--ink3);font-style:italic;font-family:var(--serif)}
+
+  @media (max-width:680px){
+    .exgrid{grid-template-columns:1fr}
+    .rutgrid{grid-template-columns:1fr}
+    .base .skel{grid-template-columns:1fr}
+    .libwrap{grid-template-columns:1fr;gap:14px}
+    .toc{position:static}
+    .toc-d{display:none}
+    .toc-m{display:block}
+    .toc-m summary{cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--ink2);padding:10px 0}
+    .sheet-panel{width:100%;border-left:none;transform:translateY(100%)}
+    .sheet.show .sheet-panel{transform:translateY(0)}
+  }
+  @media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker"><span class="dot"></span><span class="eyebrow">Plan &#183; Running</span></div>
+    <h1>La semana que previene lesiones <em>y te hace m&#225;s r&#225;pido</em></h1>
+    <p class="lede">Para <b>Alejandro y Valentina</b>. Construido sobre su semana real &#8212; corren <b>martes, jueves y domingo</b>; martes y jueves ya hacen fuerza de pierna, a veces con pliom&#233;tricos. Esta versi&#243;n no clava la prevenci&#243;n a un d&#237;a fijo: <b>lunes, mi&#233;rcoles y viernes no son d&#237;as fijos de pierna</b> (a veces hacen tren superior u otro entreno), as&#237; que lo que sumamos alrededor son <b>capas flexibles</b> que cada quien distribuye donde le caiga mejor.</p>
+  </header>
+
+  <nav class="tabs" aria-label="Secciones del plan">
+    <div class="tablist" role="tablist">
+      <button class="tabbtn" role="tab" id="tab-semana" aria-controls="panel-semana" aria-selected="true">Semana</button>
+      <button class="tabbtn" role="tab" id="tab-ejercicios" aria-controls="panel-ejercicios" aria-selected="false">Ejercicios</button>
+      <button class="tabbtn" role="tab" id="tab-biblioteca" aria-controls="panel-biblioteca" aria-selected="false">Biblioteca</button>
+    </div>
+  </nav>
+
+  <!-- ================= PESTA&#209;A 1: SEMANA ================= -->
+  <section class="panel" id="panel-semana" role="tabpanel" aria-labelledby="tab-semana" tabindex="-1">
+
+    <div class="block">
+      <div class="snum">01 &#183; TU BASE FIJA</div>
+      <h2>Lo que ya hacen &#8212; no se toca</h2>
+      <p class="sintro">Su carrera y su fuerza siguen intactas. Este es el esqueleto de la semana; el plan solo a&#241;ade capas alrededor sin robarle energ&#237;a a lo que ya funciona.</p>
+      <div class="base">
+        <h3>El esqueleto</h3>
+        <div class="skel">
+          <div class="sk"><div class="d">Martes</div><div class="t">Correr + fuerza de pierna</div><div class="s">&#177; pliom&#233;tricos</div></div>
+          <div class="sk"><div class="d">Jueves</div><div class="t">Correr + fuerza de pierna</div><div class="s">&#177; pliom&#233;tricos</div></div>
+          <div class="sk"><div class="d">Domingo</div><div class="t">Tirada larga</div><div class="s">su carrera larga</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="snum">02 &#183; LAS CAPAS</div>
+      <h2>Las 3 capas que a&#241;adimos alrededor</h2>
+      <p class="sintro">Ninguna compite con su pierna dura. Cada una tiene su frecuencia; se acomodan donde encajen en la semana real.</p>
+      <div class="capas">
+
+        <div class="capa">
+          <div class="top">
+            <span class="nm">1 &#183; Movilidad</span>
+            <span class="freq f-mob">Todos los d&#237;as &#183; 10 min</span>
+          </div>
+          <p>Esta s&#237; es diaria &#8212; la capa m&#225;s importante y la &#250;nica verdaderamente de todos los d&#237;as. Una rutina base corta; el domingo h&#225;zla <b>post-tirada</b>, con el tejido caliente.</p>
+          <div class="exrow">
+            <button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button>
+            <button class="exlink" data-ex="noventa" type="button">90/90 de cadera</button>
+            <button class="exlink" data-ex="couch" type="button">Couch stretch</button>
+            <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button>
+            <button class="exlink" data-ex="swings" type="button">Leg swings</button>
+          </div>
+        </div>
+
+        <div class="capa">
+          <div class="top">
+            <span class="nm">2 &#183; Prevenci&#243;n</span>
+            <span class="freq f-str">2&#215; por semana</span>
+          </div>
+          <p>Gl&#250;teo medio, pantorrilla exc&#233;ntrica, RDL a una pierna y plancha lateral. Es de <b>baja carga</b>: cae natural en tus d&#237;as de tren superior o descanso (lun/mie/vie) y no compite con tu pierna. Alternativa: meterlas como accesorio <b>dentro</b> de tu fuerza de pierna del mar/jue si prefieres concentrar. Regla &#250;nica: no las hagas pesadas justo antes de tu sesi&#243;n de pierna dura.</p>
+          <div class="exrow">
+            <button class="exlink" data-ex="monster" type="button">Banda lateral / monster</button>
+            <button class="exlink" data-ex="pantorrilla-recta" type="button">Pantorrilla exc&#233;ntrica</button>
+            <button class="exlink" data-ex="rdl" type="button">RDL a una pierna</button>
+            <button class="exlink" data-ex="plancha-lateral" type="button">Plancha lateral</button>
+          </div>
+        </div>
+
+        <div class="capa">
+          <div class="top">
+            <span class="nm">3 &#183; Drills</span>
+            <span class="freq f-dr">5 min post-rodaje suave (mar o jue)</span>
+          </div>
+          <p>A-skip y talones al gl&#250;teo despu&#233;s de un rodaje f&#225;cil. Refuerzan cadencia y patr&#243;n de apoyo cuando las piernas ya est&#225;n activadas pero no destrozadas.</p>
+          <div class="exrow">
+            <button class="exlink" data-ex="askip" type="button">A-skip</button>
+            <button class="exlink" data-ex="talones" type="button">Talones al gl&#250;teo</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="note" style="margin-top:16px">Una vez al mes: medir la cadencia y re-test de dorsiflexi&#243;n (rodilla-a-pared, cm hasta la pared con el tal&#243;n pegado).</div>
+    </div>
+
+    <div class="block">
+      <div class="snum">03 &#183; C&#211;MO SE VE</div>
+      <h2>Una semana ejemplo</h2>
+      <p class="sintro">Solo para visualizar c&#243;mo encajan los anclajes fijos y las capas. Las capas flotan: distribuye donde te caiga.</p>
+      <span class="exlabel">Ejemplo &#183; no obligatorio</span>
+      <div class="wkstrip">
+        <div class="wkday"><div class="dd">Lun</div><span class="wtag wt-layer">Movilidad 10&#8242;</span><span class="wtag wt-layer">Prevenci&#243;n</span></div>
+        <div class="wkday anchor"><div class="dd">Mar</div><span class="wtag wt-run">Correr</span><span class="wtag wt-str">Fuerza pierna</span><span class="wtag wt-layer">Drills 5&#8242;</span><span class="wtag wt-layer">Movilidad</span></div>
+        <div class="wkday"><div class="dd">Mie</div><span class="wtag wt-layer">Movilidad 10&#8242;</span></div>
+        <div class="wkday anchor"><div class="dd">Jue</div><span class="wtag wt-run">Correr</span><span class="wtag wt-str">Fuerza pierna</span><span class="wtag wt-layer">Drills 5&#8242;</span><span class="wtag wt-layer">Movilidad</span></div>
+        <div class="wkday"><div class="dd">Vie</div><span class="wtag wt-layer">Movilidad 10&#8242;</span><span class="wtag wt-layer">Prevenci&#243;n</span></div>
+        <div class="wkday"><div class="dd">Sab</div><span class="wtag wt-rest">Suave</span><span class="wtag wt-layer">Movilidad</span></div>
+        <div class="wkday anchor"><div class="dd">Dom</div><span class="wtag wt-run">Tirada larga</span><span class="wtag wt-layer">Movilidad post</span></div>
+      </div>
+      <div class="wklegend">
+        <span><span class="sw sw-run"></span>Correr (fijo)</span>
+        <span><span class="sw sw-str"></span>Fuerza de pierna (fijo)</span>
+        <span><span class="sw sw-layer"></span>Capa flexible (mu&#233;vela)</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="snum">04 &#183; ANTES Y DESPU&#201;S</div>
+      <h2>Rutinas: antes y despu&#233;s de cada sesi&#243;n</h2>
+      <p class="rutctx">Qu&#233; hacer antes y despu&#233;s de cada tipo de sesi&#243;n. La regla de oro: movilidad <b>DIN&#193;MICA</b> antes (prepara sin apagar la fuerza), estiramiento <b>SOSTENIDO</b> despu&#233;s (relaja con el tejido caliente).</p>
+      <div class="rutgrid">
+
+        <div class="rutina">
+          <div class="rtop"><h3>Rutina 1 &#8212; Pre-carrera</h3><span class="rdur">~8&#8211;10 min</span></div>
+          <div class="rrule">Din&#225;mico; nada de estiramiento est&#225;tico prolongado antes de correr.</div>
+          <ol>
+            <li>Trote muy suave o caminar r&#225;pido 3&#8211;5 min (subir temperatura).</li>
+            <li><button class="exlink" data-ex="swings" type="button">Leg swings</button> 10/lado (frontal y lateral).</li>
+            <li><button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> 3&#8211;4/lado.</li>
+            <li><button class="exlink" data-ex="monster" type="button">Monster walk</button> 1&#215;15 (activa el gl&#250;teo medio) &#8212; opcional pero recomendado.</li>
+            <li>Drills cortos: <button class="exlink" data-ex="ankling" type="button">Ankling</button> + <button class="exlink" data-ex="askip" type="button">A-skip</button> + <button class="exlink" data-ex="rodillas-altas" type="button">Rodillas altas</button>, ~15&#8211;20 m cada uno.</li>
+            <li>Si es d&#237;a de calidad/intervalos: 2&#8211;3 <button class="exlink" data-ex="zancadas" type="button">Zancadas</button> progresivas antes de arrancar.</li>
+          </ol>
+        </div>
+
+        <div class="rutina">
+          <div class="rtop"><h3>Rutina 2 &#8212; Post-carrera</h3><span class="rdur">~5&#8211;10 min</span></div>
+          <div class="rrule">Aqu&#237; s&#237; caben estiramientos sostenidos (tejido caliente).</div>
+          <ol>
+            <li>Caminar o trote regresivo 3&#8211;5 min (bajar pulsaciones).</li>
+            <li><button class="exlink" data-ex="couch" type="button">Couch stretch</button> 45s/lado.</li>
+            <li><button class="exlink" data-ex="noventa" type="button">90/90 de cadera</button>, suave.</li>
+            <li>Estiramiento de pantorrilla contra la pared 30s/lado (gastrocnemio y s&#243;leo).</li>
+            <li>Domingo (post-tirada): haz la rutina de movilidad completa de 10 min con el tejido caliente.</li>
+          </ol>
+        </div>
+
+        <div class="rutina">
+          <div class="rtop"><h3>Rutina 3 &#8212; Pre-fuerza de pierna</h3><span class="rdur">~8&#8211;10 min</span></div>
+          <div class="rrule">Objetivo: activar gl&#250;teo y core + ensayar el patr&#243;n antes de cargar.</div>
+          <ol>
+            <li>Cardio suave 3&#8211;5 min (bici, trote o saltar la cuerda).</li>
+            <li>Movilidad espec&#237;fica: <button class="exlink" data-ex="noventa" type="button">90/90</button> + <button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button> + <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest</button>.</li>
+            <li>Activaci&#243;n: <button class="exlink" data-ex="monster" type="button">Monster walk</button> 2&#215;15 + <button class="exlink" data-ex="plancha-lateral" type="button">Plancha lateral</button> 1&#215;20s/lado.</li>
+            <li>1&#8211;2 series de aproximaci&#243;n con poco peso antes de las series pesadas.</li>
+          </ol>
+        </div>
+
+        <div class="rutina">
+          <div class="rtop"><h3>Rutina 4 &#8212; Post-fuerza</h3><span class="rdur">~5 min</span></div>
+          <div class="rrule">Suave; si hubo pliometr&#237;a, termina sin estirar agresivo.</div>
+          <ol>
+            <li>Estiramiento suave de lo trabajado: <button class="exlink" data-ex="couch" type="button">Couch stretch</button> (cu&#225;driceps/flexor), isquios y pantorrillas.</li>
+            <li>Caminar y bajar pulsaciones.</li>
+            <li>Nada intenso; hidrataci&#243;n y a recuperar.</li>
+          </ol>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ================= PESTA&#209;A 2: EJERCICIOS ================= -->
+  <section class="panel hide" id="panel-ejercicios" role="tabpanel" aria-labelledby="tab-ejercicios" tabindex="-1">
+    <div class="snum">LOS 18 EJERCICIOS</div>
+    <h2>El cat&#225;logo, con secuencia y porqu&#233;</h2>
+    <p class="sintro">Cinco de movilidad, cinco de prevenci&#243;n y ocho drills de carrera. Toca cualquiera para abrir su ficha: secuencia del movimiento, c&#243;mo se hace, claves, errores y por qu&#233; funciona.</p>
+    <div class="exgrid" id="exgrid"></div>
+  </section>
+
+  <!-- ================= PESTA&#209;A 3: BIBLIOTECA ================= -->
+  <section class="panel hide" id="panel-biblioteca" role="tabpanel" aria-labelledby="tab-biblioteca" tabindex="-1">
+    <div class="snum">BIBLIOTECA</div>
+    <h2>La teor&#237;a, para leer y aprender</h2>
+    <p class="sintro">Once temas que explican por qu&#233; la semana est&#225; armada as&#237;. Cada uno con su dato clave, la fuente original y los movimientos relacionados.</p>
+    <div class="libwrap">
+      <div class="toc">
+        <div class="toc-d">
+          <div class="tochead">Temas</div>
+          <ol id="tocList"></ol>
+        </div>
+        <details class="toc-m">
+          <summary>&#205;ndice de temas</summary>
+          <ol id="tocListM"></ol>
+        </details>
+      </div>
+      <div id="temas"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
+    <div class="mono">PLAN &#183; RUNNING &#183; V3 &#183; JUL 2026</div>
+  </footer>
+
+</div>
+
+<!-- slide-over -->
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-bd" id="sheetBd"></div>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" id="sheetPanel">
+    <button class="sheet-x" id="sheetX" type="button" aria-label="Cerrar ficha">&#215;</button>
+    <div id="sheetBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---------- SVG helper ----------
+  var BASE = 'stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"';
+  function svg(inner){ return '<svg viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" '+BASE+'>'+inner+'</svg>'; }
+
+  // ---------- exercise data (18) ----------
+  var EX = [
+    { id:"rodilla-pared", g:"mob", name:"Rodilla a la pared", dose:"2x10/lado &#183; diario", when:"Diario", tema:"tema4",
+      frames:[
+        {c:"1. Pie frente a la pared, dedo a ~10 cm", s:'<line x1="102" y1="12" x2="102" y2="82" stroke="var(--line2)" stroke-width="4"/><line x1="14" y1="82" x2="102" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="42" cy="26" r="6"/><path d="M43 32 L50 54"/><path d="M50 54 L36 70 L30 82"/><path d="M50 54 L80 60 L82 82"/><path d="M46 40 L58 52"/><path d="M84 78 L100 78" stroke="var(--ind)" stroke-dasharray="3 3"/>'},
+        {c:"2. La rodilla avanza y toca, tal&#243;n pegado", s:'<line x1="102" y1="12" x2="102" y2="82" stroke="var(--line2)" stroke-width="4"/><line x1="14" y1="82" x2="102" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="40" cy="30" r="6"/><path d="M41 36 L48 56"/><path d="M48 56 L34 70 L28 82"/><path d="M48 56 L82 62 L80 82"/><path d="M44 44 L56 56"/><path d="M86 62 L98 62" stroke="var(--ind)" stroke-dasharray="3 3"/><path d="M94 58 L100 62 L94 66" stroke="var(--ind)"/><circle cx="80" cy="82" r="2.5" fill="var(--ind)" stroke="none"/>'},
+        {c:"3. Vista lateral: el &#225;ngulo del tobillo", s:'<line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><path d="M40 82 L74 82"/><path d="M58 82 L84 40"/><path d="M84 40 L96 70"/><path d="M58 82 A22 22 0 0 1 76 70" stroke="var(--ind)" stroke-dasharray="3 3"/><text x="70" y="77" font-size="9" fill="var(--ind)" stroke="none" font-family="monospace">20&#176;</text>'}
+      ],
+      steps:["Ponte frente a la pared en una zancada corta.","Coloca el dedo gordo a ~10 cm de la pared.","Empuja la rodilla hacia la pared SIN despegar el tal&#243;n del piso.","Toca la pared y vuelve.","Si tocas f&#225;cil, aleja el pie y repite."],
+      keys:["El tal&#243;n siempre pegado al suelo.","La rodilla viaja sobre el 2&#186; dedo, no cae hacia adentro."],
+      errors:["Despegar el tal&#243;n para llegar.","Dejar caer la rodilla hacia adentro (valgo)."],
+      why:"Moviliza la dorsiflexi&#243;n del tobillo, la bisagra que te deja absorber impacto y rodar sobre el pie. Sirve tambi&#233;n como test mensual: mide los cent&#237;metros del dedo a la pared con el tal&#243;n pegado (meta &#8805;10 cm &#8776; 20&#176;)." },
+
+    { id:"noventa", g:"mob", name:"90/90 de cadera con rotaciones", dose:"2x8/lado &#183; diario", when:"Diario", tema:"tema6",
+      frames:[
+        {c:"1. Sentado en 90/90", s:'<line x1="14" y1="80" x2="106" y2="80" stroke="var(--line2)" stroke-width="2"/><circle cx="34" cy="26" r="6"/><path d="M36 32 L44 56"/><path d="M44 56 L74 56 L74 78"/><path d="M44 56 L30 68 L52 74"/><path d="M40 40 L58 50"/>'},
+        {c:"2. Giro de rodillas al lado opuesto", s:'<line x1="14" y1="80" x2="106" y2="80" stroke="var(--line2)" stroke-width="2"/><circle cx="40" cy="26" r="6"/><path d="M42 32 L48 56"/><path d="M48 56 L20 60 L20 78"/><path d="M48 56 L64 68 L44 74"/><path d="M46 40 L64 50"/><path d="M60 40 A18 18 0 0 1 84 48" stroke="var(--ind)" stroke-dasharray="3 4"/><path d="M80 40 L86 48 L78 52" stroke="var(--ind)"/>'},
+        {c:"3. Vista superior del giro", s:'<circle cx="60" cy="46" r="8"/><path d="M60 46 L28 36"/><path d="M60 46 L34 62"/><path d="M60 46 L90 40"/><path d="M84 30 A28 28 0 0 1 88 62" stroke="var(--ind)" stroke-dasharray="3 4"/><path d="M80 32 L86 28 L88 36" stroke="var(--ind)"/>'}
+      ],
+      steps:["Si&#233;ntate con la pierna delantera a 90&#176; y la trasera a 90&#176;.","Mant&#233;n el torso erguido.","Gira ambas piernas hacia el lado contrario de forma controlada.","Alterna de lado."],
+      keys:["Mueve desde la cadera, no desde el torso.","Controla el giro, no rebotes."],
+      errors:["Encorvar la espalda.","Usar impulso en vez de control."],
+      why:"Trabaja la rotaci&#243;n interna y externa de cadera con control activo. Una cadera que rota bien reparte carga que, si no, termina en rodilla y lumbar." },
+
+    { id:"couch", g:"mob", name:"Couch stretch (flexor de cadera)", dose:"2x45s/lado", when:"Algunos d&#237;as y post-tirada", tema:"tema6",
+      frames:[
+        {c:"1. Rodilla trasera a la pared, espinilla vertical", s:'<line x1="18" y1="18" x2="18" y2="82" stroke="var(--line2)" stroke-width="4"/><line x1="18" y1="82" x2="104" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="66" cy="26" r="6"/><path d="M64 32 L58 56"/><path d="M58 56 L40 66 L24 74"/><path d="M24 74 L20 56" stroke="var(--ind)"/><path d="M58 56 L82 64 L82 82"/><path d="M62 42 L52 32"/>'},
+        {c:"2. Baja la pelvis apretando el gl&#250;teo", s:'<line x1="18" y1="18" x2="18" y2="82" stroke="var(--line2)" stroke-width="4"/><line x1="18" y1="82" x2="104" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="66" cy="30" r="6"/><path d="M64 36 L56 58"/><path d="M56 58 L40 66 L24 74"/><path d="M24 74 L20 56" stroke="var(--ind)"/><path d="M56 58 L82 64 L82 82"/><path d="M60 44 L50 36"/><path d="M50 52 L50 66" stroke="var(--ind)" stroke-dasharray="3 3"/><path d="M46 60 L50 68 L54 60" stroke="var(--ind)"/>'}
+      ],
+      steps:["Apoya la rodilla trasera en el piso contra la pared, con el pie apuntando hacia arriba.","Coloca el pie delantero plano en el suelo.","Aprieta el gl&#250;teo y mete la pelvis.","Mant&#233;n la posici&#243;n."],
+      keys:["Aprieta el gl&#250;teo (retroversi&#243;n p&#233;lvica).","No arquees la lumbar."],
+      errors:["Sacar el pecho arqueando la lumbar (da una falsa sensaci&#243;n de estiramiento)."],
+      why:"Contrarresta las horas sentado. Sin extensi&#243;n de cadera no hay zancada completa por detr&#225;s, y el lumbar termina compensando." },
+
+    { id:"wgs", g:"mob", name:"World&#39;s Greatest Stretch", dose:"5/lado &#183; diario", when:"Diario o pre-carrera", tema:"tema6",
+      frames:[
+        {c:"1. Zancada profunda", s:'<line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="52" cy="36" r="6"/><path d="M52 42 L58 60"/><path d="M58 60 L84 60 L88 82"/><path d="M58 60 L40 74 L26 82"/><path d="M54 48 L64 64"/><path d="M52 44 L44 60"/>'},
+        {c:"2. Codo al piso por dentro del pie", s:'<line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="56" cy="42" r="6"/><path d="M56 48 L60 62"/><path d="M60 62 L84 62 L88 82"/><path d="M60 62 L42 74 L28 82"/><path d="M56 50 L72 78" stroke="var(--ind)"/><circle cx="72" cy="78" r="2.5" fill="var(--ind)" stroke="none"/><path d="M60 60 L48 66"/>'},
+        {c:"3. Rotaci&#243;n: abre el brazo al techo", s:'<line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="54" cy="44" r="6"/><path d="M54 50 L60 64"/><path d="M60 64 L84 64 L88 82"/><path d="M60 64 L42 76 L28 82"/><path d="M56 52 L70 78"/><path d="M54 48 L60 24" stroke="var(--ind)"/><path d="M60 24 A14 14 0 0 0 46 26" stroke="var(--ind)" stroke-dasharray="3 4"/>'}
+      ],
+      steps:["Da una zancada larga hacia adelante.","Lleva el codo del mismo lado hacia el suelo, junto al pie.","Rota abriendo ese brazo hacia el techo.","Vuelve y alterna de lado."],
+      keys:["El tal&#243;n trasero intenta bajar.","El pecho sigue a la mano al rotar."],
+      errors:["La rodilla delantera colapsa hacia adentro.","No rotar de verdad."],
+      why:"Encadena tobillo, cadera y columna tor&#225;cica en un solo patr&#243;n din&#225;mico. M&#225;ximo rango &#250;til por cada minuto invertido." },
+
+    { id:"swings", g:"mob", name:"Leg swings (frontal y lateral)", dose:"15/lado &#183; pre-carrera", when:"Pre-carrera", tema:"tema6",
+      frames:[
+        {c:"1. Balanceo adelante-atr&#225;s", s:'<line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><line x1="16" y1="14" x2="16" y2="82" stroke="var(--line2)" stroke-width="4"/><circle cx="56" cy="18" r="6"/><path d="M56 24 L56 52"/><path d="M56 52 L52 82"/><path d="M56 52 L80 64"/><path d="M54 30 L22 34"/><path d="M56 30 L66 44"/><path d="M36 74 Q56 56 82 64" stroke="var(--ind)" stroke-dasharray="3 4"/><path d="M76 60 L82 64 L76 70" stroke="var(--ind)"/>'},
+        {c:"2. Balanceo lateral, cruzando", s:'<line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="60" cy="18" r="6"/><path d="M60 24 L60 52"/><path d="M60 52 L58 82"/><path d="M60 52 L40 70"/><path d="M60 30 L46 40"/><path d="M60 30 L74 40"/><path d="M40 70 Q60 60 82 70" stroke="var(--ind)" stroke-dasharray="3 4"/><path d="M46 66 L40 70 L46 74" stroke="var(--ind)"/>'}
+      ],
+      steps:["Apoy&#225;ndote en la pared con una mano.","Balancea una pierna relajada hacia adelante y atr&#225;s en un rango c&#243;modo.","Luego h&#225;zlo lateral, cruzando el cuerpo.","Sube el rango de forma gradual."],
+      keys:["Din&#225;mico y relajado, no fuerces el tope.","Tronco estable."],
+      errors:["Arquear la espalda para ganar rango.","Hacerlo como estiramiento est&#225;tico (esto es din&#225;mico)."],
+      why:"Movilidad din&#225;mica que prepara el rango de la zancada y activa estabilizadores SIN apagar la rigidez el&#225;stica que necesitas para correr (por eso no va est&#225;tico antes de correr)." },
+
+    { id:"pantorrilla-recta", g:"str", name:"Elevaci&#243;n de talones exc&#233;ntrica (pierna recta)", dose:"3x12 lento (3s) &#183; 2&#215;/sem", when:"2&#215; por semana", tema:"tema2",
+      frames:[
+        {c:"1. De puntas, rodilla recta", s:'<line x1="60" y1="66" x2="106" y2="66" stroke="var(--line2)" stroke-width="4"/><line x1="60" y1="66" x2="60" y2="86" stroke="var(--line2)" stroke-width="4"/><circle cx="78" cy="16" r="6"/><path d="M78 22 L78 50"/><path d="M78 50 L70 64"/><path d="M70 64 L64 64"/><path d="M78 28 L66 40"/><path d="M78 28 L90 40"/><path d="M96 54 L96 32" stroke="var(--go)"/><path d="M90 40 L96 30 L102 40" stroke="var(--go)"/>'},
+        {c:"2. Bajada lenta del tal&#243;n", s:'<line x1="60" y1="66" x2="106" y2="66" stroke="var(--line2)" stroke-width="4"/><line x1="60" y1="66" x2="60" y2="86" stroke="var(--line2)" stroke-width="4"/><circle cx="78" cy="24" r="6"/><path d="M78 30 L78 56"/><path d="M78 56 L68 66"/><path d="M68 66 L64 66"/><path d="M66 66 L66 80" stroke="var(--go)" stroke-dasharray="3 3"/><path d="M62 74 L66 82 L70 74" stroke="var(--go)"/><path d="M78 34 L66 46"/><path d="M78 34 L90 46"/>'},
+        {c:"3. Detalle: tal&#243;n bajo el escal&#243;n", s:'<line x1="24" y1="44" x2="64" y2="44" stroke="var(--line2)" stroke-width="4"/><line x1="64" y1="44" x2="64" y2="82" stroke="var(--line2)" stroke-width="4"/><path d="M50 30 L58 44"/><path d="M58 44 L64 44"/><path d="M58 44 L54 70" stroke="var(--go)"/><path d="M24 44 L100 44" stroke="var(--go)" stroke-dasharray="3 3"/>'}
+      ],
+      steps:["Ponte en el borde de un escal&#243;n.","Sube de puntas con la rodilla recta.","Baja LENTO, unos 3 segundos, dejando caer el tal&#243;n por debajo del escal&#243;n.","Sube y repite."],
+      keys:["Rodilla recta todo el tiempo.","El est&#237;mulo est&#225; en controlar la BAJADA."],
+      errors:["Bajar r&#225;pido o rebotar.","Doblar la rodilla."],
+      why:"El gastrocnemio y el Aquiles se adaptan a la carga exc&#233;ntrica lenta (protocolo Alfredson). Es la defensa n&#250;mero 1 contra la tendinopat&#237;a aqu&#237;lea." },
+
+    { id:"pantorrilla-flex", g:"str", name:"Elevaci&#243;n de talones (rodilla flexionada)", dose:"3x12 lento &#183; 2&#215;/sem", when:"2&#215; por semana", tema:"tema2",
+      frames:[
+        {c:"1. De puntas, rodilla ~30&#176; flexionada", s:'<line x1="60" y1="66" x2="106" y2="66" stroke="var(--line2)" stroke-width="4"/><line x1="60" y1="66" x2="60" y2="86" stroke="var(--line2)" stroke-width="4"/><circle cx="80" cy="20" r="6"/><path d="M80 26 L78 50"/><path d="M78 50 L84 60 L70 64"/><path d="M70 64 L64 64"/><path d="M80 30 L68 42"/><path d="M80 30 L92 42"/><text x="86" y="58" font-size="9" fill="var(--go)" stroke="none" font-family="monospace">30&#176;</text>'},
+        {c:"2. Bajada lenta manteniendo la flexi&#243;n", s:'<line x1="60" y1="66" x2="106" y2="66" stroke="var(--line2)" stroke-width="4"/><line x1="60" y1="66" x2="60" y2="86" stroke="var(--line2)" stroke-width="4"/><circle cx="80" cy="26" r="6"/><path d="M80 32 L78 54"/><path d="M78 54 L84 62 L68 66"/><path d="M68 66 L64 66"/><path d="M66 66 L66 80" stroke="var(--go)" stroke-dasharray="3 3"/><path d="M62 74 L66 82 L70 74" stroke="var(--go)"/><path d="M80 36 L68 48"/><path d="M80 36 L92 48"/>'}
+      ],
+      steps:["Igual que el anterior, pero con la rodilla flexionada ~20&#8211;30&#176; en TODO el rango.","Baja lento.","Sube manteniendo la flexi&#243;n."],
+      keys:["Mant&#233;n la flexi&#243;n constante; as&#237; el trabajo cae en el s&#243;leo."],
+      errors:["Estirar la rodilla a mitad del movimiento (vuelve a trabajar el gastrocnemio)."],
+      why:"Con la rodilla flexionada el gastrocnemio se desactiva y trabaja el S&#211;LEO, el m&#250;sculo que m&#225;s fuerza absorbe al correr (6&#8211;8&#215; el peso corporal) y el gran olvidado." },
+
+    { id:"monster", g:"str", name:"Banda lateral / monster walk", dose:"3x12 pasos/direcci&#243;n &#183; 2&#215;/sem", when:"2&#215; por semana", tema:"tema3",
+      frames:[
+        {c:"1. Banda en tobillos, semisentadilla", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="58" cy="22" r="6"/><path d="M58 28 L58 48"/><path d="M58 48 L46 66 L44 84"/><path d="M58 48 L70 66 L72 84"/><path d="M58 32 L48 42"/><path d="M58 32 L68 42"/><path d="M44 80 Q58 74 72 80" stroke="var(--go)" stroke-width="3"/>'},
+        {c:"2. Paso lateral con tensi&#243;n", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="54" cy="22" r="6"/><path d="M54 28 L54 48"/><path d="M54 48 L40 66 L34 84"/><path d="M54 48 L74 64 L84 84"/><path d="M54 32 L44 42"/><path d="M54 32 L64 42"/><path d="M34 80 Q58 72 84 80" stroke="var(--go)" stroke-width="3"/><path d="M88 78 L100 78" stroke="var(--go)" stroke-dasharray="3 3"/><path d="M96 74 L102 78 L96 82" stroke="var(--go)"/>'},
+        {c:"3. Vista frontal: rodillas alineadas", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="60" cy="20" r="6"/><path d="M60 26 L60 46"/><path d="M60 46 L44 64 L42 84"/><path d="M60 46 L76 64 L78 84"/><path d="M60 30 L48 40"/><path d="M60 30 L72 40"/><path d="M42 80 Q60 74 78 80" stroke="var(--go)" stroke-width="3"/><path d="M44 64 L34 64" stroke="var(--go)" stroke-dasharray="3 3"/><path d="M76 64 L86 64" stroke="var(--go)" stroke-dasharray="3 3"/>'}
+      ],
+      steps:["Coloca la banda en los tobillos (o sobre las rodillas).","Ponte en semisentadilla.","Da pasos laterales manteniendo la tensi&#243;n, sin juntar los pies.","Ida y vuelta."],
+      keys:["Las rodillas empujan hacia afuera contra la banda.","Pasos peque&#241;os y controlados.","No bambolees el torso."],
+      errors:["Juntar los pies (pierde tensi&#243;n).","Mecer las caderas."],
+      why:"Fortalece el gl&#250;teo medio, que evita que la rodilla colapse hacia dentro (valgo) en cada apoyo. Su debilidad se asocia al dolor patelofemoral y a la cintilla iliotibial." },
+
+    { id:"rdl", g:"str", name:"RDL a una pierna", dose:"3x8/lado &#183; 2&#215;/sem", when:"2&#215; por semana", tema:"tema1",
+      frames:[
+        {c:"1. De pie sobre una pierna", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="58" cy="18" r="6"/><path d="M58 24 L58 52"/><path d="M58 52 L58 84"/><path d="M58 52 L64 66 L60 78"/><path d="M58 30 L48 42"/><path d="M58 30 L68 42"/>'},
+        {c:"2. Bisagra: torso baja, pierna sube (T)", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="34" cy="42" r="6"/><path d="M40 44 L64 50"/><path d="M64 50 L66 84"/><path d="M64 50 L92 44"/><path d="M50 46 L52 68"/><path d="M50 46 L48 68"/>'},
+        {c:"3. Vista lateral: espalda neutra", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="30" cy="44" r="6"/><path d="M36 46 L62 50"/><path d="M92 42 L62 50"/><path d="M62 50 L64 84"/><path d="M48 48 L50 68"/><path d="M34 44 L92 42" stroke="var(--go)" stroke-dasharray="3 3"/>'}
+      ],
+      steps:["Ponte de pie sobre una pierna.","Haz una bisagra DESDE la cadera bajando el torso mientras la pierna libre se extiende hacia atr&#225;s.","Mant&#233;n la espalda recta.","Vuelve apretando el gl&#250;teo. Con o sin peso."],
+      keys:["Cadera atr&#225;s (bisagra, no sentadilla).","Cadera nivelada (no se abre hacia el lado).","Espalda neutra."],
+      errors:["Redondear la espalda.","Abrir la cadera hacia el costado."],
+      why:"Cadena posterior m&#225;s equilibrio a una pierna. Correr es una sucesi&#243;n de apoyos unipodales; entrenar en una pierna transfiere directo y descubre asimetr&#237;as." },
+
+    { id:"plancha-lateral", g:"str", name:"Plancha lateral", dose:"3x30s/lado &#183; 2&#215;/sem", when:"2&#215; por semana", tema:"tema3",
+      frames:[
+        {c:"1. Apoyo en el antebrazo, de lado", s:'<line x1="12" y1="80" x2="108" y2="80" stroke="var(--line2)" stroke-width="2"/><circle cx="26" cy="38" r="6"/><path d="M32 41 L94 68"/><path d="M94 68 L104 80"/><path d="M34 44 L34 78 L46 78"/>'},
+        {c:"2. Cadera elevada en l&#237;nea recta", s:'<line x1="12" y1="80" x2="108" y2="80" stroke="var(--line2)" stroke-width="2"/><circle cx="24" cy="32" r="6"/><path d="M30 35 L98 62"/><path d="M98 62 L106 80"/><path d="M32 38 L32 78 L44 78"/><path d="M28 34 L106 62" stroke="var(--go)" stroke-dasharray="3 3"/>'}
+      ],
+      steps:["De lado, apoya el antebrazo justo bajo el hombro.","Eleva la cadera hasta formar una l&#237;nea recta hombro-cadera-tobillo.","Mant&#233;n la posici&#243;n.","Cambia de lado."],
+      keys:["Cadera arriba (que no se hunda).","Cuerpo en una sola l&#237;nea.","Cuello neutro."],
+      errors:["Cadera ca&#237;da.","Rotar el tronco."],
+      why:"Estabilidad lateral de la pelvis. Una pelvis que no cae en cada apoyo (anti-Trendelenburg) ahorra energ&#237;a y protege la cintilla y el lumbar." },
+
+    { id:"askip", g:"dr", name:"A-skip", dose:"2x20 m", when:"Post-rodaje suave (mar o jue)", tema:"tema5",
+      frames:[
+        {c:"1. Rodilla alta a la altura de la cadera", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="52" cy="16" r="6"/><path d="M53 22 L56 50"/><path d="M56 50 L58 84"/><path d="M56 50 L64 52 L54 66"/><path d="M54 30 L40 24"/><path d="M54 30 L68 40"/><path d="M40 52 L64 52" stroke="var(--amber)" stroke-dasharray="3 3"/>'},
+        {c:"2. Contacto activo bajo el cuerpo", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="54" cy="16" r="6"/><path d="M55 22 L56 50"/><path d="M56 50 L56 84"/><path d="M56 50 L48 64 L58 74"/><path d="M54 30 L66 24"/><path d="M54 30 L44 40"/><path d="M56 52 L56 82" stroke="var(--amber)" stroke-dasharray="3 3"/><circle cx="56" cy="84" r="2.5" fill="var(--amber)" stroke="none"/>'},
+        {c:"3. Ritmo y rebote", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="54" cy="14" r="6"/><path d="M55 20 L56 48"/><path d="M56 48 L52 68 L50 78"/><path d="M56 48 L66 56 L58 68"/><path d="M54 28 L42 22"/><path d="M54 28 L66 38"/><path d="M84 60 L84 42" stroke="var(--amber)" stroke-dasharray="3 3"/><path d="M79 50 L84 40 L89 50" stroke="var(--amber)"/>'}
+      ],
+      steps:["Haz un skip r&#237;tmico llevando la rodilla a la altura de la cadera.","Mant&#233;n el tobillo firme (dorsiflexi&#243;n).","El contacto del pie es activo y BAJO el cuerpo, no adelante.","Los brazos acompa&#241;an el ritmo."],
+      keys:["Postura alta.","Contacto bajo el centro de masa.","Ritmo, no altura."],
+      errors:["Pisar por delante (sobrezancada).","Encorvarse."],
+      why:"Patr&#243;n de rodilla alta con contacto bajo el cuerpo. Refuerza la cadencia y el apoyo bajo el centro de masa sin tener que pensar la t&#233;cnica." },
+
+    { id:"talones", g:"dr", name:"Talones al gl&#250;teo", dose:"2x20 m", when:"Post-rodaje suave (mar o jue)", tema:"tema5",
+      frames:[
+        {c:"1. Recobro: tal&#243;n al gl&#250;teo", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="54" cy="16" r="6"/><path d="M55 22 L56 50"/><path d="M56 50 L60 84"/><path d="M56 50 L70 60 L56 54"/><path d="M54 30 L42 26"/><path d="M54 30 L66 40"/><path d="M72 62 Q64 46 56 52" stroke="var(--amber)" stroke-dasharray="3 4"/>'},
+        {c:"2. Frecuencia alta", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="56" cy="16" r="6"/><path d="M57 22 L58 50"/><path d="M58 50 L54 84"/><path d="M58 50 L44 60 L58 54"/><path d="M56 30 L68 26"/><path d="M56 30 L44 40"/><path d="M46 62 Q54 46 58 52" stroke="var(--amber)" stroke-dasharray="3 4"/>'}
+      ],
+      steps:["Trota llevando el tal&#243;n hacia el gl&#250;teo con un recobro r&#225;pido.","Mant&#233;n la postura erguida.","Frecuencia alta."],
+      keys:["El tal&#243;n sube por flexi&#243;n r&#225;pida de la rodilla (no patees).","Tronco erguido."],
+      errors:["Inclinarte hacia adelante.","Hacer la zancada larga."],
+      why:"Recobro r&#225;pido de la pierna (el tal&#243;n al gl&#250;teo acorta la palanca). Mejora la econom&#237;a del ciclo de zancada a cadencias altas." },
+
+    { id:"bskip", g:"dr", name:"B-skip", dose:"2x20 m", when:"Post-rodaje suave o calentamiento", tema:"tdrills",
+      frames:[
+        {c:"1. Rodilla alta, como el A-skip", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="52" cy="16" r="6"/><path d="M53 22 L56 50"/><path d="M56 50 L58 84"/><path d="M56 50 L64 52 L54 66"/><path d="M54 30 L40 24"/><path d="M54 30 L68 40"/><path d="M40 52 L64 52" stroke="var(--amber)" stroke-dasharray="3 3"/>'},
+        {c:"2. La pierna se EXTIENDE adelante-abajo", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="50" cy="16" r="6"/><path d="M51 22 L54 50"/><path d="M54 50 L54 84"/><path d="M54 50 L74 58 L84 66"/><path d="M52 30 L40 24"/><path d="M52 30 L64 38"/><path d="M60 46 L82 60" stroke="var(--amber)" stroke-dasharray="3 3"/><path d="M76 54 L84 62 L74 62" stroke="var(--amber)"/>'},
+        {c:"3. Zarpazo activo del pie, contacto bajo el cuerpo", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="56" cy="16" r="6"/><path d="M57 22 L58 50"/><path d="M58 50 L58 84"/><path d="M58 50 L50 66 L60 82"/><path d="M56 30 L68 24"/><path d="M56 30 L46 40"/><path d="M74 60 Q64 78 58 82" stroke="var(--amber)" stroke-dasharray="3 4"/><path d="M62 74 L58 83 L66 80" stroke="var(--amber)"/><circle cx="60" cy="83" r="2.5" fill="var(--amber)" stroke="none"/>'}
+      ],
+      steps:["Lleva la rodilla alta como en el A-skip.","Desde arriba, EXTIENDE la pierna hacia adelante.","Baja con un zarpazo activo llevando el pie hacia atr&#225;s para contactar BAJO el cuerpo.","Mant&#233;n el ritmo."],
+      keys:["El pie ara&#241;a el suelo hacia atr&#225;s (paw-back).","No patees adelante y dejes caer la pierna."],
+      errors:["Contactar por delante del cuerpo.","Movimiento pasivo, sin zarpazo."],
+      why:"Ense&#241;a el paw-back (acci&#243;n activa del pie hacia atr&#225;s justo antes del contacto), clave para no frenar en cada paso y para una zancada que empuja." },
+
+    { id:"rodillas-altas", g:"dr", name:"Rodillas altas (high knees)", dose:"2x20 m", when:"Calentamiento o post-rodaje", tema:"tdrills",
+      frames:[
+        {c:"1. Rodilla a la altura de la cadera", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="52" cy="14" r="6"/><path d="M53 20 L56 48"/><path d="M56 48 L58 84"/><path d="M56 48 L64 50 L54 64"/><path d="M54 28 L40 22"/><path d="M54 28 L68 38"/><path d="M40 50 L64 50" stroke="var(--amber)" stroke-dasharray="3 3"/>'},
+        {c:"2. Contacto de antepie bajo el cuerpo, postura alta", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="54" cy="14" r="6"/><path d="M55 20 L56 48"/><path d="M56 48 L56 82"/><path d="M56 48 L48 62 L58 72"/><path d="M54 28 L66 22"/><path d="M54 28 L44 38"/><path d="M56 50 L56 80" stroke="var(--amber)" stroke-dasharray="3 3"/><circle cx="58" cy="72" r="2.5" fill="var(--amber)" stroke="none"/>'}
+      ],
+      steps:["Corre con las rodillas altas (a la cadera) y frecuencia alta.","Contacto de antepie bajo el cuerpo.","Brazos r&#225;pidos.","Postura erguida."],
+      keys:["Cadencia alta por encima de altura.","Caderas altas; no te &#8216;sientes&#8217;."],
+      errors:["Inclinarte hacia atr&#225;s.","Contacto de tal&#243;n por delante."],
+      why:"Refuerza la flexi&#243;n de cadera, la frecuencia y la postura alta; base de una zancada econ&#243;mica." },
+
+    { id:"carioca", g:"dr", name:"Carioca (grapevine)", dose:"2x20 m/lado", when:"Calentamiento", tema:"tdrills",
+      frames:[
+        {c:"1. Paso lateral cruzando por delante", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="58" cy="18" r="6"/><path d="M58 24 L58 50"/><path d="M58 50 L70 68 L74 84"/><path d="M58 50 L48 66 L44 84"/><path d="M58 32 L44 40"/><path d="M58 32 L72 40"/><path d="M44 78 L78 78" stroke="var(--amber)" stroke-dasharray="3 3"/><path d="M72 74 L78 78 L72 82" stroke="var(--amber)"/>'},
+        {c:"2. Cruzando por detr&#225;s", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="60" cy="18" r="6"/><path d="M60 24 L60 50"/><path d="M60 50 L48 68 L44 84"/><path d="M60 50 L72 66 L78 84"/><path d="M60 32 L46 40"/><path d="M60 32 L74 40"/><path d="M46 80 L80 80" stroke="var(--amber)" stroke-dasharray="3 3"/><path d="M74 76 L80 80 L74 84" stroke="var(--amber)"/>'},
+        {c:"3. Rotaci&#243;n de la cadera (vista superior)", s:'<circle cx="60" cy="44" r="8"/><path d="M60 44 L30 34"/><path d="M60 44 L32 58"/><path d="M60 44 L90 40"/><path d="M82 28 A26 26 0 0 1 88 58" stroke="var(--amber)" stroke-dasharray="3 4"/><path d="M78 30 L84 26 L86 34" stroke="var(--amber)"/>'}
+      ],
+      steps:["Despl&#225;zate de lado.","Cruza una pierna por delante y luego por detr&#225;s, alternando.","Deja que roten las caderas.","Sube el ritmo."],
+      keys:["La acci&#243;n nace de las CADERAS que rotan, no solo de los pies.","Torso mirando al frente."],
+      errors:["Caderas r&#237;gidas.","Mirar los pies."],
+      why:"Movilidad rotacional de cadera + coordinaci&#243;n y disociaci&#243;n tronco-pelvis; prepara los tejidos para el rango de la carrera." },
+
+    { id:"piernas-rectas", g:"dr", name:"Piernas rectas (straight-leg bounds)", dose:"2x20 m", when:"Post-rodaje o calentamiento", tema:"tdrills",
+      frames:[
+        {c:"1. Pierna casi recta llevada al frente", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="50" cy="16" r="6"/><path d="M51 22 L54 50"/><path d="M54 50 L52 84"/><path d="M54 50 L76 56 L88 60"/><path d="M52 30 L40 24"/><path d="M52 30 L64 38"/><path d="M60 48 L86 56" stroke="var(--amber)" stroke-dasharray="3 3"/>'},
+        {c:"2. Zarpazo activo hacia abajo-atr&#225;s", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="54" cy="16" r="6"/><path d="M55 22 L58 50"/><path d="M58 50 L58 84"/><path d="M58 50 L74 66 L82 78"/><path d="M56 30 L66 24"/><path d="M56 30 L46 38"/><path d="M84 60 Q74 74 64 80" stroke="var(--amber)" stroke-dasharray="3 4"/><path d="M70 76 L64 81 L71 82" stroke="var(--amber)"/>'},
+        {c:"3. Contacto de antepie bajo el cuerpo", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="56" cy="16" r="6"/><path d="M57 22 L58 50"/><path d="M58 50 L58 82"/><path d="M58 50 L48 66 L56 80"/><path d="M56 30 L68 26"/><path d="M56 30 L46 38"/><circle cx="57" cy="82" r="2.5" fill="var(--amber)" stroke="none"/><path d="M58 52 L58 80" stroke="var(--amber)" stroke-dasharray="3 3"/>'}
+      ],
+      steps:["Con las piernas casi rectas (rodillas apenas flexionadas), lleva una pierna al frente.","B&#225;jala con un zarpazo activo hacia atr&#225;s.","Contacto de antepie bajo el cuerpo.","Rebota y alterna."],
+      keys:["Activa isquios y gl&#250;teo tirando el pie hacia atr&#225;s.","Mantente r&#237;gido y el&#225;stico, no flojo."],
+      errors:["Contactar por delante.","Doblar mucho las rodillas."],
+      why:"Activa la cadena posterior y ense&#241;a el contacto bajo el centro de masa con acci&#243;n de zarpazo; ideal para &#8216;sentir&#8217; el paw-back." },
+
+    { id:"ankling", g:"dr", name:"Ankling / tobillos", dose:"2x20 m", when:"Calentamiento", tema:"tdrills",
+      frames:[
+        {c:"1. Rebotes cortos y r&#225;pidos sobre el antepie", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="52" cy="20" r="6"/><path d="M53 26 L54 52"/><path d="M54 52 L50 70 L52 80"/><path d="M54 52 L60 70 L58 80"/><path d="M53 34 L42 40"/><path d="M53 34 L64 40"/><path d="M70 64 L70 50" stroke="var(--amber)" stroke-dasharray="3 3"/><path d="M66 54 L70 48 L74 54" stroke="var(--amber)"/>'},
+        {c:"2. Tobillo firme (dorsiflexi&#243;n), rebote el&#225;stico", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="56" cy="20" r="6"/><path d="M57 26 L58 52"/><path d="M58 52 L56 72"/><path d="M56 72 L64 74" stroke="var(--amber)"/><path d="M58 52 L64 70 L60 80"/><path d="M57 34 L46 40"/><path d="M57 34 L68 40"/><circle cx="60" cy="80" r="2.5" fill="var(--amber)" stroke="none"/>'}
+      ],
+      steps:["Da pasos muy cortos y r&#225;pidos rebotando sobre el antepie.","Tobillo firme, no lo dejes flojo.","Avanza poco, prioriza la frecuencia.","Rodillas casi rectas."],
+      keys:["Rebote el&#225;stico del tobillo (como un resorte).","Contactos r&#225;pidos y ligeros."],
+      errors:["Aterrizar de tal&#243;n.","Tobillo blando."],
+      why:"Entrena la rigidez el&#225;stica del tobillo y el pie (el &#8216;resorte&#8217; que devuelve energ&#237;a), clave de la econom&#237;a a cadencia alta." },
+
+    { id:"zancadas", g:"dr", name:"Zancadas / rectas progresivas (strides)", dose:"4&#8211;6 &#215; 60&#8211;100 m", when:"1&#8211;2&#215;/sem, fin de rodaje f&#225;cil", tema:"tzancadas",
+      frames:[
+        {c:"1. Aceleraci&#243;n progresiva", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="46" cy="22" r="6"/><path d="M48 27 L58 48"/><path d="M58 48 L48 62 L40 76"/><path d="M58 48 L72 58 L80 74"/><path d="M52 34 L40 44"/><path d="M52 34 L66 30"/><path d="M22 40 L34 40" stroke="var(--amber)" stroke-dasharray="3 3"/><path d="M22 48 L30 48" stroke="var(--amber)" stroke-dasharray="3 3"/>'},
+        {c:"2. Fase r&#225;pida y relajada (~90%)", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="50" cy="20" r="6"/><path d="M52 25 L60 47"/><path d="M60 47 L46 58 L36 72"/><path d="M60 47 L78 54 L88 68"/><path d="M56 32 L42 38"/><path d="M56 32 L70 26"/><path d="M18 34 L34 34" stroke="var(--amber)" stroke-dasharray="3 3"/><path d="M16 44 L32 44" stroke="var(--amber)" stroke-dasharray="3 3"/><path d="M20 54 L34 54" stroke="var(--amber)" stroke-dasharray="3 3"/>'},
+        {c:"3. Desaceleraci&#243;n suave", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="54" cy="22" r="6"/><path d="M55 28 L58 50"/><path d="M58 50 L50 66 L46 80"/><path d="M58 50 L68 64 L72 80"/><path d="M56 34 L46 42"/><path d="M56 34 L66 42"/><path d="M30 40 L40 40" stroke="var(--amber)" stroke-dasharray="3 3"/>'}
+      ],
+      steps:["Acelera progresivamente durante ~60&#8211;100 m.","Llega a ~90% RELAJADO (r&#225;pido pero suelto, sin tensar).","Mantente 2&#8211;3 s.","Desacelera suave.","Recupera caminando o trotando entre cada una."],
+      keys:["R&#225;pido pero RELAJADO (cara y hombros sueltos).","Postura alta; no es un sprint m&#225;ximo."],
+      errors:["Tensarte al 100%.","Recuperaci&#243;n incompleta entre repeticiones."],
+      why:"Es el puente entre los drills y correr r&#225;pido &#8212; recluta fibras r&#225;pidas, mejora la econom&#237;a y la mec&#225;nica a ritmo y &#8216;despierta&#8217; la zancada, todo con poca fatiga. De lo que m&#225;s transfiere a bajar tiempos sin subir volumen." }
+  ];
+
+  var EXMAP = {};
+  EX.forEach(function(e){ EXMAP[e.id] = e; });
+  var GLAB = { mob:["MOVILIDAD","g-mob","gp-mob"], str:["PREVENCION","g-str","gp-str"], dr:["DRILL","g-dr","gp-dr"] };
+
+  // ---------- library data (11 temas) ----------
+  var TEMAS = [
+    { id:"tema1", kick:"Tema 01 &#183; Econom&#237;a", title:"La econom&#237;a de carrera: la palanca real",
+      paras:[
+        "Correr m&#225;s kil&#243;metros funciona&#8230; hasta que deja de hacerlo. Llega un punto en que sumar volumen ya casi no mejora tu marca y s&#237; acumula fatiga y riesgo. Lo que sigue moviendo la aguja es la <b>econom&#237;a de carrera</b>: cu&#225;nta energ&#237;a gastas para sostener una velocidad dada.",
+        "La fuerza pesada y la pliometr&#237;a mejoran esa econom&#237;a entre un <b>2% y un 8%</b> en 6 a 8 semanas &#8212; una ganancia comparable a semanas de kil&#243;metros extra, pero sin la fatiga acumulada. Por eso el pilar n&#250;mero uno no es correr m&#225;s, sino a&#241;adir fuerza y saltos.",
+        "En la pr&#225;ctica esto cambia la pregunta: en vez de &#8216;&#191;cu&#225;ntos kil&#243;metros m&#225;s?&#8217; conviene preguntar &#8216;&#191;cu&#225;nta fuerza y cu&#225;ntos saltos de calidad estoy sumando?&#8217;. Sostener la misma velocidad con menos gasto se nota igual que haber corrido m&#225;s, pero sin el desgaste de subir el volumen."
+      ],
+      stat:{big:"2&#8211;8%", cap:"mejora de econom&#237;a con fuerza + plio en 6&#8211;8 semanas"},
+      url:"https://pmc.ncbi.nlm.nih.gov/articles/PMC11052887/", host:"pmc.ncbi.nlm.nih.gov",
+      rel:["rdl","pantorrilla-recta","plancha-lateral"] },
+
+    { id:"tema2", kick:"Tema 02 &#183; Tend&#243;n", title:"El tend&#243;n se entrena lento",
+      paras:[
+        "Los tendones no se entrenan como los m&#250;sculos. Responden sobre todo a la <b>magnitud</b> de la carga, no a la velocidad del movimiento: por eso el trabajo exc&#233;ntrico lento y pesado (el cl&#225;sico protocolo Alfredson) es el que los remodela y fortalece.",
+        "El s&#243;leo, adem&#225;s, absorbe entre <b>6 y 8 veces el peso corporal</b> en cada zancada, y casi nadie lo entrena de forma directa. La clave es flexionar la rodilla: as&#237; el gastrocnemio se desactiva y el trabajo cae sobre el s&#243;leo.",
+        "Esto pide paciencia: piensa en ciclos de unas <b>12 semanas</b> de constancia, no en resultados de una sola sesi&#243;n.",
+        "Por eso el trabajo de pantorrilla no se salta cuando &#8216;no duele nada&#8217;: es justamente la carga lenta y constante la que mantiene el tend&#243;n tolerante y listo para el impacto. Pi&#233;nsalo como mantenimiento continuo, no como apagar incendios cuando ya aparece la molestia."
+      ],
+      stat:{big:"6&#8211;8&#215;", cap:"peso corporal que absorbe el s&#243;leo por zancada"},
+      url:"https://theprehabguys.com/plyometric-exercises-for-distance-runners/", host:"theprehabguys.com",
+      url2:"https://runningwritings.com/2014/11/building-plyometrics-program-for.html", host2:"runningwritings.com",
+      rel:["pantorrilla-recta","pantorrilla-flex"] },
+
+    { id:"tema3", kick:"Tema 03 &#183; Gl&#250;teo medio", title:"Gl&#250;teo medio, valgo y las lesiones #1",
+      paras:[
+        "El gl&#250;teo medio es el estabilizador lateral de la cadera. En cada apoyo evita que la rodilla colapse hacia dentro (<b>valgo</b>) y que la pelvis caiga hacia el lado que no apoya.",
+        "Su debilidad est&#225; detr&#225;s de las dos lesiones m&#225;s comunes del corredor: el <b>dolor patelofemoral</b> (rodilla) y el s&#237;ndrome de la <b>cintilla iliotibial</b>. Adem&#225;s, una pelvis que se hunde en cada paso (signo de Trendelenburg) desperdicia energ&#237;a."
+      ],
+      stat:{big:"#1 y #2", cap:"lesiones del corredor asociadas a este m&#250;sculo"},
+      url:"https://strengthrunning.com/strength-training-for-runners/", host:"strengthrunning.com",
+      rel:["monster","plancha-lateral","rdl"] },
+
+    { id:"tema4", kick:"Tema 04 &#183; Tobillo", title:"Dorsiflexi&#243;n de tobillo",
+      paras:[
+        "La dorsiflexi&#243;n es cu&#225;nto puede acercarse la rodilla a la punta del pie con el tal&#243;n pegado al suelo. Correr necesita unos <b>20&#176;</b> para absorber el impacto y rodar sobre el pie.",
+        "Con menos rango, la rodilla y la cadera compensan, y esa compensaci&#243;n se asocia a un riesgo hasta <b>2,5 veces mayor</b> de dolor de rodilla. El test rodilla-a-pared la mide: la distancia en cm del dedo gordo a la pared cuando la rodilla toca sin despegar el tal&#243;n."
+      ],
+      stat:{big:"~20&#176;", cap:"de dorsiflexi&#243;n hacen falta para correr bien"},
+      url:"https://www.athletico.com/2023/04/14/is-your-ankle-mobility-holding-back-your-running/", host:"athletico.com",
+      rel:["rodilla-pared"] },
+
+    { id:"tema5", kick:"Tema 05 &#183; Cadencia", title:"Cadencia: el ajuste t&#233;cnico m&#225;s simple",
+      paras:[
+        "La cadencia es el n&#250;mero de pasos por minuto. Subir la tuya actual un <b>5 a 10%</b> acorta la zancada, reduce la sobrezancada (pisar por delante del cuerpo) y baja alrededor de un <b>20% la carga sobre la rodilla</b> (Heiderscheit, 2011).",
+        "No persigas el m&#237;tico 180: el objetivo no es un n&#250;mero universal, sino <b>tu</b> cadencia m&#225;s un 5&#8211;10%, y de forma gradual. Los drills ayudan a interiorizar ese ritmo sin pensarlo.",
+        "Aqu&#237; entran los drills y las zancadas: son la forma de grabar ese ritmo un poco m&#225;s alto sin tener que contar pasos mientras corres. Repetir el patr&#243;n con las piernas frescas hace que el cuerpo lo adopte solo cuando sales a rodar."
+      ],
+      stat:{big:"~20%", cap:"menos carga en la rodilla con +5&#8211;10% de cadencia"},
+      url:"https://runnersconnect.net/running-cadence-injury/", host:"runnersconnect.net",
+      rel:["askip","talones"] },
+
+    { id:"tema6", kick:"Tema 06 &#183; Movilidad", title:"Movilidad: frecuencia &gt; duraci&#243;n, y activa",
+      paras:[
+        "El rango de movimiento se adapta a lo que usas a menudo. Por eso <b>10 minutos diarios</b> de movilidad ganan a una sola sesi&#243;n larga a la semana: la frecuencia manda sobre la duraci&#243;n.",
+        "Y debe ser movilidad <b>activa</b> &#8212; con control y algo de carga en todo el rango &#8212; no estiramiento pasivo sostenido. La activa es la que de verdad transfiere a la zancada."
+      ],
+      stat:{big:"10 min/d&#237;a", cap:"rinden m&#225;s que 70 min un solo d&#237;a"},
+      url:"https://www.mediamaratonbogota.com/blog/entrenamiento/movilidad-para-corredores", host:"mediamaratonbogota.com",
+      rel:["noventa","couch","wgs","swings"] },
+
+    { id:"tema7", kick:"Tema 07 &#183; Pliometr&#237;a", title:"Pliometr&#237;a sin lesionarte",
+      paras:[
+        "La pliometr&#237;a &#8212; saltos y rebotes &#8212; es lo que m&#225;s mejora la elasticidad y la econom&#237;a, pero tambi&#233;n la que m&#225;s se lesiona si se abusa. La regla es empezar bajo: <b>40 a 60 contactos</b> por sesi&#243;n.",
+        "Progresa despacio, h&#225;zla <b>despu&#233;s de la fuerza</b> y con las piernas frescas, y descansa por completo entre series: aqu&#237; la calidad de cada salto manda sobre la cantidad."
+      ],
+      stat:{big:"40&#8211;60", cap:"contactos por sesi&#243;n al empezar"},
+      url:"https://runningwritings.com/2014/11/building-plyometrics-program-for.html", host:"runningwritings.com",
+      rel:["askip"] },
+
+    { id:"tema8", kick:"Tema 08 &#183; Polarizaci&#243;n", title:"D&#237;as duros duros, f&#225;ciles f&#225;ciles",
+      paras:[
+        "Concentrar carrera, fuerza y pliometr&#237;a en los mismos d&#237;as (como ya hacen martes y jueves) es lo correcto: juntar el estr&#233;s deja <b>48 a 72 horas</b> limpias para adaptarse.",
+        "El error com&#250;n es rellenar los d&#237;as f&#225;ciles con intensidad escondida. En esos d&#237;as van la movilidad y la prevenci&#243;n de baja carga, no m&#225;s carrera dura. D&#237;as duros duros, d&#237;as f&#225;ciles f&#225;ciles."
+      ],
+      stat:{big:"48&#8211;72 h", cap:"para adaptar tras un d&#237;a duro"},
+      rel:[] },
+
+    { id:"tcalentamiento", kick:"Tema 09 &#183; Calentamiento", title:"El calentamiento: din&#225;mico antes, est&#225;tico despu&#233;s",
+      paras:[
+        "Antes de correr o levantar, el calentamiento debe ser <b>din&#225;mico</b>: subir la temperatura, movilidad en movimiento, activaci&#243;n y un ensayo del patr&#243;n que vas a hacer. As&#237; el cuerpo llega despierto y con rango &#250;til, no fr&#237;o.",
+        "El estiramiento est&#225;tico prolongado ANTES es contraproducente: reduce por un rato la potencia y la rigidez el&#225;stica que justo necesitas para correr o cargar. Por eso ese trabajo va <b>despu&#233;s</b>, con el tejido caliente, para relajar y recuperar rango.",
+        "La regla, resumida: din&#225;mico antes, sostenido despu&#233;s."
+      ],
+      stat:{big:"Din&#225;mico", cap:"antes de correr; est&#225;tico sostenido, despu&#233;s"},
+      url:"https://www.mediamaratonbogota.com/blog/entrenamiento/movilidad-para-corredores", host:"mediamaratonbogota.com",
+      rel:["swings","wgs","noventa","couch"] },
+
+    { id:"tdrills", kick:"Tema 10 &#183; Drills", title:"Los drills de carrera: reprogramar la zancada",
+      paras:[
+        "Los drills a&#237;slan y exageran piezas de la zancada &#8212; rodilla alta, contacto bajo el cuerpo, el zarpazo del pie hacia atr&#225;s, cadencia alta &#8212; para que el sistema nervioso las automatice sin que tengas que &#8216;pensar la t&#233;cnica&#8217; al correr.",
+        "Se hacen con las piernas frescas, cortos y con calidad, en el calentamiento o tras un rodaje suave. No cambian tu forma de un d&#237;a para otro: la <b>reprograman con repetici&#243;n</b>, sesi&#243;n tras sesi&#243;n."
+      ],
+      stat:{big:"Calidad", cap:"cortos, con piernas frescas, en el calentamiento"},
+      url:"https://www.youtube.com/@JamesDunne", host:"youtube.com",
+      rel:["askip","bskip","rodillas-altas","piernas-rectas","ankling","carioca"] },
+
+    { id:"tzancadas", kick:"Tema 11 &#183; Zancadas", title:"Zancadas (strides): el puente a la velocidad",
+      paras:[
+        "Las zancadas son aceleraciones cortas de <b>60 a 100 m</b> hasta ~90% relajado, con recuperaci&#243;n completa. Reclutan fibras r&#225;pidas, mejoran la econom&#237;a y la mec&#225;nica a ritmo, y despiertan la zancada &#8212; con muy poca fatiga, porque son cortas y no m&#225;ximas.",
+        "Cuatro a seis al final de un rodaje f&#225;cil, una o dos veces por semana, es de lo que <b>m&#225;s transfiere a bajar tiempos sin subir volumen</b>. El puente natural entre los drills y correr r&#225;pido."
+      ],
+      stat:{big:"60&#8211;100 m", cap:"4&#8211;6 al final de un rodaje f&#225;cil, 1&#8211;2&#215;/sem"},
+      url:"https://strengthrunning.com/strength-training-for-runners/", host:"strengthrunning.com",
+      rel:["zancadas","bskip"] }
+  ];
+
+  // ---------- render exercises grid ----------
+  var exgrid = document.getElementById("exgrid");
+  EX.forEach(function(e){
+    var gl = GLAB[e.g];
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "ex";
+    b.setAttribute("data-ex", e.id);
+    b.innerHTML =
+      '<div class="exfig '+gl[1]+'">'+svg(e.frames[0].s)+'</div>'+
+      '<div class="exlab"><span class="gpill '+gl[2]+'">'+gl[0]+'</span></div>'+
+      '<h3>'+e.name+'</h3>'+
+      '<div class="dose">'+e.dose+'</div>'+
+      '<div class="open">Ver ficha &#8594;</div>';
+    exgrid.appendChild(b);
+  });
+
+  // ---------- render library ----------
+  var temasEl = document.getElementById("temas");
+  var tocList = document.getElementById("tocList");
+  var tocListM = document.getElementById("tocListM");
+
+  function tocItem(t){
+    var li = document.createElement("li");
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = t.title.replace(/&#\d+;/g, function(m){
+      var map={"&#237;":"i","&#243;":"o","&#225;":"a","&#233;":"e","&#250;":"u","&#241;":"n","&#176;":" grados","&gt;":">"};
+      return map[m]||"";
+    });
+    btn.setAttribute("data-tema", t.id);
+    li.appendChild(btn);
+    return li;
+  }
+  TEMAS.forEach(function(t){
+    tocList.appendChild(tocItem(t));
+    tocListM.appendChild(tocItem(t));
+
+    var sec = document.createElement("div");
+    sec.className = "tema";
+    sec.id = t.id;
+    var html = '<div class="tk">'+t.kick+'</div><h3>'+t.title+'</h3>';
+    t.paras.forEach(function(p){ html += '<p>'+p+'</p>'; });
+    html += '<div class="stat"><div class="big">'+t.stat.big+'</div><div class="cap">'+t.stat.cap+'</div></div>';
+    if (t.url){
+      html += '<a class="srcline" href="'+t.url+'" target="_blank" rel="noopener"><span class="h">'+t.host+'</span><span class="a">&#8599;</span></a>';
+      if (t.url2){
+        html += '<a class="srcline" href="'+t.url2+'" target="_blank" rel="noopener"><span class="h">'+t.host2+'</span><span class="a">&#8599;</span></a>';
+      }
+    }
+    if (t.rel && t.rel.length){
+      html += '<div class="relwrap"><div class="rl">Movimientos relacionados</div><div class="relchips">';
+      t.rel.forEach(function(id){
+        var ex = EXMAP[id];
+        if (ex){ html += '<button class="exlink" type="button" data-ex="'+id+'">'+ex.name+'</button>'; }
+      });
+      html += '</div></div>';
+    }
+    sec.innerHTML = html;
+    temasEl.appendChild(sec);
+  });
+
+  // ---------- tabs router ----------
+  var TABS = [
+    {id:"semana", tab:"tab-semana", panel:"panel-semana"},
+    {id:"ejercicios", tab:"tab-ejercicios", panel:"panel-ejercicios"},
+    {id:"biblioteca", tab:"tab-biblioteca", panel:"panel-biblioteca"}
+  ];
+  function reduced(){ try{ return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; }catch(e){ return false; } }
+
+  function showTab(name, opts){
+    opts = opts || {};
+    var valid = false;
+    TABS.forEach(function(t){ if(t.id===name) valid = true; });
+    if(!valid) name = "semana";
+    TABS.forEach(function(t){
+      var tabEl = document.getElementById(t.tab);
+      var panEl = document.getElementById(t.panel);
+      var on = (t.id === name);
+      tabEl.setAttribute("aria-selected", on ? "true" : "false");
+      if(on){ panEl.classList.remove("hide"); } else { panEl.classList.add("hide"); }
+    });
+    if (opts.setHash !== false){
+      try{ if (("#"+name) !== location.hash) history.replaceState(null, "", "#"+name); }catch(e){}
+    }
+    if (!opts.noScroll){
+      try{ window.scrollTo({top:0, left:0, behavior: reduced() ? "auto" : "smooth"}); }catch(e){ window.scrollTo(0,0); }
+    }
+  }
+
+  TABS.forEach(function(t){
+    document.getElementById(t.tab).addEventListener("click", function(){ showTab(t.id); });
+  });
+
+  // keyboard arrows on tablist
+  var tablist = document.querySelector(".tablist");
+  tablist.addEventListener("keydown", function(ev){
+    var i = -1;
+    for (var k=0;k<TABS.length;k++){ if(document.getElementById(TABS[k].tab)===document.activeElement){ i=k; break; } }
+    if (i<0) return;
+    var ni = i;
+    if (ev.key==="ArrowRight" || ev.key==="ArrowDown") ni = (i+1)%TABS.length;
+    else if (ev.key==="ArrowLeft" || ev.key==="ArrowUp") ni = (i-1+TABS.length)%TABS.length;
+    else return;
+    ev.preventDefault();
+    var nb = document.getElementById(TABS[ni].tab);
+    nb.focus();
+    showTab(TABS[ni].id, {noScroll:true});
+  });
+
+  window.addEventListener("hashchange", function(){
+    var h = (location.hash||"").replace("#","");
+    showTab(h || "semana", {setHash:false, noScroll:true});
+  });
+
+  // ---------- slide-over dialog ----------
+  var sheet = document.getElementById("sheet");
+  var sheetBd = document.getElementById("sheetBd");
+  var sheetX = document.getElementById("sheetX");
+  var sheetBody = document.getElementById("sheetBody");
+  var sheetPanel = document.getElementById("sheetPanel");
+  var lastFocus = null;
+
+  function listHtml(arr, ordered){
+    var tag = ordered ? "ol" : "ul";
+    var out = "<"+tag+">";
+    arr.forEach(function(x){ out += "<li>"+x+"</li>"; });
+    out += "</"+tag+">";
+    return out;
+  }
+
+  function openEx(id){
+    var e = EXMAP[id];
+    if(!e) return;
+    var gl = GLAB[e.g];
+    var seq = '<div class="seqrow">';
+    e.frames.forEach(function(f){
+      seq += '<div class="seqframe"><div class="seqbox '+gl[1]+'">'+svg(f.s)+'</div><div class="seqcap">'+f.c+'</div></div>';
+    });
+    seq += '</div>';
+
+    sheetBody.innerHTML =
+      '<div class="sh-eyebrow"><span class="gpill '+gl[2]+'">'+gl[0]+'</span></div>'+
+      '<h3 class="sh-title" id="sheetTitle">'+e.name+'</h3>'+
+      '<div class="sh-meta">'+e.dose+'</div>'+
+      '<div class="sh-when">'+e.when+'</div>'+
+      seq+
+      '<div class="sh-h4">C&#243;mo se hace</div>'+listHtml(e.steps, true)+
+      '<div class="sh-h4">Claves</div>'+listHtml(e.keys, false)+
+      '<div class="sh-h4">Errores comunes</div>'+listHtml(e.errors, false)+
+      '<div class="sh-h4">Por qu&#233; funciona</div><p class="why">'+e.why+'</p>'+
+      '<button class="sh-more" type="button" data-tema="'+e.tema+'">Leer m&#225;s en Biblioteca &#8594;</button>';
+
+    lastFocus = document.activeElement;
+    sheet.hidden = false;
+    document.body.style.overflow = "hidden";
+    // force reflow then animate
+    void sheetPanel.offsetWidth;
+    sheet.classList.add("show");
+    sheetX.focus();
+  }
+  window.openEx = openEx;
+
+  function closeSheet(){
+    sheet.classList.remove("show");
+    document.body.style.overflow = "";
+    var done = function(){
+      sheet.hidden = true;
+      sheetPanel.removeEventListener("transitionend", done);
+      if (lastFocus && lastFocus.focus){ try{ lastFocus.focus(); }catch(e){} }
+    };
+    if (reduced()){ done(); }
+    else { sheetPanel.addEventListener("transitionend", done); setTimeout(function(){ if(!sheet.hidden) done(); }, 400); }
+  }
+
+  sheetX.addEventListener("click", closeSheet);
+  sheetBd.addEventListener("click", closeSheet);
+  document.addEventListener("keydown", function(ev){
+    if (ev.key === "Escape" && !sheet.hidden){ ev.preventDefault(); closeSheet(); }
+  });
+
+  function goToLibrary(temaId){
+    showTab("biblioteca", {noScroll:true});
+    var el = temaId ? document.getElementById(temaId) : null;
+    setTimeout(function(){
+      if (el){ el.scrollIntoView({behavior: reduced() ? "auto" : "smooth", block:"start"}); }
+      else { window.scrollTo(0,0); }
+    }, 40);
+  }
+  window.goToLibrary = goToLibrary;
+
+  // ---------- delegated clicks (exercise links, tema links, toc) ----------
+  document.addEventListener("click", function(ev){
+    var t = ev.target;
+    while (t && t !== document.body){
+      if (t.getAttribute){
+        var exId = t.getAttribute("data-ex");
+        if (exId){ ev.preventDefault(); openEx(exId); return; }
+        var temaId = t.getAttribute("data-tema");
+        if (temaId){
+          ev.preventDefault();
+          if (!sheet.hidden) closeSheet();
+          goToLibrary(temaId);
+          return;
+        }
+      }
+      t = t.parentNode;
+    }
+  });
+
+  // ---------- init from hash ----------
+  var initial = (location.hash||"").replace("#","");
+  showTab(initial || "semana", {setHash:false, noScroll:true});
+})();
+</script>
+
+</body>
+</html>
