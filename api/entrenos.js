@@ -3,9 +3,9 @@
 // POST /api/entrenos  (body con los campos)  -> crea un registro
 // DELETE /api/entrenos  (body [{"Id":n}])     -> borra un registro
 module.exports = async (req, res) => {
-  const BASE = process.env.NOCODB_URL;
-  const TID = process.env.NOCODB_TABLE_ID;
-  const TOKEN = process.env.NOCODB_TOKEN;
+  const BASE = (process.env.NOCODB_URL || '').trim().replace(/\/+$/, '');
+  const TID = (process.env.NOCODB_TABLE_ID || '').trim();
+  const TOKEN = (process.env.NOCODB_TOKEN || '').trim();
   if (!BASE || !TID || !TOKEN) {
     return res.status(500).json({ error: 'Faltan variables de entorno de NocoDB en Vercel (NOCODB_URL / NOCODB_TABLE_ID / NOCODB_TOKEN).' });
   }
