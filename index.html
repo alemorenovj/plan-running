@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Plan de running: movilidad, fuerza, prevencion, drills, rutinas, videos y registro de entrenos en base compartida.">
+<meta name="description" content="Plan de running: movilidad, fuerza, drills, rutinas, videos y registro de entrenos en base compartida.">
 <meta name="theme-color" content="#efece4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#131618" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-<title>Plan de running v6 &#183; Semana, ejercicios, biblioteca y seguimiento</title>
+<title>Plan de running v7 &#183; Semana, ejercicios, biblioteca y seguimiento</title>
 <style>
   :root{
     color-scheme: light dark;
@@ -373,6 +373,18 @@
   .segempty{background:var(--card);border:1px dashed var(--line2);border-radius:14px;padding:22px;text-align:center;
     font-size:14.5px;color:var(--ink3);font-style:italic;font-family:var(--serif)}
 
+  /* ---- estructura (cal/enfr) + movilidad en la card ---- */
+  .fsub{grid-column:1 / -1;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--amber);margin-top:6px;padding-top:10px;border-top:1px solid var(--line)}
+  .segstruct{font-family:var(--mono);font-size:11.5px;color:var(--ink2);margin-top:9px;letter-spacing:.03em;
+    display:flex;flex-wrap:wrap;gap:4px 12px}
+  .segstruct .k{color:var(--amber)}
+  .segmob{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+  .segflag{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;display:inline-flex;align-items:center;gap:6px;color:var(--ink2)}
+  .segflag .mk{font-weight:700}
+  .segflag .mk.ok{color:var(--go)} .segflag .mk.no{color:var(--ink3)}
+  .segmobnote{flex-basis:100%;font-size:14px;color:var(--ink2);font-style:italic;font-family:var(--serif);line-height:1.5;margin-top:2px}
+
   .seganal{background:linear-gradient(180deg,var(--gosoft),transparent);border:1px solid var(--line2);
     border-radius:16px;padding:20px 22px;margin-top:24px}
   .seganal .ah{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--go);margin-bottom:8px}
@@ -621,7 +633,7 @@
 
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
-    <div class="mono">PLAN &#183; RUNNING &#183; V6 &#183; JUL 2026</div>
+    <div class="mono">PLAN &#183; RUNNING &#183; V7 &#183; JUL 2026</div>
   </footer>
 
 </div>
@@ -1144,8 +1156,21 @@
       fatiga: rec.fatiga || "",
       dolor: hadDolor,
       dolorDet: hadDolor ? dolorRaw : "",
+      cal: rec.calentamiento == null ? "" : String(rec.calentamiento),
+      enfr: rec.enfriamiento == null ? "" : String(rec.enfriamiento),
+      movAntes: toBool(rec.mov_antes),
+      estiroDespues: toBool(rec.estiro_despues),
+      movNota: rec.mov_nota == null ? "" : String(rec.mov_nota),
       notas: rec.nota || ""
     };
+  }
+
+  // normaliza boolean/1/0/"true"/"false"/null desde NocoDB -> boolean
+  function toBool(v){
+    if (v === true || v === 1) return true;
+    if (v === false || v === 0 || v == null) return false;
+    var s = String(v).trim().toLowerCase();
+    return s === "true" || s === "1" || s === "yes" || s === "on" || s === "checked";
   }
 
   // formulario -> body JSON para POST (columnas NocoDB)
@@ -1167,6 +1192,11 @@
       rpe: numOrNull(document.getElementById("f_rpe").value),
       fatiga: document.getElementById("f_fatiga").value,
       dolor: dolorChecked ? (dolorDet || "si") : "no",
+      calentamiento: document.getElementById("f_cal").value.trim(),
+      enfriamiento: document.getElementById("f_enfr").value.trim(),
+      mov_antes: document.getElementById("f_movantes").checked,
+      estiro_despues: document.getElementById("f_estirodespues").checked,
+      mov_nota: document.getElementById("f_movnota").value.trim(),
       nota: document.getElementById("f_notas").value.trim()
     };
   }
@@ -1309,6 +1339,9 @@
           '<div class="field"><label for="f_ritmo">Ritmo medio (min/km)</label><input type="text" id="f_ritmo" placeholder="5:30"></div>'+
           '<div class="field"><label for="f_fcmed">FC media (bpm)</label><input type="number" id="f_fcmed" min="0" inputmode="numeric" placeholder="150"></div>'+
           '<div class="field"><label for="f_fcmax">FC m&#225;x (bpm)</label><input type="number" id="f_fcmax" min="0" inputmode="numeric" placeholder="172"></div>'+
+          '<div class="fsub">Estructura de la sesi&#243;n <span style="color:var(--ink3)">(opcional)</span></div>'+
+          '<div class="field"><label for="f_cal">Calentamiento</label><input type="text" id="f_cal" placeholder="ej. 2 km o 10 min"></div>'+
+          '<div class="field"><label for="f_enfr">Enfriamiento</label><input type="text" id="f_enfr" placeholder="ej. 1 km o 10 min"></div>'+
           '<div class="ivblock" id="f_ivblock" hidden>'+
             '<div class="ivh">Intervalos / repeticiones</div>'+
             '<div class="ivscroll"><table class="ivtable"><thead><tr>'+
@@ -1326,6 +1359,10 @@
           '</select></div>'+
           '<div class="field wide checkline"><input type="checkbox" id="f_dolor"><label for="f_dolor">Hubo dolor o molestia</label></div>'+
           '<div class="field wide" id="f_dolordetwrap" hidden><label for="f_dolordet">Zona y detalle</label><input type="text" id="f_dolordet" placeholder="rodilla derecha al final"></div>'+
+          '<div class="fsub">Movilidad y estiramiento</div>'+
+          '<div class="field wide checkline"><input type="checkbox" id="f_movantes"><label for="f_movantes">Hice la movilidad antes</label></div>'+
+          '<div class="field wide checkline"><input type="checkbox" id="f_estirodespues"><label for="f_estirodespues">Estir&#233; despu&#233;s</label></div>'+
+          '<div class="field wide"><label for="f_movnota">Comentario sobre movilidad o estiramiento</label><input type="text" id="f_movnota" placeholder="ej. sent&#237; el tobillo tenso, o la cadera mejor"></div>'+
           '<div class="field wide"><label for="f_notas">Notas</label><textarea id="f_notas" placeholder="C&#243;mo te sentiste, clima, terreno&#8230;"></textarea></div>'+
         '</div>'+
         '<div class="formbtns">'+
@@ -1421,6 +1458,11 @@
     document.getElementById("f_dolor").checked = !!en.dolor;
     document.getElementById("f_dolordetwrap").hidden = !en.dolor;
     document.getElementById("f_dolordet").value = en.dolorDet || "";
+    document.getElementById("f_cal").value = en.cal || "";
+    document.getElementById("f_enfr").value = en.enfr || "";
+    document.getElementById("f_movantes").checked = !!en.movAntes;
+    document.getElementById("f_estirodespues").checked = !!en.estiroDespues;
+    document.getElementById("f_movnota").value = en.movNota || "";
     document.getElementById("f_notas").value = en.notas || "";
     clearIntervals();
     toggleIvBlock();
@@ -1500,6 +1542,19 @@
       });
       h += '</tbody></table></div>';
     }
+
+    if (en.cal || en.enfr){
+      var st = [];
+      if (en.cal)  st.push('<span><span class="k">CAL</span> '+esc(en.cal)+'</span>');
+      if (en.enfr) st.push('<span><span class="k">ENFR</span> '+esc(en.enfr)+'</span>');
+      h += '<div class="segstruct">'+st.join("")+'</div>';
+    }
+
+    h += '<div class="segmob">';
+    h += '<span class="segflag">Movilidad antes <span class="mk '+(en.movAntes?"ok":"no")+'">'+(en.movAntes?"&#10003;":"&#10007;")+'</span></span>';
+    h += '<span class="segflag">Estiramiento <span class="mk '+(en.estiroDespues?"ok":"no")+'">'+(en.estiroDespues?"&#10003;":"&#10007;")+'</span></span>';
+    if (en.movNota){ h += '<span class="segmobnote">&#8220;'+esc(en.movNota)+'&#8221;</span>'; }
+    h += '</div>';
 
     var hasSens = en.rpe || en.fatiga || en.dolor || en.notas;
     if (hasSens){
@@ -1627,6 +1682,12 @@
           L.push("     " + (j+1) + ") " + p.join(" "));
         });
       }
+      var est = [];
+      if (en.cal)  est.push("cal " + en.cal);
+      if (en.enfr) est.push("enfr " + en.enfr);
+      if (est.length) L.push("   Estructura: " + est.join(" | "));
+      L.push("   Movilidad antes: " + (en.movAntes ? "si" : "no") + " | Estiramiento despues: " + (en.estiroDespues ? "si" : "no"));
+      if (en.movNota) L.push("   Mov/estiramiento: " + en.movNota);
       var s = [];
       if (en.rpe) s.push("RPE " + en.rpe + "/10");
       if (en.fatiga) s.push("fatiga " + en.fatiga);
