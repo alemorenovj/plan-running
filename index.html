@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Plan de running: movilidad, fuerza, drills, rutinas, videos y registro de entrenos en base compartida.">
+<meta name="description" content="Plan de running: semana, ejercicios, biblioteca, registro de entrenos y perfiles.">
 <meta name="theme-color" content="#efece4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#131618" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-<title>Plan de running v7 &#183; Semana, ejercicios, biblioteca y seguimiento</title>
+<title>Plan de running v8 &#183; Semana, ejercicios, biblioteca, seguimiento y perfiles</title>
 <style>
   :root{
     color-scheme: light dark;
@@ -18,6 +18,7 @@
     --amber:#d9741a; --ambersoft:rgba(217,116,26,.12);
     --go:#1c8f63; --gosoft:rgba(28,143,99,.12);
     --ind:#3a5bd0; --indsoft:rgba(58,91,208,.12);
+    --cyan:#1596ad; --red:#cf4030;
     --shadow:0 1px 2px rgba(28,30,31,.05), 0 8px 30px rgba(28,30,31,.06);
     --disp:-apple-system,"SF Pro Display",system-ui,"Segoe UI",Roboto,sans-serif;
     --body:-apple-system,"SF Pro Text",system-ui,"Segoe UI",Roboto,sans-serif;
@@ -31,6 +32,7 @@
       --amber:#f0993f; --ambersoft:rgba(240,153,63,.14);
       --go:#3fc48c; --gosoft:rgba(63,196,140,.14);
       --ind:#7d9bff; --indsoft:rgba(125,155,255,.15);
+      --cyan:#4bc6dd; --red:#f0664f;
       --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 34px rgba(0,0,0,.35);
     }
   }
@@ -40,6 +42,7 @@
     --amber:#d9741a; --ambersoft:rgba(217,116,26,.12);
     --go:#1c8f63; --gosoft:rgba(28,143,99,.12);
     --ind:#3a5bd0; --indsoft:rgba(58,91,208,.12);
+    --cyan:#1596ad; --red:#cf4030;
     --shadow:0 1px 2px rgba(28,30,31,.05), 0 8px 30px rgba(28,30,31,.06);
   }
   :root[data-theme="dark"]{
@@ -48,6 +51,7 @@
     --amber:#f0993f; --ambersoft:rgba(240,153,63,.14);
     --go:#3fc48c; --gosoft:rgba(63,196,140,.14);
     --ind:#7d9bff; --indsoft:rgba(125,155,255,.15);
+    --cyan:#4bc6dd; --red:#f0664f;
     --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 34px rgba(0,0,0,.35);
   }
   *{box-sizing:border-box}
@@ -402,8 +406,37 @@
     transition:opacity .25s,transform .25s;z-index:80;max-width:90vw;text-align:center}
   .segtoast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
+  /* ---- perfiles ---- */
+  .perfgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .perfcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow)}
+  .perfhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+  .perfhead h3{font-size:20px;font-weight:800;letter-spacing:-.02em}
+  .perfchip{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+    padding:4px 10px;border-radius:99px;background:var(--indsoft);color:var(--ind);border:1px solid transparent}
+  .perfvo2{background:linear-gradient(180deg,var(--gosoft),transparent);border:1px solid var(--line2);border-radius:14px;
+    padding:16px 18px;margin-bottom:16px}
+  .perfvo2 .lab{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:5px}
+  .perf-vo2-num{font-family:var(--disp);font-weight:800;font-size:44px;letter-spacing:-.03em;color:var(--go);line-height:1}
+  .perf-vo2-num.pending{font-size:26px;color:var(--ink3);font-style:italic;font-family:var(--serif);font-weight:400;letter-spacing:-.01em}
+  .perfvo2 .micro{font-size:12.5px;color:var(--ink2);margin-top:7px}
+  .perfstats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:18px}
+  .perfstat{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .perfstat .k{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
+  .perfstat .v{font-size:17px;font-weight:700;color:var(--ink);margin-top:2px;letter-spacing:-.01em}
+  .perfstat .v.pending{font-size:14px;color:var(--ink3);font-style:italic;font-family:var(--serif);font-weight:400}
+  .perfzonas .zh{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+  .perfzonas .zsub{font-family:var(--mono);font-size:10px;color:var(--ink3);text-transform:none;letter-spacing:.02em}
+  .zrow{display:flex;align-items:center;gap:11px;padding:6px 0;border-top:1px solid var(--line)}
+  .zrow:first-of-type{border-top:none}
+  .zbar{width:6px;height:26px;border-radius:3px;background:var(--zcol);flex:0 0 auto}
+  .zlab{font-family:var(--mono);font-size:12.5px;font-weight:700;color:var(--zcol);width:24px;flex:0 0 auto}
+  .zname{font-size:14px;color:var(--ink);font-weight:600}
+  .zrange{margin-left:auto;font-family:var(--mono);font-size:13px;color:var(--ink2);letter-spacing:.02em}
+  .zc-z1{--zcol:var(--ink3)} .zc-z2{--zcol:var(--cyan)} .zc-z3{--zcol:var(--go)} .zc-z4{--zcol:var(--amber)} .zc-z5{--zcol:var(--red)}
+
   @media (max-width:680px){
     .exgrid{grid-template-columns:1fr}
+    .perfgrid{grid-template-columns:1fr}
     .rutgrid{grid-template-columns:1fr}
     .base .skel{grid-template-columns:1fr}
     .libwrap{grid-template-columns:1fr;gap:14px}
@@ -434,6 +467,7 @@
       <button class="tabbtn" role="tab" id="tab-ejercicios" aria-controls="panel-ejercicios" aria-selected="false">Ejercicios</button>
       <button class="tabbtn" role="tab" id="tab-biblioteca" aria-controls="panel-biblioteca" aria-selected="false">Biblioteca</button>
       <button class="tabbtn" role="tab" id="tab-seguimiento" aria-controls="panel-seguimiento" aria-selected="false">Seguimiento</button>
+      <button class="tabbtn" role="tab" id="tab-perfiles" aria-controls="panel-perfiles" aria-selected="false">Perfiles</button>
     </div>
   </nav>
 
@@ -607,7 +641,7 @@
   <section class="panel hide" id="panel-biblioteca" role="tabpanel" aria-labelledby="tab-biblioteca" tabindex="-1">
     <div class="snum">BIBLIOTECA</div>
     <h2>La teor&#237;a, para leer y aprender</h2>
-    <p class="sintro">Once temas que explican por qu&#233; la semana est&#225; armada as&#237;. Cada uno con su dato clave, la fuente original y los movimientos relacionados.</p>
+    <p class="sintro">Diecis&#233;is temas que explican por qu&#233; la semana est&#225; armada as&#237;. Cada uno con su dato clave, la fuente original y los movimientos relacionados.</p>
     <div class="libwrap">
       <div class="toc">
         <div class="toc-d">
@@ -631,9 +665,17 @@
     <div id="segRoot"></div>
   </section>
 
+  <!-- ================= PESTA&#209;A 5: PERFILES ================= -->
+  <section class="panel hide" id="panel-perfiles" role="tabpanel" aria-labelledby="tab-perfiles" tabindex="-1">
+    <div class="snum">PERFILES</div>
+    <h2>Alejandro y Valentina</h2>
+    <p class="sintro">Los n&#250;meros base de cada uno &#8212; edad, VO2 Max, frecuencias y zonas card&#237;acas. Tu Clon los toma en cuenta en el an&#225;lisis de los domingos.</p>
+    <div id="perfilesGrid" class="perfgrid"></div>
+  </section>
+
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
-    <div class="mono">PLAN &#183; RUNNING &#183; V7 &#183; JUL 2026</div>
+    <div class="mono">PLAN &#183; RUNNING &#183; V8 &#183; JUL 2026</div>
   </footer>
 
 </div>
@@ -982,7 +1024,52 @@
       ],
       stat:{big:"60&#8211;100 m", cap:"4&#8211;6 al final de un rodaje f&#225;cil, 1&#8211;2&#215;/sem"},
       url:"https://strengthrunning.com/strength-training-for-runners/", host:"strengthrunning.com",
-      rel:["zancadas","bskip"] }
+      rel:["zancadas","bskip"] },
+
+    { id:"t-vo2max", kick:"Tema 12 &#183; VO2 Max", title:"VO2 Max: el techo de tu motor",
+      paras:[
+        "El <b>VO2 Max</b> es el m&#225;ximo de ox&#237;geno que tu cuerpo puede usar por minuto, medido en mL/kg/min. Es, sencillamente, el tama&#241;o de tu motor aer&#243;bico: cu&#225;nta energ&#237;a puedes producir con ox&#237;geno cuando aprietas.",
+        "Es el <b>mejor predictor del rendimiento en resistencia</b> &#8212; y la buena noticia es que se puede mejorar con entrenamiento. Sube con dos ingredientes: est&#237;mulo (intervalos duros) montado sobre una buena base aer&#243;bica, y tiempo (semanas y meses de constancia).",
+        "No es un n&#250;mero fijo con el que naciste: la constancia lo mueve. Entrena el techo y la base a la vez y ver&#225;s c&#243;mo el mismo ritmo se siente cada vez m&#225;s f&#225;cil."
+      ],
+      stat:{big:"mL/kg/min", cap:"ox&#237;geno m&#225;ximo por minuto y kilo &#8212; se entrena, no es fijo"},
+      rel:[] },
+
+    { id:"t-intervalos-vo2", kick:"Tema 13 &#183; Intervalos", title:"Intervalos a VO2 Max: el est&#237;mulo directo",
+      paras:[
+        "La forma m&#225;s eficaz de subir el VO2 Max son los <b>intervalos duros en zona 4-5</b> (~90-95% de tu FC m&#225;x), de 3 a 5 minutos cada uno, con recuperaci&#243;n entre ellos. A ese esfuerzo el coraz&#243;n y los m&#250;sculos trabajan cerca de su techo, y esa es justo la se&#241;al que los obliga a crecer.",
+        "Protocolos cl&#225;sicos: <b>4&#215;4 min fuerte / 3 min trote</b> (el llamado &#8216;noruego&#8217;), o <b>5&#215;3 min / 2 min</b>. Elige uno y respeta los tiempos.",
+        "Con esto no se abusa: <b>1 a 2 veces por semana como m&#225;ximo</b>, y siempre con las piernas frescas &#8212; nunca encima de una sesi&#243;n dura. La calidad de cada intervalo pesa m&#225;s que la cantidad."
+      ],
+      stat:{big:"4&#215;4 min", cap:"fuerte al 90-95% de FC m&#225;x, 1-2&#215; por semana"},
+      rel:[] },
+
+    { id:"t-base-z2", kick:"Tema 14 &#183; Base", title:"La base en zona 2 sostiene el techo",
+      paras:[
+        "El VO2 Max no se sostiene sin una <b>base aer&#243;bica grande</b> debajo. El volumen f&#225;cil en <b>zona 2</b> construye m&#225;s mitocondrias, m&#225;s capilares y un coraz&#243;n m&#225;s eficiente: el motor que los intervalos despu&#233;s exprimen.",
+        "De ah&#237; la regla <b>80/20</b>: alrededor del 80% del tiempo f&#225;cil y solo un 20% duro. Es el entrenamiento polarizado, y funciona porque deja al cuerpo adaptarse en vez de vivir siempre a medio gas.",
+        "Correr todo a medias &#8212; ni f&#225;cil ni duro &#8212; es el error cl&#225;sico: no construye la base ni estimula el techo. F&#225;cil de verdad en los f&#225;ciles, duro de verdad en los duros."
+      ],
+      stat:{big:"80/20", cap:"~80% del tiempo f&#225;cil, ~20% duro (polarizado)"},
+      rel:[] },
+
+    { id:"t-respiracion", kick:"Tema 15 &#183; Respiraci&#243;n", title:"Respiraci&#243;n para correr (en carrera, antes y despu&#233;s)",
+      paras:[
+        "<b>En carrera:</b> respira con el diafragma &#8212; que se mueva la barriga, no solo el pecho &#8212; y lleva un ritmo respiratorio con los pasos: por ejemplo inhala 3 pasos / exhala 2 en lo f&#225;cil, y 2:1 en lo duro. Ese ritmo ayuda a evitar el flato y a regular el esfuerzo. En rodajes suaves, prueba la respiraci&#243;n nasal para construir tolerancia y eficiencia.",
+        "<b>Antes:</b> unas respiraciones diafragm&#225;ticas lentas para activarte sin tensarte &#8212; sin hiperventilar.",
+        "<b>Despu&#233;s / recuperaci&#243;n:</b> respiraci&#243;n lenta con <b>exhalaci&#243;n larga</b> (inhala 4 / exhala 6, o &#8216;box breathing&#8217; 4-4-4-4) para bajar pulsaciones y activar el sistema parasimp&#225;tico. Acelera la recuperaci&#243;n y sube el HRV."
+      ],
+      stat:{big:"Exhala largo", cap:"exhalaci&#243;n larga = recuperaci&#243;n; baja pulsaciones y sube el HRV"},
+      rel:[] },
+
+    { id:"t-nutricion-aerobica", kick:"Tema 16 &#183; Nutrici&#243;n", title:"Nutrici&#243;n para el motor aer&#243;bico",
+      paras:[
+        "El ox&#237;geno viaja en la sangre pegado al <b>hierro</b>: un hierro o ferritina bajo &#8212; frecuente en mujeres corredoras &#8212; baja el rendimiento aer&#243;bico y el VO2 Max. Vale la pena chequear la ferritina con tu nutricionista o m&#233;dico.",
+        "Los <b>nitratos</b> (jugo de remolacha) tienen evidencia decente para mejorar la econom&#237;a de ox&#237;geno. Y asegura <b>carbohidratos</b> suficientes alrededor de las sesiones duras &#8212; son el combustible del trabajo intenso &#8212; junto con una buena hidrataci&#243;n.",
+        "Nota clara: esto es educativo, <b>no es consejo m&#233;dico</b>. Cualquier suplemento o cambio, con un profesional &#8212; ustedes ya tienen a su nutricionista."
+      ],
+      stat:{big:"Ferritina", cap:"revisa el hierro &#8212; clave del transporte de ox&#237;geno"},
+      rel:[] }
   ];
 
   // ---------- render exercises grid ----------
@@ -1046,6 +1133,77 @@
     sec.innerHTML = html;
     temasEl.appendChild(sec);
   });
+
+  // ---------- perfiles (datos base por persona) ----------
+  var PERFILES = {
+    alejandro: {
+      nombre:"Alejandro", edad:22, wearable:"WHOOP",
+      vo2max:null,                 // WHOOP no lo mide -> "por confirmar"
+      fcReposo:54, hrv:93, fcMax:198,
+      zonasFuente:"WHOOP",
+      zonas:[
+        { z:"Z1", nombre:"", rango:"&lt;139",  col:"zc-z1" },
+        { z:"Z2", nombre:"", rango:"140-152",  col:"zc-z2" },
+        { z:"Z3", nombre:"", rango:"153-165",  col:"zc-z3" },
+        { z:"Z4", nombre:"", rango:"166-178",  col:"zc-z4" },
+        { z:"Z5", nombre:"", rango:"179+",     col:"zc-z5" }
+      ]
+    },
+    valentina: {
+      nombre:"Valentina", edad:null, wearable:"Garmin",
+      vo2max:"43.0",
+      fcReposo:47, hrv:null, fcMax:185,
+      zonasFuente:"Garmin",
+      zonas:[
+        { z:"Z1", nombre:"Calentamiento", rango:"113-138", col:"zc-z1" },
+        { z:"Z2", nombre:"F&#225;cil",    rango:"139-158", col:"zc-z2" },
+        { z:"Z3", nombre:"Aer&#243;bico", rango:"159-165", col:"zc-z3" },
+        { z:"Z4", nombre:"Umbral",        rango:"166-175", col:"zc-z4" },
+        { z:"Z5", nombre:"M&#225;ximo",   rango:"&gt;175",  col:"zc-z5" }
+      ]
+    }
+  };
+  var PERF_ORDER = ["alejandro", "valentina"];
+
+  function perfStat(k, val){
+    var pend = (val == null || val === "");
+    var v = pend ? "por confirmar" : val;
+    return '<div class="perfstat"><div class="k">'+k+'</div><div class="v'+(pend?" pending":"")+'">'+v+'</div></div>';
+  }
+  function perfCardHtml(p){
+    var vo2 = (p.vo2max == null || p.vo2max === "")
+      ? '<span class="perf-vo2-num pending">por confirmar</span>'
+      : '<span class="perf-vo2-num">'+p.vo2max+'</span>';
+    var stats = "";
+    stats += perfStat("Edad", p.edad);
+    stats += perfStat("FC reposo", p.fcReposo);
+    stats += perfStat("FC m&#225;x aprox", p.fcMax);
+    if (p.hrv != null && p.hrv !== ""){ stats += perfStat("HRV t&#237;pica", p.hrv); }
+
+    var zonas = "";
+    p.zonas.forEach(function(zn){
+      var name = zn.nombre ? '<span class="zname">'+zn.nombre+'</span>' : '';
+      zonas +=
+        '<div class="zrow '+zn.col+'">'+
+          '<span class="zbar"></span>'+
+          '<span class="zlab">'+zn.z+'</span>'+
+          name+
+          '<span class="zrange">'+zn.rango+' bpm</span>'+
+        '</div>';
+    });
+
+    return '<div class="perfcard">'+
+      '<div class="perfhead"><h3>'+p.nombre+'</h3><span class="perfchip">'+p.wearable+'</span></div>'+
+      '<div class="perfvo2"><div class="lab">VO2 Max</div>'+vo2+
+        '<div class="micro">mL/kg/min &#183; techo aer&#243;bico</div></div>'+
+      '<div class="perfstats">'+stats+'</div>'+
+      '<div class="perfzonas"><div class="zh">Zonas card&#237;acas <span class="zsub">('+p.zonasFuente+')</span></div>'+zonas+'</div>'+
+    '</div>';
+  }
+  var perfGrid = document.getElementById("perfilesGrid");
+  if (perfGrid){
+    perfGrid.innerHTML = PERF_ORDER.map(function(id){ return perfCardHtml(PERFILES[id]); }).join("");
+  }
 
   // ---------- seguimiento: registro por persona (API REST /api/entrenos + base de datos) ----------
   // Analisis editable a mano por el Clon. Pon un string (con saltos de linea) por persona.
@@ -1794,7 +1952,8 @@
     {id:"semana", tab:"tab-semana", panel:"panel-semana"},
     {id:"ejercicios", tab:"tab-ejercicios", panel:"panel-ejercicios"},
     {id:"biblioteca", tab:"tab-biblioteca", panel:"panel-biblioteca"},
-    {id:"seguimiento", tab:"tab-seguimiento", panel:"panel-seguimiento"}
+    {id:"seguimiento", tab:"tab-seguimiento", panel:"panel-seguimiento"},
+    {id:"perfiles", tab:"tab-perfiles", panel:"panel-perfiles"}
   ];
   function reduced(){ try{ return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; }catch(e){ return false; } }
 
