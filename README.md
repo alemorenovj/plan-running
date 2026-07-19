@@ -27,3 +27,12 @@ git remote add origin https://github.com/TU_USUARIO/plan-running.git
 git branch -M main
 git push -u origin main
 ```
+
+## Cómo actualizar (flujo automatizado)
+
+El contenido lo genera el Clon (Fable + subagentes). Para actualizar:
+1. Pides el cambio al Clon.
+2. El Clon edita `index.html`, hace `commit` y `push` a este repo.
+3. Vercel redespliega solo (~10 s). Solo refrescas la URL.
+
+Contexto y decisiones del proyecto viven en el Clon Digital: `Running/MEMORIA_RUNNING.md`.
