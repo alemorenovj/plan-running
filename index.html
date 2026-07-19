@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Plan de running: movilidad, fuerza, prevencion, drills, rutinas, videos y registro de entrenos.">
+<meta name="description" content="Plan de running: movilidad, fuerza, prevencion, drills, rutinas, videos y registro de entrenos en base compartida.">
 <meta name="theme-color" content="#efece4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#131618" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-<title>Plan de running v5 &#183; Semana, ejercicios, biblioteca y seguimiento</title>
+<title>Plan de running v6 &#183; Semana, ejercicios, biblioteca y seguimiento</title>
 <style>
   :root{
     color-scheme: light dark;
@@ -615,13 +615,13 @@
   <section class="panel hide" id="panel-seguimiento" role="tabpanel" aria-labelledby="tab-seguimiento" tabindex="-1">
     <div class="snum">SEGUIMIENTO</div>
     <h2>Tu registro de entrenos</h2>
-    <p class="sintro">Registra aqu&#237; tus entrenos de running &#8212; sobre todo los de calidad. Cada quien tiene su apartado (se guarda en este dispositivo). Al terminar un entreno, anota c&#243;mo te sentiste. Con el bot&#243;n &#8220;Copiar semana para el Clon&#8221; le pasas tu semana por chat y el domingo te deja el an&#225;lisis.</p>
+    <p class="sintro">Registra aqu&#237; tus entrenos de running. Cada quien tiene su apartado. Se guarda en tu base compartida &#8212; aparece en todos tus dispositivos y el del que corra contigo, y tu Clon lo lee para el an&#225;lisis de los domingos.</p>
     <div id="segRoot"></div>
   </section>
 
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
-    <div class="mono">PLAN &#183; RUNNING &#183; V5 &#183; JUL 2026</div>
+    <div class="mono">PLAN &#183; RUNNING &#183; V6 &#183; JUL 2026</div>
   </footer>
 
 </div>
@@ -1035,18 +1035,19 @@
     temasEl.appendChild(sec);
   });
 
-  // ---------- seguimiento: registro manual por persona (localStorage) ----------
+  // ---------- seguimiento: registro por persona (API REST /api/entrenos + base de datos) ----------
   // Analisis editable a mano por el Clon. Pon un string (con saltos de linea) por persona.
   var ANALISIS = { alejandro: null, valentina: null };
 
   var PERSONAS = [
-    { id:"alejandro", label:"Alejandro", key:"runlog_alejandro" },
-    { id:"valentina", label:"Valentina", key:"runlog_valentina" }
+    { id:"alejandro", label:"Alejandro", api:"Alejandro" },
+    { id:"valentina", label:"Valentina", api:"Valentina" }
   ];
   var personaActiva = "alejandro";
-  var memStore = {};      // fallback en memoria si localStorage falla
-  var lsOk = true;        // se marca false si algo falla
-  var editingId = null;   // id del entreno en edicion (o null)
+  var currentList = [];       // entrenos (forma interna) de la persona activa, cargados de la API
+  var loadState = "loading";  // "loading" | "ok" | "error"
+  var segEverLoaded = false;  // la carga real ocurre al entrar a la pestana por primera vez
+  var editingId = null;       // Id (numerico) del entreno en edicion (o null)
   var pendingDelete = null;
 
   // tipos de entreno: value (ASCII), label (HTML), grupo para desglose, pill de color
@@ -1085,34 +1086,140 @@
     return "";
   }
 
-  // ---------- storage ----------
-  function storeKey(pid){
-    for (var i=0;i<PERSONAS.length;i++){ if(PERSONAS[i].id===pid) return PERSONAS[i].key; }
-    return "runlog_"+pid;
+  // ---------- API REST (/api/entrenos, misma-origen, persiste en base de datos) ----------
+  function personaApi(pid){
+    for (var i=0;i<PERSONAS.length;i++){ if(PERSONAS[i].id===pid) return PERSONAS[i].api; }
+    return pid;
   }
   function personaLabel(pid){
     for (var i=0;i<PERSONAS.length;i++){ if(PERSONAS[i].id===pid) return PERSONAS[i].label; }
     return pid;
   }
-  function loadLog(pid){
-    var key = storeKey(pid);
-    try{
-      var raw = window.localStorage.getItem(key);
-      var arr = raw ? JSON.parse(raw) : [];
-      return Array.isArray(arr) ? arr : [];
-    }catch(e){
-      lsOk = false;
-      return memStore[key] ? memStore[key].slice() : [];
-    }
+  function idNum(id){
+    if (typeof id === "number") return id;
+    var s = String(id == null ? "" : id).trim();
+    return /^\d+$/.test(s) ? Number(s) : id;
   }
-  function saveLog(pid, arr){
-    var key = storeKey(pid);
-    memStore[key] = arr.slice();          // siempre respaldamos en memoria
-    try{
-      window.localStorage.setItem(key, JSON.stringify(arr));
-    }catch(e){
-      lsOk = false;
+  function numOrNull(s){
+    s = String(s == null ? "" : s).trim();
+    if (s === "") return null;
+    var n = Number(s);
+    return isNaN(n) ? null : n;
+  }
+
+  // registro NocoDB -> forma interna usada por el render/formulario
+  function apiToEntreno(rec){
+    rec = rec || {};
+    var ivs = [];
+    var raw = rec.intervalos;
+    if (typeof raw === "string" && raw){
+      try{
+        var parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)){ ivs = parsed; }
+      }catch(e){ ivs = []; }
+    } else if (Array.isArray(raw)){
+      ivs = raw;
     }
+    ivs = ivs.map(function(iv){
+      iv = iv || {};
+      return {
+        d: iv.d == null ? "" : String(iv.d),
+        pace: iv.pace == null ? "" : String(iv.pace),
+        fc: iv.fc == null ? "" : String(iv.fc)
+      };
+    });
+    var dolorRaw = rec.dolor == null ? "" : String(rec.dolor).trim();
+    var hadDolor = dolorRaw !== "" && dolorRaw.toLowerCase() !== "no";
+    return {
+      id: rec.Id,
+      fecha: rec.fecha || "",
+      tipo: rec.tipo || "otro",
+      dist: rec.distancia_km == null ? "" : String(rec.distancia_km),
+      dur: rec.duracion || "",
+      ritmo: rec.ritmo || "",
+      fcMed: rec.fc_media == null ? "" : String(rec.fc_media),
+      fcMax: rec.fc_max == null ? "" : String(rec.fc_max),
+      intervalos: ivs,
+      rpe: rec.rpe == null ? "" : String(rec.rpe),
+      fatiga: rec.fatiga || "",
+      dolor: hadDolor,
+      dolorDet: hadDolor ? dolorRaw : "",
+      notas: rec.nota || ""
+    };
+  }
+
+  // formulario -> body JSON para POST (columnas NocoDB)
+  function formToApiBody(){
+    var tipo = document.getElementById("f_tipo").value;
+    var dolorChecked = document.getElementById("f_dolor").checked;
+    var dolorDet = dolorChecked ? document.getElementById("f_dolordet").value.trim() : "";
+    var ivs = tipoConIntervalos(tipo) ? readIntervals() : [];
+    return {
+      persona: personaApi(personaActiva),
+      fecha: document.getElementById("f_fecha").value || todayStr(),
+      tipo: tipo,
+      distancia_km: numOrNull(document.getElementById("f_dist").value),
+      duracion: document.getElementById("f_dur").value.trim(),
+      ritmo: document.getElementById("f_ritmo").value.trim(),
+      fc_media: numOrNull(document.getElementById("f_fcmed").value),
+      fc_max: numOrNull(document.getElementById("f_fcmax").value),
+      intervalos: ivs.length ? JSON.stringify(ivs) : "",
+      rpe: numOrNull(document.getElementById("f_rpe").value),
+      fatiga: document.getElementById("f_fatiga").value,
+      dolor: dolorChecked ? (dolorDet || "si") : "no",
+      nota: document.getElementById("f_notas").value.trim()
+    };
+  }
+
+  function apiList(pid){
+    return fetch("/api/entrenos?persona=" + encodeURIComponent(personaApi(pid)), {
+      headers: { "Accept": "application/json" }
+    }).then(function(r){
+      if(!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    });
+  }
+  function apiCreate(body){
+    return fetch("/api/entrenos", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(body)
+    }).then(function(r){
+      if(!r.ok) throw new Error("HTTP " + r.status);
+      return r.json().catch(function(){ return null; });
+    });
+  }
+  function apiDelete(id){
+    return fetch("/api/entrenos", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify([{ Id: idNum(id) }])
+    }).then(function(r){
+      if(!r.ok) throw new Error("HTTP " + r.status);
+      return r.json().catch(function(){ return null; });
+    });
+  }
+
+  // carga la lista de la persona activa desde la API y re-renderiza
+  function loadPersona(pid){
+    loadState = "loading";
+    renderPane();
+    return apiList(pid).then(function(data){
+      if (pid !== personaActiva) return;        // el usuario ya cambio de persona
+      var list = (data && Array.isArray(data.list)) ? data.list : [];
+      currentList = list.map(apiToEntreno);
+      loadState = "ok";
+      renderPane();
+    }).catch(function(){
+      if (pid !== personaActiva) return;
+      loadState = "error";
+      renderPane();
+    });
+  }
+  function ensureSegLoaded(){
+    if (segEverLoaded) return;
+    segEverLoaded = true;
+    loadPersona(personaActiva);
   }
 
   // ---------- ISO week ----------
@@ -1228,7 +1335,6 @@
       '</form>';
 
     var body =
-      '<div class="segwarn" id="segWarn" hidden>Tu navegador no deja guardar en este dispositivo (modo privado o bloqueo). Puedes seguir registrando, pero se perder&#225; al cerrar la pesta&#241;a.</div>'+
       '<div class="segsum" id="segSum"></div>'+
       '<div class="seglisth">Entrenos guardados</div>'+
       '<div class="seglist" id="segList"></div>'+
@@ -1296,7 +1402,9 @@
     clearIntervals();
     toggleIvBlock();
     document.getElementById("segFormH").textContent = "Agregar entreno";
-    document.getElementById("f_guardar").textContent = "Guardar entreno";
+    var gb = document.getElementById("f_guardar");
+    gb.textContent = "Guardar entreno";
+    gb.disabled = false;
     document.getElementById("f_cancel").hidden = true;
   }
   function loadIntoForm(en){
@@ -1324,49 +1432,40 @@
     document.getElementById("f_guardar").textContent = "Guardar cambios";
     document.getElementById("f_cancel").hidden = false;
   }
-  function collectForm(){
-    var tipo = document.getElementById("f_tipo").value;
-    var dolor = document.getElementById("f_dolor").checked;
-    var en = {
-      id: editingId || uid(),
-      fecha: document.getElementById("f_fecha").value || todayStr(),
-      tipo: tipo,
-      dist: document.getElementById("f_dist").value.trim(),
-      dur: document.getElementById("f_dur").value.trim(),
-      ritmo: document.getElementById("f_ritmo").value.trim(),
-      fcMed: document.getElementById("f_fcmed").value.trim(),
-      fcMax: document.getElementById("f_fcmax").value.trim(),
-      intervalos: tipoConIntervalos(tipo) ? readIntervals() : [],
-      rpe: document.getElementById("f_rpe").value,
-      fatiga: document.getElementById("f_fatiga").value,
-      dolor: dolor,
-      dolorDet: dolor ? document.getElementById("f_dolordet").value.trim() : "",
-      notas: document.getElementById("f_notas").value.trim()
-    };
-    return en;
-  }
   function saveFromForm(){
-    var en = collectForm();
-    var arr = loadLog(personaActiva);
-    if (editingId){
-      var found = false;
-      for (var i=0;i<arr.length;i++){ if(arr[i].id===editingId){ arr[i]=en; found=true; break; } }
-      if(!found) arr.push(en);
-    } else {
-      arr.push(en);
-    }
-    saveLog(personaActiva, arr);
-    resetForm();
-    renderPane();
-    showToast(editingId ? "Cambios guardados" : "Entreno guardado");
+    var btn = document.getElementById("f_guardar");
+    if (!btn || btn.disabled) return;
+    var wasEditing = editingId;          // Id numerico del registro viejo (o null)
+    var body = formToApiBody();
+    var restoreLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = "Guardando...";
+
+    // NocoDB no tiene PATCH en este contrato: editar = borrar el viejo + crear el nuevo
+    var step = (wasEditing != null)
+      ? apiDelete(wasEditing).then(function(){ return apiCreate(body); })
+      : apiCreate(body);
+
+    step.then(function(){
+      resetForm();                       // limpia el form y reactiva el boton
+      showToast(wasEditing != null ? "Cambios guardados" : "Entreno guardado");
+      loadPersona(personaActiva);        // recarga la lista con GET
+    }).catch(function(){
+      btn.disabled = false;              // no limpiamos: el usuario conserva sus datos
+      btn.textContent = restoreLabel;
+      showToast("No se pudo guardar &#8212; revisa tu conexi&#243;n e int&#233;ntalo de nuevo");
+    });
   }
   function deleteEntreno(id){
-    var arr = loadLog(personaActiva).filter(function(en){ return en.id !== id; });
-    saveLog(personaActiva, arr);
-    if (editingId === id) resetForm();
     pendingDelete = null;
-    renderPane();
-    showToast("Entreno borrado");
+    if (editingId != null && String(editingId) === String(id)) resetForm();
+    apiDelete(id).then(function(){
+      showToast("Entreno borrado");
+      loadPersona(personaActiva);        // recarga la lista con GET
+    }).catch(function(){
+      showToast("No se pudo borrar &#8212; revisa tu conexi&#243;n");
+      renderPane();
+    });
   }
 
   // ---------- render de un entreno ----------
@@ -1378,7 +1477,7 @@
     h += '<span class="segpill '+def.pill+'">'+def.label+'</span>';
     h += '<span class="segrowbtns">';
     h += '<button type="button" class="segmini" data-edit="'+esc(en.id)+'">Editar</button>';
-    if (pendingDelete === en.id){
+    if (pendingDelete != null && String(pendingDelete) === String(en.id)){
       h += '<button type="button" class="segmini confirm" data-confirmdel="'+esc(en.id)+'">Confirmar</button>';
       h += '<button type="button" class="segmini" data-canceldel="1">No</button>';
     } else {
@@ -1434,6 +1533,18 @@
   }
 
   // ---------- render del apartado activo ----------
+  function renderAnal(analEl){
+    var anal = '<div class="ah">An&#225;lisis del Clon</div>';
+    var txt = ANALISIS[personaActiva];
+    if (txt){
+      anal += '<div class="ah" style="color:var(--ink3);margin-top:-2px;margin-bottom:8px">Semana '+esc(weekLabel())+'</div>';
+      anal += '<p>'+esc(txt)+'</p>';
+    } else {
+      anal += '<p class="ph">Cuando compartas tu semana con el Clon (bot&#243;n de abajo), aqu&#237; te deja el an&#225;lisis del domingo: qu&#233; sali&#243; bien, qu&#233; pudo fallar y el ajuste para la pr&#243;xima.</p>';
+    }
+    analEl.innerHTML = anal;
+  }
+
   function renderPane(){
     if(!document.getElementById("segSum")) return;
 
@@ -1443,10 +1554,25 @@
       var on = btns[i].getAttribute("data-persona") === personaActiva;
       btns[i].setAttribute("aria-selected", on ? "true" : "false");
     }
-    var warn = document.getElementById("segWarn");
-    if (warn) warn.hidden = lsOk;
 
-    var arr = loadLog(personaActiva).slice();
+    var sumEl = document.getElementById("segSum");
+    var listEl = document.getElementById("segList");
+    renderAnal(document.getElementById("segAnal"));
+
+    // estados de carga / error (aviso suave, sin romper la pagina)
+    if (loadState === "loading"){
+      sumEl.innerHTML = "";
+      listEl.innerHTML = '<div class="segempty">Cargando entrenos&#8230;</div>';
+      return;
+    }
+    if (loadState === "error"){
+      sumEl.innerHTML = "";
+      listEl.innerHTML = '<div class="segempty">No pude conectar con la base. '+
+        '<button type="button" class="segmini" id="segRetry" style="margin-left:6px">Reintentar</button></div>';
+      return;
+    }
+
+    var arr = currentList.slice();
     var week = arr.filter(function(en){ return inCurrentWeek(en.fecha); });
 
     // resumen semana
@@ -1457,37 +1583,26 @@
       '<div class="segtile"><div class="big">'+kmTxt+' km</div><div class="cap">esta semana &#183; '+weekLabel()+'</div></div>'+
       '<div class="segtile"><div class="big">'+week.length+'</div><div class="cap">'+(week.length===1?"sesi&#243;n":"sesiones")+' registrada'+(week.length===1?"":"s")+'</div></div>'+
       '<div class="segtile"><div class="big" style="font-size:16px;line-height:1.3">'+breakdownHtml(week)+'</div><div class="cap">desglose por tipo</div></div>';
-    document.getElementById("segSum").innerHTML = sum;
+    sumEl.innerHTML = sum;
 
-    // lista (mas reciente primero: por fecha desc, y por id como desempate estable)
+    // lista (mas reciente primero: por fecha desc, y por Id como desempate estable)
     var ordered = arr.slice().sort(function(a,b){
       var fa = a.fecha||"", fb = b.fecha||"";
       if (fa < fb) return 1;
       if (fa > fb) return -1;
-      return (a.id < b.id) ? 1 : (a.id > b.id ? -1 : 0);
+      var ia = a.id||0, ib = b.id||0;
+      return (ia < ib) ? 1 : (ia > ib ? -1 : 0);
     });
-    var listEl = document.getElementById("segList");
     if (ordered.length){
       listEl.innerHTML = ordered.map(entrenoHtml).join("");
     } else {
       listEl.innerHTML = '<div class="segempty">A&#250;n no hay entrenos de '+esc(personaLabel(personaActiva))+'. Agrega el primero con el formulario de arriba.</div>';
     }
-
-    // analisis del Clon
-    var anal = '<div class="ah">An&#225;lisis del Clon</div>';
-    var txt = ANALISIS[personaActiva];
-    if (txt){
-      anal += '<div class="ah" style="color:var(--ink3);margin-top:-2px;margin-bottom:8px">Semana '+esc(weekLabel())+'</div>';
-      anal += '<p>'+esc(txt)+'</p>';
-    } else {
-      anal += '<p class="ph">Cuando compartas tu semana con el Clon (bot&#243;n de abajo), aqu&#237; te deja el an&#225;lisis del domingo: qu&#233; sali&#243; bien, qu&#233; pudo fallar y el ajuste para la pr&#243;xima.</p>';
-    }
-    document.getElementById("segAnal").innerHTML = anal;
   }
 
   // ---------- texto para el Clon ----------
   function buildWeekText(pid){
-    var arr = loadLog(pid).filter(function(en){ return inCurrentWeek(en.fecha); });
+    var arr = currentList.filter(function(en){ return inCurrentWeek(en.fecha); });
     arr.sort(function(a,b){ return (a.fecha||"") < (b.fecha||"") ? -1 : 1; });
     var L = [];
     L.push("Semana de running " + weekLabel() + " - " + personaLabel(pid));
@@ -1547,7 +1662,7 @@
   }
   function downloadJson(pid){
     try{
-      var data = JSON.stringify({ persona: pid, entrenos: loadLog(pid) }, null, 2);
+      var data = JSON.stringify({ persona: personaApi(pid), entrenos: currentList }, null, 2);
       var blob = new Blob([data], { type: "application/json" });
       var url = URL.createObjectURL(blob);
       var a = document.createElement("a");
@@ -1566,12 +1681,16 @@
     segRoot.addEventListener("click", function(ev){
       var t = ev.target;
       var pid = t.getAttribute && t.getAttribute("data-persona");
-      if (pid){ personaActiva = pid; pendingDelete = null; resetForm(); renderPane(); return; }
+      if (pid){
+        if (pid !== personaActiva){ personaActiva = pid; currentList = []; }
+        pendingDelete = null; resetForm(); loadPersona(personaActiva); return;
+      }
+
+      if (t.id === "segRetry"){ loadPersona(personaActiva); return; }
 
       var editId = t.getAttribute && t.getAttribute("data-edit");
       if (editId){
-        var arr = loadLog(personaActiva);
-        for (var i=0;i<arr.length;i++){ if(arr[i].id===editId){ loadIntoForm(arr[i]); break; } }
+        for (var i=0;i<currentList.length;i++){ if(String(currentList[i].id)===String(editId)){ loadIntoForm(currentList[i]); break; } }
         pendingDelete = null; renderPane();
         var f = document.getElementById("segForm");
         try{ f.scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block:"start" }); }catch(e){}
@@ -1630,6 +1749,7 @@
       tabEl.setAttribute("aria-selected", on ? "true" : "false");
       if(on){ panEl.classList.remove("hide"); } else { panEl.classList.add("hide"); }
     });
+    if (name === "seguimiento"){ ensureSegLoaded(); }   // carga la lista al entrar a la pestana
     if (opts.setHash !== false){
       try{ if (("#"+name) !== location.hash) history.replaceState(null, "", "#"+name); }catch(e){}
     }
