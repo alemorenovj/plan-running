@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#131618" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-<title>Plan de running v8 &#183; Semana, ejercicios, biblioteca, seguimiento y perfiles</title>
+<title>Plan de running v9 &#183; Semana, ejercicios, biblioteca, seguimiento y perfiles</title>
 <style>
   :root{
     color-scheme: light dark;
@@ -193,6 +193,19 @@
   .ex h3{font-size:16px;font-weight:800;letter-spacing:-.02em}
   .ex .dose{font-family:var(--mono);font-size:11.5px;color:var(--ink2);margin-top:6px;letter-spacing:.02em}
   .ex .open{font-family:var(--mono);font-size:10.5px;color:var(--amber);margin-top:8px;letter-spacing:.06em;text-transform:uppercase}
+
+  /* ---- cadencia (inicio de ejercicios) ---- */
+  .cadbox{background:linear-gradient(180deg,var(--ambersoft),transparent);border:1px solid var(--line2);
+    border-radius:16px;padding:22px 24px;margin-bottom:26px}
+  .cadbox .cadeye{margin-bottom:9px}
+  .cadbox h3{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+  .cadbox p{color:var(--ink2);font-size:15.5px;line-height:1.6;max-width:64ch}
+  .cadbox p b{color:var(--ink);font-weight:600}
+  .cadchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .cadmore{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--ink2);
+    text-decoration:underline;text-underline-offset:2px}
+  .cadmore:hover{color:var(--amber)}
+  .cadmore:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 
   /* ---- slide-over sheet ---- */
   .sheet[hidden]{display:none}
@@ -634,6 +647,21 @@
     <div class="snum">LOS 18 EJERCICIOS</div>
     <h2>El cat&#225;logo, con secuencia y porqu&#233;</h2>
     <p class="sintro">Cinco de movilidad, cinco de prevenci&#243;n y ocho drills de carrera. Toca cualquiera para abrir su ficha: secuencia del movimiento, c&#243;mo se hace, claves, errores y por qu&#233; funciona.</p>
+
+    <div class="cadbox">
+      <div class="eyebrow cadeye">Antes de empezar</div>
+      <h3>Mejora tu cadencia</h3>
+      <p>La cadencia (pasos por minuto) es de los ajustes que m&#225;s transfiere: subir la <b>TUYA</b> un 5-10% acorta la sobrezancada y baja la carga en la rodilla, sin correr m&#225;s r&#225;pido. C&#243;mo hacerlo: mide tu cadencia actual, ponte una meta de <b>+5%</b> con un metr&#243;nomo (hay apps), y mant&#233;n el <b>MISMO ritmo</b> &#8212; el paso se acorta, no aceleras. Sube de a poco. Estos drills la refuerzan sin que tengas que pensarla:</p>
+      <div class="cadchips">
+        <button class="exlink" data-ex="askip" type="button">A-skip</button>
+        <button class="exlink" data-ex="rodillas-altas" type="button">Rodillas altas</button>
+        <button class="exlink" data-ex="talones" type="button">Talones al gl&#250;teo</button>
+        <button class="exlink" data-ex="ankling" type="button">Ankling</button>
+        <button class="exlink" data-ex="piernas-rectas" type="button">Piernas rectas</button>
+      </div>
+      <a class="cadmore" href="https://therunexperience.com/how-to-improve-your-running-cadence/" target="_blank" rel="noopener">Leer m&#225;s &#8599;</a>
+    </div>
+
     <div class="exgrid" id="exgrid"></div>
   </section>
 
@@ -641,7 +669,7 @@
   <section class="panel hide" id="panel-biblioteca" role="tabpanel" aria-labelledby="tab-biblioteca" tabindex="-1">
     <div class="snum">BIBLIOTECA</div>
     <h2>La teor&#237;a, para leer y aprender</h2>
-    <p class="sintro">Diecis&#233;is temas que explican por qu&#233; la semana est&#225; armada as&#237;. Cada uno con su dato clave, la fuente original y los movimientos relacionados.</p>
+    <p class="sintro">Dieciocho temas que explican por qu&#233; la semana est&#225; armada as&#237;. Cada uno con su dato clave, la fuente original y los movimientos relacionados.</p>
     <div class="libwrap">
       <div class="toc">
         <div class="toc-d">
@@ -675,7 +703,7 @@
 
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
-    <div class="mono">PLAN &#183; RUNNING &#183; V8 &#183; JUL 2026</div>
+    <div class="mono">PLAN &#183; RUNNING &#183; V9 &#183; JUL 2026</div>
   </footer>
 
 </div>
@@ -920,7 +948,7 @@
     return YT[id] || "https://www.youtube.com";
   }
 
-  // ---------- library data (11 temas) ----------
+  // ---------- library data (18 temas) ----------
   var TEMAS = [
     { id:"tema1", kick:"Tema 01 &#183; Econom&#237;a", title:"La econom&#237;a de carrera: la palanca real",
       paras:[
@@ -1074,7 +1102,27 @@
         "Nota clara: esto es educativo, <b>no es consejo m&#233;dico</b>. Cualquier suplemento o cambio, con un profesional &#8212; ustedes ya tienen a su nutricionista."
       ],
       stat:{big:"Ferritina", cap:"revisa el hierro &#8212; clave del transporte de ox&#237;geno"},
-      rel:[] }
+      rel:[] },
+
+    { id:"t-rer", kick:"Tema 17 &#183; Fisiolog&#237;a", title:"Cociente respiratorio (RER): qu&#233; combustible quemas",
+      url:"https://www.topendsports.com/testing/respiratory-exchange-ratio.htm", host:"topendsports.com",
+      paras:[
+        "El RER (respiratory exchange ratio) es la relaci&#243;n entre el CO2 que exhalas y el O2 que consumes, y delata qu&#233; combustible usa tu cuerpo: <b>~0.70 = puras grasas</b>, ~0.85 = mezcla grasa/carbohidratos, <b>~1.0 = puros carbohidratos</b>.",
+        "Sube con la intensidad: en f&#225;cil quemas m&#225;s grasa (RER bajo); al apretar, el cuerpo cambia a carbohidratos (RER cerca de 1.0).",
+        "Lo clave para ti: el entrenamiento de resistencia <b>BAJA tu RER</b> a un ritmo dado &#8212; aprendes a quemar m&#225;s grasa y ahorrar gluc&#243;geno, y eso te deja correr m&#225;s lejos antes de &#8216;pegarte&#8217;. Los muy entrenados tienen RER bajo hasta en reposo. Es otra raz&#243;n del volumen en zona 2: construye esa maquinaria de oxidar grasa."
+      ],
+      stat:{big:"0.70 &#183; 1.0", cap:"RER: 0.70 = grasa &#183; 1.0 = carbohidratos"},
+      rel:["t-base-z2"] },
+
+    { id:"t-elite", kick:"Tema 18 &#183; Elite", title:"C&#243;mo entrenan los elite su VO2 Max",
+      url:"https://www.outsideonline.com/health/training-performance/norwegian-method-jakob-ingebrigtsen/", host:"outsideonline.com",
+      paras:[
+        "Los mejores del mundo casi nunca corren todo al m&#225;ximo. El <b>m&#233;todo noruego</b> (los hermanos Ingebrigtsen) combina una base aer&#243;bica enorme con &#8216;doble umbral&#8217;: dos sesiones de umbral el mismo d&#237;a, controladas por lactato (2-4.5 mmol/L, ni muy suave ni muy duro), y solo <b>1 sesi&#243;n de VO2 Max fuerte por semana</b> (ej. 5&#215;1000 m a ritmo de 3K, o 4&#215;4 min al 90-95% de FC m&#225;x). La idea: acumular mucho trabajo de calidad sin destruirse.",
+        "Kipchoge: volumen alt&#237;simo en f&#225;cil, tiradas largas y trabajo de ritmo, con una consistencia brutal.",
+        "La lecci&#243;n para ti (sin medir lactato): mucha base f&#225;cil, y el trabajo duro de VO2 Max <b>DOSIFICADO y controlado</b> (1-2 veces por semana), no todo a tope."
+      ],
+      stat:{big:"Doble umbral", cap:"el VO2 Max pone el techo; el umbral define cu&#225;nto de ese techo usas"},
+      rel:["t-intervalos-vo2","t-base-z2"] }
   ];
 
   // ---------- render exercises grid ----------
