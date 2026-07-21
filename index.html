@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Plan de running: semana, ejercicios, biblioteca, registro de entrenos y perfiles.">
+<meta name="description" content="Plan de running: semana, ejercicios, biblioteca, seguimiento, perfiles y quiz.">
 <meta name="theme-color" content="#efece4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#131618" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-<title>Plan de running v9 &#183; Semana, ejercicios, biblioteca, seguimiento y perfiles</title>
+<title>Plan de running v10 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
 <style>
   :root{
     color-scheme: light dark;
@@ -447,6 +447,46 @@
   .zrange{margin-left:auto;font-family:var(--mono);font-size:13px;color:var(--ink2);letter-spacing:.02em}
   .zc-z1{--zcol:var(--ink3)} .zc-z2{--zcol:var(--cyan)} .zc-z3{--zcol:var(--go)} .zc-z4{--zcol:var(--amber)} .zc-z5{--zcol:var(--red)}
 
+  /* ---- badge "Nuevo" ---- */
+  .newbadge{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    color:var(--amber);background:var(--ambersoft);border:1px solid transparent;
+    padding:2px 6px;border-radius:5px;vertical-align:middle;display:inline-block;line-height:1.4}
+  .navdot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--amber);
+    margin-left:7px;vertical-align:middle}
+  .toc button .newbadge{font-size:8px;padding:1px 5px;margin-left:4px}
+
+  /* ---- quiz ---- */
+  .quizcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);margin-bottom:20px}
+  .quizcard.quiz-pass{background:linear-gradient(180deg,var(--gosoft),transparent);border-color:var(--line2)}
+  .quizcard.quiz-fail{background:linear-gradient(180deg,var(--ambersoft),transparent);border-color:var(--line2)}
+  .quizintro-h{font-size:18px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+  .quizintro-p{color:var(--ink2);font-size:15.5px;line-height:1.6;max-width:64ch;margin-bottom:16px}
+  .quizintro-p b{color:var(--ink);font-weight:600}
+  .quizresh{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
+  .quizbig{font-family:var(--disp);font-weight:800;font-size:44px;letter-spacing:-.03em;color:var(--ink);line-height:1}
+  .quizslash{font-size:24px;color:var(--ink3);font-weight:700}
+  .quizmsg{font-size:16px;color:var(--ink);margin-top:10px;line-height:1.5}
+  .quizmsg b{font-weight:700}
+  .quizlock{font-family:var(--mono);font-size:11.5px;color:var(--ink3);margin-top:12px;letter-spacing:.02em}
+  .quizform{display:grid;gap:16px}
+  .quizprog{font-size:14px;color:var(--ink2);font-style:italic;font-family:var(--serif)}
+  .quizq{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+  .quizqnum{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+  .quizqtext{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:12px;line-height:1.4}
+  .quizopts{display:grid;gap:8px}
+  .quizopt{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:var(--paper);transition:border-color .15s}
+  .quizopt:hover{border-color:var(--line2)}
+  .quizopt input{margin-top:3px;flex:0 0 auto}
+  .quizopt span{font-size:15px;color:var(--ink);line-height:1.45}
+  .quizopt:focus-within{border-color:var(--amber)}
+  .quizpairs .quizpair{display:flex;align-items:center;gap:12px;margin-top:10px;flex-wrap:wrap}
+  .quizword{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--ink);background:var(--paper);
+    border:1px solid var(--line2);border-radius:8px;padding:8px 12px;min-width:150px}
+  .quizsel{font:inherit;font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line2);
+    border-radius:9px;padding:9px 11px;flex:1;min-width:180px}
+  .quizsel:focus-visible{outline:2px solid var(--amber);outline-offset:1px}
+  #quizSubmit{justify-self:start}
+
   @media (max-width:680px){
     .exgrid{grid-template-columns:1fr}
     .perfgrid{grid-template-columns:1fr}
@@ -480,7 +520,8 @@
       <button class="tabbtn" role="tab" id="tab-ejercicios" aria-controls="panel-ejercicios" aria-selected="false">Ejercicios</button>
       <button class="tabbtn" role="tab" id="tab-biblioteca" aria-controls="panel-biblioteca" aria-selected="false">Biblioteca</button>
       <button class="tabbtn" role="tab" id="tab-seguimiento" aria-controls="panel-seguimiento" aria-selected="false">Seguimiento</button>
-      <button class="tabbtn" role="tab" id="tab-perfiles" aria-controls="panel-perfiles" aria-selected="false">Perfiles</button>
+      <button class="tabbtn" role="tab" id="tab-perfiles" aria-controls="panel-perfiles" aria-selected="false">Perfiles<span class="navdot" aria-label="Nuevo"></span></button>
+      <button class="tabbtn" role="tab" id="tab-quiz" aria-controls="panel-quiz" aria-selected="false">Quiz<span class="navdot" aria-label="Nuevo"></span></button>
     </div>
   </nav>
 
@@ -650,7 +691,7 @@
 
     <div class="cadbox">
       <div class="eyebrow cadeye">Antes de empezar</div>
-      <h3>Mejora tu cadencia</h3>
+      <h3>Mejora tu cadencia <span class="newbadge">Nuevo</span></h3>
       <p>La cadencia (pasos por minuto) es de los ajustes que m&#225;s transfiere: subir la <b>TUYA</b> un 5-10% acorta la sobrezancada y baja la carga en la rodilla, sin correr m&#225;s r&#225;pido. C&#243;mo hacerlo: mide tu cadencia actual, ponte una meta de <b>+5%</b> con un metr&#243;nomo (hay apps), y mant&#233;n el <b>MISMO ritmo</b> &#8212; el paso se acorta, no aceleras. Sube de a poco. Estos drills la refuerzan sin que tengas que pensarla:</p>
       <div class="cadchips">
         <button class="exlink" data-ex="askip" type="button">A-skip</button>
@@ -701,9 +742,17 @@
     <div id="perfilesGrid" class="perfgrid"></div>
   </section>
 
+  <!-- ================= PESTA&#209;A 6: QUIZ ================= -->
+  <section class="panel hide" id="panel-quiz" role="tabpanel" aria-labelledby="tab-quiz" tabindex="-1">
+    <div class="snum">QUIZ</div>
+    <h2>Ponte a prueba</h2>
+    <p class="sintro">Veinte preguntas sobre el plan: econom&#237;a de carrera, tend&#243;n, cadencia, VO2 Max, zonas y m&#225;s. Un intento por d&#237;a por persona &#8212; se guarda en tu base compartida. Apruebas con <b>10 de 20</b>.</p>
+    <div id="quizRoot"></div>
+  </section>
+
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
-    <div class="mono">PLAN &#183; RUNNING &#183; V9 &#183; JUL 2026</div>
+    <div class="mono">PLAN &#183; RUNNING &#183; V10 &#183; JUL 2026</div>
   </footer>
 
 </div>
@@ -1054,7 +1103,7 @@
       url:"https://strengthrunning.com/strength-training-for-runners/", host:"strengthrunning.com",
       rel:["zancadas","bskip"] },
 
-    { id:"t-vo2max", kick:"Tema 12 &#183; VO2 Max", title:"VO2 Max: el techo de tu motor",
+    { id:"t-vo2max", nuevo:true, kick:"Tema 12 &#183; VO2 Max", title:"VO2 Max: el techo de tu motor",
       url:"https://marathonhandbook.com/how-to-increase-vo2-max/", host:"marathonhandbook.com",
       paras:[
         "El <b>VO2 Max</b> es el m&#225;ximo de ox&#237;geno que tu cuerpo puede usar por minuto, medido en mL/kg/min. Es, sencillamente, el tama&#241;o de tu motor aer&#243;bico: cu&#225;nta energ&#237;a puedes producir con ox&#237;geno cuando aprietas.",
@@ -1064,7 +1113,7 @@
       stat:{big:"mL/kg/min", cap:"ox&#237;geno m&#225;ximo por minuto y kilo &#8212; se entrena, no es fijo"},
       rel:[] },
 
-    { id:"t-intervalos-vo2", kick:"Tema 13 &#183; Intervalos", title:"Intervalos a VO2 Max: el est&#237;mulo directo",
+    { id:"t-intervalos-vo2", nuevo:true, kick:"Tema 13 &#183; Intervalos", title:"Intervalos a VO2 Max: el est&#237;mulo directo",
       url:"https://runningmagazine.ca/sections/training/the-norwegian-secret-to-boosting-vo2-max/", host:"runningmagazine.ca",
       paras:[
         "La forma m&#225;s eficaz de subir el VO2 Max son los <b>intervalos duros en zona 4-5</b> (~90-95% de tu FC m&#225;x), de 3 a 5 minutos cada uno, con recuperaci&#243;n entre ellos. A ese esfuerzo el coraz&#243;n y los m&#250;sculos trabajan cerca de su techo, y esa es justo la se&#241;al que los obliga a crecer.",
@@ -1074,7 +1123,7 @@
       stat:{big:"4&#215;4 min", cap:"fuerte al 90-95% de FC m&#225;x, 1-2&#215; por semana"},
       rel:[] },
 
-    { id:"t-base-z2", kick:"Tema 14 &#183; Base", title:"La base en zona 2 sostiene el techo",
+    { id:"t-base-z2", nuevo:true, kick:"Tema 14 &#183; Base", title:"La base en zona 2 sostiene el techo",
       url:"https://marathonhandbook.com/polarized-training/", host:"marathonhandbook.com",
       paras:[
         "El VO2 Max no se sostiene sin una <b>base aer&#243;bica grande</b> debajo. El volumen f&#225;cil en <b>zona 2</b> construye m&#225;s mitocondrias, m&#225;s capilares y un coraz&#243;n m&#225;s eficiente: el motor que los intervalos despu&#233;s exprimen.",
@@ -1084,7 +1133,7 @@
       stat:{big:"80/20", cap:"~80% del tiempo f&#225;cil, ~20% duro (polarizado)"},
       rel:[] },
 
-    { id:"t-respiracion", kick:"Tema 15 &#183; Respiraci&#243;n", title:"Respiraci&#243;n para correr (en carrera, antes y despu&#233;s)",
+    { id:"t-respiracion", nuevo:true, kick:"Tema 15 &#183; Respiraci&#243;n", title:"Respiraci&#243;n para correr (en carrera, antes y despu&#233;s)",
       url:"https://runnersconnect.net/breathing-patterns/", host:"runnersconnect.net",
       paras:[
         "<b>En carrera:</b> respira con el diafragma &#8212; que se mueva la barriga, no solo el pecho &#8212; y lleva un ritmo respiratorio con los pasos: por ejemplo inhala 3 pasos / exhala 2 en lo f&#225;cil, y 2:1 en lo duro. Ese ritmo ayuda a evitar el flato y a regular el esfuerzo. En rodajes suaves, prueba la respiraci&#243;n nasal para construir tolerancia y eficiencia.",
@@ -1094,7 +1143,7 @@
       stat:{big:"Exhala largo", cap:"exhalaci&#243;n larga = recuperaci&#243;n; baja pulsaciones y sube el HRV"},
       rel:[] },
 
-    { id:"t-nutricion-aerobica", kick:"Tema 16 &#183; Nutrici&#243;n", title:"Nutrici&#243;n para el motor aer&#243;bico",
+    { id:"t-nutricion-aerobica", nuevo:true, kick:"Tema 16 &#183; Nutrici&#243;n", title:"Nutrici&#243;n para el motor aer&#243;bico",
       url:"https://runnersconnect.net/iron-deficiency-in-runners/", host:"runnersconnect.net",
       paras:[
         "El ox&#237;geno viaja en la sangre pegado al <b>hierro</b>: un hierro o ferritina bajo &#8212; frecuente en mujeres corredoras &#8212; baja el rendimiento aer&#243;bico y el VO2 Max. Vale la pena chequear la ferritina con tu nutricionista o m&#233;dico.",
@@ -1104,7 +1153,7 @@
       stat:{big:"Ferritina", cap:"revisa el hierro &#8212; clave del transporte de ox&#237;geno"},
       rel:[] },
 
-    { id:"t-rer", kick:"Tema 17 &#183; Fisiolog&#237;a", title:"Cociente respiratorio (RER): qu&#233; combustible quemas",
+    { id:"t-rer", nuevo:true, kick:"Tema 17 &#183; Fisiolog&#237;a", title:"Cociente respiratorio (RER): qu&#233; combustible quemas",
       url:"https://www.topendsports.com/testing/respiratory-exchange-ratio.htm", host:"topendsports.com",
       paras:[
         "El RER (respiratory exchange ratio) es la relaci&#243;n entre el CO2 que exhalas y el O2 que consumes, y delata qu&#233; combustible usa tu cuerpo: <b>~0.70 = puras grasas</b>, ~0.85 = mezcla grasa/carbohidratos, <b>~1.0 = puros carbohidratos</b>.",
@@ -1114,7 +1163,7 @@
       stat:{big:"0.70 &#183; 1.0", cap:"RER: 0.70 = grasa &#183; 1.0 = carbohidratos"},
       rel:["t-base-z2"] },
 
-    { id:"t-elite", kick:"Tema 18 &#183; Elite", title:"C&#243;mo entrenan los elite su VO2 Max",
+    { id:"t-elite", nuevo:true, kick:"Tema 18 &#183; Elite", title:"C&#243;mo entrenan los elite su VO2 Max",
       url:"https://www.outsideonline.com/health/training-performance/norwegian-method-jakob-ingebrigtsen/", host:"outsideonline.com",
       paras:[
         "Los mejores del mundo casi nunca corren todo al m&#225;ximo. El <b>m&#233;todo noruego</b> (los hermanos Ingebrigtsen) combina una base aer&#243;bica enorme con &#8216;doble umbral&#8217;: dos sesiones de umbral el mismo d&#237;a, controladas por lactato (2-4.5 mmol/L, ni muy suave ni muy duro), y solo <b>1 sesi&#243;n de VO2 Max fuerte por semana</b> (ej. 5&#215;1000 m a ritmo de 3K, o 4&#215;4 min al 90-95% de FC m&#225;x). La idea: acumular mucho trabajo de calidad sin destruirse.",
@@ -1151,10 +1200,11 @@
     var li = document.createElement("li");
     var btn = document.createElement("button");
     btn.type = "button";
-    btn.textContent = t.title.replace(/&#\d+;/g, function(m){
+    var plain = t.title.replace(/&#\d+;/g, function(m){
       var map={"&#237;":"i","&#243;":"o","&#225;":"a","&#233;":"e","&#250;":"u","&#241;":"n","&#176;":" grados","&gt;":">"};
       return map[m]||"";
     });
+    btn.innerHTML = plain + (t.nuevo ? ' <span class="newbadge">Nuevo</span>' : '');
     btn.setAttribute("data-tema", t.id);
     li.appendChild(btn);
     return li;
@@ -1166,7 +1216,8 @@
     var sec = document.createElement("div");
     sec.className = "tema";
     sec.id = t.id;
-    var html = '<div class="tk">'+t.kick+'</div><h3>'+t.title+'</h3>';
+    var badge = t.nuevo ? ' <span class="newbadge">Nuevo</span>' : '';
+    var html = '<div class="tk">'+t.kick+'</div><h3>'+t.title+badge+'</h3>';
     t.paras.forEach(function(p){ html += '<p>'+p+'</p>'; });
     html += '<div class="stat"><div class="big">'+t.stat.big+'</div><div class="cap">'+t.stat.cap+'</div></div>';
     if (t.url){
@@ -2000,13 +2051,233 @@
   resetForm();
   renderPane();
 
+  // ---------- QUIZ (gating por dia via /api/quiz + NocoDB) ----------
+  // 15 preguntas de seleccion simple; correct = indice de la opcion correcta.
+  var QUIZ = [
+    { q:"La palanca m&#225;s fiable para ir m&#225;s r&#225;pido (econom&#237;a de carrera) es:",
+      opts:["Correr m&#225;s kil&#243;metros","Fuerza pesada + pliometr&#237;a","Estirar m&#225;s antes de correr"], correct:1 },
+    { q:"La movilidad conviene hacerla:",
+      opts:["Solo los s&#225;bados","Todos los d&#237;as, ~10 min","Solo cuando duele algo"], correct:1 },
+    { q:"Para trabajar el S&#211;LEO, la elevaci&#243;n de talones se hace con la rodilla:",
+      opts:["Recta","Flexionada ~30 grados","Da igual"], correct:1 },
+    { q:"El tend&#243;n (Aquiles) responde sobre todo a:",
+      opts:["La velocidad del movimiento","La magnitud de la carga: exc&#233;ntricos lentos y pesados","El estiramiento pasivo"], correct:1 },
+    { q:"La dorsiflexi&#243;n de tobillo de referencia m&#237;nima es:",
+      opts:["~10 grados","~20 grados","~40 grados"], correct:1 },
+    { q:"Para mejorar la cadencia la subes:",
+      opts:["A 180 fijo siempre","Un 5-10% sobre la tuya","La duplicas"], correct:1 },
+    { q:"La regla de oro del calentamiento es:",
+      opts:["Est&#225;tico antes, din&#225;mico despu&#233;s","Din&#225;mico antes, estiramiento sostenido despu&#233;s","No calentar"], correct:1 },
+    { q:"La pliometr&#237;a se hace:",
+      opts:["Cansado, al final de todo","Fresco, despu&#233;s de la fuerza, 40-60 contactos","Todos los d&#237;as al m&#225;ximo"], correct:1 },
+    { q:"El est&#237;mulo #1 para subir el VO2 Max son:",
+      opts:["Rodajes suaves largos","Intervalos duros en zona 4-5 (ej. 4x4)","Estiramientos"], correct:1 },
+    { q:"La distribuci&#243;n polarizada de intensidad es:",
+      opts:["50% f&#225;cil / 50% duro","80% f&#225;cil / 20% duro","Todo a ritmo medio"], correct:1 },
+    { q:"Un RER de 0.70 indica que quemas principalmente:",
+      opts:["Grasas","Carbohidratos","Prote&#237;nas"], correct:0 },
+    { q:"Un RER cercano a 1.0 indica que quemas principalmente:",
+      opts:["Grasas","Carbohidratos","Nada"], correct:1 },
+    { q:"Las zancadas (strides) son:",
+      opts:["Sprints m&#225;ximos hasta el fallo","Aceleraciones cortas de 60-100 m a ~90% relajado","Trote muy lento"], correct:1 },
+    { q:"En carrera, la respiraci&#243;n eficiente es:",
+      opts:["Solo con el pecho, r&#225;pida","Diafragm&#225;tica (barriga) y con ritmo en los pasos","Aguantar la respiraci&#243;n"], correct:1 },
+    { q:"El m&#233;todo noruego de los elite se basa en:",
+      opts:["Correr todo al m&#225;ximo","Base grande + doble umbral + 1 sesi&#243;n VO2 Max por semana","Solo fuerza"], correct:1 }
+  ];
+  // 5 pares: unir palabra con concepto.
+  var QUIZ_PAIRS = [
+    { word:"VO2 Max",           concept:"Techo aer&#243;bico (m&#225;ximo O2 por minuto)" },
+    { word:"Zona 2",            concept:"Base aer&#243;bica (mitocondrias y capilares)" },
+    { word:"Drills de carrera", concept:"Reprograman la zancada" },
+    { word:"Gl&#250;teo medio", concept:"Evita el valgo de rodilla" },
+    { word:"Ferritina baja",    concept:"Cae el rendimiento aer&#243;bico" }
+  ];
+
+  function shuffle(a){
+    for (var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var tmp=a[i]; a[i]=a[j]; a[j]=tmp; }
+    return a;
+  }
+  function numInt(v){ var n=parseInt(v,10); return isNaN(n)?0:n; }
+
+  var quizPersona = "alejandro";
+  var quizLoadState = "loading";   // loading | ok | error
+  var quizLast = null;             // ultimo intento {fecha,puntaje,total,aprobado} o null
+  var quizResult = null;           // resultado recien enviado
+  var quizPhase = "intro";         // intro | taking | done
+  var quizEverLoaded = false;
+
+  function quizApiList(pid){
+    return fetch("/api/quiz?persona=" + encodeURIComponent(personaApi(pid)), {
+      headers: { "Accept": "application/json" }
+    }).then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); });
+  }
+  function quizApiCreate(body){
+    return fetch("/api/quiz", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(body)
+    }).then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json().catch(function(){ return null; }); });
+  }
+  function loadQuiz(pid){
+    quizLoadState = "loading"; quizPhase = "intro"; quizResult = null;
+    renderQuiz();
+    return quizApiList(pid).then(function(data){
+      if (pid !== quizPersona) return;
+      var list = (data && Array.isArray(data.list)) ? data.list : [];
+      quizLast = list.length ? list[list.length-1] : null;
+      quizLoadState = "ok";
+      renderQuiz();
+    }).catch(function(){
+      if (pid !== quizPersona) return;
+      quizLoadState = "error";
+      renderQuiz();
+    });
+  }
+  function ensureQuizLoaded(){
+    if (quizEverLoaded) return;
+    quizEverLoaded = true;
+    loadQuiz(quizPersona);
+  }
+
+  function quizResultCard(punt, total, aprobado, justSubmitted){
+    var head = justSubmitted ? "Tu resultado" : "Ya presentaste hoy";
+    var msg = aprobado
+      ? '&#161;Aprobado! Vuelve ma&#241;ana para repasar.'
+      : 'Reprobaste ('+punt+'/'+total+'). Puedes volver a intentar <b>ma&#241;ana</b>.';
+    var cls = aprobado ? "quiz-pass" : "quiz-fail";
+    return '<div class="quizcard '+cls+'">'+
+      '<div class="quizresh">'+head+'</div>'+
+      '<div class="quizbig">'+punt+'<span class="quizslash">/'+total+'</span></div>'+
+      '<div class="quizmsg">'+msg+'</div>'+
+      '<div class="quizlock">No puedes volver a presentar hoy.</div>'+
+    '</div>';
+  }
+  function quizIntroHtml(){
+    return '<div class="quizcard">'+
+      '<div class="quizintro-h">20 preguntas sobre el plan</div>'+
+      '<p class="quizintro-p">Quince de opci&#243;n simple y cinco de unir palabra con concepto, en una sola vista. Lo que dejes sin responder cuenta como incorrecto. Apruebas con <b>10 de 20</b>. Un intento por d&#237;a: si repruebas, puedes volver a intentarlo ma&#241;ana.</p>'+
+      '<button type="button" class="segbtn primary" data-qstart="1">Comenzar quiz</button>'+
+    '</div>';
+  }
+  function quizFormHtml(){
+    var h = '<form class="quizform" id="quizForm" novalidate>';
+    h += '<div class="quizprog">Responde las 20. Lo que dejes en blanco cuenta como incorrecto.</div>';
+    QUIZ.forEach(function(item, qi){
+      var opts = item.opts.map(function(txt, idx){ return { txt:txt, correct: idx===item.correct }; });
+      shuffle(opts);
+      h += '<div class="quizq">';
+      h += '<div class="quizqnum">Pregunta '+(qi+1)+'</div>';
+      h += '<div class="quizqtext">'+item.q+'</div>';
+      h += '<div class="quizopts">';
+      opts.forEach(function(o, oi){
+        var nm = "q"+qi, id = "q"+qi+"_"+oi;
+        h += '<label class="quizopt" for="'+id+'"><input type="radio" name="'+nm+'" id="'+id+'" data-correct="'+(o.correct?"1":"0")+'"><span>'+o.txt+'</span></label>';
+      });
+      h += '</div></div>';
+    });
+    h += '<div class="quizq quizpairs">';
+    h += '<div class="quizqnum">Preguntas 16-20</div>';
+    h += '<div class="quizqtext">Une cada palabra con su concepto.</div>';
+    var conceptItems = QUIZ_PAIRS.map(function(p, idx){ return { concept:p.concept, idx:idx }; });
+    shuffle(conceptItems);
+    var optsHtml = '<option value="">&#8212; elige &#8212;</option>';
+    conceptItems.forEach(function(c){ optsHtml += '<option value="'+c.idx+'">'+c.concept+'</option>'; });
+    QUIZ_PAIRS.forEach(function(p, pi){
+      h += '<div class="quizpair"><span class="quizword">'+p.word+'</span>'+
+        '<select class="quizsel" data-pair="'+pi+'" aria-label="Concepto para '+p.word+'">'+optsHtml+'</select></div>';
+    });
+    h += '</div>';
+    h += '<button type="submit" class="segbtn primary" id="quizSubmit">Enviar respuestas</button>';
+    h += '</form>';
+    return h;
+  }
+  function renderQuiz(){
+    var root = document.getElementById("quizRoot");
+    if(!root) return;
+    var toggle = '<div class="segtoggle" role="tablist" aria-label="Persona">';
+    PERSONAS.forEach(function(p){
+      toggle += '<button type="button" class="segpill-btn" role="tab" data-qpersona="'+p.id+'" aria-selected="'+(p.id===quizPersona?"true":"false")+'">'+p.label+'</button>';
+    });
+    toggle += '</div>';
+
+    var inner;
+    if (quizLoadState === "loading"){
+      inner = '<div class="segempty">Cargando&#8230;</div>';
+    } else if (quizLoadState === "error"){
+      inner = '<div class="segempty">No pude conectar con la base. '+
+        '<button type="button" class="segmini" data-qretry="1" style="margin-left:6px">Reintentar</button></div>';
+    } else if (quizResult){
+      inner = quizResultCard(quizResult.puntaje, quizResult.total, quizResult.aprobado, true);
+    } else if (quizLast && quizLast.fecha === todayStr()){
+      inner = quizResultCard(numInt(quizLast.puntaje), numInt(quizLast.total)||20, toBool(quizLast.aprobado), false);
+    } else if (quizPhase === "taking"){
+      inner = quizFormHtml();
+    } else {
+      inner = quizIntroHtml();
+    }
+    root.innerHTML = toggle + inner;
+  }
+  function submitQuiz(){
+    var form = document.getElementById("quizForm");
+    if(!form) return;
+    var btn = document.getElementById("quizSubmit");
+    if (btn && btn.disabled) return;
+    var score = 0;
+    QUIZ.forEach(function(item, qi){
+      var sel = form.querySelector('input[name="q'+qi+'"]:checked');
+      if (sel && sel.getAttribute("data-correct") === "1") score++;
+    });
+    var sels = form.querySelectorAll(".quizsel");
+    for (var i=0;i<sels.length;i++){
+      var pi = Number(sels[i].getAttribute("data-pair"));
+      if (sels[i].value !== "" && Number(sels[i].value) === pi) score++;
+    }
+    var total = 20, aprobado = score >= 10, hoy = todayStr();
+    var body = { persona: personaApi(quizPersona), fecha: hoy, puntaje: score, total: total, aprobado: aprobado };
+    if (btn){ btn.disabled = true; btn.textContent = "Enviando..."; }
+    quizApiCreate(body).then(function(){
+      quizResult = { puntaje: score, total: total, aprobado: aprobado };
+      quizLast = { fecha: hoy, puntaje: score, total: total, aprobado: aprobado };
+      quizPhase = "done";
+      renderQuiz();
+      showToast(aprobado ? ("&#161;Aprobado! " + score + "/20") : ("Enviado: " + score + "/20"));
+    }).catch(function(){
+      if (btn){ btn.disabled = false; btn.textContent = "Enviar respuestas"; }
+      showToast("No se pudo enviar &#8212; revisa tu conexi&#243;n e int&#233;ntalo de nuevo");
+    });
+  }
+  function bindQuiz(){
+    var root = document.getElementById("quizRoot");
+    if(!root) return;
+    root.addEventListener("click", function(ev){
+      var t = ev.target;
+      var qp = t.getAttribute && t.getAttribute("data-qpersona");
+      if (qp){
+        if (qp !== quizPersona){ quizPersona = qp; quizLast = null; quizResult = null; quizPhase = "intro"; loadQuiz(quizPersona); }
+        return;
+      }
+      if (t.getAttribute && t.getAttribute("data-qretry")){ loadQuiz(quizPersona); return; }
+      if (t.getAttribute && t.getAttribute("data-qstart")){
+        quizPhase = "taking"; quizResult = null; renderQuiz();
+        try{ document.getElementById("panel-quiz").scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block:"start" }); }catch(e){}
+        return;
+      }
+    });
+    root.addEventListener("submit", function(ev){
+      if (ev.target && ev.target.id === "quizForm"){ ev.preventDefault(); submitQuiz(); }
+    });
+  }
+  bindQuiz();
+
   // ---------- tabs router ----------
   var TABS = [
     {id:"semana", tab:"tab-semana", panel:"panel-semana"},
     {id:"ejercicios", tab:"tab-ejercicios", panel:"panel-ejercicios"},
     {id:"biblioteca", tab:"tab-biblioteca", panel:"panel-biblioteca"},
     {id:"seguimiento", tab:"tab-seguimiento", panel:"panel-seguimiento"},
-    {id:"perfiles", tab:"tab-perfiles", panel:"panel-perfiles"}
+    {id:"perfiles", tab:"tab-perfiles", panel:"panel-perfiles"},
+    {id:"quiz", tab:"tab-quiz", panel:"panel-quiz"}
   ];
   function reduced(){ try{ return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; }catch(e){ return false; } }
 
@@ -2023,6 +2294,7 @@
       if(on){ panEl.classList.remove("hide"); } else { panEl.classList.add("hide"); }
     });
     if (name === "seguimiento"){ ensureSegLoaded(); }   // carga la lista al entrar a la pestana
+    if (name === "quiz"){ ensureQuizLoaded(); }         // carga el gating del quiz al entrar
     if (opts.setHash !== false){
       try{ if (("#"+name) !== location.hash) history.replaceState(null, "", "#"+name); }catch(e){}
     }
