@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#131618" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-<title>Plan de running v10 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
+<title>Plan de running v11 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
 <style>
   :root{
     color-scheme: light dark;
@@ -455,37 +455,125 @@
     margin-left:7px;vertical-align:middle}
   .toc button .newbadge{font-size:8px;padding:1px 5px;margin-left:4px}
 
-  /* ---- quiz ---- */
-  .quizcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);margin-bottom:20px}
+  /* ---- quiz (Platzi-style) ---- */
+  .quizcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;box-shadow:var(--shadow);margin-bottom:20px;max-width:640px;margin-left:auto;margin-right:auto}
   .quizcard.quiz-pass{background:linear-gradient(180deg,var(--gosoft),transparent);border-color:var(--line2)}
   .quizcard.quiz-fail{background:linear-gradient(180deg,var(--ambersoft),transparent);border-color:var(--line2)}
-  .quizintro-h{font-size:18px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+  .quizintro-h{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
   .quizintro-p{color:var(--ink2);font-size:15.5px;line-height:1.6;max-width:64ch;margin-bottom:16px}
   .quizintro-p b{color:var(--ink);font-weight:600}
-  .quizresh{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
-  .quizbig{font-family:var(--disp);font-weight:800;font-size:44px;letter-spacing:-.03em;color:var(--ink);line-height:1}
-  .quizslash{font-size:24px;color:var(--ink3);font-weight:700}
-  .quizmsg{font-size:16px;color:var(--ink);margin-top:10px;line-height:1.5}
+  .quizintro-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .quizintro-meta .pill{background:var(--indsoft);color:var(--ind)}
+  .quizresh{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+  .quizbig{font-family:var(--disp);font-weight:800;font-size:54px;letter-spacing:-.03em;color:var(--ink);line-height:1}
+  .quizbig.pass{color:var(--go)} .quizbig.fail{color:var(--red)}
+  .quizslash{font-size:26px;color:var(--ink3);font-weight:700}
+  .quizpct{font-family:var(--mono);font-size:13px;color:var(--ink2);margin-top:8px;letter-spacing:.04em}
+  .quizmsg{font-size:16px;color:var(--ink);margin-top:12px;line-height:1.5}
   .quizmsg b{font-weight:700}
-  .quizlock{font-family:var(--mono);font-size:11.5px;color:var(--ink3);margin-top:12px;letter-spacing:.02em}
-  .quizform{display:grid;gap:16px}
-  .quizprog{font-size:14px;color:var(--ink2);font-style:italic;font-family:var(--serif)}
-  .quizq{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
-  .quizqnum{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
-  .quizqtext{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:12px;line-height:1.4}
-  .quizopts{display:grid;gap:8px}
-  .quizopt{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:var(--paper);transition:border-color .15s}
-  .quizopt:hover{border-color:var(--line2)}
-  .quizopt input{margin-top:3px;flex:0 0 auto}
-  .quizopt span{font-size:15px;color:var(--ink);line-height:1.45}
-  .quizopt:focus-within{border-color:var(--amber)}
-  .quizpairs .quizpair{display:flex;align-items:center;gap:12px;margin-top:10px;flex-wrap:wrap}
-  .quizword{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--ink);background:var(--paper);
-    border:1px solid var(--line2);border-radius:8px;padding:8px 12px;min-width:150px}
-  .quizsel{font:inherit;font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line2);
-    border-radius:9px;padding:9px 11px;flex:1;min-width:180px}
-  .quizsel:focus-visible{outline:2px solid var(--amber);outline-offset:1px}
-  #quizSubmit{justify-self:start}
+  .quizlock{font-family:var(--mono);font-size:11.5px;color:var(--ink3);margin-top:14px;letter-spacing:.02em}
+
+  /* taking view */
+  .qtake{max-width:640px;margin:0 auto}
+  .qprogwrap{margin-bottom:18px}
+  .qprogtop{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px}
+  .qproglab{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);font-weight:700}
+  .qprogcount{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink3)}
+  .qbar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+  .qfill{height:100%;border-radius:99px;background:var(--go);width:0;transition:width .4s cubic-bezier(.4,0,.2,1)}
+  .qpips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .qpip{width:24px;height:24px;border-radius:7px;border:1px solid var(--line2);background:var(--card);color:var(--ink3);
+    font-family:var(--mono);font-size:10.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
+    transition:border-color .15s,background .15s,color .15s,transform .15s}
+  .qpip:hover{transform:translateY(-1px);border-color:var(--amber)}
+  .qpip.done{background:var(--gosoft);color:var(--go);border-color:transparent}
+  .qpip.cur{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .qpip:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+  .qcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 26px 24px;box-shadow:var(--shadow)}
+  .qcard.anim{animation:qfade .28s cubic-bezier(.4,0,.2,1)}
+  @keyframes qfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .qtypepill{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    padding:4px 9px;border-radius:6px;background:var(--ambersoft);color:var(--amber);margin-bottom:14px}
+  .qtext{font-family:var(--disp);font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.28;color:var(--ink)}
+  .qhint{font-size:13.5px;color:var(--ink3);margin-top:7px;font-style:italic;font-family:var(--serif)}
+  .qopts{display:grid;gap:10px;margin-top:20px}
+  .qopt{display:flex;align-items:center;gap:13px;width:100%;text-align:left;padding:15px 16px;border:1.5px solid var(--line);
+    border-radius:13px;background:var(--paper);cursor:pointer;font:inherit;color:var(--ink);
+    transition:border-color .15s,background .15s,transform .12s}
+  .qopt:hover{border-color:var(--line2);transform:translateX(2px)}
+  .qopt:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+  .qopt .qmark{flex:0 0 auto;width:22px;height:22px;border-radius:50%;border:2px solid var(--line2);
+    display:inline-flex;align-items:center;justify-content:center;transition:border-color .15s}
+  .qopt.multi .qmark{border-radius:7px}
+  .qopt .qmark::after{content:"";width:10px;height:10px;border-radius:inherit;background:transparent;transition:background .15s}
+  .qopt .qtxt{font-size:16px;line-height:1.4;flex:1}
+  .qopt.sel{border-color:var(--amber);background:var(--ambersoft)}
+  .qopt.sel .qmark{border-color:var(--amber)}
+  .qopt.sel .qmark::after{background:var(--amber)}
+
+  .qtf{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+  .qtfbtn{padding:24px 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--paper);cursor:pointer;
+    font-family:var(--disp);font-size:19px;font-weight:800;letter-spacing:-.02em;color:var(--ink);
+    transition:border-color .15s,background .15s,transform .12s}
+  .qtfbtn:hover{border-color:var(--line2);transform:translateY(-2px)}
+  .qtfbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+  .qtfbtn.sel{border-color:var(--amber);background:var(--ambersoft)}
+
+  .qmatch{display:grid;gap:12px;margin-top:20px}
+  .qmrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .qmleft{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--ink);background:var(--paper);
+    border:1px solid var(--line2);border-radius:9px;padding:11px 13px;min-width:150px;flex:0 0 auto}
+  .qmarrow{color:var(--ink3);font-weight:700;flex:0 0 auto}
+  .qmsel{font:inherit;font-size:15px;color:var(--ink);background:var(--paper);border:1.5px solid var(--line2);
+    border-radius:10px;padding:11px 12px;flex:1;min-width:180px;cursor:pointer}
+  .qmsel:focus-visible{outline:2px solid var(--amber);outline-offset:1px}
+
+  .qorder{display:grid;gap:10px;margin-top:20px}
+  .qorow{display:flex;align-items:center;gap:12px;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--paper)}
+  .qonum{flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:var(--ink);color:var(--paper);
+    font-family:var(--mono);font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+  .qotxt{flex:1;font-size:15.5px;line-height:1.4;color:var(--ink)}
+  .qobtns{flex:0 0 auto;display:flex;gap:6px}
+  .qomove{width:34px;height:34px;border-radius:8px;border:1px solid var(--line2);background:var(--card);color:var(--ink);
+    font-size:15px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:border-color .15s,color .15s,transform .12s}
+  .qomove:hover:not(:disabled){border-color:var(--amber);color:var(--amber);transform:translateY(-1px)}
+  .qomove:disabled{opacity:.3;cursor:not-allowed}
+  .qomove:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+  .qnav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:22px auto 0;max-width:640px}
+  .qnavbtn{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    padding:12px 20px;border-radius:11px;border:1px solid var(--line2);background:var(--card);color:var(--ink);cursor:pointer;
+    transition:border-color .15s,background .15s,transform .12s}
+  .qnavbtn:hover:not(:disabled){transform:translateY(-1px);border-color:var(--amber)}
+  .qnavbtn:disabled{opacity:.4;cursor:not-allowed}
+  .qnavbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+  .qnavbtn.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .qnavbtn.primary:hover:not(:disabled){background:var(--amber);border-color:var(--amber)}
+
+  .qconfirm{max-width:640px;margin:16px auto 0;background:var(--ambersoft);border:1px solid var(--line2);border-radius:13px;padding:16px 18px}
+  .qconfirm p{font-size:14.5px;color:var(--ink);margin-bottom:12px}
+  .qconfirm .row{display:flex;gap:10px;flex-wrap:wrap}
+
+  /* review */
+  .qrsummary{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink3);margin:20px auto 12px;text-transform:uppercase;max-width:640px}
+  .qreview{display:grid;gap:10px;margin:0 auto;max-width:640px}
+  .qritem{border:1px solid var(--line);border-radius:13px;padding:14px 16px;background:var(--card)}
+  .qritem.bad{border-color:var(--line2);background:linear-gradient(180deg,rgba(207,64,48,.06),transparent)}
+  .qrhead{display:flex;align-items:flex-start;gap:10px}
+  .qrmark{flex:0 0 auto;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:800;margin-top:1px}
+  .qrmark.ok{background:var(--gosoft);color:var(--go)}
+  .qrmark.no{background:rgba(207,64,48,.14);color:var(--red)}
+  .qrq{font-size:15px;font-weight:600;color:var(--ink);line-height:1.4}
+  .qrnum{font-family:var(--mono);font-size:11px;color:var(--ink3);letter-spacing:.06em}
+  .qrbody{margin-top:10px;padding-left:32px;display:grid;gap:5px}
+  .qrline{font-size:14px;line-height:1.5}
+  .qrline .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);margin-right:6px}
+  .qrline.mine{color:var(--red)}
+  .qrline.rite{color:var(--go)}
+  .qrline.why{color:var(--ink2);font-style:italic}
+  .qhome{display:block;margin:18px auto 0;max-width:640px}
 
   @media (max-width:680px){
     .exgrid{grid-template-columns:1fr}
@@ -503,7 +591,7 @@
     .fgrid{grid-template-columns:1fr}
     .segsum{grid-template-columns:1fr}
   }
-  @media (prefers-reduced-motion: reduce){*{transition:none!important}}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 </style>
 
 <div class="wrap">
@@ -746,13 +834,13 @@
   <section class="panel hide" id="panel-quiz" role="tabpanel" aria-labelledby="tab-quiz" tabindex="-1">
     <div class="snum">QUIZ</div>
     <h2>Ponte a prueba</h2>
-    <p class="sintro">Veinte preguntas sobre el plan: econom&#237;a de carrera, tend&#243;n, cadencia, VO2 Max, zonas y m&#225;s. Un intento por d&#237;a por persona &#8212; se guarda en tu base compartida. Apruebas con <b>10 de 20</b>.</p>
+    <p class="sintro">Veinte preguntas sobre el plan, <b>una a la vez</b> y de varios tipos &#8212; econom&#237;a de carrera, tend&#243;n, cadencia, VO2 Max, zonas y m&#225;s. Un intento por d&#237;a por persona &#8212; se guarda en tu base compartida. Apruebas con <b>12 de 20</b> (60%).</p>
     <div id="quizRoot"></div>
   </section>
 
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
-    <div class="mono">PLAN &#183; RUNNING &#183; V10 &#183; JUL 2026</div>
+    <div class="mono">PLAN &#183; RUNNING &#183; V11 &#183; JUL 2026</div>
   </footer>
 
 </div>
@@ -2051,47 +2139,109 @@
   resetForm();
   renderPane();
 
-  // ---------- QUIZ (gating por dia via /api/quiz + NocoDB) ----------
-  // 15 preguntas de seleccion simple; correct = indice de la opcion correcta.
+  // ---------- QUIZ (Platzi-style; gating por dia via /api/quiz + NocoDB) ----------
+  // 20 preguntas, una a la vez. tipo: single | multi | truefalse | match | order.
   var QUIZ = [
-    { q:"La palanca m&#225;s fiable para ir m&#225;s r&#225;pido (econom&#237;a de carrera) es:",
-      opts:["Correr m&#225;s kil&#243;metros","Fuerza pesada + pliometr&#237;a","Estirar m&#225;s antes de correr"], correct:1 },
-    { q:"La movilidad conviene hacerla:",
-      opts:["Solo los s&#225;bados","Todos los d&#237;as, ~10 min","Solo cuando duele algo"], correct:1 },
-    { q:"Para trabajar el S&#211;LEO, la elevaci&#243;n de talones se hace con la rodilla:",
-      opts:["Recta","Flexionada ~30 grados","Da igual"], correct:1 },
-    { q:"El tend&#243;n (Aquiles) responde sobre todo a:",
-      opts:["La velocidad del movimiento","La magnitud de la carga: exc&#233;ntricos lentos y pesados","El estiramiento pasivo"], correct:1 },
-    { q:"La dorsiflexi&#243;n de tobillo de referencia m&#237;nima es:",
-      opts:["~10 grados","~20 grados","~40 grados"], correct:1 },
-    { q:"Para mejorar la cadencia la subes:",
-      opts:["A 180 fijo siempre","Un 5-10% sobre la tuya","La duplicas"], correct:1 },
-    { q:"La regla de oro del calentamiento es:",
-      opts:["Est&#225;tico antes, din&#225;mico despu&#233;s","Din&#225;mico antes, estiramiento sostenido despu&#233;s","No calentar"], correct:1 },
-    { q:"La pliometr&#237;a se hace:",
-      opts:["Cansado, al final de todo","Fresco, despu&#233;s de la fuerza, 40-60 contactos","Todos los d&#237;as al m&#225;ximo"], correct:1 },
-    { q:"El est&#237;mulo #1 para subir el VO2 Max son:",
-      opts:["Rodajes suaves largos","Intervalos duros en zona 4-5 (ej. 4x4)","Estiramientos"], correct:1 },
-    { q:"La distribuci&#243;n polarizada de intensidad es:",
-      opts:["50% f&#225;cil / 50% duro","80% f&#225;cil / 20% duro","Todo a ritmo medio"], correct:1 },
-    { q:"Un RER de 0.70 indica que quemas principalmente:",
-      opts:["Grasas","Carbohidratos","Prote&#237;nas"], correct:0 },
-    { q:"Un RER cercano a 1.0 indica que quemas principalmente:",
-      opts:["Grasas","Carbohidratos","Nada"], correct:1 },
-    { q:"Las zancadas (strides) son:",
-      opts:["Sprints m&#225;ximos hasta el fallo","Aceleraciones cortas de 60-100 m a ~90% relajado","Trote muy lento"], correct:1 },
-    { q:"En carrera, la respiraci&#243;n eficiente es:",
-      opts:["Solo con el pecho, r&#225;pida","Diafragm&#225;tica (barriga) y con ritmo en los pasos","Aguantar la respiraci&#243;n"], correct:1 },
-    { q:"El m&#233;todo noruego de los elite se basa en:",
-      opts:["Correr todo al m&#225;ximo","Base grande + doble umbral + 1 sesi&#243;n VO2 Max por semana","Solo fuerza"], correct:1 }
-  ];
-  // 5 pares: unir palabra con concepto.
-  var QUIZ_PAIRS = [
-    { word:"VO2 Max",           concept:"Techo aer&#243;bico (m&#225;ximo O2 por minuto)" },
-    { word:"Zona 2",            concept:"Base aer&#243;bica (mitocondrias y capilares)" },
-    { word:"Drills de carrera", concept:"Reprograman la zancada" },
-    { word:"Gl&#250;teo medio", concept:"Evita el valgo de rodilla" },
-    { word:"Ferritina baja",    concept:"Cae el rendimiento aer&#243;bico" }
+    { tipo:"single",
+      q:"La palanca m&#225;s fiable para mejorar la econom&#237;a de carrera es:",
+      opts:["Sumar m&#225;s kil&#243;metros","Fuerza pesada + pliometr&#237;a","Estirar m&#225;s antes de correr","Correr siempre al m&#225;ximo"],
+      correct:1,
+      explica:"La fuerza y la pliometr&#237;a mejoran la econom&#237;a 2-8% sin sumar fatiga de volumen." },
+    { tipo:"multi",
+      q:"&#191;Cu&#225;les de estas son se&#241;ales de que debes bajar la carga?",
+      opts:["HRV por debajo de tu baseline 3 d&#237;as","Dolor que persiste al correr","Dormir 8 horas","FC en reposo elevada varios d&#237;as","Sentirte fresco"],
+      correct:[0,1,3],
+      explica:"HRV baja sostenida, RHR elevada y dolor persistente son banderas; dormir bien y sentirte fresco no lo son." },
+    { tipo:"truefalse",
+      q:"El estiramiento est&#225;tico prolongado ANTES de correr mejora el rendimiento.",
+      correct:false,
+      explica:"Antes va movilidad din&#225;mica; el estiramiento sostenido va despu&#233;s." },
+    { tipo:"single",
+      q:"Para aislar el S&#211;LEO en la elevaci&#243;n de talones, la rodilla va:",
+      opts:["Recta","Flexionada ~30 grados","Bloqueada hacia atr&#225;s"],
+      correct:1,
+      explica:"Con la rodilla flexionada el gastrocnemio se desactiva y trabaja el s&#243;leo." },
+    { tipo:"multi",
+      q:"&#191;Qu&#233; caracteriza al m&#233;todo noruego de los elite?",
+      opts:["Base aer&#243;bica grande","Doble umbral controlado por lactato","Correr todo al m&#225;ximo","Dosis moderada de VO2 Max (1-2/sem)","Solo intervalos"],
+      correct:[0,1,3],
+      explica:"Base + doble umbral + VO2 Max dosificado; nunca todo al m&#225;ximo." },
+    { tipo:"match",
+      q:"Relaciona cada concepto con su definici&#243;n:",
+      pairs:[
+        { left:"VO2 Max",       right:"Techo aer&#243;bico (m&#225;x O2/min)" },
+        { left:"Zona 2",        right:"Base aer&#243;bica (mitocondrias/capilares)" },
+        { left:"RER 0.70",      right:"Quema de grasa" },
+        { left:"Gl&#250;teo medio", right:"Evita el valgo de rodilla" },
+        { left:"Ferritina baja", right:"Cae el rendimiento aer&#243;bico" }
+      ] },
+    { tipo:"single",
+      q:"Subir la cadencia de forma correcta significa:",
+      opts:["Subirla a 180 siempre","Subir un 5-10% la tuya manteniendo el ritmo","Alargar la zancada"],
+      correct:1,
+      explica:"Mismo ritmo, paso m&#225;s corto: +5-10% sobre tu cadencia actual." },
+    { tipo:"order",
+      q:"Ordena una sesi&#243;n de calidad, del inicio al final:",
+      steps:["Movilidad din&#225;mica y activaci&#243;n","Drills cortos","Parte principal (series)","Enfriamiento","Estiramiento sostenido"] },
+    { tipo:"truefalse",
+      q:"El VO2 Max es un valor fijo que no se puede mejorar.",
+      correct:false,
+      explica:"Se mejora con intervalos sobre una buena base; no es fijo." },
+    { tipo:"single",
+      q:"Un RER cercano a 1.0 indica que el cuerpo quema principalmente:",
+      opts:["Grasas","Carbohidratos","Prote&#237;nas"],
+      correct:1,
+      explica:"~0.70 grasa, ~1.0 carbohidratos." },
+    { tipo:"multi",
+      q:"&#191;Qu&#233; ejercicios apuntan a la PREVENCI&#211;N de lesiones t&#237;picas del corredor?",
+      opts:["Elevaci&#243;n de talones exc&#233;ntrica","Banda lateral / gl&#250;teo medio","A-skip","Plancha lateral","Zancadas"],
+      correct:[0,1,3],
+      explica:"Exc&#233;ntricos de pantorrilla, gl&#250;teo medio y plancha lateral son prevenci&#243;n; A-skip y zancadas son drills de t&#233;cnica/velocidad." },
+    { tipo:"single",
+      q:"El est&#237;mulo m&#225;s directo para subir el VO2 Max son:",
+      opts:["Rodajes suaves","Intervalos duros en zona 4-5 (ej. 4x4 min)","Estiramientos"],
+      correct:1,
+      explica:"Intervalos al 90-95% de FC m&#225;x, tipo 4x4." },
+    { tipo:"truefalse",
+      q:"La movilidad rinde m&#225;s por frecuencia (10 min diarios) que por una sola sesi&#243;n larga a la semana.",
+      correct:true,
+      explica:"El rango se adapta a lo que usas a menudo." },
+    { tipo:"single",
+      q:"La distribuci&#243;n polarizada 80/20 significa:",
+      opts:["80% duro / 20% f&#225;cil","80% f&#225;cil / 20% duro","50/50"],
+      correct:1,
+      explica:"La mayor&#237;a del volumen f&#225;cil, la minor&#237;a intensa." },
+    { tipo:"match",
+      q:"Relaciona la zona/dato con su idea:",
+      pairs:[
+        { left:"Zona 4-5",        right:"Est&#237;mulo de VO2 Max" },
+        { left:"Zona 2",          right:"Construir base" },
+        { left:"Cadencia +5-10%", right:"Menos sobrezancada" },
+        { left:"Dorsiflexi&#243;n &lt;20 grados", right:"M&#225;s riesgo de rodilla" },
+        { left:"Couch stretch",   right:"Flexor de cadera" }
+      ] },
+    { tipo:"multi",
+      q:"Sobre la respiraci&#243;n al correr, &#191;qu&#233; es correcto?",
+      opts:["Respirar con el diafragma","Llevar ritmo respiratorio con los pasos","Respirar solo con el pecho lo m&#225;s r&#225;pido posible","Exhalaci&#243;n larga para recuperar despu&#233;s"],
+      correct:[0,1,3],
+      explica:"Diafragm&#225;tica, con cadencia respiratoria, y exhalaci&#243;n larga para recuperar." },
+    { tipo:"single",
+      q:"Las zancadas (strides) son:",
+      opts:["Sprints m&#225;ximos hasta fallar","Aceleraciones cortas de 60-100 m a ~90% relajado","Trote de recuperaci&#243;n"],
+      correct:1,
+      explica:"Cortas, r&#225;pidas pero relajadas; puente a la velocidad." },
+    { tipo:"truefalse",
+      q:"Conviene hacer la pliometr&#237;a al final, con las piernas ya cansadas.",
+      correct:false,
+      explica:"Se hace fresco, tras la fuerza, con pocos contactos de calidad." },
+    { tipo:"single",
+      q:"Una ferritina baja afecta el rendimiento porque:",
+      opts:["Sube la grasa corporal","Reduce el transporte de ox&#237;geno en la sangre","Acorta los m&#250;sculos"],
+      correct:1,
+      explica:"El ox&#237;geno viaja pegado al hierro; poca ferritina = menos O2 a los m&#250;sculos." },
+    { tipo:"order",
+      q:"Ordena la prioridad anti-lesi&#243;n (mayor a menor impacto):",
+      steps:["Pantorrilla/s&#243;leo exc&#233;ntrico","Gl&#250;teo medio","Dorsiflexi&#243;n de tobillo","Carga progresiva + cadencia"] }
   ];
 
   function shuffle(a){
@@ -2103,9 +2253,14 @@
   var quizPersona = "alejandro";
   var quizLoadState = "loading";   // loading | ok | error
   var quizLast = null;             // ultimo intento {fecha,puntaje,total,aprobado} o null
-  var quizResult = null;           // resultado recien enviado
+  var quizResult = null;           // resultado recien enviado {puntaje,total,aprobado}
   var quizPhase = "intro";         // intro | taking | done
   var quizEverLoaded = false;
+  var quizIndex = 0;               // pregunta visible (0-19)
+  var quizAnswers = [];            // respuesta por pregunta (forma segun tipo)
+  var quizMeta = [];               // metadata de presentacion (orden barajado estable)
+  var quizConfirm = false;         // confirmacion suave de envio
+  var quizAnimate = true;          // animar la tarjeta solo al cambiar de pregunta
 
   function quizApiList(pid){
     return fetch("/api/quiz?persona=" + encodeURIComponent(personaApi(pid)), {
@@ -2120,7 +2275,7 @@
     }).then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json().catch(function(){ return null; }); });
   }
   function loadQuiz(pid){
-    quizLoadState = "loading"; quizPhase = "intro"; quizResult = null;
+    quizLoadState = "loading"; quizPhase = "intro"; quizResult = null; quizConfirm = false;
     renderQuiz();
     return quizApiList(pid).then(function(data){
       if (pid !== quizPersona) return;
@@ -2140,58 +2295,264 @@
     loadQuiz(quizPersona);
   }
 
-  function quizResultCard(punt, total, aprobado, justSubmitted){
-    var head = justSubmitted ? "Tu resultado" : "Ya presentaste hoy";
-    var msg = aprobado
-      ? '&#161;Aprobado! Vuelve ma&#241;ana para repasar.'
-      : 'Reprobaste ('+punt+'/'+total+'). Puedes volver a intentar <b>ma&#241;ana</b>.';
-    var cls = aprobado ? "quiz-pass" : "quiz-fail";
-    return '<div class="quizcard '+cls+'">'+
-      '<div class="quizresh">'+head+'</div>'+
-      '<div class="quizbig">'+punt+'<span class="quizslash">/'+total+'</span></div>'+
-      '<div class="quizmsg">'+msg+'</div>'+
-      '<div class="quizlock">No puedes volver a presentar hoy.</div>'+
-    '</div>';
+  // ---- intento: estado inicial de respuestas y orden barajado estable ----
+  function initQuizAttempt(){
+    quizAnswers = []; quizMeta = []; quizIndex = 0; quizConfirm = false;
+    QUIZ.forEach(function(item){
+      if (item.tipo === "single" || item.tipo === "multi"){
+        var order = item.opts.map(function(_,i){ return i; }); shuffle(order);
+        quizMeta.push({ optOrder: order });
+        quizAnswers.push(item.tipo === "multi" ? [] : null);
+      } else if (item.tipo === "truefalse"){
+        quizMeta.push({});
+        quizAnswers.push(null);
+      } else if (item.tipo === "match"){
+        var ro = item.pairs.map(function(_,i){ return i; }); shuffle(ro);
+        quizMeta.push({ rightOrder: ro });
+        quizAnswers.push(item.pairs.map(function(){ return null; }));
+      } else if (item.tipo === "order"){
+        var so = item.steps.map(function(_,i){ return i; }); shuffle(so);
+        var ok = true; for (var k=0;k<so.length;k++){ if(so[k]!==k){ ok=false; break; } }
+        if (ok && so.length>1){ var t=so[0]; so[0]=so[1]; so[1]=t; }  // evita arrancar ya resuelto
+        quizMeta.push({});
+        quizAnswers.push(so);
+      }
+    });
   }
+
+  function quizIsCorrect(qi){
+    var item = QUIZ[qi], ans = quizAnswers[qi];
+    if (item.tipo === "single")    return ans !== null && ans === item.correct;
+    if (item.tipo === "truefalse") return ans !== null && ans === item.correct;
+    if (item.tipo === "multi"){
+      if (!ans || !ans.length) return false;
+      var a = ans.slice().sort(function(x,y){ return x-y; });
+      var c = item.correct.slice().sort(function(x,y){ return x-y; });
+      if (a.length !== c.length) return false;
+      for (var i=0;i<a.length;i++){ if(a[i]!==c[i]) return false; }
+      return true;
+    }
+    if (item.tipo === "match"){
+      for (var j=0;j<item.pairs.length;j++){ if(ans[j] !== j) return false; }
+      return true;
+    }
+    if (item.tipo === "order"){
+      for (var m=0;m<item.steps.length;m++){ if(ans[m] !== m) return false; }
+      return true;
+    }
+    return false;
+  }
+  function quizScore(){ var s=0; for (var i=0;i<QUIZ.length;i++){ if(quizIsCorrect(i)) s++; } return s; }
+  function quizAnswered(qi){
+    var item = QUIZ[qi], ans = quizAnswers[qi];
+    if (item.tipo === "single" || item.tipo === "truefalse") return ans !== null;
+    if (item.tipo === "multi") return !!(ans && ans.length);
+    if (item.tipo === "match"){ for (var i=0;i<ans.length;i++){ if(ans[i]!==null) return true; } return false; }
+    if (item.tipo === "order") return true;  // siempre tiene un ordenamiento
+    return false;
+  }
+  function quizTypeLabel(t){
+    if (t==="single") return "Selecci&#243;n simple";
+    if (t==="multi") return "Opci&#243;n m&#250;ltiple";
+    if (t==="truefalse") return "Verdadero / Falso";
+    if (t==="match") return "Relacionar";
+    if (t==="order") return "Ordenar";
+    return "Pregunta";
+  }
+  function orderMove(qi,pos,dir){
+    var arr = quizAnswers[qi]; var np = pos+dir;
+    if (np<0 || np>=arr.length) return;
+    var t = arr[pos]; arr[pos] = arr[np]; arr[np] = t;
+  }
+
+  // ---- lectura legible de respuestas para la revision ----
+  function quizUserText(qi){
+    var item = QUIZ[qi], ans = quizAnswers[qi];
+    if (item.tipo === "single") return ans===null ? "(sin responder)" : item.opts[ans];
+    if (item.tipo === "truefalse") return ans===null ? "(sin responder)" : (ans ? "Verdadero" : "Falso");
+    if (item.tipo === "multi"){
+      if (!ans || !ans.length) return "(sin responder)";
+      return ans.slice().sort(function(x,y){return x-y;}).map(function(i){ return item.opts[i]; }).join(", ");
+    }
+    if (item.tipo === "match"){
+      return item.pairs.map(function(p,li){
+        return p.left + " &#8594; " + (ans[li]===null ? "(sin responder)" : item.pairs[ans[li]].right);
+      }).join("; ");
+    }
+    if (item.tipo === "order"){
+      return ans.map(function(si,pos){ return (pos+1)+". "+item.steps[si]; }).join("  ");
+    }
+    return "";
+  }
+  function quizCorrectText(qi){
+    var item = QUIZ[qi];
+    if (item.tipo === "single") return item.opts[item.correct];
+    if (item.tipo === "truefalse") return item.correct ? "Verdadero" : "Falso";
+    if (item.tipo === "multi") return item.correct.map(function(i){ return item.opts[i]; }).join(", ");
+    if (item.tipo === "match") return item.pairs.map(function(p){ return p.left + " &#8594; " + p.right; }).join("; ");
+    if (item.tipo === "order") return item.steps.map(function(s,i){ return (i+1)+". "+s; }).join("  ");
+    return "";
+  }
+
+  // ---- render: tarjeta de la pregunta actual ----
+  function quizQCardHtml(qi){
+    var item = QUIZ[qi];
+    var h = '<div class="qcard'+(quizAnimate?' anim':'')+'">';
+    h += '<span class="qtypepill">'+quizTypeLabel(item.tipo)+'</span>';
+    h += '<div class="qtext">'+item.q+'</div>';
+    if (item.tipo === "multi") h += '<div class="qhint">(elige todas las que apliquen)</div>';
+
+    if (item.tipo === "single"){
+      h += '<div class="qopts">';
+      quizMeta[qi].optOrder.forEach(function(oi){
+        var sel = quizAnswers[qi] === oi;
+        h += '<button type="button" class="qopt'+(sel?' sel':'')+'" data-qopt="1" data-qi="'+qi+'" data-oi="'+oi+'">'+
+             '<span class="qmark"></span><span class="qtxt">'+item.opts[oi]+'</span></button>';
+      });
+      h += '</div>';
+    } else if (item.tipo === "multi"){
+      h += '<div class="qopts">';
+      quizMeta[qi].optOrder.forEach(function(oi){
+        var sel = quizAnswers[qi].indexOf(oi) !== -1;
+        h += '<button type="button" class="qopt multi'+(sel?' sel':'')+'" data-qmulti="1" data-qi="'+qi+'" data-oi="'+oi+'">'+
+             '<span class="qmark"></span><span class="qtxt">'+item.opts[oi]+'</span></button>';
+      });
+      h += '</div>';
+    } else if (item.tipo === "truefalse"){
+      var v = quizAnswers[qi];
+      h += '<div class="qtf">';
+      h += '<button type="button" class="qtfbtn'+(v===true?' sel':'')+'" data-qtf="1" data-qi="'+qi+'" data-val="1">Verdadero</button>';
+      h += '<button type="button" class="qtfbtn'+(v===false?' sel':'')+'" data-qtf="1" data-qi="'+qi+'" data-val="0">Falso</button>';
+      h += '</div>';
+    } else if (item.tipo === "match"){
+      h += '<div class="qmatch">';
+      item.pairs.forEach(function(p, li){
+        var chosen = quizAnswers[qi][li];
+        var opts = '<option value="">&#8212; elige &#8212;</option>';
+        quizMeta[qi].rightOrder.forEach(function(ri){
+          opts += '<option value="'+ri+'"'+(chosen===ri?' selected':'')+'>'+item.pairs[ri].right+'</option>';
+        });
+        h += '<div class="qmrow"><span class="qmleft">'+p.left+'</span><span class="qmarrow">&#8594;</span>'+
+             '<select class="qmsel" data-qmatch="1" data-qi="'+qi+'" data-li="'+li+'">'+opts+'</select></div>';
+      });
+      h += '</div>';
+    } else if (item.tipo === "order"){
+      h += '<div class="qorder">';
+      var arr = quizAnswers[qi];
+      arr.forEach(function(si, pos){
+        h += '<div class="qorow"><span class="qonum">'+(pos+1)+'</span><span class="qotxt">'+item.steps[si]+'</span>'+
+             '<span class="qobtns">'+
+             '<button type="button" class="qomove" data-qup="1" data-qi="'+qi+'" data-pos="'+pos+'"'+(pos===0?' disabled':'')+' aria-label="Subir">&#8593;</button>'+
+             '<button type="button" class="qomove" data-qdown="1" data-qi="'+qi+'" data-pos="'+pos+'"'+(pos===arr.length-1?' disabled':'')+' aria-label="Bajar">&#8595;</button>'+
+             '</span></div>';
+      });
+      h += '</div>';
+    }
+    h += '</div>';
+    return h;
+  }
+
+  function quizTakingHtml(){
+    var n = QUIZ.length;
+    var pct = Math.round(((quizIndex+1)/n)*100);
+    var answered = 0, i;
+    for (i=0;i<n;i++){ if(quizAnswered(i)) answered++; }
+    var h = '<div class="qtake">';
+    h += '<div class="qprogwrap">';
+    h += '<div class="qprogtop"><span class="qproglab">Pregunta '+(quizIndex+1)+' de '+n+'</span>'+
+         '<span class="qprogcount">'+answered+'/'+n+' respondidas</span></div>';
+    h += '<div class="qbar"><div class="qfill" style="width:'+pct+'%"></div></div>';
+    h += '<div class="qpips">';
+    for (i=0;i<n;i++){
+      var cls = 'qpip'+(i===quizIndex?' cur':(quizAnswered(i)?' done':''));
+      h += '<button type="button" class="'+cls+'" data-qjump="'+i+'" aria-label="Ir a la pregunta '+(i+1)+'">'+(i+1)+'</button>';
+    }
+    h += '</div></div>';
+    h += quizQCardHtml(quizIndex);
+    var isLast = quizIndex === n-1;
+    h += '<div class="qnav">';
+    h += '<button type="button" class="qnavbtn" data-qnav="prev"'+(quizIndex===0?' disabled':'')+'>Anterior</button>';
+    if (isLast){
+      h += '<button type="button" class="qnavbtn primary" data-qsubmit="1">Enviar respuestas</button>';
+    } else {
+      h += '<button type="button" class="qnavbtn primary" data-qnav="next">Siguiente</button>';
+    }
+    h += '</div>';
+    if (quizConfirm){
+      h += '<div class="qconfirm"><p>&#191;Enviar tus respuestas? No podr&#225;s cambiarlas despu&#233;s.</p>'+
+           '<div class="row"><button type="button" class="qnavbtn" data-qcancel="1">Cancelar</button>'+
+           '<button type="button" class="qnavbtn primary" data-qconfirm="1" id="quizSubmit">S&#237;, enviar</button></div></div>';
+    }
+    h += '</div>';
+    return h;
+  }
+
   function quizIntroHtml(){
     return '<div class="quizcard">'+
       '<div class="quizintro-h">20 preguntas sobre el plan</div>'+
-      '<p class="quizintro-p">Quince de opci&#243;n simple y cinco de unir palabra con concepto, en una sola vista. Lo que dejes sin responder cuenta como incorrecto. Apruebas con <b>10 de 20</b>. Un intento por d&#237;a: si repruebas, puedes volver a intentarlo ma&#241;ana.</p>'+
+      '<p class="quizintro-p">Una pregunta a la vez, con tipos variados: selecci&#243;n simple, opci&#243;n m&#250;ltiple, verdadero/falso, relacionar y ordenar. Lo que dejes sin responder cuenta como incorrecto. Apruebas con <b>12 de 20</b> (60%). Un intento por d&#237;a: si no llegas, puedes volver a intentarlo ma&#241;ana.</p>'+
+      '<div class="quizintro-meta"><span class="pill">20 preguntas</span><span class="pill">5 tipos</span><span class="pill">Umbral 60%</span></div>'+
       '<button type="button" class="segbtn primary" data-qstart="1">Comenzar quiz</button>'+
     '</div>';
   }
-  function quizFormHtml(){
-    var h = '<form class="quizform" id="quizForm" novalidate>';
-    h += '<div class="quizprog">Responde las 20. Lo que dejes en blanco cuenta como incorrecto.</div>';
+
+  function quizResultCompact(punt, total, aprobado){
+    var pct = total ? Math.round((punt/total)*100) : 0;
+    var cls = aprobado ? "quiz-pass" : "quiz-fail";
+    var bigcls = aprobado ? "pass" : "fail";
+    var head = aprobado ? "&#161;Aprobado!" : "No alcanzaste el 60%";
+    return '<div class="quizcard '+cls+'">'+
+      '<div class="quizresh">Ya presentaste hoy</div>'+
+      '<div class="quizbig '+bigcls+'">'+punt+'<span class="quizslash">/'+total+'</span></div>'+
+      '<div class="quizpct">'+pct+'% &#183; '+head+'</div>'+
+      '<div class="quizmsg">'+(aprobado
+        ? "Ya presentaste hoy y aprobaste. Vuelve ma&#241;ana para repasar."
+        : "Ya presentaste hoy. Puedes volver a intentarlo <b>ma&#241;ana</b>.")+'</div>'+
+      '<div class="quizlock">Un intento por d&#237;a &#8212; no puedes volver a presentar hoy.</div>'+
+    '</div>';
+  }
+
+  function quizReviewHtml(){
+    var h = '<div class="qreview">';
     QUIZ.forEach(function(item, qi){
-      var opts = item.opts.map(function(txt, idx){ return { txt:txt, correct: idx===item.correct }; });
-      shuffle(opts);
-      h += '<div class="quizq">';
-      h += '<div class="quizqnum">Pregunta '+(qi+1)+'</div>';
-      h += '<div class="quizqtext">'+item.q+'</div>';
-      h += '<div class="quizopts">';
-      opts.forEach(function(o, oi){
-        var nm = "q"+qi, id = "q"+qi+"_"+oi;
-        h += '<label class="quizopt" for="'+id+'"><input type="radio" name="'+nm+'" id="'+id+'" data-correct="'+(o.correct?"1":"0")+'"><span>'+o.txt+'</span></label>';
-      });
-      h += '</div></div>';
-    });
-    h += '<div class="quizq quizpairs">';
-    h += '<div class="quizqnum">Preguntas 16-20</div>';
-    h += '<div class="quizqtext">Une cada palabra con su concepto.</div>';
-    var conceptItems = QUIZ_PAIRS.map(function(p, idx){ return { concept:p.concept, idx:idx }; });
-    shuffle(conceptItems);
-    var optsHtml = '<option value="">&#8212; elige &#8212;</option>';
-    conceptItems.forEach(function(c){ optsHtml += '<option value="'+c.idx+'">'+c.concept+'</option>'; });
-    QUIZ_PAIRS.forEach(function(p, pi){
-      h += '<div class="quizpair"><span class="quizword">'+p.word+'</span>'+
-        '<select class="quizsel" data-pair="'+pi+'" aria-label="Concepto para '+p.word+'">'+optsHtml+'</select></div>';
+      var ok = quizIsCorrect(qi);
+      h += '<div class="qritem'+(ok?'':' bad')+'">';
+      h += '<div class="qrhead"><span class="qrmark '+(ok?'ok':'no')+'">'+(ok?'&#10003;':'&#10007;')+'</span>'+
+           '<span class="qrq"><span class="qrnum">'+(qi+1)+'. </span>'+item.q+'</span></div>';
+      if (!ok){
+        h += '<div class="qrbody">';
+        h += '<div class="qrline mine"><span class="k">Tu respuesta</span>'+quizUserText(qi)+'</div>';
+        h += '<div class="qrline rite"><span class="k">Correcta</span>'+quizCorrectText(qi)+'</div>';
+        if (item.explica) h += '<div class="qrline why">'+item.explica+'</div>';
+        h += '</div>';
+      }
+      h += '</div>';
     });
     h += '</div>';
-    h += '<button type="submit" class="segbtn primary" id="quizSubmit">Enviar respuestas</button>';
-    h += '</form>';
     return h;
   }
+
+  function quizResultsScreen(){
+    var r = quizResult;
+    var pct = r.total ? Math.round((r.puntaje/r.total)*100) : 0;
+    var cls = r.aprobado ? "quiz-pass" : "quiz-fail";
+    var bigcls = r.aprobado ? "pass" : "fail";
+    var head = r.aprobado ? "&#161;Aprobado!" : "Sigue repasando";
+    var h = '<div class="quizcard '+cls+'">';
+    h += '<div class="quizresh">Tu resultado</div>';
+    h += '<div class="quizbig '+bigcls+'">'+r.puntaje+'<span class="quizslash">/'+r.total+'</span></div>';
+    h += '<div class="quizpct">'+pct+'% &#183; '+head+'</div>';
+    h += '<div class="quizmsg">'+(r.aprobado
+        ? "Dominas el plan. Vuelve ma&#241;ana si quieres repasar."
+        : "Necesitas <b>12 de 20</b> para aprobar. Revisa lo que fallaste y vuelve a intentarlo <b>ma&#241;ana</b>.")+'</div>';
+    h += '<div class="quizlock">Un intento por d&#237;a &#8212; no puedes volver a presentar hoy.</div>';
+    h += '</div>';
+    h += '<div class="qrsummary">Revisi&#243;n &#8212; esto es lo que respondiste</div>';
+    h += quizReviewHtml();
+    h += '<button type="button" class="segbtn qhome" data-qhome="1">Volver al inicio del Quiz</button>';
+    return h;
+  }
+
   function renderQuiz(){
     var root = document.getElementById("quizRoot");
     if(!root) return;
@@ -2208,64 +2569,82 @@
       inner = '<div class="segempty">No pude conectar con la base. '+
         '<button type="button" class="segmini" data-qretry="1" style="margin-left:6px">Reintentar</button></div>';
     } else if (quizResult){
-      inner = quizResultCard(quizResult.puntaje, quizResult.total, quizResult.aprobado, true);
+      inner = quizResultsScreen();
     } else if (quizLast && quizLast.fecha === todayStr()){
-      inner = quizResultCard(numInt(quizLast.puntaje), numInt(quizLast.total)||20, toBool(quizLast.aprobado), false);
+      inner = quizResultCompact(numInt(quizLast.puntaje), numInt(quizLast.total)||20, toBool(quizLast.aprobado));
     } else if (quizPhase === "taking"){
-      inner = quizFormHtml();
+      inner = quizTakingHtml();
     } else {
       inner = quizIntroHtml();
     }
     root.innerHTML = toggle + inner;
   }
+
   function submitQuiz(){
-    var form = document.getElementById("quizForm");
-    if(!form) return;
     var btn = document.getElementById("quizSubmit");
     if (btn && btn.disabled) return;
-    var score = 0;
-    QUIZ.forEach(function(item, qi){
-      var sel = form.querySelector('input[name="q'+qi+'"]:checked');
-      if (sel && sel.getAttribute("data-correct") === "1") score++;
-    });
-    var sels = form.querySelectorAll(".quizsel");
-    for (var i=0;i<sels.length;i++){
-      var pi = Number(sels[i].getAttribute("data-pair"));
-      if (sels[i].value !== "" && Number(sels[i].value) === pi) score++;
-    }
-    var total = 20, aprobado = score >= 10, hoy = todayStr();
+    var score = quizScore();
+    var total = QUIZ.length, aprobado = score >= 12, hoy = todayStr();
     var body = { persona: personaApi(quizPersona), fecha: hoy, puntaje: score, total: total, aprobado: aprobado };
     if (btn){ btn.disabled = true; btn.textContent = "Enviando..."; }
     quizApiCreate(body).then(function(){
       quizResult = { puntaje: score, total: total, aprobado: aprobado };
       quizLast = { fecha: hoy, puntaje: score, total: total, aprobado: aprobado };
-      quizPhase = "done";
+      quizPhase = "done"; quizConfirm = false;
       renderQuiz();
+      try{ document.getElementById("panel-quiz").scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block:"start" }); }catch(e){}
       showToast(aprobado ? ("&#161;Aprobado! " + score + "/20") : ("Enviado: " + score + "/20"));
     }).catch(function(){
-      if (btn){ btn.disabled = false; btn.textContent = "Enviar respuestas"; }
+      quizConfirm = false;
+      renderQuiz();
       showToast("No se pudo enviar &#8212; revisa tu conexi&#243;n e int&#233;ntalo de nuevo");
     });
   }
+
   function bindQuiz(){
     var root = document.getElementById("quizRoot");
     if(!root) return;
     root.addEventListener("click", function(ev){
-      var t = ev.target;
-      var qp = t.getAttribute && t.getAttribute("data-qpersona");
-      if (qp){
-        if (qp !== quizPersona){ quizPersona = qp; quizLast = null; quizResult = null; quizPhase = "intro"; loadQuiz(quizPersona); }
+      var sel = "[data-qpersona],[data-qretry],[data-qstart],[data-qhome],[data-qopt],[data-qmulti],[data-qtf],[data-qjump],[data-qnav],[data-qup],[data-qdown],[data-qsubmit],[data-qcancel],[data-qconfirm]";
+      var t = (ev.target && ev.target.closest) ? ev.target.closest(sel) : null;
+      if(!t) return;
+      var g = function(a){ return t.getAttribute(a); };
+      if (g("data-qpersona")){
+        var qp = g("data-qpersona");
+        if (qp !== quizPersona){ quizPersona = qp; quizLast = null; quizResult = null; quizPhase = "intro"; quizConfirm = false; loadQuiz(quizPersona); }
         return;
       }
-      if (t.getAttribute && t.getAttribute("data-qretry")){ loadQuiz(quizPersona); return; }
-      if (t.getAttribute && t.getAttribute("data-qstart")){
-        quizPhase = "taking"; quizResult = null; renderQuiz();
-        try{ document.getElementById("panel-quiz").scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block:"start" }); }catch(e){}
-        return;
+      if (g("data-qretry")){ loadQuiz(quizPersona); return; }
+      if (g("data-qstart")){ initQuizAttempt(); quizPhase = "taking"; quizResult = null; quizAnimate = true; renderQuiz();
+        try{ document.getElementById("panel-quiz").scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block:"start" }); }catch(e){} return; }
+      if (g("data-qhome")){ quizResult = null; quizPhase = "intro"; quizConfirm = false; renderQuiz(); return; }
+      if (g("data-qopt")){ quizAnswers[+g("data-qi")] = +g("data-oi"); quizAnimate = false; renderQuiz(); return; }
+      if (g("data-qmulti")){
+        var qi = +g("data-qi"), oi = +g("data-oi"), arr = quizAnswers[qi], ix = arr.indexOf(oi);
+        if (ix === -1) arr.push(oi); else arr.splice(ix,1);
+        quizAnimate = false; renderQuiz(); return;
       }
+      if (g("data-qtf")){ quizAnswers[+g("data-qi")] = g("data-val") === "1"; quizAnimate = false; renderQuiz(); return; }
+      if (g("data-qjump")){ quizIndex = +g("data-qjump"); quizConfirm = false; quizAnimate = true; renderQuiz(); return; }
+      if (g("data-qnav")){
+        var d = g("data-qnav");
+        if (d === "prev" && quizIndex > 0) quizIndex--;
+        else if (d === "next" && quizIndex < QUIZ.length-1) quizIndex++;
+        quizConfirm = false; quizAnimate = true; renderQuiz(); return;
+      }
+      if (g("data-qup")){ orderMove(+g("data-qi"), +g("data-pos"), -1); quizAnimate = false; renderQuiz(); return; }
+      if (g("data-qdown")){ orderMove(+g("data-qi"), +g("data-pos"), 1); quizAnimate = false; renderQuiz(); return; }
+      if (g("data-qsubmit")){ quizConfirm = true; renderQuiz(); return; }
+      if (g("data-qcancel")){ quizConfirm = false; renderQuiz(); return; }
+      if (g("data-qconfirm")){ submitQuiz(); return; }
     });
-    root.addEventListener("submit", function(ev){
-      if (ev.target && ev.target.id === "quizForm"){ ev.preventDefault(); submitQuiz(); }
+    root.addEventListener("change", function(ev){
+      var s = ev.target;
+      if (s && s.getAttribute && s.getAttribute("data-qmatch")){
+        var qi = +s.getAttribute("data-qi"), li = +s.getAttribute("data-li");
+        quizAnswers[qi][li] = (s.value === "") ? null : +s.value;
+        quizAnimate = false; renderQuiz();
+      }
     });
   }
   bindQuiz();
