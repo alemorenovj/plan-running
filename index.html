@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#131618" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-<title>Plan de running v12 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
+<title>Plan de running v13 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
 <style>
   :root{
     color-scheme: light dark;
@@ -456,6 +456,34 @@
   .zrange{margin-left:auto;font-family:var(--mono);font-size:13px;color:var(--ink2);letter-spacing:.02em}
   .zc-z1{--zcol:var(--ink3)} .zc-z2{--zcol:var(--cyan)} .zc-z3{--zcol:var(--go)} .zc-z4{--zcol:var(--amber)} .zc-z5{--zcol:var(--red)}
 
+  /* ---- perfiles: progreso EF ---- */
+  .perfprog{margin-top:30px;padding-top:28px;border-top:1px solid var(--line)}
+  .perfprog .pph{font-family:var(--disp);font-size:clamp(20px,3.6vw,25px);font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+  .perfprog .ppsub{color:var(--ink2);font-size:15.5px;max-width:66ch;margin-bottom:16px}
+  .perfprog .ppsub b{color:var(--ink);font-weight:600}
+  .ppgexplain{background:linear-gradient(180deg,var(--gosoft),transparent);border:1px solid var(--line2);
+    border-left:3px solid var(--go);border-radius:12px;padding:14px 16px;margin-bottom:18px}
+  .ppgexplain p{color:var(--ink2);font-size:14.5px;line-height:1.55;margin:0}
+  .ppgexplain p b{color:var(--ink);font-weight:600}
+  .ppggrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .perfprogcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow)}
+  .ppghead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .ppghead h3{font-size:18px;font-weight:800;letter-spacing:-.02em}
+  .ppghead .ppgtag{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
+  .ppgbig{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;min-height:34px;margin-bottom:4px}
+  .ppgnum{font-family:var(--disp);font-weight:800;font-size:34px;letter-spacing:-.03em;color:var(--go);line-height:1}
+  .ppgdelta{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.02em}
+  .ppgdelta.up{color:var(--go)} .ppgdelta.down{color:var(--red)}
+  .ppgunit{font-family:var(--mono);font-size:11px;color:var(--ink3);letter-spacing:.04em}
+  .ppgcalc{font-family:var(--mono);font-size:13px;color:var(--ink3);letter-spacing:.02em}
+  .ppgwrap{margin-top:6px}
+  .ppgwrap canvas{display:block;width:100%}
+  .ppgnote{font-size:13.5px;color:var(--ink2);font-style:italic;font-family:var(--serif);line-height:1.5;margin-top:10px}
+  .ppgretry{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--ink);background:var(--paper);
+    border:1px solid var(--line2);border-radius:99px;padding:6px 13px;cursor:pointer;margin-left:6px;font-style:normal}
+  .ppgretry:hover{border-color:var(--amber);background:var(--ambersoft)}
+  .ppgretry:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
   /* ---- badge "Nuevo" ---- */
   .newbadge{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
     color:var(--amber);background:var(--ambersoft);border:1px solid transparent;
@@ -587,6 +615,7 @@
   @media (max-width:680px){
     .exgrid{grid-template-columns:1fr}
     .perfgrid{grid-template-columns:1fr}
+    .ppggrid{grid-template-columns:1fr}
     .rutgrid{grid-template-columns:1fr}
     .base .skel{grid-template-columns:1fr}
     .libwrap{grid-template-columns:1fr;gap:14px}
@@ -846,6 +875,13 @@
     <h2>Alejandro y Valentina</h2>
     <p class="sintro">Los n&#250;meros base de cada uno &#8212; edad, VO2 Max, frecuencias y zonas card&#237;acas. Tu Clon los toma en cuenta en el an&#225;lisis de los domingos.</p>
     <div id="perfilesGrid" class="perfgrid"></div>
+
+    <div id="perfProgress" class="perfprog">
+      <div class="pph">Progreso &#183; semana a semana</div>
+      <p class="ppsub">La <b>Eficiencia aer&#243;bica (EF)</b> de cada uno, semana a semana. Se llena sola con los rodajes f&#225;ciles que registran en Seguimiento.</p>
+      <div class="ppgexplain"><p><b>Eficiencia aer&#243;bica (EF):</b> metros que avanzas por minuto &#247; tu FC media en rodajes f&#225;ciles. <b>M&#225;s alto = corres m&#225;s r&#225;pido al mismo pulso = m&#225;s en forma.</b> Se llena sola con tus rodajes. Compara f&#225;cil con f&#225;cil; el calor y el mal dormir suben la FC ese d&#237;a.</p></div>
+      <div class="ppggrid" id="ppgGrid"></div>
+    </div>
   </section>
 
   <!-- ================= PESTA&#209;A 6: QUIZ ================= -->
@@ -858,7 +894,7 @@
 
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
-    <div class="mono">PLAN &#183; RUNNING &#183; V12 &#183; JUL 2026</div>
+    <div class="mono">PLAN &#183; RUNNING &#183; V13 &#183; JUL 2026</div>
   </footer>
 
 </div>
@@ -1426,6 +1462,268 @@
   if (perfGrid){
     perfGrid.innerHTML = PERF_ORDER.map(function(id){ return perfCardHtml(PERFILES[id]); }).join("");
   }
+
+  // ---------- perfiles: progreso EF (Eficiencia aerobica) por semana ----------
+  // EF = metros/min entre FC media en rodajes faciles. Se llena solo desde /api/entrenos.
+  var perfProgLoaded = false;
+  var perfProgState = { alejandro:null, valentina:null };  // {state:"loading"|"ok"|"empty"|"error", weeks:[...]}
+  var EF_EASY = { "rodaje-suave":1, "rodaje-continuo":1, "recuperacion":1 };
+  var EF_MESES = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+
+  function efPad2(n){ n = String(n); return n.length < 2 ? "0"+n : n; }
+  function efParseFecha(s){
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || "");
+    if (!m) return null;
+    return new Date(Date.UTC(+m[1], +m[2]-1, +m[3]));
+  }
+  function efMondayKey(d){
+    var day = d.getUTCDay() || 7;                 // lunes=1..domingo=7
+    var mon = new Date(d.getTime());
+    mon.setUTCDate(d.getUTCDate() - (day - 1));
+    return mon;
+  }
+  function efMonLabel(d){ return d.getUTCDate() + " " + EF_MESES[d.getUTCMonth()]; }
+  function efParseRitmo(s){
+    var m = /^\s*(\d+):([0-5]?\d)\s*$/.exec(String(s == null ? "" : s));
+    if (!m) return 0;
+    return (+m[1]) * 60 + (+m[2]);                 // segundos por km
+  }
+
+  // Agrupa entrenos por semana ISO: EF promedio (solo rodajes faciles con ritmo+FC) y km totales.
+  function computeEfWeeks(list){
+    var map = {};
+    (list || []).forEach(function(e){
+      var d = efParseFecha(e.fecha);
+      if (!d) return;
+      var mon = efMondayKey(d);
+      var key = mon.getUTCFullYear() + "-" + efPad2(mon.getUTCMonth()+1) + "-" + efPad2(mon.getUTCDate());
+      var w = map[key] || (map[key] = { key:key, monday:mon, efs:[], km:0 });
+      var km = parseFloat(e.dist);
+      if (!isNaN(km)) w.km += km;
+      if (EF_EASY[e.tipo]){
+        var sec = efParseRitmo(e.ritmo);
+        var fc = parseFloat(e.fcMed);
+        if (sec > 0 && fc > 0){
+          var velMetrosPorMin = 60000 / sec;
+          var ef = Math.round((velMetrosPorMin / fc) * 100) / 100;   // ~0.9-1.2
+          w.efs.push(ef);
+        }
+      }
+    });
+    var arr = [];
+    Object.keys(map).forEach(function(k){
+      var w = map[k];
+      if (!w.efs.length) return;                    // solo semanas con EF calculable
+      var sum = 0; for (var i=0;i<w.efs.length;i++) sum += w.efs[i];
+      arr.push({
+        monday: w.monday,
+        ef: Math.round((sum / w.efs.length) * 100) / 100,
+        km: Math.round(w.km * 10) / 10,
+        n: w.efs.length,
+        label: efMonLabel(w.monday)
+      });
+    });
+    arr.sort(function(a,b){ return a.monday.getTime() - b.monday.getTime(); });
+    return arr;
+  }
+
+  function efCssVar(name){
+    try{ return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || "#888"; }
+    catch(e){ return "#888"; }
+  }
+
+  function drawEfChart(pid){
+    var st = perfProgState[pid];
+    if (!st || st.state !== "ok") return;
+    var weeks = st.weeks;
+    var canvas = document.getElementById("ppgcanvas-"+pid);
+    var wrap = document.getElementById("ppgwrap-"+pid);
+    if (!canvas || !wrap) return;
+    var cssW = wrap.clientWidth;
+    if (!cssW || cssW < 10) return;                 // aun no visible / sin ancho
+    var cssH = 190;
+    var dpr = window.devicePixelRatio || 1;
+    canvas.style.width = cssW + "px";
+    canvas.style.height = cssH + "px";
+    canvas.width = Math.round(cssW * dpr);
+    canvas.height = Math.round(cssH * dpr);
+    var ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, cssW, cssH);
+
+    var colGo = efCssVar("--go"), colAmber = efCssVar("--amber"), colInk = efCssVar("--ink"),
+        colInk3 = efCssVar("--ink3"), colLine = efCssVar("--line"), colCard = efCssVar("--card");
+
+    var padL = 38, padR = 16, padT = 24, padB = 30;
+    var plotW = cssW - padL - padR, plotH = cssH - padT - padB;
+    var n = weeks.length;
+
+    var efs = weeks.map(function(w){ return w.ef; });
+    var minEf = Math.min.apply(null, efs), maxEf = Math.max.apply(null, efs);
+    var rng = maxEf - minEf;
+    if (rng < 0.001) rng = Math.max(minEf * 0.1, 0.1);
+    var yLo = minEf - rng * 0.35, yHi = maxEf + rng * 0.35;
+    if (yHi - yLo < 0.001) yHi = yLo + 0.2;
+    function yFor(ef){ return padT + plotH * (1 - (ef - yLo) / (yHi - yLo)); }
+    function xFor(i){ return n === 1 ? (padL + plotW/2) : (padL + plotW * (i/(n-1))); }
+
+    // barras tenues de km (eje derecho implicito), detras de la linea
+    var kms = weeks.map(function(w){ return w.km; });
+    var maxKm = Math.max.apply(null, kms); if (maxKm <= 0) maxKm = 1;
+    var barW = n === 1 ? 40 : Math.max(8, Math.min(30, plotW / (n * 1.8)));
+    ctx.fillStyle = colAmber;
+    ctx.globalAlpha = 0.14;
+    weeks.forEach(function(w, i){
+      var bh = plotH * (w.km / maxKm);
+      ctx.fillRect(xFor(i) - barW/2, padT + plotH - bh, barW, bh);
+    });
+    ctx.globalAlpha = 1;
+
+    // eje base
+    ctx.strokeStyle = colLine; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(padL, padT + plotH + 0.5); ctx.lineTo(padL + plotW, padT + plotH + 0.5); ctx.stroke();
+
+    // etiquetas Y (max y min EF)
+    ctx.fillStyle = colInk3;
+    ctx.font = "10px ui-monospace, Menlo, Consolas, monospace";
+    ctx.textAlign = "right"; ctx.textBaseline = "middle";
+    ctx.fillText(maxEf.toFixed(2), padL - 6, yFor(maxEf));
+    if (Math.abs(yFor(minEf) - yFor(maxEf)) > 12) ctx.fillText(minEf.toFixed(2), padL - 6, yFor(minEf));
+
+    // linea EF
+    if (n > 1){
+      ctx.strokeStyle = colGo; ctx.lineWidth = 2; ctx.lineJoin = "round";
+      ctx.beginPath();
+      weeks.forEach(function(w, i){ var x = xFor(i), y = yFor(w.ef); if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); });
+      ctx.stroke();
+    }
+    // puntos (ultimo resaltado)
+    weeks.forEach(function(w, i){
+      var x = xFor(i), y = yFor(w.ef), last = (i === n-1);
+      ctx.beginPath(); ctx.arc(x, y, last ? 5 : 3.2, 0, Math.PI*2);
+      ctx.fillStyle = colGo; ctx.fill();
+      if (last){ ctx.strokeStyle = colCard; ctx.lineWidth = 2; ctx.stroke(); }
+    });
+    // valor del ultimo punto
+    var lw = weeks[n-1], lx = xFor(n-1), ly = yFor(lw.ef);
+    ctx.fillStyle = colInk; ctx.font = "700 12px ui-monospace, Menlo, Consolas, monospace";
+    ctx.textBaseline = "bottom";
+    var lblY = ly - 9; if (lblY < padT + 8) lblY = ly + 20;
+    ctx.textAlign = (n === 1) ? "center" : "right";
+    ctx.fillText(lw.ef.toFixed(2), (n === 1) ? lx : Math.min(lx, padL + plotW), lblY);
+
+    // etiquetas X (semana)
+    ctx.fillStyle = colInk3; ctx.font = "10px ui-monospace, Menlo, Consolas, monospace";
+    ctx.textBaseline = "top";
+    var many = n > 6;
+    weeks.forEach(function(w, i){
+      if (many && (i % 2 !== 0) && i !== n-1) return;
+      var x = xFor(i), tx = x;
+      ctx.textAlign = "center";
+      if (i === 0 && n > 1){ ctx.textAlign = "left"; tx = Math.max(x - barW/2, 2); }
+      else if (i === n-1 && n > 1){ ctx.textAlign = "right"; tx = Math.min(x + barW/2, cssW - 2); }
+      ctx.fillText(w.label, tx, padT + plotH + 8);
+    });
+  }
+
+  function renderPerfCard(pid){
+    var st = perfProgState[pid] || { state:"loading" };
+    var big = document.getElementById("ppgbig-"+pid);
+    var note = document.getElementById("ppgnote-"+pid);
+    var wrap = document.getElementById("ppgwrap-"+pid);
+    if (!big || !note || !wrap) return;
+    if (st.state === "loading"){
+      big.innerHTML = '<span class="ppgcalc">Calculando&#8230;</span>';
+      note.innerHTML = ""; wrap.style.display = "none"; return;
+    }
+    if (st.state === "error"){
+      big.innerHTML = '<span class="ppgcalc">Sin conexi&#243;n</span>';
+      note.innerHTML = 'No se pudieron cargar tus entrenos.<button class="ppgretry" data-retry="'+pid+'" type="button">Reintentar</button>';
+      wrap.style.display = "none"; return;
+    }
+    if (st.state === "empty"){
+      big.innerHTML = '<span class="ppgcalc">&#8212;</span>';
+      note.innerHTML = 'A&#250;n no hay rodajes f&#225;ciles con ritmo y FC para calcular el EF. Registra rodajes con esos datos y aqu&#237; vas a ver tu progreso.';
+      wrap.style.display = "none"; return;
+    }
+    var weeks = st.weeks, n = weeks.length, last = weeks[n-1];
+    var html = '<span class="ppgnum">' + last.ef.toFixed(2) + '</span>';
+    if (n >= 2){
+      var prev = weeks[n-2];
+      var d = Math.round((last.ef - prev.ef) * 100) / 100;
+      var up = d >= 0;
+      html += '<span class="ppgdelta ' + (up ? "up" : "down") + '">' + (up ? "&#8593;" : "&#8595;") + ' ' + Math.abs(d).toFixed(2) + '</span>';
+    }
+    html += '<span class="ppgunit">EF &#183; &#250;ltima semana</span>';
+    big.innerHTML = html;
+    note.innerHTML = (n === 1) ? 'Vamos empezando &#8212; el progreso se ve claro en 3-4 semanas.' : '';
+    wrap.style.display = "block";
+    drawEfChart(pid);
+  }
+
+  function loadPerfProg(pid){
+    perfProgState[pid] = { state:"loading" };
+    renderPerfCard(pid);
+    return apiList(pid).then(function(data){
+      var list = (data && Array.isArray(data.list)) ? data.list.map(apiToEntreno) : [];
+      var weeks = computeEfWeeks(list);
+      perfProgState[pid] = { state: weeks.length ? "ok" : "empty", weeks: weeks };
+      renderPerfCard(pid);
+    }).catch(function(){
+      perfProgState[pid] = { state:"error" };
+      renderPerfCard(pid);
+    });
+  }
+
+  function buildPerfProgSkeleton(){
+    var grid = document.getElementById("ppgGrid");
+    if (!grid) return;
+    grid.innerHTML = PERF_ORDER.map(function(pid){
+      var nm = PERFILES[pid] ? PERFILES[pid].nombre : pid;
+      return '<div class="perfprogcard" data-pid="'+pid+'">'+
+        '<div class="ppghead"><h3>'+nm+'</h3><span class="ppgtag">Eficiencia aer&#243;bica</span></div>'+
+        '<div class="ppgbig" id="ppgbig-'+pid+'"><span class="ppgcalc">Calculando&#8230;</span></div>'+
+        '<div class="ppgwrap" id="ppgwrap-'+pid+'" style="display:none"><canvas id="ppgcanvas-'+pid+'"></canvas></div>'+
+        '<div class="ppgnote" id="ppgnote-'+pid+'"></div>'+
+      '</div>';
+    }).join("");
+  }
+
+  function redrawAllPerf(){
+    PERF_ORDER.forEach(function(pid){
+      var st = perfProgState[pid];
+      if (st && st.state === "ok") drawEfChart(pid);
+    });
+  }
+
+  function ensurePerfProgress(){
+    if (!perfProgLoaded){
+      perfProgLoaded = true;
+      buildPerfProgSkeleton();
+      var root = document.getElementById("perfProgress");
+      if (root){
+        root.addEventListener("click", function(ev){
+          var t = ev.target;
+          var pid = t && t.getAttribute ? t.getAttribute("data-retry") : null;
+          if (pid) loadPerfProg(pid);
+        });
+      }
+      loadPerfProg("alejandro");
+      loadPerfProg("valentina");
+    } else {
+      redrawAllPerf();                              // el ancho pudo cambiar mientras estaba oculta
+    }
+  }
+
+  var perfResizeT = null;
+  window.addEventListener("resize", function(){
+    if (!perfProgLoaded) return;
+    var panel = document.getElementById("panel-perfiles");
+    if (panel && panel.classList.contains("hide")) return;
+    if (perfResizeT) clearTimeout(perfResizeT);
+    perfResizeT = setTimeout(redrawAllPerf, 150);
+  });
 
   // ---------- seguimiento: registro por persona (API REST /api/entrenos + base de datos) ----------
   // Analisis editable a mano por el Clon. Pon un string (con saltos de linea) por persona.
@@ -2703,6 +3001,7 @@
       if(on){ panEl.classList.remove("hide"); } else { panEl.classList.add("hide"); }
     });
     if (name === "seguimiento"){ ensureSegLoaded(); }   // carga la lista al entrar a la pestana
+    if (name === "perfiles"){ ensurePerfProgress(); }   // carga/redibuja las graficas de EF
     if (name === "quiz"){ ensureQuizLoaded(); }         // carga el gating del quiz al entrar
     if (opts.setHash !== false){
       try{ if (("#"+name) !== location.hash) history.replaceState(null, "", "#"+name); }catch(e){}
