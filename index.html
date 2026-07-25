@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#131618" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-<title>Plan de running v11 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
+<title>Plan de running v12 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
 <style>
   :root{
     color-scheme: light dark;
@@ -158,6 +158,15 @@
   .note{font-size:14px;color:var(--ink2);font-style:italic;font-family:var(--serif);
     background:var(--card);border:1px solid var(--line);border-left:3px solid var(--amber);
     border-radius:10px;padding:13px 16px;margin-top:6px}
+
+  /* ---- foco de la semana (callout) ---- */
+  .foco{background:linear-gradient(180deg,var(--gosoft),transparent);border:1px solid var(--line2);
+    border-left:3px solid var(--go);border-radius:12px;padding:14px 16px;margin-top:14px}
+  .foco .fh{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:6px}
+  .foco .fh .ft{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--go)}
+  .foco p{color:var(--ink2);font-size:14.5px;line-height:1.55;margin:0}
+  .foco p b{color:var(--ink);font-weight:600}
+  .foco .exrow{margin-top:11px}
 
   /* ---- rutinas antes/despues ---- */
   .rutctx{color:var(--ink2);font-size:15.5px;max-width:66ch;margin-bottom:18px}
@@ -663,6 +672,15 @@
             <button class="exlink" data-ex="rdl" type="button">RDL a una pierna</button>
             <button class="exlink" data-ex="plancha-lateral" type="button">Plancha lateral</button>
           </div>
+          <div class="foco">
+            <div class="fh"><span class="ft">Foco de esta semana</span><span class="newbadge">Nuevo</span></div>
+            <p><b>Foco de esta semana: prehab de canilla.</b> Sumen el <b>tibial anterior</b> y los <b>exc&#233;ntricos de pantorrilla/s&#243;leo</b> 2&#215;/sem &#8212; para la molestia de tibia que aparece al inicio de las carreras.</p>
+            <div class="exrow">
+              <button class="exlink" data-ex="tibial-anterior" type="button">Tibial anterior</button>
+              <button class="exlink" data-ex="pantorrilla-recta" type="button">Pantorrilla recta</button>
+              <button class="exlink" data-ex="pantorrilla-flex" type="button">Pantorrilla rodilla flexionada</button>
+            </div>
+          </div>
         </div>
 
         <div class="capa">
@@ -773,9 +791,9 @@
 
   <!-- ================= PESTA&#209;A 2: EJERCICIOS ================= -->
   <section class="panel hide" id="panel-ejercicios" role="tabpanel" aria-labelledby="tab-ejercicios" tabindex="-1">
-    <div class="snum">LOS 18 EJERCICIOS</div>
+    <div class="snum">LOS 19 EJERCICIOS</div>
     <h2>El cat&#225;logo, con secuencia y porqu&#233;</h2>
-    <p class="sintro">Cinco de movilidad, cinco de prevenci&#243;n y ocho drills de carrera. Toca cualquiera para abrir su ficha: secuencia del movimiento, c&#243;mo se hace, claves, errores y por qu&#233; funciona.</p>
+    <p class="sintro">Cinco de movilidad, seis de prevenci&#243;n y ocho drills de carrera. Toca cualquiera para abrir su ficha: secuencia del movimiento, c&#243;mo se hace, claves, errores y por qu&#233; funciona.</p>
 
     <div class="cadbox">
       <div class="eyebrow cadeye">Antes de empezar</div>
@@ -840,7 +858,7 @@
 
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
-    <div class="mono">PLAN &#183; RUNNING &#183; V11 &#183; JUL 2026</div>
+    <div class="mono">PLAN &#183; RUNNING &#183; V12 &#183; JUL 2026</div>
   </footer>
 
 </div>
@@ -862,7 +880,7 @@
   var BASE = 'stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"';
   function svg(inner){ return '<svg viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" '+BASE+'>'+inner+'</svg>'; }
 
-  // ---------- exercise data (18) ----------
+  // ---------- exercise data (19) ----------
   var EX = [
     { id:"rodilla-pared", g:"mob", name:"Rodilla a la pared", dose:"2x10/lado &#183; diario", when:"Diario", tema:"tema4",
       frames:[
@@ -1053,7 +1071,18 @@
       steps:["Acelera progresivamente durante ~60&#8211;100 m.","Llega a ~90% RELAJADO (r&#225;pido pero suelto, sin tensar).","Mantente 2&#8211;3 s.","Desacelera suave.","Recupera caminando o trotando entre cada una."],
       keys:["R&#225;pido pero RELAJADO (cara y hombros sueltos).","Postura alta; no es un sprint m&#225;ximo."],
       errors:["Tensarte al 100%.","Recuperaci&#243;n incompleta entre repeticiones."],
-      why:"Es el puente entre los drills y correr r&#225;pido &#8212; recluta fibras r&#225;pidas, mejora la econom&#237;a y la mec&#225;nica a ritmo y &#8216;despierta&#8217; la zancada, todo con poca fatiga. De lo que m&#225;s transfiere a bajar tiempos sin subir volumen." }
+      why:"Es el puente entre los drills y correr r&#225;pido &#8212; recluta fibras r&#225;pidas, mejora la econom&#237;a y la mec&#225;nica a ritmo y &#8216;despierta&#8217; la zancada, todo con poca fatiga. De lo que m&#225;s transfiere a bajar tiempos sin subir volumen." },
+
+    { id:"tibial-anterior", g:"str", nuevo:true, name:"Tibial anterior (elevaciones de punta)", dose:"3&#215;15 &#183; 2&#215;/sem", when:"Prehab de canilla", tema:"tema2",
+      frames:[
+        {c:"1. Espalda en la pared, talones ~20-30 cm adelante", s:'<line x1="18" y1="10" x2="18" y2="82" stroke="var(--line2)" stroke-width="4"/><line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="26" cy="22" r="6"/><path d="M26 28 L28 54"/><path d="M28 54 L58 60"/><path d="M58 60 L58 82"/><path d="M27 34 L24 54"/><path d="M52 82 L64 82" stroke="var(--go)"/><path d="M40 78 L56 78" stroke="var(--go)" stroke-dasharray="3 3"/>'},
+        {c:"2. Levanta las puntas hacia las espinillas, pausa", s:'<line x1="18" y1="10" x2="18" y2="82" stroke="var(--line2)" stroke-width="4"/><line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="26" cy="22" r="6"/><path d="M26 28 L28 54"/><path d="M28 54 L58 60"/><path d="M58 60 L58 78"/><path d="M27 34 L24 54"/><path d="M58 78 L50 72" stroke="var(--go)"/><path d="M58 78 L68 78" stroke="var(--go)" stroke-dasharray="3 3"/><path d="M74 74 L74 58" stroke="var(--go)"/><path d="M69 64 L74 56 L79 64" stroke="var(--go)"/>'},
+        {c:"3. Baja lento y controlado", s:'<line x1="18" y1="10" x2="18" y2="82" stroke="var(--line2)" stroke-width="4"/><line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="26" cy="22" r="6"/><path d="M26 28 L28 54"/><path d="M28 54 L58 60"/><path d="M58 60 L58 82"/><path d="M27 34 L24 54"/><path d="M52 82 L64 82" stroke="var(--go)"/><path d="M74 56 L74 72" stroke="var(--go)" stroke-dasharray="3 3"/><path d="M69 66 L74 74 L79 66" stroke="var(--go)"/>'}
+      ],
+      steps:["Apoya la espalda en una pared, talones adelante ~20-30 cm.","Con los talones fijos, levanta las puntas de los pies hacia ti lo m&#225;s alto posible.","Mant&#233;n 1 s arriba.","Baja lento y controlado.","Repite."],
+      keys:["El movimiento es solo de tobillo (los talones no se despegan).","Sube y baja controlado, siente la espinilla trabajar."],
+      errors:["Doblar las rodillas para ayudar.","Hacerlo con impulso."],
+      why:"Fortalece el tibial anterior (m&#250;sculo del frente de la espinilla), que desacelera el pie en cada apoyo; su debilidad se asocia al dolor de canilla (shin splints). Es prehab directa para la molestia de tibia que aparece al inicio de sus carreras." }
   ];
 
   var EXMAP = {};
@@ -1079,7 +1108,8 @@
     "carioca":"https://www.youtube.com/watch?v=hp2G5Au0lrY",
     "piernas-rectas":"https://www.youtube.com/watch?v=g1Wb9DbbO1g",
     "ankling":"https://www.youtube.com/watch?v=-pMvwB3lM4k",
-    "zancadas":"https://www.youtube.com/watch?v=IeZS646X44M"
+    "zancadas":"https://www.youtube.com/watch?v=IeZS646X44M",
+    "tibial-anterior":"https://www.youtube.com/watch?v=pz70FwVRDJE"
   };
   function ytHref(id){
     return YT[id] || "https://www.youtube.com";
@@ -1272,7 +1302,7 @@
     b.setAttribute("data-ex", e.id);
     b.innerHTML =
       '<div class="exfig '+gl[1]+'">'+svg(e.frames[0].s)+'</div>'+
-      '<div class="exlab"><span class="gpill '+gl[2]+'">'+gl[0]+'</span></div>'+
+      '<div class="exlab"><span class="gpill '+gl[2]+'">'+gl[0]+'</span>'+(e.nuevo ? '<span class="newbadge">Nuevo</span>' : '')+'</div>'+
       '<h3>'+e.name+'</h3>'+
       '<div class="dose">'+e.dose+'</div>'+
       '<div class="open">Ver ficha &#8594;</div>';
@@ -2734,7 +2764,7 @@
     seq += '</div>';
 
     sheetBody.innerHTML =
-      '<div class="sh-eyebrow"><span class="gpill '+gl[2]+'">'+gl[0]+'</span></div>'+
+      '<div class="sh-eyebrow"><span class="gpill '+gl[2]+'">'+gl[0]+'</span>'+(e.nuevo ? '<span class="newbadge">Nuevo</span>' : '')+'</div>'+
       '<h3 class="sh-title" id="sheetTitle">'+e.name+'</h3>'+
       '<div class="sh-meta">'+e.dose+'</div>'+
       '<div class="sh-when">'+e.when+'</div>'+
