@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Plan de running: semana, ejercicios, biblioteca, seguimiento, perfiles y quiz.">
+<meta name="description" content="Plan de running: semana, ejercicios, biblioteca (curso), seguimiento, perfiles y quiz.">
 <meta name="theme-color" content="#efece4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#131618" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-<title>Plan de running v13 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
+<title>Plan de running v14 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
 <style>
   :root{
     color-scheme: light dark;
@@ -284,6 +284,46 @@
   .relwrap{margin-top:16px}
   .relwrap .rl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
   .relchips{display:flex;flex-wrap:wrap;gap:7px}
+
+  /* ---- Biblioteca: ruta de curso (m&#243;dulos + lecciones) ---- */
+  .ruta{display:grid;gap:16px}
+  .modcard{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;
+    box-shadow:var(--shadow);overflow:hidden;scroll-margin-top:82px}
+  .modcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--amber)}
+  .modhead{list-style:none;display:flex;align-items:center;gap:14px;padding:18px 20px 18px 22px;cursor:pointer;user-select:none}
+  .modhead::-webkit-details-marker{display:none}
+  .modhead:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+  .modnum{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+    background:var(--ambersoft);color:var(--amber);font-family:var(--disp);font-weight:800;font-size:19px;
+    line-height:1;transition:background .2s,color .2s}
+  .modmeta{flex:1;min-width:0}
+  .modkick{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+  .modkick .newbadge{margin-left:6px}
+  .modtitle{display:block;font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:clamp(17px,2.6vw,20px);color:var(--ink);line-height:1.2;margin:3px 0 4px;letter-spacing:-.01em}
+  .moddesc{display:block;font-size:13.5px;color:var(--ink2);line-height:1.4}
+  .modcount{flex:none;font-family:var(--mono);font-size:11px;color:var(--ink3);white-space:nowrap}
+  .modchev{flex:none;color:var(--ink3);font-family:var(--mono);font-size:13px;transition:transform .2s}
+  .modcard[open] .modchev{transform:rotate(90deg)}
+  .modcard[open] .modnum{background:var(--amber);color:var(--paper)}
+  .modbody{padding:2px 16px 16px 22px;display:grid;gap:8px}
+  .lesson{border:1px solid var(--line);border-radius:12px;background:var(--paper);overflow:hidden;scroll-margin-top:82px}
+  .lhead{list-style:none;display:flex;align-items:center;gap:12px;padding:13px 15px;cursor:pointer;user-select:none}
+  .lhead::-webkit-details-marker{display:none}
+  .lhead:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+  .lnum{flex:none;font-family:var(--mono);font-size:12px;font-weight:700;color:var(--amber);min-width:32px}
+  .ltitle{flex:1;min-width:0;font-size:15.5px;font-weight:600;color:var(--ink);line-height:1.3}
+  .ltitle .newbadge{margin-left:6px}
+  .lchev{flex:none;color:var(--ink3);font-family:var(--mono);font-size:12px;transition:transform .2s}
+  .lesson[open] .lchev{transform:rotate(90deg)}
+  .lesson[open] .lhead{border-bottom:1px solid var(--line)}
+  .lbody{padding:15px 15px 16px}
+  .lbody .tk{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:9px}
+  .lbody p{color:var(--ink2);font-size:15.5px;line-height:1.6;margin:0 0 12px;max-width:64ch}
+  .lbody p b{color:var(--ink);font-weight:600}
+  .lbody .relwrap{margin-bottom:0}
+  .lesson[open] .lbody{animation:lgrow .22s ease}
+  @keyframes lgrow{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 
   footer{padding:40px 0 0;color:var(--ink3);font-size:13px;line-height:1.6;border-top:1px solid var(--line);margin-top:20px}
   footer .mono{font-family:var(--mono);font-size:11px;letter-spacing:.04em;margin-top:12px}
@@ -844,21 +884,9 @@
   <!-- ================= PESTA&#209;A 3: BIBLIOTECA ================= -->
   <section class="panel hide" id="panel-biblioteca" role="tabpanel" aria-labelledby="tab-biblioteca" tabindex="-1">
     <div class="snum">BIBLIOTECA</div>
-    <h2>La teor&#237;a, para leer y aprender</h2>
-    <p class="sintro">Dieciocho temas que explican por qu&#233; la semana est&#225; armada as&#237;. Cada uno con su dato clave, la fuente original y los movimientos relacionados.</p>
-    <div class="libwrap">
-      <div class="toc">
-        <div class="toc-d">
-          <div class="tochead">Temas</div>
-          <ol id="tocList"></ol>
-        </div>
-        <details class="toc-m">
-          <summary>&#205;ndice de temas</summary>
-          <ol id="tocListM"></ol>
-        </details>
-      </div>
-      <div id="temas"></div>
-    </div>
+    <h2>Ruta de aprendizaje</h2>
+    <p class="sintro">Un curso en <b>4 m&#243;dulos</b>: abre cada m&#243;dulo y sus temas a tu ritmo. 18 lecciones, de los fundamentos a la prevenci&#243;n.</p>
+    <div id="ruta"></div>
   </section>
 
   <!-- ================= PESTA&#209;A 4: SEGUIMIENTO ================= -->
@@ -902,7 +930,7 @@
 
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
-    <div class="mono">PLAN &#183; RUNNING &#183; V13 &#183; JUL 2026</div>
+    <div class="mono">PLAN &#183; RUNNING &#183; V14 &#183; JUL 2026</div>
   </footer>
 
 </div>
@@ -1353,33 +1381,27 @@
     exgrid.appendChild(b);
   });
 
-  // ---------- render library ----------
-  var temasEl = document.getElementById("temas");
-  var tocList = document.getElementById("tocList");
-  var tocListM = document.getElementById("tocListM");
+  // ---------- render library (ruta de curso: 4 m&#243;dulos) ----------
+  var TEMAP = {};
+  TEMAS.forEach(function(t){ TEMAP[t.id] = t; });
 
-  function tocItem(t){
-    var li = document.createElement("li");
-    var btn = document.createElement("button");
-    btn.type = "button";
-    var plain = t.title.replace(/&#\d+;/g, function(m){
-      var map={"&#237;":"i","&#243;":"o","&#225;":"a","&#233;":"e","&#250;":"u","&#241;":"n","&#176;":" grados","&gt;":">"};
-      return map[m]||"";
-    });
-    btn.innerHTML = plain + (t.nuevo ? ' <span class="newbadge">Nuevo</span>' : '');
-    btn.setAttribute("data-tema", t.id);
-    li.appendChild(btn);
-    return li;
-  }
-  TEMAS.forEach(function(t){
-    tocList.appendChild(tocItem(t));
-    tocListM.appendChild(tocItem(t));
+  var MODULOS = [
+    { n:1, title:"Fundamentos: d&#243;nde est&#225; la velocidad",
+      desc:"Por qu&#233; correr m&#225;s no basta y qu&#233; mueve de verdad la aguja.",
+      temas:["tema1","t-vo2max","t-rer","tema8"] },
+    { n:2, title:"Construir el motor aer&#243;bico",
+      desc:"Subir el techo y la base que lo sostiene.",
+      temas:["t-base-z2","t-intervalos-vo2","tzancadas","t-elite","t-nutricion-aerobica"] },
+    { n:3, title:"T&#233;cnica, movilidad y respiraci&#243;n",
+      desc:"Correr m&#225;s eficiente con lo que ya tienes.",
+      temas:["tema5","tdrills","t-respiracion","tema6"] },
+    { n:4, title:"Prevenci&#243;n: correr sin romperte",
+      desc:"Blindar las zonas fr&#225;giles del corredor.",
+      temas:["tema2","tema3","tema4","tema7","tcalentamiento"] }
+  ];
 
-    var sec = document.createElement("div");
-    sec.className = "tema";
-    sec.id = t.id;
-    var badge = t.nuevo ? ' <span class="newbadge">Nuevo</span>' : '';
-    var html = '<div class="tk">'+t.kick+'</div><h3>'+t.title+badge+'</h3>';
+  function temaBodyHtml(t){
+    var html = '<div class="tk">'+t.kick+'</div>';
     t.paras.forEach(function(p){ html += '<p>'+p+'</p>'; });
     html += '<div class="stat"><div class="big">'+t.stat.big+'</div><div class="cap">'+t.stat.cap+'</div></div>';
     if (t.url){
@@ -1396,8 +1418,54 @@
       });
       html += '</div></div>';
     }
-    sec.innerHTML = html;
-    temasEl.appendChild(sec);
+    return html;
+  }
+
+  var rutaEl = document.getElementById("ruta");
+  MODULOS.forEach(function(m){
+    var anyNuevo = m.temas.some(function(id){ return TEMAP[id] && TEMAP[id].nuevo; });
+
+    var mod = document.createElement("details");
+    mod.className = "modcard";
+    mod.id = "mod-" + m.n;
+
+    var head = document.createElement("summary");
+    head.className = "modhead";
+    head.innerHTML =
+      '<span class="modnum">'+m.n+'</span>'+
+      '<span class="modmeta">'+
+        '<span class="modkick">M&#243;dulo '+m.n+(anyNuevo ? ' <span class="newbadge">Nuevo</span>' : '')+'</span>'+
+        '<span class="modtitle">'+m.title+'</span>'+
+        '<span class="moddesc">'+m.desc+'</span>'+
+      '</span>'+
+      '<span class="modcount">'+m.temas.length+' lecciones</span>'+
+      '<span class="modchev">&#9656;</span>';
+    mod.appendChild(head);
+
+    var body = document.createElement("div");
+    body.className = "modbody";
+    m.temas.forEach(function(id, i){
+      var t = TEMAP[id];
+      if (!t) return;
+      var les = document.createElement("details");
+      les.className = "lesson";
+      les.id = "lesson-" + id;
+      var badge = t.nuevo ? ' <span class="newbadge">Nuevo</span>' : '';
+      var lh = document.createElement("summary");
+      lh.className = "lhead";
+      lh.innerHTML =
+        '<span class="lnum">'+m.n+'.'+(i+1)+'</span>'+
+        '<span class="ltitle">'+t.title+badge+'</span>'+
+        '<span class="lchev">&#9656;</span>';
+      les.appendChild(lh);
+      var lb = document.createElement("div");
+      lb.className = "lbody";
+      lb.innerHTML = temaBodyHtml(t);
+      les.appendChild(lb);
+      body.appendChild(les);
+    });
+    mod.appendChild(body);
+    rutaEl.appendChild(mod);
   });
 
   // ---------- perfiles (datos base por persona) ----------
@@ -3115,9 +3183,14 @@
 
   function goToLibrary(temaId){
     showTab("biblioteca", {noScroll:true});
-    var el = temaId ? document.getElementById(temaId) : null;
+    var les = temaId ? document.getElementById("lesson-" + temaId) : null;
+    if (les){
+      var mod = les.closest ? les.closest(".modcard") : (les.parentNode && les.parentNode.parentNode);
+      if (mod){ mod.open = true; }
+      les.open = true;
+    }
     setTimeout(function(){
-      if (el){ el.scrollIntoView({behavior: reduced() ? "auto" : "smooth", block:"start"}); }
+      if (les){ les.scrollIntoView({behavior: reduced() ? "auto" : "smooth", block:"start"}); }
       else { window.scrollTo(0,0); }
     }, 40);
   }
