@@ -11,10 +11,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<title>Plan de running v20 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
+<title>Plan de running v21 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
 <style>
   /* =========================================================
-     v20 &#183; Noche grafito + &#225;mbar &#183; liquid glass (dark-only)
+     v21 &#183; Noche grafito + &#225;mbar &#183; liquid glass (dark-only)
      ========================================================= */
   :root{
     color-scheme: dark;
@@ -871,6 +871,7 @@
     padding:6px 10px;border-radius:9px;flex:0 0 auto;line-height:1.3;text-align:center}
   .rgk.k-run{background:var(--ambersoft);color:var(--amber)}
   .rgk.k-up{background:var(--indsoft);color:var(--ind)}
+  .rgk.k-2ses{background:var(--gosoft);color:var(--go)}
   .rgitem p{font-size:15px;color:var(--ink2);line-height:1.6;margin:0}
   .rgitem p b{color:var(--ink);font-weight:600}
 
@@ -889,6 +890,7 @@
   .dt-dura{background:var(--ambersoft);color:var(--amber)}
   .dt-suave{background:var(--indsoft);color:var(--ind)}
   .dt-tec{background:var(--gosoft);color:var(--go)}
+  .dt-2x{background:rgba(255,255,255,.08);color:var(--ink2);border:1px solid var(--line)}
   .daysub{font-size:14.5px;color:var(--ink2);line-height:1.45;margin-top:7px}
   .dayrows{display:grid;gap:8px}
   .drow{display:grid;grid-template-columns:78px 1fr;gap:14px;align-items:baseline;
@@ -912,6 +914,29 @@
   .dayclave{font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--ink2);line-height:1.6;
     margin-top:14px;padding-left:13px;border-left:2px solid rgba(255,255,255,.14)}
   .note .exlink,.dayclave .exlink{font-family:var(--body);font-style:normal;font-weight:500}
+
+  /* ---- dos sesiones en un mismo dia (martes / jueves) ---- */
+  .sesblocks{display:grid;gap:10px}
+  .sesblock{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--rmd);
+    padding:13px 15px 14px 17px;
+    background:linear-gradient(180deg,rgba(255,255,255,.038),rgba(255,255,255,.012));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+  .sesblock::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;z-index:2;background:var(--line2)}
+  .sesblock.sb-run::before{background:linear-gradient(180deg,var(--amber),rgba(242,160,74,.22))}
+  .sesblock.sb-str::before{background:linear-gradient(180deg,var(--go),rgba(69,207,149,.22))}
+  .seshead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:11px}
+  .sestag{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;
+    padding:4px 9px;border-radius:999px;line-height:1.2;background:rgba(255,255,255,.07);color:var(--ink3)}
+  .sesblock.sb-run .sestag{background:var(--ambersoft);color:var(--amber)}
+  .sesblock.sb-str .sestag{background:var(--gosoft);color:var(--go)}
+  .sesname{font-size:15px;font-weight:600;letter-spacing:-.025em;color:var(--ink);line-height:1.3}
+  .sesname .sesfoco{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--ink2)}
+  .sesblock .dayrows{gap:7px}
+  .sesblock .drow{background:rgba(255,255,255,.035);border-color:var(--line)}
+  .sesblock .drow .dv{font-size:14px}
+  .sessep{display:flex;align-items:center;gap:11px;margin:1px 0;
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3)}
+  .sessep::before,.sessep::after{content:"";flex:1;height:1px;background:var(--line)}
 
   /* =========================================================
      13 &#183; RESPONSIVE
@@ -993,7 +1018,7 @@
       </div>
       <div class="hstat">
         <svg viewBox="0 0 20 20" fill="rgba(255,255,255,.6)" aria-hidden="true"><rect x="1" y="1" width="2.5" height="2.5"/><rect x="8.75" y="1" width="2.5" height="2.5"/><rect x="16.5" y="1" width="2.5" height="2.5"/><rect x="4.875" y="8.75" width="2.5" height="2.5"/><rect x="12.625" y="8.75" width="2.5" height="2.5"/><rect x="1" y="16.5" width="2.5" height="2.5"/><rect x="8.75" y="16.5" width="2.5" height="2.5"/><rect x="16.5" y="16.5" width="2.5" height="2.5"/></svg>
-        <span class="hsv">19 ejercicios</span>
+        <span class="hsv">23 ejercicios</span>
         <span class="hsl">Con ficha y video</span>
       </div>
       <div class="hstat">
@@ -1028,11 +1053,15 @@
       <div class="reglabox">
         <div class="rgitem">
           <span class="rgk k-run">Corres<br>o pierna</span>
-          <p><b>D&#237;a que corres o haces pierna</b> &#8594; movilidad <b>din&#225;mica corta</b> ANTES (prepara sin apagar la fuerza) y estiramiento sostenido DESPU&#201;S. No hay movilidad extra ese d&#237;a.</p>
+          <p><b>D&#237;a que corres o haces pierna</b> &#8594; movilidad <b>din&#225;mica corta ANTES de cada sesi&#243;n</b> (prepara sin apagar la fuerza) y estiramiento sostenido DESPU&#201;S. Si el d&#237;a tiene dos sesiones, cada una lleva la suya &#8212; no hay una movilidad extra suelta.</p>
         </div>
         <div class="rgitem">
           <span class="rgk k-up">Tren<br>superior</span>
           <p><b>D&#237;a de tren superior</b> &#8594; ah&#237; va la <b>movilidad completa de 10 min</b> (la larga, con estiramiento sostenido). Es lo que ya vienen haciendo &#8212; ahora es oficial y no se duplica.</p>
+        </div>
+        <div class="rgitem">
+          <span class="rgk k-2ses">Dos<br>sesiones</span>
+          <p><b>Martes y jueves entrenan dos veces</b> (fuerza y carrera en momentos distintos del d&#237;a). Deja <b>6 h o m&#225;s</b> entre ambas y pon la sesi&#243;n de calidad cuando est&#233;s m&#225;s fresco.</p>
         </div>
       </div>
       <div class="note" style="margin-top:16px">Regla de oro: din&#225;mico antes, sostenido despu&#233;s. Nunca estiramiento est&#225;tico largo antes de correr o de cargar.</div>
@@ -1051,7 +1080,7 @@
           </div>
           <div class="daybody">
             <div class="dayrows">
-              <div class="drow mob"><div class="dk">Antes<span class="dur">5 min</span></div><div class="dv">Movilidad de columna y hombro + 2 min de cardio suave. <b>Nada de pierna.</b></div></div>
+              <div class="drow mob"><div class="dk">Antes<span class="dur">5 min</span></div><div class="dv"><button class="exlink" data-ex="toracica-rot" type="button">Rotaci&#243;n tor&#225;cica</button> 8/lado &#183; <button class="exlink" data-ex="hombro-banda" type="button">Pasadas de hombro</button> 10 pasadas &#183; 2 min de cardio suave. <b>Nada de pierna.</b></div></div>
               <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv">Tren superior + <b>prehab de canilla (dosis 1 de 2)</b>: <button class="exlink" data-ex="tibial-anterior" type="button">Tibial anterior</button> 2&#215;15 &#183; <button class="exlink" data-ex="pantorrilla-recta" type="button">Pantorrilla recta</button> 2&#215;12 lento &#183; <button class="exlink" data-ex="monster" type="button">Monster walk</button> 2&#215;15 &#183; <button class="exlink" data-ex="plancha-lateral" type="button">Plancha lateral</button> 2&#215;20s/lado.</div></div>
               <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">10 min</span></div><div class="dv"><b>Movilidad completa</b> &#8212; <button class="exlink" data-ex="noventa" type="button">90/90 de cadera</button> &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> &#183; <button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button>.</div></div>
             </div>
@@ -1061,16 +1090,32 @@
 
         <article class="day t-dura">
           <div class="daymeta">
-            <div class="dayhead"><h3>Martes</h3><span class="dtag dt-dura">Dura</span></div>
-            <p class="daysub">Intervalos + fuerza de pierna</p>
+            <div class="dayhead"><h3>Martes</h3><span class="dtag dt-dura">Dura</span><span class="dtag dt-2x">2 sesiones</span></div>
+            <p class="daysub">Intervalos + fuerza de pierna &#183; 2 sesiones</p>
           </div>
           <div class="daybody">
-            <div class="dayrows">
-              <div class="drow mob"><div class="dk">Antes<span class="dur">12 min</span></div><div class="dv">Trote muy suave 5 min &#183; <button class="exlink" data-ex="swings" type="button">Leg swings</button> 10/lado &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> 3&#8211;4/lado &#183; <button class="exlink" data-ex="monster" type="button">Monster walk</button> 1&#215;15 &#183; drills cortos <button class="exlink" data-ex="ankling" type="button">Ankling</button> + <button class="exlink" data-ex="askip" type="button">A-skip</button> + <button class="exlink" data-ex="rodillas-altas" type="button">Rodillas altas</button> ~20 m c/u &#183; 2&#8211;3 <button class="exlink" data-ex="zancadas" type="button">Zancadas</button> progresivas.</div></div>
-              <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv"><b>Intervalos primero, con piernas frescas.</b> La fuerza de pierna va DESPU&#201;S (ideal 6 h m&#225;s tarde; si no, al terminar). Pliometr&#237;a solo si las piernas responden y con pocos contactos.</div></div>
-              <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">8 min</span></div><div class="dv">Trote regresivo 3&#8211;5 min &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> 45s/lado &#183; pantorrilla contra la pared 30s/lado &#183; isquios suave.</div></div>
+            <div class="sesblocks">
+
+              <div class="sesblock sb-run">
+                <div class="seshead"><span class="sestag">Bloque A</span><span class="sesname">Sesi&#243;n de carrera <span class="sesfoco">&#183; Intervalos</span></span></div>
+                <div class="dayrows">
+                  <div class="drow mob"><div class="dk">Antes<span class="dur">12 min</span></div><div class="dv">Trote muy suave 5 min &#183; <button class="exlink" data-ex="swings" type="button">Leg swings</button> 10/lado &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> 3&#8211;4/lado &#183; <button class="exlink" data-ex="monster" type="button">Monster walk</button> 1&#215;15 &#183; drills cortos <button class="exlink" data-ex="ankling" type="button">Ankling</button> + <button class="exlink" data-ex="askip" type="button">A-skip</button> + <button class="exlink" data-ex="rodillas-altas" type="button">Rodillas altas</button> ~20 m c/u &#183; 2&#8211;3 <button class="exlink" data-ex="zancadas" type="button">Zancadas</button> progresivas.</div></div>
+                  <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">8 min</span></div><div class="dv">Trote regresivo 3&#8211;5 min &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> 45s/lado &#183; pantorrilla contra la pared 30s/lado &#183; isquios suave.</div></div>
+                </div>
+              </div>
+
+              <div class="sessep">6 h o m&#225;s de separaci&#243;n</div>
+
+              <div class="sesblock sb-str">
+                <div class="seshead"><span class="sestag">Bloque B</span><span class="sesname">Sesi&#243;n de fuerza <span class="sesfoco">&#183; Pierna</span></span></div>
+                <div class="dayrows">
+                  <div class="drow mob"><div class="dk">Antes<span class="dur">8 min</span></div><div class="dv"><b>Movilidad para sentadilla</b> &#8212; <button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button> 10/lado &#183; <button class="exlink" data-ex="sentadilla-profunda" type="button">Sentadilla profunda</button> 60&#8211;90 s &#183; <button class="exlink" data-ex="aductores-rock" type="button">Mecedora de aductores</button> 10 mecidas &#183; activaci&#243;n <button class="exlink" data-ex="monster" type="button">Monster walk</button> 2&#215;15 + <button class="exlink" data-ex="plancha-lateral" type="button">Plancha lateral</button> 1&#215;20s/lado &#183; 1&#8211;2 series de aproximaci&#243;n con poco peso.</div></div>
+                  <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">5 min</span></div><div class="dv">Estiramiento suave de lo trabajado &#8212; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> &#183; isquios &#183; pantorrillas. Si hubo pliometr&#237;a, nada agresivo.</div></div>
+                </div>
+              </div>
+
             </div>
-            <p class="dayclave">Esta es la &#250;nica movilidad del martes. El orden importa: la calidad de carrera manda, la fuerza va detr&#225;s &#8212; al rev&#233;s fue lo que tumb&#243; el tempo del jueves pasado.</p>
+            <p class="dayclave">Al ser dos sesiones separadas, cada una lleva su propio calentamiento corto &#8212; no hay una movilidad extra suelta. <b>Deja al menos 6 h entre las dos</b> y pon la de calidad cuando est&#233;s m&#225;s fresco. Si la fuerza va primero, ese d&#237;a evita los RM y la pliometr&#237;a: fue justo lo que tumb&#243; el tempo del jueves pasado.</p>
           </div>
         </article>
 
@@ -1081,7 +1126,7 @@
           </div>
           <div class="daybody">
             <div class="dayrows">
-              <div class="drow mob"><div class="dk">Antes<span class="dur">5 min</span></div><div class="dv">Movilidad de columna y hombro.</div></div>
+              <div class="drow mob"><div class="dk">Antes<span class="dur">5 min</span></div><div class="dv"><button class="exlink" data-ex="toracica-rot" type="button">Rotaci&#243;n tor&#225;cica</button> 8/lado &#183; <button class="exlink" data-ex="hombro-banda" type="button">Pasadas de hombro</button> 10 pasadas &#183; 2 min de cardio suave.</div></div>
               <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv">Tren superior. Pierna, nada pesado &#8212; hoy se recupera del martes.</div></div>
               <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">12 min</span></div><div class="dv"><b>Movilidad completa</b> &#8212; <button class="exlink" data-ex="noventa" type="button">90/90 de cadera</button> &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> &#183; <button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button> + foam roll de canilla, pantorrilla, isquios y VMO.</div></div>
             </div>
@@ -1091,16 +1136,32 @@
 
         <article class="day t-dura">
           <div class="daymeta">
-            <div class="dayhead"><h3>Jueves</h3><span class="dtag dt-dura">Dura</span></div>
-            <p class="daysub">Tempo + fuerza de pierna</p>
+            <div class="dayhead"><h3>Jueves</h3><span class="dtag dt-dura">Dura</span><span class="dtag dt-2x">2 sesiones</span></div>
+            <p class="daysub">Tempo + fuerza de pierna &#183; 2 sesiones</p>
           </div>
           <div class="daybody">
-            <div class="dayrows">
-              <div class="drow mob"><div class="dk">Antes<span class="dur">12 min</span></div><div class="dv">Igual que el martes, pero entra progresivo: trote suave 5&#8211;8 min &#183; <button class="exlink" data-ex="swings" type="button">Leg swings</button> &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> &#183; <button class="exlink" data-ex="monster" type="button">Monster walk</button> &#183; <button class="exlink" data-ex="askip" type="button">A-skip</button> + <button class="exlink" data-ex="rodillas-altas" type="button">Rodillas altas</button> &#183; 2 <button class="exlink" data-ex="zancadas" type="button">Zancadas</button>.</div></div>
-              <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv"><b>Tempo primero.</b> Fuerza de pierna despu&#233;s (o 6 h m&#225;s tarde). <b>Nada de RM ni pliometr&#237;a antes del tempo.</b></div></div>
-              <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">8 min</span></div><div class="dv">Trote regresivo &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> &#183; pantorrilla pared &#183; isquios suave.</div></div>
+            <div class="sesblocks">
+
+              <div class="sesblock sb-run">
+                <div class="seshead"><span class="sestag">Bloque A</span><span class="sesname">Sesi&#243;n de carrera <span class="sesfoco">&#183; Tempo</span></span></div>
+                <div class="dayrows">
+                  <div class="drow mob"><div class="dk">Antes<span class="dur">12 min</span></div><div class="dv">Trote suave 5&#8211;8 min (entra progresivo) &#183; <button class="exlink" data-ex="swings" type="button">Leg swings</button> &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> &#183; <button class="exlink" data-ex="monster" type="button">Monster walk</button> &#183; <button class="exlink" data-ex="askip" type="button">A-skip</button> + <button class="exlink" data-ex="rodillas-altas" type="button">Rodillas altas</button> &#183; 2 <button class="exlink" data-ex="zancadas" type="button">Zancadas</button>.</div></div>
+                  <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">8 min</span></div><div class="dv">Trote regresivo &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> &#183; pantorrilla pared &#183; isquios suave.</div></div>
+                </div>
+              </div>
+
+              <div class="sessep">6 h o m&#225;s de separaci&#243;n</div>
+
+              <div class="sesblock sb-str">
+                <div class="seshead"><span class="sestag">Bloque B</span><span class="sesname">Sesi&#243;n de fuerza <span class="sesfoco">&#183; Pierna</span></span></div>
+                <div class="dayrows">
+                  <div class="drow mob"><div class="dk">Antes<span class="dur">8 min</span></div><div class="dv">Igual que el martes &#8212; <button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button> &#183; <button class="exlink" data-ex="sentadilla-profunda" type="button">Sentadilla profunda</button> &#183; <button class="exlink" data-ex="aductores-rock" type="button">Mecedora de aductores</button> &#183; <button class="exlink" data-ex="monster" type="button">Monster walk</button> + <button class="exlink" data-ex="plancha-lateral" type="button">Plancha lateral</button> &#183; series de aproximaci&#243;n.</div></div>
+                  <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">5 min</span></div><div class="dv"><button class="exlink" data-ex="couch" type="button">Couch stretch</button> &#183; isquios &#183; pantorrillas, suave.</div></div>
+                </div>
+              </div>
+
             </div>
-            <p class="dayclave">El tempo del jueves pasado se cay&#243; a los 2k por hacer peso muerto m&#225;ximo + plio en la ma&#241;ana. Hoy se invierte el orden.</p>
+            <p class="dayclave">Mismo criterio que el martes: 6 h de separaci&#243;n y la calidad con piernas frescas. El tempo pide entrar progresivo; si la fuerza fue antes, baja la carga y olvida los m&#225;ximos.</p>
           </div>
         </article>
 
@@ -1111,7 +1172,7 @@
           </div>
           <div class="daybody">
             <div class="dayrows">
-              <div class="drow mob"><div class="dk">Antes<span class="dur">5 min</span></div><div class="dv">Movilidad de columna y hombro.</div></div>
+              <div class="drow mob"><div class="dk">Antes<span class="dur">5 min</span></div><div class="dv"><button class="exlink" data-ex="toracica-rot" type="button">Rotaci&#243;n tor&#225;cica</button> 8/lado &#183; <button class="exlink" data-ex="hombro-banda" type="button">Pasadas de hombro</button> 10 pasadas &#183; 2 min de cardio suave.</div></div>
               <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv">Tren superior + <b>prehab de canilla (dosis 2 de 2)</b>: <button class="exlink" data-ex="tibial-anterior" type="button">Tibial anterior</button> 2&#215;15 &#183; <button class="exlink" data-ex="pantorrilla-flex" type="button">Pantorrilla rodilla flexionada</button> 2&#215;12 lento &#183; <button class="exlink" data-ex="rdl" type="button">RDL a una pierna</button> 2&#215;8/pierna ligero &#183; <button class="exlink" data-ex="plancha-lateral" type="button">Plancha lateral</button> 2&#215;20s/lado.</div></div>
               <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">10 min</span></div><div class="dv"><b>Movilidad completa</b> &#8212; <button class="exlink" data-ex="noventa" type="button">90/90 de cadera</button> &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> &#183; <button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button>.</div></div>
             </div>
@@ -1184,9 +1245,9 @@
 
   <!-- ================= PESTA&#209;A 2: EJERCICIOS ================= -->
   <section class="panel hide" id="panel-ejercicios" role="tabpanel" aria-labelledby="tab-ejercicios" tabindex="-1">
-    <div class="snum">LOS 19 EJERCICIOS</div>
+    <div class="snum">LOS 23 EJERCICIOS</div>
     <h2>El cat&#225;logo, con secuencia y porqu&#233;</h2>
-    <p class="sintro">Cinco de movilidad, seis de prevenci&#243;n y ocho drills de carrera. Toca cualquiera para abrir su ficha: secuencia del movimiento, c&#243;mo se hace, claves, errores y por qu&#233; funciona.</p>
+    <p class="sintro">Nueve de movilidad, seis de prevenci&#243;n y ocho drills de carrera. Toca cualquiera para abrir su ficha: secuencia del movimiento, c&#243;mo se hace, claves, errores y por qu&#233; funciona.</p>
 
     <div class="cadbox">
       <div class="eyebrow cadeye">Antes de empezar</div>
@@ -1254,7 +1315,7 @@
 
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
-    <div class="mono">PLAN &#183; RUNNING &#183; V20 &#183; JUL 2026</div>
+    <div class="mono">PLAN &#183; RUNNING &#183; V21 &#183; JUL 2026</div>
   </footer>
 
 </div>
@@ -1276,7 +1337,7 @@
   var BASE = 'stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"';
   function svg(inner){ return '<svg viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" '+BASE+'>'+inner+'</svg>'; }
 
-  // ---------- exercise data (19) ----------
+  // ---------- exercise data (23) ----------
   var EX = [
     { id:"rodilla-pared", g:"mob", name:"Rodilla a la pared", dose:"2x10/lado &#183; diario", when:"Diario", tema:"tema4",
       frames:[
@@ -1330,6 +1391,50 @@
       keys:["Din&#225;mico y relajado, no fuerces el tope.","Tronco estable."],
       errors:["Arquear la espalda para ganar rango.","Hacerlo como estiramiento est&#225;tico (esto es din&#225;mico)."],
       why:"Movilidad din&#225;mica que prepara el rango de la zancada y activa estabilizadores SIN apagar la rigidez el&#225;stica que necesitas para correr (por eso no va est&#225;tico antes de correr)." },
+
+    { id:"sentadilla-profunda", g:"mob", nuevo:true, name:"Sentadilla profunda sostenida", dose:"60&#8211;90 s &#183; pre-fuerza", when:"Pre-fuerza de pierna", tema:"tema4",
+      frames:[
+        {c:"1. Baja a cuclillas: la cadera por debajo de la rodilla", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><path d="M52 84 L78 84"/><path d="M58 84 L78 62"/><path d="M78 62 L50 72"/><path d="M50 72 L58 41"/><circle cx="60" cy="35" r="6"/><path d="M57 45 L64 60"/><path d="M64 60 L74 58"/><circle cx="54" cy="84" r="2.5" fill="var(--ind)" stroke="none"/><path d="M24 84 L44 84" stroke="var(--ind)" stroke-dasharray="3 3"/>'},
+        {c:"2. Frontal: los codos empujan las rodillas hacia fuera", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="60" cy="16" r="6"/><path d="M60 22 L60 48"/><path d="M60 48 L38 62 L44 84"/><path d="M60 48 L82 62 L76 84"/><path d="M60 28 L47 56"/><path d="M60 28 L73 56"/><path d="M32 62 L22 62" stroke="var(--ind)" stroke-dasharray="3 3"/><path d="M27 58 L21 62 L27 66" stroke="var(--ind)"/><path d="M88 62 L98 62" stroke="var(--ind)" stroke-dasharray="3 3"/><path d="M93 58 L99 62 L93 66" stroke="var(--ind)"/>'},
+        {c:"3. Si el tal&#243;n se levanta, ap&#243;yalo sobre un disco", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><path d="M44 84 L44 76 L62 76" stroke="var(--ind)"/><path d="M48 76 L76 84"/><path d="M55 78 L78 58"/><path d="M78 58 L50 68"/><path d="M50 68 L58 37"/><circle cx="60" cy="31" r="6"/><path d="M57 41 L64 56"/><path d="M64 56 L74 54"/>'}
+      ],
+      steps:["Ponte de pie con los pies al ancho de los hombros y las puntas ligeramente hacia fuera.","Baja a cuclillas lo m&#225;s profundo que puedas, con los talones pegados al suelo.","Mete los codos por dentro de las rodillas y emp&#250;jalas suavemente hacia fuera.","Sost&#233;n 60&#8211;90 s respirando dentro de la posici&#243;n, mec&#233;ndote un poco de lado a lado.","Si los talones se te levantan, ap&#243;yalos sobre un disco o un libro y baja esa altura con las semanas."],
+      keys:["Talones pegados al suelo.","Pecho arriba, no te derrumbes.","Las rodillas siguen la l&#237;nea de los pies.","Respira dentro de la posici&#243;n."],
+      errors:["Rebotar con fuerza en el fondo.","Espalda totalmente redondeada bajo carga.","Forzar hasta el dolor de rodilla."],
+      why:"Es el gesto de la sentadilla llevado a rango completo pero sin carga: gana profundidad real de tobillo y cadera, que es justo lo que hoy te limita para bajar m&#225;s en el gym." },
+
+    { id:"aductores-rock", g:"mob", nuevo:true, name:"Mecedora de aductores", dose:"10 mecidas &#183; pre-fuerza", when:"Pre-fuerza de pierna", tema:"tema4",
+      frames:[
+        {c:"1. Cuadrupedia, rodillas separadas y tibias en l&#237;nea", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><path d="M86 84 L86 54"/><path d="M86 54 L46 58"/><path d="M46 58 L48 84"/><path d="M48 84 L32 84"/><path d="M86 54 L91 50"/><circle cx="95" cy="47" r="6"/>'},
+        {c:"2. M&#233;cete atr&#225;s: la cadera va hacia los talones", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><path d="M94 84 L78 56"/><path d="M78 56 L42 64"/><path d="M42 64 L40 84"/><path d="M40 84 L24 84"/><path d="M78 56 L83 52"/><circle cx="87" cy="49" r="6"/><path d="M64 38 L38 44" stroke="var(--ind)" stroke-dasharray="3 4"/><path d="M46 38 L36 44 L46 49" stroke="var(--ind)"/>'},
+        {c:"3. Desde arriba: manos adelante, rodillas bien abiertas", s:'<circle cx="60" cy="24" r="8"/><path d="M60 32 L60 56"/><path d="M60 40 L26 28"/><path d="M60 40 L94 28"/><path d="M60 56 L26 70"/><path d="M60 56 L94 70"/><path d="M24 80 L96 80" stroke="var(--ind)" stroke-dasharray="3 3"/><path d="M30 76 L24 80 L30 84" stroke="var(--ind)"/><path d="M90 76 L96 80 L90 84" stroke="var(--ind)"/>'}
+      ],
+      steps:["Ponte en cuadrupedia: manos bajo los hombros y rodillas bajo las caderas.","Separa las rodillas todo lo que puedas, con las tibias en l&#237;nea con los muslos.","M&#233;cete hacia atr&#225;s llevando la cadera hacia los talones, despacio.","Vuelve al inicio sin perder la espalda neutra.","Repite 10 mecidas."],
+      keys:["Espalda neutra: la lumbar no se redondea.","Movimiento lento, sin tirones.","Llega solo hasta donde la espalda aguante recta."],
+      errors:["Abrir tanto que la lumbar colapse.","Hacerlo a tirones."],
+      why:"Abre aductores y cadera, que es lo que permite una sentadilla m&#225;s ancha y m&#225;s profunda sin que la pelvis se meta hacia dentro al final del recorrido." },
+
+    { id:"toracica-rot", g:"mob", nuevo:true, name:"Rotaci&#243;n tor&#225;cica (open book)", dose:"8/lado &#183; d&#237;as de tren superior", when:"Tren superior o pre-fuerza", tema:"tema6",
+      frames:[
+        {c:"1. Vista superior: de lado, rodillas a 90&#186; y brazos juntos al frente", s:'<circle cx="60" cy="20" r="6"/><path d="M60 26 L60 62"/><path d="M60 62 L38 74"/><path d="M38 74 L46 86"/><path d="M60 34 L96 30"/><path d="M60 34 L96 38"/>'},
+        {c:"2. Abre el brazo de arriba siguiendo la mirada", s:'<circle cx="60" cy="20" r="6"/><path d="M60 26 L60 62"/><path d="M60 62 L38 74"/><path d="M38 74 L46 86"/><path d="M60 34 L96 38"/><path d="M60 34 L24 30" stroke="var(--ind)"/><path d="M96 30 A38 22 0 0 0 24 30" stroke="var(--ind)" stroke-dasharray="3 4"/><path d="M31 24 L23 30 L32 35" stroke="var(--ind)"/><circle cx="38" cy="74" r="2.5" fill="var(--ind)" stroke="none"/>'},
+        {c:"3. Las rodillas nunca se despegan del suelo", s:'<circle cx="60" cy="20" r="6"/><path d="M60 26 L60 62"/><path d="M60 62 L38 74"/><path d="M38 74 L46 86"/><path d="M60 34 L96 38"/><path d="M60 34 L24 30"/><path d="M38 54 L38 66" stroke="var(--ind)" stroke-dasharray="3 3"/><path d="M33 60 L38 68 L43 60" stroke="var(--ind)"/><circle cx="38" cy="74" r="3" fill="var(--ind)" stroke="none"/>'}
+      ],
+      steps:["T&#250;mbate de lado con las rodillas dobladas a 90&#186;, una sobre la otra.","Estira los dos brazos juntos al frente, a la altura de los hombros.","Abre el brazo de arriba en arco hasta el suelo del otro lado, siguiendo la mano con la mirada.","Exhala al abrir y vuelve despacio.","Haz 8 por lado."],
+      keys:["Las rodillas pegadas al suelo todo el tiempo.","El giro sale del torso, no de la cadera.","Exhala al abrir para ganar rango."],
+      errors:["Dejar que las rodillas se despeguen (entonces gira la cadera, no la espalda alta).","Forzar con el brazo en vez de rotar el torso."],
+      why:"Una espalda alta r&#237;gida hace que el pecho se caiga en la sentadilla y limita el press por encima de la cabeza. Esto la desbloquea." },
+
+    { id:"hombro-banda", g:"mob", nuevo:true, name:"Pasadas de hombro con banda", dose:"10 pasadas &#183; d&#237;as de tren superior", when:"Tren superior", tema:"tema6",
+      frames:[
+        {c:"1. De pie, agarre MUY ancho al frente", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="60" cy="16" r="6"/><path d="M60 22 L60 52"/><path d="M60 52 L52 84"/><path d="M60 52 L68 84"/><path d="M60 28 L30 44"/><path d="M60 28 L90 44"/><path d="M30 44 Q60 54 90 44" stroke="var(--ind)" stroke-width="3.4"/>'},
+        {c:"2. Sube y pasa por encima de la cabeza", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="60" cy="24" r="6"/><path d="M60 30 L60 54"/><path d="M60 54 L52 84"/><path d="M60 54 L68 84"/><path d="M60 34 L28 16"/><path d="M60 34 L92 16"/><path d="M28 16 Q60 8 92 16" stroke="var(--ind)" stroke-width="3.4"/><path d="M100 40 A26 26 0 0 0 96 16" stroke="var(--ind)" stroke-dasharray="3 4"/><path d="M90 20 L96 14 L99 22" stroke="var(--ind)"/>'},
+        {c:"3. Lateral: termina detr&#225;s, brazos rectos y costillas abajo", s:'<line x1="14" y1="84" x2="106" y2="84" stroke="var(--line2)" stroke-width="2"/><circle cx="64" cy="18" r="6"/><path d="M63 24 L60 54"/><path d="M60 54 L54 84"/><path d="M60 54 L66 84"/><path d="M62 30 L36 24"/><path d="M36 15 L36 33" stroke="var(--ind)" stroke-width="3.4"/><path d="M76 34 L76 46" stroke="var(--ind)" stroke-dasharray="3 3"/><path d="M71 40 L76 48 L81 40" stroke="var(--ind)"/>'}
+      ],
+      steps:["Agarra una banda el&#225;stica (o un palo) MUY ancho, con los brazos estirados al frente.","Sube los brazos rectos y pasa la banda por encima de la cabeza hasta atr&#225;s.","Vuelve al frente por el mismo camino.","Haz 10 pasadas.","Con las semanas, cierra un poco el agarre."],
+      keys:["Empieza muy ancho y cierra con las semanas, no antes.","Brazos rectos en todo el recorrido.","Costillas abajo: sin arquear la lumbar."],
+      errors:["Agarre demasiado estrecho al principio.","Doblar los codos para llegar.","Compensar sacando las costillas."],
+      why:"Prepara el hombro para empujar por encima de la cabeza y te ayuda a sostener la barra en la espalda sin que el pecho se venga abajo." },
 
     { id:"pantorrilla-recta", g:"str", name:"Elevaci&#243;n de talones exc&#233;ntrica (pierna recta)", dose:"3x12 lento (3s) &#183; 2&#215;/sem", when:"2&#215; por semana", tema:"tema2",
       frames:[
@@ -1492,6 +1597,10 @@
     "couch":"https://www.youtube.com/watch?v=Fg-lwNBzVV8",
     "wgs":"https://www.youtube.com/watch?v=-CiWQ2IvY34",
     "swings":"https://www.youtube.com/watch?v=naW8u72lOzI",
+    "sentadilla-profunda":"https://www.youtube.com/watch?v=bjV07PRoGGo",
+    "aductores-rock":"https://www.youtube.com/watch?v=zfO4HhPUxDw",
+    "toracica-rot":"https://www.youtube.com/watch?v=peeW19ofFUg",
+    "hombro-banda":"https://www.youtube.com/watch?v=riVxa9By-pM",
     "pantorrilla-recta":"https://www.youtube.com/watch?v=hoheL7eei40",
     "pantorrilla-flex":"https://www.youtube.com/watch?v=C3tLEvqrW4E",
     "monster":"https://www.youtube.com/watch?v=h8LJktRKl5U",
