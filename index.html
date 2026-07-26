@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#131618" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-<title>Plan de running v16 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
+<title>Plan de running v17 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
 <style>
   :root{
     color-scheme: light dark;
@@ -938,7 +938,7 @@
   <section class="panel hide" id="panel-biblioteca" role="tabpanel" aria-labelledby="tab-biblioteca" tabindex="-1">
     <div class="snum">BIBLIOTECA</div>
     <h2>Ruta de aprendizaje</h2>
-    <p class="sintro">Un curso en <b>5 m&#243;dulos</b>: abre cada m&#243;dulo y sus temas a tu ritmo. 22 lecciones, de los fundamentos a la fuerza.</p>
+    <p class="sintro">Un curso en <b>8 m&#243;dulos</b>: abre cada m&#243;dulo y sus temas a tu ritmo. 31 lecciones, de los fundamentos a la biomec&#225;nica y el calzado.</p>
     <div id="ruta"></div>
   </section>
 
@@ -983,7 +983,7 @@
 
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
-    <div class="mono">PLAN &#183; RUNNING &#183; V16 &#183; JUL 2026</div>
+    <div class="mono">PLAN &#183; RUNNING &#183; V17 &#183; JUL 2026</div>
   </footer>
 
 </div>
@@ -1242,7 +1242,7 @@
 
   // ---------- library data (18 temas) ----------
   var TEMAS = [
-    { id:"tema1", kick:"Tema 01 &#183; Econom&#237;a", title:"La econom&#237;a de carrera: la palanca real",
+    { id:"tema1", video:"https://www.youtube.com/watch?v=DFO-7J_oXv0", kick:"Tema 01 &#183; Econom&#237;a", title:"La econom&#237;a de carrera: la palanca real",
       contexto:"Ya lo aplican &#8212; la fuerza de pierna del mar/jue ES esta palanca. El reto es que rinda sin acumular de mas (a Alejandro el jueves le paso factura correr tras fuerza maxima).",
       paras:[
         "Correr m&#225;s kil&#243;metros funciona&#8230; hasta que deja de hacerlo. Llega un punto en que sumar volumen ya casi no mejora tu marca y s&#237; acumula fatiga y riesgo. Lo que sigue moviendo la aguja es la <b>econom&#237;a de carrera</b>: cu&#225;nta energ&#237;a gastas para sostener una velocidad dada.",
@@ -1253,7 +1253,7 @@
       url:"https://pmc.ncbi.nlm.nih.gov/articles/PMC11052887/", host:"pmc.ncbi.nlm.nih.gov",
       rel:["rdl","pantorrilla-recta","plancha-lateral"] },
 
-    { id:"tema2", kick:"Tema 02 &#183; Tend&#243;n", title:"El tend&#243;n se entrena lento",
+    { id:"tema2", video:"https://www.youtube.com/watch?v=DnxahqgsAEw", kick:"Tema 02 &#183; Tend&#243;n", title:"El tend&#243;n se entrena lento",
       contexto:"Directo a la molestia de tibia de esta semana (ambos): el soleo y el Aquiles se blindan con excentricos lentos. Es el prehab de canilla que ya sumaron al plan.",
       paras:[
         "Los tendones no se entrenan como los m&#250;sculos. Responden sobre todo a la <b>magnitud</b> de la carga, no a la velocidad del movimiento: por eso el trabajo exc&#233;ntrico lento y pesado (el cl&#225;sico protocolo Alfredson) es el que los remodela y fortalece.",
@@ -1266,7 +1266,7 @@
       url2:"https://runningwritings.com/2014/11/building-plyometrics-program-for.html", host2:"runningwritings.com",
       rel:["pantorrilla-recta","pantorrilla-flex"] },
 
-    { id:"tema3", kick:"Tema 03 &#183; Gl&#250;teo medio", title:"Gl&#250;teo medio, valgo y las lesiones #1",
+    { id:"tema3", video:"https://www.youtube.com/watch?v=wJyJUUv_7DA", kick:"Tema 03 &#183; Gl&#250;teo medio", title:"Gl&#250;teo medio, valgo y las lesiones #1",
       contexto:"Valentina: si en los rodajes largos aparece la rodilla o la cintilla, el gluteo medio es la causa comun. Por eso el monster walk 2 veces por semana.",
       paras:[
         "El gl&#250;teo medio es el estabilizador lateral de la cadera. En cada apoyo evita que la rodilla colapse hacia dentro (<b>valgo</b>) y que la pelvis caiga hacia el lado que no apoya.",
@@ -1276,7 +1276,7 @@
       url:"https://strengthrunning.com/strength-training-for-runners/", host:"strengthrunning.com",
       rel:["monster","plancha-lateral","rdl"] },
 
-    { id:"tema4", kick:"Tema 04 &#183; Tobillo", title:"Dorsiflexi&#243;n de tobillo",
+    { id:"tema4", video:"https://www.youtube.com/watch?v=kI6WCHC2Bpw", kick:"Tema 04 &#183; Tobillo", title:"Dorsiflexi&#243;n de tobillo",
       contexto:"El test rodilla-a-pared que miden cada mes evalua justo esto; poca dorsiflexion tambien sobrecarga la tibia.",
       paras:[
         "La dorsiflexi&#243;n es cu&#225;nto puede acercarse la rodilla a la punta del pie con el tal&#243;n pegado al suelo. Correr necesita unos <b>20&#176;</b> para absorber el impacto y rodar sobre el pie.",
@@ -1286,7 +1286,7 @@
       url:"https://www.athletico.com/2023/04/14/is-your-ankle-mobility-holding-back-your-running/", host:"athletico.com",
       rel:["rodilla-pared"] },
 
-    { id:"tema5", kick:"Tema 05 &#183; Cadencia", title:"Cadencia: el ajuste t&#233;cnico m&#225;s simple",
+    { id:"tema5", video:"https://www.youtube.com/watch?v=eacl52qzr4E", kick:"Tema 05 &#183; Cadencia", title:"Cadencia: el ajuste t&#233;cnico m&#225;s simple",
       contexto:"Su objetivo de esta semana: +5% de cadencia en los rodajes faciles. Ataca la sobrezancada y baja la carga en la tibia que les molesto a ambos.",
       paras:[
         "La cadencia es el n&#250;mero de pasos por minuto. Subir la tuya actual un <b>5 a 10%</b> acorta la zancada, reduce la sobrezancada (pisar por delante del cuerpo) y baja alrededor de un <b>20% la carga sobre la rodilla</b> (Heiderscheit, 2011).",
@@ -1297,7 +1297,7 @@
       url:"https://runnersconnect.net/running-cadence-injury/", host:"runnersconnect.net",
       rel:["askip","talones"] },
 
-    { id:"tema6", kick:"Tema 06 &#183; Movilidad", title:"Movilidad: frecuencia &gt; duraci&#243;n, y activa",
+    { id:"tema6", video:"https://www.youtube.com/watch?v=TiG2I3UoDRw", kick:"Tema 06 &#183; Movilidad", title:"Movilidad: frecuencia &gt; duraci&#243;n, y activa",
       contexto:"Su capa diaria de movilidad (10 min) sale de aqui: mas vale poco todos los dias que mucho un solo dia.",
       paras:[
         "El rango de movimiento se adapta a lo que usas a menudo. Por eso <b>10 minutos diarios</b> de movilidad ganan a una sola sesi&#243;n larga a la semana: la frecuencia manda sobre la duraci&#243;n.",
@@ -1307,7 +1307,7 @@
       url:"https://www.mediamaratonbogota.com/blog/entrenamiento/movilidad-para-corredores", host:"mediamaratonbogota.com",
       rel:["noventa","couch","wgs","swings"] },
 
-    { id:"tema7", kick:"Tema 07 &#183; Pliometr&#237;a", title:"Pliometr&#237;a sin lesionarte",
+    { id:"tema7", video:"https://www.youtube.com/watch?v=a78RcOziYoI", kick:"Tema 07 &#183; Pliometr&#237;a", title:"Pliometr&#237;a sin lesionarte",
       contexto:"La hacen mar/jue junto a la fuerza. Ojo: fresca y de calidad &#8212; el jueves de Alejandro (RM peso muerto + plio y luego correr) fue el ejemplo de que NO conviene sumarlo todo.",
       paras:[
         "La pliometr&#237;a &#8212; saltos y rebotes &#8212; es lo que m&#225;s mejora la elasticidad y la econom&#237;a, pero tambi&#233;n la que m&#225;s se lesiona si se abusa. La regla es empezar bajo: <b>40 a 60 contactos</b> por sesi&#243;n.",
@@ -1317,7 +1317,7 @@
       url:"https://runningwritings.com/2014/11/building-plyometrics-program-for.html", host:"runningwritings.com",
       rel:["askip"] },
 
-    { id:"tema8", kick:"Tema 08 &#183; Polarizaci&#243;n", title:"D&#237;as duros duros, f&#225;ciles f&#225;ciles",
+    { id:"tema8", video:"https://www.youtube.com/watch?v=81iE6C1eefE", kick:"Tema 08 &#183; Polarizaci&#243;n", title:"D&#237;as duros duros, f&#225;ciles f&#225;ciles",
       contexto:"El diagnostico de su semana: el facil salio un pelin fuerte (Alejandro a FC 158 en un &#8216;facil&#8217;). Concentren lo duro en mar/jue y dejen el resto suave.",
       paras:[
         "Concentrar carrera, fuerza y pliometr&#237;a en los mismos d&#237;as (como ya hacen martes y jueves) es lo correcto: juntar el estr&#233;s deja <b>48 a 72 horas</b> limpias para adaptarse.",
@@ -1326,7 +1326,7 @@
       stat:{big:"48&#8211;72 h", cap:"para adaptar tras un d&#237;a duro"},
       rel:[] },
 
-    { id:"tcalentamiento", kick:"Tema 09 &#183; Calentamiento", title:"El calentamiento: din&#225;mico antes, est&#225;tico despu&#233;s",
+    { id:"tcalentamiento", video:"https://www.youtube.com/watch?v=3WUtJxLv-wI", kick:"Tema 09 &#183; Calentamiento", title:"El calentamiento: din&#225;mico antes, est&#225;tico despu&#233;s",
       contexto:"Sus rutinas pre/post de la pestana Semana salen de aqui. Su tibia &#8216;cede al calentar&#8217;: por eso calentar completo antes de las series es innegociable.",
       paras:[
         "Antes de correr o levantar, el calentamiento debe ser <b>din&#225;mico</b>: subir la temperatura, movilidad en movimiento, activaci&#243;n y un ensayo del patr&#243;n que vas a hacer. As&#237; el cuerpo llega despierto y con rango &#250;til, no fr&#237;o.",
@@ -1337,7 +1337,7 @@
       url:"https://www.mediamaratonbogota.com/blog/entrenamiento/movilidad-para-corredores", host:"mediamaratonbogota.com",
       rel:["swings","wgs","noventa","couch"] },
 
-    { id:"tdrills", kick:"Tema 10 &#183; Drills", title:"Los drills de carrera: reprogramar la zancada",
+    { id:"tdrills", video:"https://www.youtube.com/watch?v=y6hBI3DEe6Y", kick:"Tema 10 &#183; Drills", title:"Los drills de carrera: reprogramar la zancada",
       contexto:"Son los drills de la seccion de cadencia (A-skip, etc.). Refuerzan su zancada sin que tengan que &#8216;pensar la tecnica&#8217; corriendo.",
       paras:[
         "Los drills a&#237;slan y exageran piezas de la zancada &#8212; rodilla alta, contacto bajo el cuerpo, el zarpazo del pie hacia atr&#225;s, cadencia alta &#8212; para que el sistema nervioso las automatice sin que tengas que &#8216;pensar la t&#233;cnica&#8217; al correr.",
@@ -1347,7 +1347,7 @@
       url:"https://www.youtube.com/@JamesDunne", host:"youtube.com",
       rel:["askip","bskip","rodillas-altas","piernas-rectas","ankling","carioca"] },
 
-    { id:"tzancadas", kick:"Tema 11 &#183; Zancadas", title:"Zancadas (strides): el puente a la velocidad",
+    { id:"tzancadas", video:"https://www.youtube.com/watch?v=1i2ZPpXtuOk", kick:"Tema 11 &#183; Zancadas", title:"Zancadas (strides): el puente a la velocidad",
       contexto:"Lo que aun no meten y mas les falta para bajar tiempos: 4-6 zancadas al final de un rodaje facil. Buen candidato para arrancar ya.",
       paras:[
         "Las zancadas son aceleraciones cortas de <b>60 a 100 m</b> hasta ~90% relajado, con recuperaci&#243;n completa. Reclutan fibras r&#225;pidas, mejoran la econom&#237;a y la mec&#225;nica a ritmo, y despiertan la zancada &#8212; con muy poca fatiga, porque son cortas y no m&#225;ximas.",
@@ -1357,7 +1357,7 @@
       url:"https://strengthrunning.com/strength-training-for-runners/", host:"strengthrunning.com",
       rel:["zancadas","bskip"] },
 
-    { id:"t-vo2max", nuevo:true, kick:"Tema 12 &#183; VO2 Max", title:"VO2 Max: el techo de tu motor",
+    { id:"t-vo2max", nuevo:true, video:"https://www.youtube.com/watch?v=6LbpOAuf2PI", kick:"Tema 12 &#183; VO2 Max", title:"VO2 Max: el techo de tu motor",
       contexto:"El VO2 Max de Valentina es 43 (Garmin); el de Alejandro 55. No es fijo: sube con lo que viene (intervalos). Es su techo aerobico a mejorar.",
       url:"https://marathonhandbook.com/how-to-increase-vo2-max/", host:"marathonhandbook.com",
       paras:[
@@ -1368,7 +1368,7 @@
       stat:{big:"mL/kg/min", cap:"ox&#237;geno m&#225;ximo por minuto y kilo &#8212; se entrena, no es fijo"},
       rel:[] },
 
-    { id:"t-intervalos-vo2", nuevo:true, kick:"Tema 13 &#183; Intervalos", title:"Intervalos a VO2 Max: el est&#237;mulo directo",
+    { id:"t-intervalos-vo2", nuevo:true, video:"https://www.youtube.com/watch?v=3r0Kd3G4kek", kick:"Tema 13 &#183; Intervalos", title:"Intervalos a VO2 Max: el est&#237;mulo directo",
       contexto:"CLAVE PARA VALENTINA: en tus series tu FC se quedo en zona 3 (~162), no llegaste a la zona 4 de umbral (166-175). El estimulo de VO2 Max vive en ESA zona &#8212; por eso costaba &#8216;sentir&#8217; el trabajo. Causas probables: pacing irregular y fatiga acumulada (tu HRV venia bajo). Solucion: reps mas parejas y frescas.",
       url:"https://runningmagazine.ca/sections/training/the-norwegian-secret-to-boosting-vo2-max/", host:"runningmagazine.ca",
       paras:[
@@ -1379,7 +1379,7 @@
       stat:{big:"4&#215;4 min", cap:"fuerte al 90-95% de FC m&#225;x, 1-2&#215; por semana"},
       rel:[] },
 
-    { id:"t-base-z2", nuevo:true, kick:"Tema 14 &#183; Base", title:"La base en zona 2 sostiene el techo",
+    { id:"t-base-z2", nuevo:true, video:"https://www.youtube.com/watch?v=C-B-XBt3eiY", kick:"Tema 14 &#183; Base", title:"La base en zona 2 sostiene el techo",
       contexto:"El error a corregir: corrieron el facil en zona 3. Esta base en zona 2 (FC baja) es justo la capa que les falta reforzar.",
       url:"https://marathonhandbook.com/polarized-training/", host:"marathonhandbook.com",
       paras:[
@@ -1390,7 +1390,7 @@
       stat:{big:"80/20", cap:"~80% del tiempo f&#225;cil, ~20% duro (polarizado)"},
       rel:[] },
 
-    { id:"t-respiracion", nuevo:true, kick:"Tema 15 &#183; Respiraci&#243;n", title:"Respiraci&#243;n para correr (en carrera, antes y despu&#233;s)",
+    { id:"t-respiracion", nuevo:true, video:"https://www.youtube.com/watch?v=V-2szNtHea4", kick:"Tema 15 &#183; Respiraci&#243;n", title:"Respiraci&#243;n para correr (en carrera, antes y despu&#233;s)",
       contexto:"Util para el flato y para regular el esfuerzo en las series &#8212; y la exhalacion larga post-entreno ayuda a que suba el HRV de Valentina.",
       url:"https://runnersconnect.net/breathing-patterns/", host:"runnersconnect.net",
       paras:[
@@ -1401,7 +1401,7 @@
       stat:{big:"Exhala largo", cap:"exhalaci&#243;n larga = recuperaci&#243;n; baja pulsaciones y sube el HRV"},
       rel:[] },
 
-    { id:"t-nutricion-aerobica", nuevo:true, kick:"Tema 16 &#183; Nutrici&#243;n", title:"Nutrici&#243;n para el motor aer&#243;bico",
+    { id:"t-nutricion-aerobica", nuevo:true, video:"https://www.youtube.com/watch?v=vjSik-5R0yU", kick:"Tema 16 &#183; Nutrici&#243;n", title:"Nutrici&#243;n para el motor aer&#243;bico",
       contexto:"Directo al &#8216;hambre al minuto 30&#8217; de Valentina el sabado: lleven gel/carbos en rodajes de mas de 60-75 min. Y ojo con la ferritina (deficit frecuente en corredoras).",
       url:"https://runnersconnect.net/iron-deficiency-in-runners/", host:"runnersconnect.net",
       paras:[
@@ -1412,7 +1412,7 @@
       stat:{big:"Ferritina", cap:"revisa el hierro &#8212; clave del transporte de ox&#237;geno"},
       rel:[] },
 
-    { id:"t-rer", nuevo:true, kick:"Tema 17 &#183; Fisiolog&#237;a", title:"Cociente respiratorio (RER): qu&#233; combustible quemas",
+    { id:"t-rer", nuevo:true, video:"https://www.youtube.com/watch?v=gz9xUuMm3o4", kick:"Tema 17 &#183; Fisiolog&#237;a", title:"Cociente respiratorio (RER): qu&#233; combustible quemas",
       contexto:"Por que el volumen facil en zona 2 les ensena a quemar grasa y aguantar mas antes de &#8216;pegarse&#8217; en los rodajes largos.",
       url:"https://www.topendsports.com/testing/respiratory-exchange-ratio.htm", host:"topendsports.com",
       paras:[
@@ -1423,7 +1423,7 @@
       stat:{big:"0.70 &#183; 1.0", cap:"RER: 0.70 = grasa &#183; 1.0 = carbohidratos"},
       rel:["t-base-z2"] },
 
-    { id:"t-elite", nuevo:true, kick:"Tema 18 &#183; Elite", title:"C&#243;mo entrenan los elite su VO2 Max",
+    { id:"t-elite", nuevo:true, video:"https://www.youtube.com/watch?v=epje184Z7SI", kick:"Tema 18 &#183; Elite", title:"C&#243;mo entrenan los elite su VO2 Max",
       contexto:"La leccion de su semana en una frase: los mejores del mundo NO corren todo al maximo. A ustedes les sobro intensidad y les falto facil-facil.",
       url:"https://www.outsideonline.com/health/training-performance/norwegian-method-jakob-ingebrigtsen/", host:"outsideonline.com",
       paras:[
@@ -1473,13 +1473,113 @@
     { id:"m5-interferencia", nuevo:true, kick:"M&#243;dulo 5 &#183; Concurrencia", title:"El efecto de interferencia (fuerza + carrera)",
       contexto:"Directo a Alejandro: hace fuerza casi a diario + carreras. Ordenar &#8212; fuerza pesada lejos de las series, o al menos fresco &#8212; le sube el rendimiento. Para recreacionales el efecto es leve, pero el orden ayuda.",
       url:"https://www.strongerbyscience.com/research-spotlight-interference-effect/", host:"strongerbyscience.com",
+      video:"https://www.youtube.com/watch?v=T1k-8QuAz9Q",
       podcast:{ url:"https://strengthrunning.com/podcast/", label:"The Strength Running Podcast" },
       paras:[
         "Hacer fuerza y resistencia juntas puede restar un poco a las ganancias de FUERZA: tu cuerpo recibe se&#241;ales que compiten. La buena noticia: a vol&#250;menes moderados y para corredores recreacionales, el efecto es menor.",
         "C&#243;mo minimizarlo: separa las sesiones (idealmente 6 horas o en d&#237;as distintos), haz la fuerza ANTES de correr si van el mismo d&#237;a, y no exageres el volumen. La resistencia que menos interfiere es correr.",
         "En resumen: se combinan perfectamente con un poco de orden."
       ],
-      rel:["rdl"] }
+      rel:["rdl"] },
+
+    { id:"m6-sueno", nuevo:true, video:"https://www.youtube.com/watch?v=o3f-XJXm0I8", kick:"M&#243;dulo 6 &#183; Recuperaci&#243;n", title:"El sue&#241;o: donde ocurre la adaptaci&#243;n",
+      contexto:"Alejandro mide su recuperaci&#243;n con WHOOP y Valentina con Garmin: cuando el sue&#241;o cae, la recovery/HRV lo reflejan al d&#237;a siguiente. Si durmieron mal, ese es d&#237;a de rodaje suave, no de calidad.",
+      url:"https://www.sleepfoundation.org/physical-activity/athletic-performance-and-sleep", host:"sleepfoundation.org",
+      paras:[
+        "El entrenamiento solo es el est&#237;mulo; la mejora se construye mientras duermes. En el sue&#241;o profundo liberas hormona de crecimiento, reparas m&#250;sculo y consolidas los patrones motores que practicaste en los drills.",
+        "Dormir poco baja tu rendimiento, sube la percepci&#243;n de esfuerzo y aumenta el riesgo de lesi&#243;n. Apunta a 7-9 horas, con horario regular; la consistencia importa tanto como la cantidad.",
+        "Reglas simples: cuarto oscuro y fresco, cortar pantallas antes de dormir, y cuidar la cafe&#237;na despu&#233;s del mediod&#237;a."
+      ],
+      stat:"7-9 h &#183; horario regular",
+      rel:["couch"] },
+
+    { id:"m6-readiness", nuevo:true, video:"https://www.youtube.com/watch?v=kVV6ZZifGA0", kick:"M&#243;dulo 6 &#183; Recuperaci&#243;n", title:"Leer tu readiness: HRV y FC en reposo",
+      contexto:"Directo a ustedes: en el 1er informe la HRV de Valentina cay&#243; 82&#8594;58&#8594;57&#8594;48 y su FC reposo subi&#243; 46&#8594;52 con 4 fuerzas seguidas &#8212; el reloj le mostraba z2 pero el cuerpo lo viv&#237;a m&#225;s alto. Ah&#237; toca restar un punto de carga, no forzar.",
+      url:"https://www.trainingpeaks.com/blog/using-heart-rate-variability-to-schedule-the-intensity-of-your-training/", host:"trainingpeaks.com",
+      paras:[
+        "La variabilidad de la frecuencia card&#237;aca (HRV) mide qu&#233; tan recuperado est&#225; tu sistema nervioso: HRV alta = listo para exigir; HRV baja varios d&#237;as = tu cuerpo pide bajar la carga.",
+        "La frecuencia card&#237;aca en reposo (FC reposo) complementa: si sube de forma sostenida respecto a tu l&#237;nea base, sueles estar acumulando fatiga, estr&#233;s o el inicio de algo.",
+        "No reacciones a un solo d&#237;a: mira la tendencia. Un valor aislado bajo no cancela el entreno; una tendencia s&#237; manda ajustar."
+      ],
+      stat:"mira la tendencia, no el d&#237;a",
+      rel:[] },
+
+    { id:"m6-deload", nuevo:true, video:"https://www.youtube.com/watch?v=M6jeubR6e_k", kick:"M&#243;dulo 6 &#183; Recuperaci&#243;n", title:"Semanas de descarga (deload)",
+      contexto:"Alejandro hace fuerza casi a diario y ambos corren mar/jue/dom: sin semanas de descarga esa carga se apila. Programen una descarga cada mes &#8212; encaja con el l&#237;mite de +10%/sem que ya cuidamos.",
+      url:"https://builtwithscience.com/fitness-tips/deload-week/", host:"builtwithscience.com",
+      paras:[
+        "El cuerpo mejora por supercompensaci&#243;n: cargas, te fatigas, descansas y vuelves m&#225;s fuerte. Sin la parte de descanso, solo acumulas fatiga.",
+        "Cada 3-4 semanas de progresi&#243;n, mete una semana de descarga: baja el volumen ~30-40% manteniendo algo de intensidad corta. No pierdes forma; la consolidas.",
+        "Los d&#237;as de descanso completos tambi&#233;n cuentan como entrenamiento invisible. No subas el volumen semanal m&#225;s de ~10%."
+      ],
+      stat:"descarga cada 3-4 sem &#183; -30/40% vol",
+      rel:[] },
+
+    { id:"m7-taper", nuevo:true, video:"https://www.youtube.com/watch?v=hoVdvLw-f4k", kick:"M&#243;dulo 7 &#183; Carrera", title:"El tapering: llegar fresco",
+      contexto:"Para cuando apunten a una meta (10k/media): la semana previa se recorta, no se aprieta. Las zancadas cortas que ya practican son ideales para mantener chispa sin fatiga.",
+      url:"https://runnersworldonline.com.au/everything-need-know-marathon-taper/", host:"runnersworldonline.com.au",
+      paras:[
+        "En la 1-2 semanas antes de una carrera importante, reduce el VOLUMEN (baja el kilometraje ~40-60%) pero mant&#233;n algo de INTENSIDAD corta para no sentirte lento. As&#237; llegas descansado sin oxidarte.",
+        "El error com&#250;n es entrenar de m&#225;s en los &#250;ltimos d&#237;as por nervios: no ganas forma en una semana, pero s&#237; puedes llegar cansado.",
+        "Sensaci&#243;n normal en el taper: piernas raras, algo de inquietud. Es parte del proceso."
+      ],
+      stat:"1-2 sem &#183; -40/60% vol, mant&#233;n intensidad",
+      rel:["zancadas"] },
+
+    { id:"m7-pacing", nuevo:true, video:"https://www.youtube.com/watch?v=EZoP3YDa8ds", kick:"M&#243;dulo 7 &#183; Carrera", title:"Pacing: c&#243;mo repartir el esfuerzo",
+      contexto:"Un patr&#243;n que ya se les vio: series con primeros repeticiones muy r&#225;pidas y luego irregulares (600m 5:05-8:25 en Valentina). El mismo control de salida aplica a la carrera: arrancar frenado paga al final.",
+      url:"https://runnersconnect.net/marathon-pacing-training/", host:"runnersconnect.net",
+      paras:[
+        "La forma m&#225;s r&#225;pida de arruinar una carrera es salir demasiado r&#225;pido. Lo &#243;ptimo es un ritmo parejo o un negative split: la segunda mitad igual o m&#225;s r&#225;pida que la primera.",
+        "Empieza conservador los primeros minutos aunque te sientas fresco; el adrenalina enga&#241;a. Ese &#8216;banco&#8217; de energ&#237;a lo cobras al final.",
+        "Practica el ritmo objetivo en los entrenos de tempo para que el cuerpo lo reconozca el d&#237;a de la carrera."
+      ],
+      stat:"parejo o negative split",
+      rel:[] },
+
+    { id:"m7-nutricion-carrera", nuevo:true, video:"https://www.youtube.com/watch?v=w6a2uexa7Mo", kick:"M&#243;dulo 7 &#183; Carrera", title:"Nutrici&#243;n de carrera: carbos y geles",
+      contexto:"Directo a Valentina: en el rodaje de 11.4k sinti&#243; hambre al minuto 30 y no llevaba geles. Esta es la lecci&#243;n que lo resuelve &#8212; geles desde temprano en los rodajes largos, probados antes.",
+      url:"https://www.runnersneed.com/expert-advice/nutrition-and-hydration/energy-gels.html", host:"runnersneed.com",
+      paras:[
+        "Para esfuerzos largos, el combustible manda. En los d&#237;as previos sube un poco los carbohidratos (carga suave) para llenar el dep&#243;sito de gluc&#243;geno.",
+        "En carreras/rodajes de m&#225;s de 60-75 minutos, toma carbohidrato durante: ~30-60 g por hora (geles, bebida deportiva), empezando temprano, no cuando ya te sientes vac&#237;o.",
+        "Nada nuevo el d&#237;a de la carrera: prueba tus geles y desayuno en los entrenos largos."
+      ],
+      stat:"30-60 g carbo/h en &gt;60-75 min",
+      rel:[] },
+
+    { id:"m8-pisada", nuevo:true, video:"https://www.youtube.com/watch?v=q1Osn6xugBg", kick:"M&#243;dulo 8 &#183; Biomec&#225;nica", title:"Tu pisada: tal&#243;n, medio o antepi&#233;",
+      contexto:"Enlaza con la cadencia que ya trabajan (+5%). Para ambos, subir un poco la cadencia corrige el aterrizaje adelantado sin tener que &#8216;pensar&#8217; en c&#243;mo cae el pie.",
+      url:"https://runtothefinish.com/running-foot-strike/", host:"runtothefinish.com",
+      paras:[
+        "No existe una &#8216;pisada correcta&#8217; universal. Lo que m&#225;s se asocia a lesiones no es d&#243;nde aterriza el pie, sino aterrizar con la pierna muy extendida y por delante del cuerpo (overstriding).",
+        "El arreglo casi siempre es la cadencia: dar pasos m&#225;s cortos y frecuentes hace que el pie caiga bajo tu centro de masa, sin obsesionarte con tal&#243;n vs antepi&#233;.",
+        "Cambiar el tipo de pisada a la fuerza suele mover el estr&#233;s de un sitio a otro; mejor: cadencia, fuerza y t&#233;cnica."
+      ],
+      stat:"el problema es overstriding, no el tal&#243;n",
+      rel:["rodillas-altas","askip"] },
+
+    { id:"m8-drop", nuevo:true, video:"https://www.youtube.com/watch?v=Wx0g4EStekY", kick:"M&#243;dulo 8 &#183; Biomec&#225;nica", title:"El drop y la amortiguaci&#243;n del calzado",
+      contexto:"Ambos reportaron molestia en tibia/canilla y Aquiles al inicio. Si prueban un calzado de drop muy distinto, h&#225;ganlo gradual &#8212; encaja con la prehab de s&#243;leo y tibial que ya hacen.",
+      url:"https://www.runningwarehouse.com/learningcenter/gear_guides/footwear/heel-toe-drop.html", host:"runningwarehouse.com",
+      paras:[
+        "El &#8216;drop&#8217; es la diferencia de altura entre tal&#243;n y punta. Drop alto (8-12 mm) suele acompa&#241;ar a quien pisa de tal&#243;n; drop bajo (0-6 mm) carga m&#225;s el Aquiles y la pantorrilla.",
+        "No hay un drop &#8216;mejor&#8217;: hay el que tu cuerpo tolera. Cambios grandes y bruscos de drop son una causa t&#237;pica de molestias de Aquiles o canilla.",
+        "La amortiguaci&#243;n es preferencia y uso: m&#225;s zapato para rodajes largos, menos para ritmos r&#225;pidos. Comodidad primero."
+      ],
+      stat:"no cambies el drop de golpe",
+      rel:["pantorrilla-recta","tibial-anterior"] },
+
+    { id:"m8-rotacion", nuevo:true, video:"https://www.youtube.com/watch?v=6N1ffXUxU3M", kick:"M&#243;dulo 8 &#183; Biomec&#225;nica", title:"Rotar zapatillas y cu&#225;ndo cambiarlas",
+      contexto:"Corren varias veces por semana: llevar la cuenta de km por par y rotar entre rodaje y series les baja el riesgo de las molestias de canilla/Aquiles que ya aparecieron.",
+      url:"https://runtothefinish.com/why-you-must-rotate-running-shoes/", host:"runtothefinish.com",
+      paras:[
+        "Alternar 2 pares de zapatillas distintas reduce el riesgo de lesi&#243;n: var&#237;as el estr&#233;s sobre tejidos y das tiempo a que la espuma se recupere entre usos.",
+        "Ten idealmente un par para rodajes (m&#225;s amortiguado) y otro para calidad/series (m&#225;s ligero). Tu cuerpo agradece la variedad de est&#237;mulo.",
+        "Cambia las zapatillas cuando pierden respuesta &#8212; orientativo 500-800 km, o antes si notan m&#225;s impacto o vuelven molestias viejas."
+      ],
+      stat:"rota 2 pares &#183; cambia ~500-800 km",
+      rel:[] }
   ];
 
   // ---------- render exercises grid ----------
@@ -1499,7 +1599,7 @@
     exgrid.appendChild(b);
   });
 
-  // ---------- render library (ruta de curso: 4 m&#243;dulos) ----------
+  // ---------- render library (ruta de curso: 8 m&#243;dulos) ----------
   var TEMAP = {};
   TEMAS.forEach(function(t){ TEMAP[t.id] = t; });
 
@@ -1518,7 +1618,16 @@
       temas:["tema2","tema3","tema4","tema7","tcalentamiento"] },
     { n:5, title:"Fuerza y potencia para correr",
       desc:"Cargas pesadas y saltos: el motor de la velocidad, con orden.",
-      temas:["m5-porque","m5-lifts","m5-plio","m5-interferencia"] }
+      temas:["m5-porque","m5-lifts","m5-plio","m5-interferencia"] },
+    { n:6, title:"Recuperaci&#243;n y readiness",
+      desc:"El progreso no ocurre entrenando, sino recuperando: sue&#241;o, se&#241;ales del cuerpo y descarga.",
+      temas:["m6-sueno","m6-readiness","m6-deload"] },
+    { n:7, title:"De la pr&#225;ctica a la carrera",
+      desc:"Convertir el entrenamiento en un buen d&#237;a de carrera: llegar fresco, dosificar y comer bien.",
+      temas:["m7-taper","m7-pacing","m7-nutricion-carrera"] },
+    { n:8, title:"Biomec&#225;nica y calzado",
+      desc:"C&#243;mo pisas y qu&#233; te pones: menos mitos, m&#225;s criterio para elegir.",
+      temas:["m8-pisada","m8-drop","m8-rotacion"] }
   ];
 
   function temaBodyHtml(t){
@@ -1528,7 +1637,9 @@
       html += '<div class="lctx"><div class="lctx-lab">En su caso</div><div class="lctx-txt">'+t.contexto+'</div></div>';
     }
     if (t.stat){
-      html += '<div class="stat"><div class="big">'+t.stat.big+'</div><div class="cap">'+t.stat.cap+'</div></div>';
+      var _sb = (typeof t.stat === "string") ? t.stat : t.stat.big;
+      var _sc = (typeof t.stat === "string") ? "" : t.stat.cap;
+      html += '<div class="stat"><div class="big">'+_sb+'</div>'+(_sc ? '<div class="cap">'+_sc+'</div>' : '')+'</div>';
     }
     if (t.url || t.video || t.podcast){
       if (t.url){
@@ -1575,9 +1686,15 @@
   }
   function modCompleted(m){ var p = modProgress(m); return p.total > 0 && p.done === p.total; }
   function modUnlocked(m){
-    if (m.n <= 1) return true;
-    var prev = MODULOS[m.n - 2];
-    return prev ? modCompleted(prev) : true;
+    // Unico gate del curso: el M&#243;dulo 5. Todos los dem&#225;s siempre abiertos.
+    if (m.n !== 5) return true;
+    var need = [1,2,3,4], ok = true;
+    need.forEach(function(n){
+      var mm = null;
+      for (var i=0;i<MODULOS.length;i++){ if (MODULOS[i].n === n){ mm = MODULOS[i]; break; } }
+      if (mm && !modCompleted(mm)) ok = false;
+    });
+    return ok;
   }
 
   // ---- toast de desbloqueo ----
@@ -1641,7 +1758,7 @@
 
       var lockedVis = !unlocked && !r.el._bypass;
       r.el.classList.toggle("locked", lockedVis);
-      if (r.descEl){ r.descEl.innerHTML = lockedVis ? ('Completa el M&#243;dulo ' + (r.m.n - 1) + ' para desbloquear') : r.m.desc; }
+      if (r.descEl){ r.descEl.innerHTML = lockedVis ? 'Completa los M&#243;dulos 1 a 4 para desbloquear' : r.m.desc; }
       if (lockedVis && r.el.open){ r.el.open = false; }
     });
     var pctG = TEMAS.length ? Math.round(gDone / TEMAS.length * 100) : 0;
