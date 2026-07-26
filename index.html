@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#131618" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-<title>Plan de running v18 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
+<title>Plan de running v19 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
 <style>
   :root{
     color-scheme: light dark;
@@ -705,6 +705,65 @@
   .qrline.why{color:var(--ink2);font-style:italic}
   .qhome{display:block;margin:18px auto 0;max-width:640px}
 
+  /* ---- v19: la regla + tarjetas de d&#237;a ---- */
+  .reglabox{background:linear-gradient(180deg,var(--ambersoft),transparent);border:1px solid var(--line2);
+    border-radius:16px;padding:20px 22px;display:grid;gap:12px}
+  .rgitem{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px;
+    display:flex;gap:13px;align-items:flex-start}
+  .rgk{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    padding:5px 9px;border-radius:6px;flex:0 0 auto;line-height:1.25;text-align:center}
+  .rgk.k-run{background:var(--ambersoft);color:var(--amber)}
+  .rgk.k-up{background:var(--indsoft);color:var(--ind)}
+  .rgitem p{font-size:15px;color:var(--ink2);line-height:1.55;margin:0}
+  .rgitem p b{color:var(--ink);font-weight:600}
+
+  .daygrid{display:grid;gap:14px}
+  .day{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:18px 22px 18px 24px;box-shadow:var(--shadow);
+    display:grid;grid-template-columns:198px 1fr;gap:10px 26px;overflow:hidden}
+  .day::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--line2)}
+  .day.t-dura::before{background:var(--amber)}
+  .day.t-suave::before{background:var(--ind)}
+  .day.t-tec::before{background:var(--go)}
+  .day.t-dura,.day.t-tec{border-color:var(--line2)}
+  .daymeta{align-self:start}
+  .dayhead{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .dayhead h3{font-size:21px;font-weight:800;letter-spacing:-.03em;line-height:1.05}
+  .dtag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    padding:4px 9px;border-radius:6px;line-height:1.2}
+  .dt-dura{background:var(--ambersoft);color:var(--amber)}
+  .dt-suave{background:var(--indsoft);color:var(--ind)}
+  .dt-tec{background:var(--gosoft);color:var(--go)}
+  .daysub{font-size:14.5px;color:var(--ink2);line-height:1.4;margin-top:6px}
+  .dayrows{display:grid;gap:8px}
+  .drow{display:grid;grid-template-columns:78px 1fr;gap:14px;align-items:baseline;
+    border:1px solid transparent;border-radius:11px;padding:10px 12px}
+  .drow.mob{background:var(--indsoft)}
+  .drow.main{background:var(--paper);border-color:var(--line2)}
+  .day.t-dura .drow.main{background:var(--ambersoft);border-color:var(--amber)}
+  .day.t-tec .drow.main{background:var(--gosoft);border-color:var(--go)}
+  .dk{font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;
+    color:var(--ink3);line-height:1.4}
+  .drow.mob .dk{color:var(--ind)}
+  .drow.main .dk{color:var(--ink)}
+  .day.t-dura .drow.main .dk{color:var(--amber)}
+  .day.t-tec .drow.main .dk{color:var(--go)}
+  .dk .dur{display:block;font-size:10.5px;letter-spacing:.03em;text-transform:none;font-weight:600;
+    color:var(--ink3);margin-top:3px}
+  .dv{font-size:14.5px;color:var(--ink2);line-height:1.65;max-width:62ch}
+  .dv b{color:var(--ink);font-weight:600}
+  .drow.main .dv{font-size:15.5px;color:var(--ink)}
+  .day .exlink{margin:1px}
+  .dayclave{font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--ink2);line-height:1.55;
+    margin-top:12px;padding-left:12px;border-left:2px solid var(--line2)}
+  .note .exlink,.dayclave .exlink{font-family:var(--body);font-style:normal;font-weight:600}
+  @media (max-width:820px){
+    .day{grid-template-columns:1fr;gap:14px;padding:17px 18px 17px 20px}
+    .daymeta{padding-bottom:0}
+    .drow{grid-template-columns:1fr;gap:5px;padding:11px 13px}
+    .dk .dur{display:inline;margin-left:9px}
+    .dv{max-width:none}
+  }
   @media (max-width:680px){
     .exgrid{grid-template-columns:1fr}
     .perfgrid{grid-template-columns:1fr}
@@ -748,166 +807,163 @@
   <section class="panel" id="panel-semana" role="tabpanel" aria-labelledby="tab-semana" tabindex="-1">
 
     <div class="block">
-      <div class="snum">01 &#183; TU BASE FIJA</div>
-      <h2>Lo que ya hacen &#8212; no se toca</h2>
-      <p class="sintro">Su carrera y su fuerza siguen intactas. Este es el esqueleto de la semana; el plan solo a&#241;ade capas alrededor sin robarle energ&#237;a a lo que ya funciona.</p>
-      <div class="base">
-        <h3>El esqueleto</h3>
-        <div class="skel">
-          <div class="sk"><div class="d">Martes</div><div class="t">Correr + fuerza de pierna</div><div class="s">&#177; pliom&#233;tricos</div></div>
-          <div class="sk"><div class="d">Jueves</div><div class="t">Correr + fuerza de pierna</div><div class="s">&#177; pliom&#233;tricos</div></div>
-          <div class="sk"><div class="d">Domingo</div><div class="t">Tirada larga</div><div class="s">su carrera larga</div></div>
+      <div class="snum">01 &#183; LA REGLA</div>
+      <h2>Un d&#237;a, una rutina</h2>
+      <p class="sintro">Antes hab&#237;a una &#8220;movilidad diaria&#8221; y adem&#225;s rutinas pre-carrera y pre-fuerza, y no quedaba claro cu&#225;l tocaba el martes. Se acab&#243;: <b>cada d&#237;a tiene UNA sola rutina</b>, ya decidida abajo.</p>
+      <div class="reglabox">
+        <div class="rgitem">
+          <span class="rgk k-run">Corres<br>o pierna</span>
+          <p><b>D&#237;a que corres o haces pierna</b> &#8594; movilidad <b>din&#225;mica corta</b> ANTES (prepara sin apagar la fuerza) y estiramiento sostenido DESPU&#201;S. No hay movilidad extra ese d&#237;a.</p>
+        </div>
+        <div class="rgitem">
+          <span class="rgk k-up">Tren<br>superior</span>
+          <p><b>D&#237;a de tren superior</b> &#8594; ah&#237; va la <b>movilidad completa de 10 min</b> (la larga, con estiramiento sostenido). Es lo que ya vienen haciendo &#8212; ahora es oficial y no se duplica.</p>
         </div>
       </div>
+      <div class="note" style="margin-top:16px">Regla de oro: din&#225;mico antes, sostenido despu&#233;s. Nunca estiramiento est&#225;tico largo antes de correr o de cargar.</div>
     </div>
 
     <div class="block">
-      <div class="snum">02 &#183; LAS CAPAS</div>
-      <h2>Las 3 capas que a&#241;adimos alrededor</h2>
-      <p class="sintro">Ninguna compite con su pierna dura. Cada una tiene su frecuencia; se acomodan donde encajen en la semana real.</p>
-      <div class="capas">
+      <div class="snum">02 &#183; ESTA SEMANA</div>
+      <h2>D&#237;a a d&#237;a</h2>
+      <p class="sintro">Su semana real: martes intervalos, jueves tempo, domingo bici; pierna el martes y el jueves, tren superior lun/mi&#233;/vie. Toca cualquier ejercicio para ver su ficha.</p>
+      <div class="daygrid">
 
-        <div class="capa">
-          <div class="top">
-            <span class="nm">1 &#183; Movilidad</span>
-            <span class="freq f-mob">Todos los d&#237;as &#183; 10 min</span>
+        <article class="day t-suave">
+          <div class="daymeta">
+            <div class="dayhead"><h3>Lunes</h3><span class="dtag dt-suave">Suave</span></div>
+            <p class="daysub">Tren superior</p>
           </div>
-          <p>Esta s&#237; es diaria &#8212; la capa m&#225;s importante y la &#250;nica verdaderamente de todos los d&#237;as. Una rutina base corta; el domingo h&#225;zla <b>post-tirada</b>, con el tejido caliente.</p>
-          <div class="exrow">
-            <button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button>
-            <button class="exlink" data-ex="noventa" type="button">90/90 de cadera</button>
-            <button class="exlink" data-ex="couch" type="button">Couch stretch</button>
-            <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button>
-            <button class="exlink" data-ex="swings" type="button">Leg swings</button>
-          </div>
-        </div>
-
-        <div class="capa">
-          <div class="top">
-            <span class="nm">2 &#183; Prevenci&#243;n</span>
-            <span class="freq f-str">2&#215; por semana</span>
-          </div>
-          <p>Gl&#250;teo medio, pantorrilla exc&#233;ntrica, RDL a una pierna y plancha lateral. Es de <b>baja carga</b>: cae natural en tus d&#237;as de tren superior o descanso (lun/mie/vie) y no compite con tu pierna. Alternativa: meterlas como accesorio <b>dentro</b> de tu fuerza de pierna del mar/jue si prefieres concentrar. Regla &#250;nica: no las hagas pesadas justo antes de tu sesi&#243;n de pierna dura.</p>
-          <div class="exrow">
-            <button class="exlink" data-ex="monster" type="button">Banda lateral / monster</button>
-            <button class="exlink" data-ex="pantorrilla-recta" type="button">Pantorrilla exc&#233;ntrica</button>
-            <button class="exlink" data-ex="rdl" type="button">RDL a una pierna</button>
-            <button class="exlink" data-ex="plancha-lateral" type="button">Plancha lateral</button>
-          </div>
-          <div class="foco">
-            <div class="fh"><span class="ft">Foco de esta semana</span><span class="newbadge">Nuevo</span></div>
-            <p><b>Foco de esta semana: prehab de canilla.</b> Sumen el <b>tibial anterior</b> y los <b>exc&#233;ntricos de pantorrilla/s&#243;leo</b> 2&#215;/sem &#8212; para la molestia de tibia que aparece al inicio de las carreras.</p>
-            <div class="exrow">
-              <button class="exlink" data-ex="tibial-anterior" type="button">Tibial anterior</button>
-              <button class="exlink" data-ex="pantorrilla-recta" type="button">Pantorrilla recta</button>
-              <button class="exlink" data-ex="pantorrilla-flex" type="button">Pantorrilla rodilla flexionada</button>
+          <div class="daybody">
+            <div class="dayrows">
+              <div class="drow mob"><div class="dk">Antes<span class="dur">5 min</span></div><div class="dv">Movilidad de columna y hombro + 2 min de cardio suave. <b>Nada de pierna.</b></div></div>
+              <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv">Tren superior + <b>prehab de canilla (dosis 1 de 2)</b>: <button class="exlink" data-ex="tibial-anterior" type="button">Tibial anterior</button> 2&#215;15 &#183; <button class="exlink" data-ex="pantorrilla-recta" type="button">Pantorrilla recta</button> 2&#215;12 lento &#183; <button class="exlink" data-ex="monster" type="button">Monster walk</button> 2&#215;15 &#183; <button class="exlink" data-ex="plancha-lateral" type="button">Plancha lateral</button> 2&#215;20s/lado.</div></div>
+              <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">10 min</span></div><div class="dv"><b>Movilidad completa</b> &#8212; <button class="exlink" data-ex="noventa" type="button">90/90 de cadera</button> &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> &#183; <button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button>.</div></div>
             </div>
+            <p class="dayclave">Aqu&#237; vive la movilidad larga. La prehab es de baja carga: no le roba nada a la pierna del martes.</p>
           </div>
-        </div>
+        </article>
 
-        <div class="capa">
-          <div class="top">
-            <span class="nm">3 &#183; Drills</span>
-            <span class="freq f-dr">5 min post-rodaje suave (mar o jue)</span>
+        <article class="day t-dura">
+          <div class="daymeta">
+            <div class="dayhead"><h3>Martes</h3><span class="dtag dt-dura">Dura</span></div>
+            <p class="daysub">Intervalos + fuerza de pierna</p>
           </div>
-          <p>A-skip y talones al gl&#250;teo despu&#233;s de un rodaje f&#225;cil. Refuerzan cadencia y patr&#243;n de apoyo cuando las piernas ya est&#225;n activadas pero no destrozadas.</p>
-          <div class="exrow">
-            <button class="exlink" data-ex="askip" type="button">A-skip</button>
-            <button class="exlink" data-ex="talones" type="button">Talones al gl&#250;teo</button>
+          <div class="daybody">
+            <div class="dayrows">
+              <div class="drow mob"><div class="dk">Antes<span class="dur">12 min</span></div><div class="dv">Trote muy suave 5 min &#183; <button class="exlink" data-ex="swings" type="button">Leg swings</button> 10/lado &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> 3&#8211;4/lado &#183; <button class="exlink" data-ex="monster" type="button">Monster walk</button> 1&#215;15 &#183; drills cortos <button class="exlink" data-ex="ankling" type="button">Ankling</button> + <button class="exlink" data-ex="askip" type="button">A-skip</button> + <button class="exlink" data-ex="rodillas-altas" type="button">Rodillas altas</button> ~20 m c/u &#183; 2&#8211;3 <button class="exlink" data-ex="zancadas" type="button">Zancadas</button> progresivas.</div></div>
+              <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv"><b>Intervalos primero, con piernas frescas.</b> La fuerza de pierna va DESPU&#201;S (ideal 6 h m&#225;s tarde; si no, al terminar). Pliometr&#237;a solo si las piernas responden y con pocos contactos.</div></div>
+              <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">8 min</span></div><div class="dv">Trote regresivo 3&#8211;5 min &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> 45s/lado &#183; pantorrilla contra la pared 30s/lado &#183; isquios suave.</div></div>
+            </div>
+            <p class="dayclave">Esta es la &#250;nica movilidad del martes. El orden importa: la calidad de carrera manda, la fuerza va detr&#225;s &#8212; al rev&#233;s fue lo que tumb&#243; el tempo del jueves pasado.</p>
           </div>
-        </div>
+        </article>
+
+        <article class="day t-suave">
+          <div class="daymeta">
+            <div class="dayhead"><h3>Mi&#233;rcoles</h3><span class="dtag dt-suave">Suave</span></div>
+            <p class="daysub">Tren superior</p>
+          </div>
+          <div class="daybody">
+            <div class="dayrows">
+              <div class="drow mob"><div class="dk">Antes<span class="dur">5 min</span></div><div class="dv">Movilidad de columna y hombro.</div></div>
+              <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv">Tren superior. Pierna, nada pesado &#8212; hoy se recupera del martes.</div></div>
+              <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">12 min</span></div><div class="dv"><b>Movilidad completa</b> &#8212; <button class="exlink" data-ex="noventa" type="button">90/90 de cadera</button> &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> &#183; <button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button> + foam roll de canilla, pantorrilla, isquios y VMO.</div></div>
+            </div>
+            <p class="dayclave">El foam roll de hoy apunta justo a lo que se les carga: canilla y pantorrilla (Ale y Vale), isquios y VMO (Vale).</p>
+          </div>
+        </article>
+
+        <article class="day t-dura">
+          <div class="daymeta">
+            <div class="dayhead"><h3>Jueves</h3><span class="dtag dt-dura">Dura</span></div>
+            <p class="daysub">Tempo + fuerza de pierna</p>
+          </div>
+          <div class="daybody">
+            <div class="dayrows">
+              <div class="drow mob"><div class="dk">Antes<span class="dur">12 min</span></div><div class="dv">Igual que el martes, pero entra progresivo: trote suave 5&#8211;8 min &#183; <button class="exlink" data-ex="swings" type="button">Leg swings</button> &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> &#183; <button class="exlink" data-ex="monster" type="button">Monster walk</button> &#183; <button class="exlink" data-ex="askip" type="button">A-skip</button> + <button class="exlink" data-ex="rodillas-altas" type="button">Rodillas altas</button> &#183; 2 <button class="exlink" data-ex="zancadas" type="button">Zancadas</button>.</div></div>
+              <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv"><b>Tempo primero.</b> Fuerza de pierna despu&#233;s (o 6 h m&#225;s tarde). <b>Nada de RM ni pliometr&#237;a antes del tempo.</b></div></div>
+              <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">8 min</span></div><div class="dv">Trote regresivo &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> &#183; pantorrilla pared &#183; isquios suave.</div></div>
+            </div>
+            <p class="dayclave">El tempo del jueves pasado se cay&#243; a los 2k por hacer peso muerto m&#225;ximo + plio en la ma&#241;ana. Hoy se invierte el orden.</p>
+          </div>
+        </article>
+
+        <article class="day t-suave">
+          <div class="daymeta">
+            <div class="dayhead"><h3>Viernes</h3><span class="dtag dt-suave">Suave</span></div>
+            <p class="daysub">Tren superior</p>
+          </div>
+          <div class="daybody">
+            <div class="dayrows">
+              <div class="drow mob"><div class="dk">Antes<span class="dur">5 min</span></div><div class="dv">Movilidad de columna y hombro.</div></div>
+              <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv">Tren superior + <b>prehab de canilla (dosis 2 de 2)</b>: <button class="exlink" data-ex="tibial-anterior" type="button">Tibial anterior</button> 2&#215;15 &#183; <button class="exlink" data-ex="pantorrilla-flex" type="button">Pantorrilla rodilla flexionada</button> 2&#215;12 lento &#183; <button class="exlink" data-ex="rdl" type="button">RDL a una pierna</button> 2&#215;8/pierna ligero &#183; <button class="exlink" data-ex="plancha-lateral" type="button">Plancha lateral</button> 2&#215;20s/lado.</div></div>
+              <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">10 min</span></div><div class="dv"><b>Movilidad completa</b> &#8212; <button class="exlink" data-ex="noventa" type="button">90/90 de cadera</button> &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> &#183; <button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button>.</div></div>
+            </div>
+            <p class="dayclave">Con esta queda cerrada la dosis de 2&#215;/semana de prehab de canilla &#8212; la molestia de tibia que sienten al arrancar.</p>
+          </div>
+        </article>
+
+        <article class="day t-tec">
+          <div class="daymeta">
+            <div class="dayhead"><h3>S&#225;bado</h3><span class="dtag dt-tec">T&#233;cnica</span><span class="newbadge">Nuevo</span></div>
+            <p class="daysub">Clase de t&#233;cnica: drills</p>
+          </div>
+          <div class="daybody">
+            <div class="dayrows">
+              <div class="drow mob"><div class="dk">Antes<span class="dur">8 min</span></div><div class="dv">Trote suave 5 min &#183; <button class="exlink" data-ex="swings" type="button">Leg swings</button> 10/lado &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> 3/lado.</div></div>
+              <div class="drow main"><div class="dk">Sesi&#243;n<span class="dur">20&#8211;25 min</span></div><div class="dv"><b>El d&#237;a de los drills.</b> Aprenderlos con calidad, no cansarse. 2 series de ~20 m de cada uno, caminando de vuelta: <button class="exlink" data-ex="ankling" type="button">Ankling</button> &#183; <button class="exlink" data-ex="askip" type="button">A-skip</button> &#183; <button class="exlink" data-ex="bskip" type="button">B-skip</button> &#183; <button class="exlink" data-ex="rodillas-altas" type="button">Rodillas altas</button> &#183; <button class="exlink" data-ex="talones" type="button">Talones al gl&#250;teo</button> &#183; <button class="exlink" data-ex="piernas-rectas" type="button">Piernas rectas</button> &#183; <button class="exlink" data-ex="carioca" type="button">Carioca</button>. Cerrar con 4 <button class="exlink" data-ex="zancadas" type="button">Zancadas</button> progresivas.</div></div>
+              <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">10 min</span></div><div class="dv"><b>Movilidad completa</b> &#8212; <button class="exlink" data-ex="noventa" type="button">90/90 de cadera</button> &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> &#183; <button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button>.</div></div>
+            </div>
+            <p class="dayclave">Es el d&#237;a ideal: piernas frescas (viernes fue tren superior) y sin sesi&#243;n de calidad compitiendo. Cuando ya los dominen, se reducen a 5 min dentro del calentamiento del martes y jueves.</p>
+          </div>
+        </article>
+
+        <article class="day t-suave">
+          <div class="daymeta">
+            <div class="dayhead"><h3>Domingo</h3><span class="dtag dt-suave">Suave</span></div>
+            <p class="daysub">Bici</p>
+          </div>
+          <div class="daybody">
+            <div class="dayrows">
+              <div class="drow mob"><div class="dk">Antes<span class="dur">5 min</span></div><div class="dv">Movilidad ligera de cadera y tobillo &#183; <button class="exlink" data-ex="swings" type="button">Leg swings</button> 10/lado.</div></div>
+              <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv">Bici aer&#243;bica en zona 2, conversable. Suma motor sin impacto &#8212; buena semana para que la tibia descanse.</div></div>
+              <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">10 min</span></div><div class="dv"><b>Movilidad completa</b> con el tejido caliente, con &#233;nfasis en <button class="exlink" data-ex="couch" type="button">Couch stretch</button> 45s/lado.</div></div>
+            </div>
+            <p class="dayclave">La bici acorta el flexor de cadera por la posici&#243;n sentada: el couch stretch de hoy no es opcional.</p>
+          </div>
+        </article>
 
       </div>
-      <div class="note" style="margin-top:16px">Una vez al mes: medir la cadencia y re-test de dorsiflexi&#243;n (rodilla-a-pared, cm hasta la pared con el tal&#243;n pegado).</div>
     </div>
 
     <div class="block">
-      <div class="snum">03 &#183; C&#211;MO SE VE</div>
-      <h2>Una semana ejemplo</h2>
-      <p class="sintro">Solo para visualizar c&#243;mo encajan los anclajes fijos y las capas. Las capas flotan: distribuye donde te caiga.</p>
-      <span class="exlabel">Ejemplo &#183; no obligatorio</span>
-      <div class="wkstrip">
-        <div class="wkday"><div class="dd">Lun</div><span class="wtag wt-layer">Movilidad 10&#8242;</span><span class="wtag wt-layer">Prevenci&#243;n</span></div>
-        <div class="wkday anchor"><div class="dd">Mar</div><span class="wtag wt-run">Correr</span><span class="wtag wt-str">Fuerza pierna</span><span class="wtag wt-layer">Drills 5&#8242;</span><span class="wtag wt-layer">Movilidad</span></div>
-        <div class="wkday"><div class="dd">Mie</div><span class="wtag wt-layer">Movilidad 10&#8242;</span></div>
-        <div class="wkday anchor"><div class="dd">Jue</div><span class="wtag wt-run">Correr</span><span class="wtag wt-str">Fuerza pierna</span><span class="wtag wt-layer">Drills 5&#8242;</span><span class="wtag wt-layer">Movilidad</span></div>
-        <div class="wkday"><div class="dd">Vie</div><span class="wtag wt-layer">Movilidad 10&#8242;</span><span class="wtag wt-layer">Prevenci&#243;n</span></div>
-        <div class="wkday"><div class="dd">Sab</div><span class="wtag wt-rest">Suave</span><span class="wtag wt-layer">Movilidad</span></div>
-        <div class="wkday anchor"><div class="dd">Dom</div><span class="wtag wt-run">Tirada larga</span><span class="wtag wt-layer">Movilidad post</span></div>
+      <div class="snum">03 &#183; FOCO</div>
+      <h2>Las 2 cosas que mueven la aguja esta semana</h2>
+      <p class="sintro">Si esta semana solo pueden sostener dos cosas nuevas, que sean estas.</p>
+      <div class="foco">
+        <div class="fh"><span class="ft">Foco 1</span><span class="newbadge">Nuevo</span></div>
+        <p><b>Los drills, el s&#225;bado.</b> Nunca los han hecho y son la v&#237;a m&#225;s directa a la t&#233;cnica que buscan. S&#225;bado, con piernas frescas, 20&#8211;25 min de calidad. Luego pasan a ser 5 min del calentamiento de mar/jue.</p>
+        <div class="exrow">
+          <button class="exlink" data-ex="ankling" type="button">Ankling</button>
+          <button class="exlink" data-ex="askip" type="button">A-skip</button>
+          <button class="exlink" data-ex="bskip" type="button">B-skip</button>
+          <button class="exlink" data-ex="talones" type="button">Talones al gl&#250;teo</button>
+          <button class="exlink" data-ex="carioca" type="button">Carioca</button>
+        </div>
       </div>
-      <div class="wklegend">
-        <span><span class="sw sw-run"></span>Correr (fijo)</span>
-        <span><span class="sw sw-str"></span>Fuerza de pierna (fijo)</span>
-        <span><span class="sw sw-layer"></span>Capa flexible (mu&#233;vela)</span>
+      <div class="foco">
+        <div class="fh"><span class="ft">Foco 2</span></div>
+        <p><b>Prehab de canilla, 2&#215; (lunes y viernes).</b> Tibial anterior + exc&#233;ntricos de pantorrilla. Va en los d&#237;as de tren superior para no competir con la pierna del martes y jueves.</p>
+        <div class="exrow">
+          <button class="exlink" data-ex="tibial-anterior" type="button">Tibial anterior</button>
+          <button class="exlink" data-ex="pantorrilla-recta" type="button">Pantorrilla recta</button>
+          <button class="exlink" data-ex="pantorrilla-flex" type="button">Pantorrilla rodilla flexionada</button>
+        </div>
       </div>
+      <div class="note" style="margin-top:18px">Una vez al mes: medir cadencia y re-test de dorsiflexi&#243;n (<button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button>, cm hasta la pared con el tal&#243;n pegado).</div>
     </div>
 
-    <div class="block">
-      <div class="snum">04 &#183; ANTES Y DESPU&#201;S</div>
-      <h2>Rutinas: antes y despu&#233;s de cada sesi&#243;n</h2>
-      <p class="rutctx">Qu&#233; hacer antes y despu&#233;s de cada tipo de sesi&#243;n. La regla de oro: movilidad <b>DIN&#193;MICA</b> antes (prepara sin apagar la fuerza), estiramiento <b>SOSTENIDO</b> despu&#233;s (relaja con el tejido caliente).</p>
-      <div class="rutgrid">
-
-        <div class="rutina">
-          <div class="rtop"><h3>Rutina 1 &#8212; Pre-carrera</h3><span class="rdur">~8&#8211;10 min</span></div>
-          <div class="rrule">Din&#225;mico; nada de estiramiento est&#225;tico prolongado antes de correr.</div>
-          <ol>
-            <li>Trote muy suave o caminar r&#225;pido 3&#8211;5 min (subir temperatura).</li>
-            <li><button class="exlink" data-ex="swings" type="button">Leg swings</button> 10/lado (frontal y lateral).</li>
-            <li><button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> 3&#8211;4/lado.</li>
-            <li><button class="exlink" data-ex="monster" type="button">Monster walk</button> 1&#215;15 (activa el gl&#250;teo medio) &#8212; opcional pero recomendado.</li>
-            <li>Drills cortos: <button class="exlink" data-ex="ankling" type="button">Ankling</button> + <button class="exlink" data-ex="askip" type="button">A-skip</button> + <button class="exlink" data-ex="rodillas-altas" type="button">Rodillas altas</button>, ~15&#8211;20 m cada uno.</li>
-            <li>Si es d&#237;a de calidad/intervalos: 2&#8211;3 <button class="exlink" data-ex="zancadas" type="button">Zancadas</button> progresivas antes de arrancar.</li>
-          </ol>
-        </div>
-
-        <div class="rutina">
-          <div class="rtop"><h3>Rutina 2 &#8212; Post-carrera</h3><span class="rdur">~5&#8211;10 min</span></div>
-          <div class="rrule">Aqu&#237; s&#237; caben estiramientos sostenidos (tejido caliente).</div>
-          <ol>
-            <li>Caminar o trote regresivo 3&#8211;5 min (bajar pulsaciones).</li>
-            <li><button class="exlink" data-ex="couch" type="button">Couch stretch</button> 45s/lado.</li>
-            <li><button class="exlink" data-ex="noventa" type="button">90/90 de cadera</button>, suave.</li>
-            <li>Estiramiento de pantorrilla contra la pared 30s/lado (gastrocnemio y s&#243;leo).</li>
-            <li>Domingo (post-tirada): haz la rutina de movilidad completa de 10 min con el tejido caliente.</li>
-          </ol>
-        </div>
-
-        <div class="rutina">
-          <div class="rtop"><h3>Rutina 3 &#8212; Pre-fuerza de pierna</h3><span class="rdur">~8&#8211;10 min</span></div>
-          <div class="rrule">Objetivo: activar gl&#250;teo y core + ensayar el patr&#243;n antes de cargar.</div>
-          <ol>
-            <li>Cardio suave 3&#8211;5 min (bici, trote o saltar la cuerda).</li>
-            <li>Movilidad espec&#237;fica: <button class="exlink" data-ex="noventa" type="button">90/90</button> + <button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button> + <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest</button>.</li>
-            <li>Activaci&#243;n: <button class="exlink" data-ex="monster" type="button">Monster walk</button> 2&#215;15 + <button class="exlink" data-ex="plancha-lateral" type="button">Plancha lateral</button> 1&#215;20s/lado.</li>
-            <li>1&#8211;2 series de aproximaci&#243;n con poco peso antes de las series pesadas.</li>
-          </ol>
-        </div>
-
-        <div class="rutina">
-          <div class="rtop"><h3>Rutina 4 &#8212; Post-fuerza</h3><span class="rdur">~5 min</span></div>
-          <div class="rrule">Suave; si hubo pliometr&#237;a, termina sin estirar agresivo.</div>
-          <ol>
-            <li>Estiramiento suave de lo trabajado: <button class="exlink" data-ex="couch" type="button">Couch stretch</button> (cu&#225;driceps/flexor), isquios y pantorrillas.</li>
-            <li>Caminar y bajar pulsaciones.</li>
-            <li>Nada intenso; hidrataci&#243;n y a recuperar.</li>
-          </ol>
-        </div>
-
-        <div class="rutina">
-          <div class="rtop"><h3>Rutina 5 &#8212; Pre-tirada larga</h3><span class="rdur">domingo &#183; ~10 min</span></div>
-          <div class="rrule">Activar y lubricar sin gastar; en una larga, el mejor calentamiento es empezar lento.</div>
-          <ol>
-            <li>Caminar o trote muy suave 5 min.</li>
-            <li><button class="exlink" data-ex="swings" type="button">Leg swings</button> 10/lado + <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> 3&#8211;4/lado.</li>
-            <li><button class="exlink" data-ex="monster" type="button">Monster walk</button> 1&#215;15 (activa el gl&#250;teo medio &#8212; clave para que la rodilla no colapse en los km finales).</li>
-            <li>Opcional y muy suave: <button class="exlink" data-ex="ankling" type="button">Ankling</button> + <button class="exlink" data-ex="askip" type="button">A-skip</button> ~15 m (sin fatigar).</li>
-            <li>Arranca la tirada MUY suave los primeros 10 min. Sin zancadas al inicio: hoy el objetivo es durar, no la velocidad.</li>
-          </ol>
-        </div>
-
-      </div>
-    </div>
 
   </section>
 
@@ -983,7 +1039,7 @@
 
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
-    <div class="mono">PLAN &#183; RUNNING &#183; V18 &#183; JUL 2026</div>
+    <div class="mono">PLAN &#183; RUNNING &#183; V19 &#183; JUL 2026</div>
   </footer>
 
 </div>
