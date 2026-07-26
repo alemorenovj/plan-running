@@ -3871,10 +3871,9 @@
 (function(){
   var v = document.getElementById('herovid');
   if (!v) return;
-  /* Video de cabecera: pega aqui la URL de un mp4 para activarlo.
-     Vacio = solo el degradado premium de respaldo (estado actual).
-     El de la plantilla original era una animacion medica de un cerebro: no encajaba. */
-  var SRC = '';
+  /* Video de cabecera: corredores al amanecer (Pexels, licencia libre), alojado
+     en el propio repo para no depender de un CDN ajeno. Vacio = solo el degradado. */
+  var SRC = 'hero.mp4';
   if (!SRC) return;
   var okW = window.matchMedia('(min-width:900px)').matches;
   var okM = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
