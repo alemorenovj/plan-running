@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#131618" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-<title>Plan de running v15 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
+<title>Plan de running v16 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
 <style>
   :root{
     color-scheme: light dark;
@@ -938,7 +938,7 @@
   <section class="panel hide" id="panel-biblioteca" role="tabpanel" aria-labelledby="tab-biblioteca" tabindex="-1">
     <div class="snum">BIBLIOTECA</div>
     <h2>Ruta de aprendizaje</h2>
-    <p class="sintro">Un curso en <b>4 m&#243;dulos</b>: abre cada m&#243;dulo y sus temas a tu ritmo. 18 lecciones, de los fundamentos a la prevenci&#243;n.</p>
+    <p class="sintro">Un curso en <b>5 m&#243;dulos</b>: abre cada m&#243;dulo y sus temas a tu ritmo. 22 lecciones, de los fundamentos a la fuerza.</p>
     <div id="ruta"></div>
   </section>
 
@@ -983,7 +983,7 @@
 
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
-    <div class="mono">PLAN &#183; RUNNING &#183; V15 &#183; JUL 2026</div>
+    <div class="mono">PLAN &#183; RUNNING &#183; V16 &#183; JUL 2026</div>
   </footer>
 
 </div>
@@ -1432,7 +1432,54 @@
         "La lecci&#243;n para ti (sin medir lactato): mucha base f&#225;cil, y el trabajo duro de VO2 Max <b>DOSIFICADO y controlado</b> (1-2 veces por semana), no todo a tope."
       ],
       stat:{big:"Doble umbral", cap:"el VO2 Max pone el techo; el umbral define cu&#225;nto de ese techo usas"},
-      rel:["t-intervalos-vo2","t-base-z2"] }
+      rel:["t-intervalos-vo2","t-base-z2"] },
+
+    { id:"m5-porque", nuevo:true, kick:"M&#243;dulo 5 &#183; Fuerza", title:"Por qu&#233; la fuerza pesada te hace m&#225;s r&#225;pido",
+      contexto:"Alejandro ya hace fuerza de pierna mar/jue &#8212; el objetivo es que sea PESADA y de calidad (no muchas reps ligeras), y no acumularla tanto que reste.",
+      url:"https://strengthrunning.com/strength-training-for-runners/", host:"strengthrunning.com",
+      video:"https://www.youtube.com/watch?v=mJXZQBXSUXw",
+      podcast:{ url:"https://strengthrunning.com/podcast/", label:"The Strength Running Podcast" },
+      paras:[
+        "La fuerza pesada (cargas altas, pocas repeticiones) no te pone voluminoso a las dosis de un corredor: mejora tu econom&#237;a y tu tasa de desarrollo de fuerza &#8212; qu&#233; tan r&#225;pido produces fuerza en cada paso.",
+        "Un m&#250;sculo y un tend&#243;n m&#225;s fuertes guardan y devuelven m&#225;s energ&#237;a como un resorte, as&#237; que gastas menos para ir al mismo ritmo. Bastan 2-3 series de 3-6 repeticiones pesadas, con buena t&#233;cnica, 2 veces por semana.",
+        "No busques el ardor ni muchas repeticiones ligeras: para correr, la clave es la carga alta y la calidad del movimiento."
+      ],
+      stat:{big:"2-3 x 3-6", cap:"cargas altas, 2&#215;/sem"},
+      rel:["rdl","plancha-lateral"] },
+
+    { id:"m5-lifts", nuevo:true, kick:"M&#243;dulo 5 &#183; Fuerza", title:"Sentadilla y peso muerto: los dos grandes",
+      contexto:"Complementan el RDL a una pierna que ya tienen en el plan &#8212; suman la versi&#243;n bilateral con m&#225;s carga.",
+      url:"https://strengthrunning.com/strength-training-for-runners/", host:"strengthrunning.com",
+      video:"https://www.youtube.com/watch?v=NRLu169HBAE",
+      paras:[
+        "Son los dos ejercicios con m&#225;s transferencia a correr: trabajan cu&#225;driceps, gl&#250;teo y toda la cadena posterior con cargas que ning&#250;n ejercicio de peso corporal alcanza.",
+        "La t&#233;cnica manda sobre el peso: empieza ligero, aprende el patr&#243;n (bisagra de cadera en el peso muerto, torso firme en la sentadilla) y sube de a poco.",
+        "2-4 series de 4-6 repeticiones, 1-2 veces por semana, es suficiente para un corredor."
+      ],
+      rel:["rdl"] },
+
+    { id:"m5-plio", nuevo:true, kick:"M&#243;dulo 5 &#183; Potencia", title:"Pliometr&#237;a: potencia con progresi&#243;n",
+      contexto:"La que hacen mar/jue: progresen por niveles y con pocos contactos de calidad, no todo al m&#225;ximo.",
+      url:"https://runningwritings.com/2014/11/building-plyometrics-program-for.html", host:"runningwritings.com",
+      video:"https://www.youtube.com/watch?v=_YudFDcW_Iw",
+      paras:[
+        "La pliometr&#237;a (saltos) entrena el resorte de tus piernas: mejora la rigidez el&#225;stica y la econom&#237;a, de lo m&#225;s potente para la velocidad.",
+        "Se progresa por niveles: primero pogos y skips (bajo impacto), luego bounds y saltos alternos, y al final drop jumps. Domina cada nivel antes de subir.",
+        "Empieza bajo &#8212; 40 a 60 contactos por sesi&#243;n, fresco y con calidad. Menos es m&#225;s."
+      ],
+      stat:{big:"40-60 contactos", cap:"progresa por niveles"},
+      rel:["askip","zancadas"] },
+
+    { id:"m5-interferencia", nuevo:true, kick:"M&#243;dulo 5 &#183; Concurrencia", title:"El efecto de interferencia (fuerza + carrera)",
+      contexto:"Directo a Alejandro: hace fuerza casi a diario + carreras. Ordenar &#8212; fuerza pesada lejos de las series, o al menos fresco &#8212; le sube el rendimiento. Para recreacionales el efecto es leve, pero el orden ayuda.",
+      url:"https://www.strongerbyscience.com/research-spotlight-interference-effect/", host:"strongerbyscience.com",
+      podcast:{ url:"https://strengthrunning.com/podcast/", label:"The Strength Running Podcast" },
+      paras:[
+        "Hacer fuerza y resistencia juntas puede restar un poco a las ganancias de FUERZA: tu cuerpo recibe se&#241;ales que compiten. La buena noticia: a vol&#250;menes moderados y para corredores recreacionales, el efecto es menor.",
+        "C&#243;mo minimizarlo: separa las sesiones (idealmente 6 horas o en d&#237;as distintos), haz la fuerza ANTES de correr si van el mismo d&#237;a, y no exageres el volumen. La resistencia que menos interfiere es correr.",
+        "En resumen: se combinan perfectamente con un poco de orden."
+      ],
+      rel:["rdl"] }
   ];
 
   // ---------- render exercises grid ----------
@@ -1468,7 +1515,10 @@
       temas:["tema5","tdrills","t-respiracion","tema6"] },
     { n:4, title:"Prevenci&#243;n: correr sin romperte",
       desc:"Blindar las zonas fr&#225;giles del corredor.",
-      temas:["tema2","tema3","tema4","tema7","tcalentamiento"] }
+      temas:["tema2","tema3","tema4","tema7","tcalentamiento"] },
+    { n:5, title:"Fuerza y potencia para correr",
+      desc:"Cargas pesadas y saltos: el motor de la velocidad, con orden.",
+      temas:["m5-porque","m5-lifts","m5-plio","m5-interferencia"] }
   ];
 
   function temaBodyHtml(t){
@@ -1477,11 +1527,22 @@
     if (t.contexto){
       html += '<div class="lctx"><div class="lctx-lab">En su caso</div><div class="lctx-txt">'+t.contexto+'</div></div>';
     }
-    html += '<div class="stat"><div class="big">'+t.stat.big+'</div><div class="cap">'+t.stat.cap+'</div></div>';
-    if (t.url){
-      html += '<a class="srcline" href="'+t.url+'" target="_blank" rel="noopener"><span class="h">'+t.host+'</span><span class="a">&#8599;</span></a>';
-      if (t.url2){
-        html += '<a class="srcline" href="'+t.url2+'" target="_blank" rel="noopener"><span class="h">'+t.host2+'</span><span class="a">&#8599;</span></a>';
+    if (t.stat){
+      html += '<div class="stat"><div class="big">'+t.stat.big+'</div><div class="cap">'+t.stat.cap+'</div></div>';
+    }
+    if (t.url || t.video || t.podcast){
+      if (t.url){
+        html += '<a class="srcline" href="'+t.url+'" target="_blank" rel="noopener"><span class="h">Art&#237;culo &#183; '+t.host+'</span><span class="a">&#8599;</span></a>';
+        if (t.url2){
+          html += '<a class="srcline" href="'+t.url2+'" target="_blank" rel="noopener"><span class="h">'+t.host2+'</span><span class="a">&#8599;</span></a>';
+        }
+      }
+      if (t.video){
+        html += '<a class="srcline" href="'+t.video+'" target="_blank" rel="noopener"><span class="h">Ver video</span><span class="a">&#8599;</span></a>';
+      }
+      if (t.podcast){
+        var pod = (typeof t.podcast === "string") ? { url:t.podcast, label:"" } : t.podcast;
+        html += '<a class="srcline" href="'+pod.url+'" target="_blank" rel="noopener"><span class="h">Escuchar el podcast'+(pod.label ? ' &#183; '+pod.label : '')+'</span><span class="a">&#8599;</span></a>';
       }
     }
     if (t.rel && t.rel.length){
