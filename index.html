@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
-<meta name="description" content="Plan de running: semana, ejercicios, biblioteca (curso), seguimiento, perfiles y quiz.">
+<meta name="description" content="Plan de running: camino al 15K del 31 de agosto, semana, ejercicios, biblioteca (curso), seguimiento, perfiles y quiz.">
 <meta name="theme-color" content="#0c0e10">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<title>Plan de running v22 &#183; Semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
+<title>Plan de running v23 &#183; Carrera 15K, semana, ejercicios, biblioteca, seguimiento y quiz</title>
 <style>
   /* =========================================================
      v22 &#183; Noche grafito + &#225;mbar &#183; liquid glass (dark-only)
@@ -996,6 +996,80 @@
     *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
     .hero-vid{display:none}
   }
+
+  /* ===== PESTANA CARRERA (v23) ===== */
+  .rchero{background:linear-gradient(160deg,rgba(242,160,74,.16),rgba(255,255,255,.03));
+    border:1px solid rgba(242,160,74,.3);border-radius:20px;padding:24px 26px;margin-bottom:20px}
+  .rchead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+  .rcname{font-size:20px;font-weight:700;letter-spacing:-.02em;color:#fff}
+  .rcwhen{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
+  .rccount{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+  .rcnum{font-size:clamp(44px,11vw,72px);font-weight:800;line-height:.95;letter-spacing:-.045em;color:#fff;
+    font-variant-numeric:tabular-nums}
+  .rclab{font-size:15px;color:rgba(255,255,255,.62)}
+  .rcsub{font-size:14.5px;color:rgba(255,255,255,.62);line-height:1.55;max-width:62ch}
+  .rcgoals{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:18px}
+  @media(max-width:620px){.rcgoals{grid-template-columns:1fr}}
+  .rcg{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px 16px}
+  .rcg .who{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+  .rcg.a .who{color:var(--cy,#4bc6dd)} .rcg.v .who{color:var(--in,#7d9bff)}
+  .rcg .tgt{display:flex;align-items:baseline;gap:8px;margin-bottom:3px}
+  .rcg .tv{font-size:26px;font-weight:800;color:#fff;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .rcg .tp{font-family:var(--mono);font-size:12.5px;color:rgba(255,255,255,.55)}
+  .rcg .tnote{font-size:13px;color:rgba(255,255,255,.5);line-height:1.5;margin-top:6px}
+
+  .rcscen{display:grid;gap:9px;margin-top:14px}
+  .scen{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:11px 14px;flex-wrap:wrap}
+  .scen .sk{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    padding:4px 9px;border-radius:6px;white-space:nowrap}
+  .scen.go .sk{background:rgba(63,196,140,.16);color:#3fc48c}
+  .scen.mid .sk{background:rgba(242,160,74,.16);color:var(--amber)}
+  .scen.no .sk{background:rgba(240,102,79,.15);color:#f0664f}
+  .scen .sv{font-size:17px;font-weight:700;color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+  .scen .sp{font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.5)}
+  .scen .sd{font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.45;flex:1 1 220px}
+
+  .ptwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:14px;
+    border:1px solid rgba(255,255,255,.1);border-radius:14px}
+  table.pt{border-collapse:collapse;width:100%;min-width:420px;font-variant-numeric:tabular-nums}
+  table.pt th,table.pt td{padding:9px 12px;text-align:right;font-size:13.5px;
+    border-bottom:1px solid rgba(255,255,255,.07)}
+  table.pt th{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+    color:rgba(255,255,255,.5);font-weight:700;background:rgba(255,255,255,.04);position:sticky;top:0}
+  table.pt td:first-child,table.pt th:first-child{text-align:left;font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.55)}
+  table.pt tr:last-child td{border-bottom:none}
+  table.pt tr.mark td{background:rgba(242,160,74,.09)}
+  table.pt tr.mark td:first-child{color:var(--amber);font-weight:700}
+  table.pt td b{color:#fff;font-weight:700}
+
+  .phases{display:grid;gap:11px;margin-top:6px}
+  .ph{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:15px 17px;
+    border-left:3px solid var(--amber)}
+  .ph.taper{border-left-color:#3fc48c}
+  .ph .phh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:7px}
+  .ph .pht{font-size:15.5px;font-weight:700;color:#fff;letter-spacing:-.01em}
+  .ph .phd{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+  .ph.taper .phd{color:#3fc48c}
+  .ph p{font-size:14px;color:rgba(255,255,255,.62);line-height:1.55}
+  .ph p+p{margin-top:7px}
+  .ph p b{color:#fff;font-weight:600}
+  .ph .key{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;
+    background:rgba(242,160,74,.14);color:var(--amber);border-radius:5px;padding:3px 8px;margin-right:7px;font-weight:700}
+
+  .ckl{display:grid;gap:8px;margin-top:6px}
+  .ck{display:flex;gap:11px;align-items:flex-start;background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:12px 14px;cursor:pointer;
+    transition:background .15s,border-color .15s}
+  .ck:hover{background:rgba(255,255,255,.07)}
+  .ck input{margin:2px 0 0;accent-color:var(--amber);width:17px;height:17px;flex:0 0 auto;cursor:pointer}
+  .ck .cktx{font-size:14px;color:rgba(255,255,255,.75);line-height:1.5}
+  .ck .cktx b{color:#fff;font-weight:600}
+  .ck.done{border-color:rgba(63,196,140,.35);background:rgba(63,196,140,.07)}
+  .ck.done .cktx{color:rgba(255,255,255,.45);text-decoration:line-through;text-decoration-color:rgba(255,255,255,.25)}
+  .ckwhen{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);
+    margin:16px 0 4px;font-weight:700}
+
 </style>
 
 <header class="hero">
@@ -1034,6 +1108,7 @@
 
   <nav class="tabs" aria-label="Secciones del plan">
     <div class="tablist glass" role="tablist">
+      <button class="tabbtn" role="tab" id="tab-carrera" aria-controls="panel-carrera" aria-selected="false">Carrera<span class="navdot" aria-label="Nuevo"></span></button>
       <button class="tabbtn" role="tab" id="tab-semana" aria-controls="panel-semana" aria-selected="true">Semana</button>
       <button class="tabbtn" role="tab" id="tab-ejercicios" aria-controls="panel-ejercicios" aria-selected="false">Ejercicios</button>
       <button class="tabbtn" role="tab" id="tab-biblioteca" aria-controls="panel-biblioteca" aria-selected="false">Biblioteca</button>
@@ -1312,6 +1387,179 @@
     <p class="sintro">Veinte preguntas sobre el plan, <b>una a la vez</b> y de varios tipos &#8212; econom&#237;a de carrera, tend&#243;n, cadencia, VO2 Max, zonas y m&#225;s. Un intento por d&#237;a por persona &#8212; se guarda en tu base compartida. Apruebas con <b>12 de 20</b> (60%).</p>
     <div id="quizRoot"></div>
   </section>
+
+  <!-- ================= PESTA&#209;A 7: CARRERA ================= -->
+  <section class="panel hide" id="panel-carrera" role="tabpanel" aria-labelledby="tab-carrera" tabindex="-1">
+
+    <div class="rchero">
+      <div class="rchead">
+        <span class="rcname">15K Hipereventos</span>
+        <span class="rcwhen">Lunes 31 de agosto &#183; 2026</span>
+      </div>
+      <div class="rccount">
+        <span class="rcnum" id="rcDays">&#8212;</span>
+        <span class="rclab" id="rcDaysLab">d&#237;as para la carrera</span>
+      </div>
+      <p class="rcsub">Todo lo que veni&#769;an haciendo &#8212; zona 2, series, movilidad, prehab de canilla &#8212; sigue igual. Lo que cambia es que ahora <b>tiene una fecha</b>. Estas tres semanas se ordenan alrededor de ella.</p>
+
+      <div class="rcgoals">
+        <div class="rcg a">
+          <div class="who">Alejandro &#183; objetivo realista</div>
+          <div class="tgt"><span class="tv">1:20:00</span><span class="tp">5:20 / km</span></div>
+          <p class="tnote">Su objetivo declarado era 1:10 (4:40/km). Los datos de campo no lo sostienen todav&#237;a &#8212; ver abajo por qu&#233;.</p>
+        </div>
+        <div class="rcg v">
+          <div class="who">Valentina &#183; objetivo realista</div>
+          <div class="tgt"><span class="tv">1:33:00</span><span class="tp">6:12 / km</span></div>
+          <p class="tnote">Su objetivo declarado era 1:20 (5:20/km), 45 s/km m&#225;s r&#225;pido que su ritmo de umbral actual.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="snum">01 &#183; DE D&#211;NDE SALEN ESOS N&#218;MEROS</div>
+      <h2>La cuenta honesta</h2>
+      <p class="sintro">Un objetivo de tiempo no se elige: se calcula desde lo que el cuerpo ya demostr&#243; en entrenamiento. Estos son sus datos reales de las &#250;ltimas tres semanas y lo que predicen.</p>
+
+      <div class="rcscen">
+        <div class="scen no">
+          <span class="sk">Alejandro</span>
+          <span class="sv">1:10:00</span><span class="sp">4:40/km</span>
+          <span class="sd"><b>Fuera de alcance.</b> 4:40/km est&#225; a solo <b>12 segundos por km</b> de sus repeticiones de 600 m (4:28) &#8212; habr&#237;a que sostener casi ese ritmo <b>25 veces m&#225;s lejos</b>. Su tempo de 7 km fue a 5:30.</span>
+        </div>
+        <div class="scen mid">
+          <span class="sk">Alejandro</span>
+          <span class="sv">1:17:00</span><span class="sp">5:08/km</span>
+          <span class="sd"><b>Estirar.</b> Solo si las 3 semanas salen limpias, llega fresco y el d&#237;a acompa&#241;a. Es su ritmo de umbral estimado sostenido 15 km enteros: exigente pero no absurdo.</span>
+        </div>
+        <div class="scen go">
+          <span class="sk">Alejandro</span>
+          <span class="sv">1:20:00</span><span class="sp">5:20/km</span>
+          <span class="sd"><b>El objetivo.</b> Sale de su tempo real (7 km a 5:30 con FC media 162, que fue por debajo de umbral). 15K se corre cerca de umbral: 5:15-5:25/km es su rango honesto hoy.</span>
+        </div>
+        <div class="scen no">
+          <span class="sk">Valentina</span>
+          <span class="sv">1:20:00</span><span class="sp">5:20/km</span>
+          <span class="sd"><b>Fuera de alcance.</b> Su tempo de 10 km fue a <b>6:07/km con FC 165</b> &#8212; eso ya era su umbral. 5:20 es 47 s/km m&#225;s r&#225;pido, sobre 5 km m&#225;s de distancia.</span>
+        </div>
+        <div class="scen mid">
+          <span class="sk">Valentina</span>
+          <span class="sv">1:30:00</span><span class="sp">6:00/km</span>
+          <span class="sd"><b>Estirar.</b> Requiere correr 15 km m&#225;s r&#225;pido que su mejor tempo de 10 km. Posible solo si llega descansada de verdad &#8212; y hoy lleva dos semanas sin un BALANCED.</span>
+        </div>
+        <div class="scen go">
+          <span class="sk">Valentina</span>
+          <span class="sv">1:33:00</span><span class="sp">6:12 / km</span>
+          <span class="sd"><b>El objetivo.</b> Ligeramente por debajo de su ritmo de umbral, que es como se corre un 15K. Ser&#237;a su mejor rendimiento registrado del a&#241;o.</span>
+        </div>
+      </div>
+
+      <div class="note" style="margin-top:16px"><b>&#191;Y el VO2 m&#225;x de 45 del reloj?</b> Garmin le da a Valentina 45,2, y ese n&#250;mero en tabla predecir&#237;a un 15K en ~1:10. Pero su rendimiento real de campo (10 km a 6:07) corresponde a un VO2 m&#225;x funcional bastante m&#225;s bajo. <b>El reloj estima; la pista mide.</b> Cuando los dos se contradicen, manda la pista. Lo mismo aplica a las predicciones de carrera de Garmin, que ya sab&#237;amos que est&#225;n sin calibrar.</div>
+
+      <div class="note" style="margin-top:12px"><b>Esto se puede recalibrar.</b> Si alguno tiene una marca real de carrera anterior (una media marat&#243;n, un 10K cronometrado), ese dato manda por encima de cualquier estimaci&#243;n de entrenamiento y estos n&#250;meros cambian. Y el <b>test del jueves 13</b> (abajo) est&#225; puesto justo para medirlo sin depender de la memoria.</div>
+    </div>
+
+    <div class="block">
+      <div class="snum">02 &#183; EL PLAN</div>
+      <h2>Tres semanas, tres trabajos distintos</h2>
+      <p class="sintro">No hay tiempo para ganar forma nueva &#8212; s&#237; para <b>expresar la que ya tienen</b>. Ese es todo el juego de aqu&#237; al 31: llegar fresco y saber a qu&#233; ritmo correr.</p>
+
+      <div class="phases">
+        <div class="ph">
+          <div class="phh"><span class="pht">Semana 1 &#183; calibrar</span><span class="phd">10 &#8211; 16 ago</span></div>
+          <p><span class="key">Jue 13</span><b>El test.</b> Alejandro: 5 km a 5:20/km &#8212; su ritmo objetivo exacto. No es un entrenamiento duro, es una medici&#243;n: si termina con FC bajo 168 y sensaci&#243;n de poder seguir, el objetivo es correcto; si acaba ahogado, se ajusta a 1:23. Valentina hace su rodaje f&#225;cil normal.</p>
+          <p><span class="key">Dom 16</span>Fondo 14 km. Valentina cierra con <b>3 km a 6:12/km</b> &#8212; su test, m&#225;s suave, dentro del fondo. Alejandro, todo f&#225;cil.</p>
+          <p>Lunes 10 en blanco los dos, sin excepci&#243;n. El resto de la semana igual que siempre.</p>
+        </div>
+
+        <div class="ph">
+          <div class="phh"><span class="pht">Semana 2 &#183; la espec&#237;fica</span><span class="phd">17 &#8211; 23 ago</span></div>
+          <p><span class="key">Jue 20</span><b>La sesi&#243;n clave de las tres semanas.</b> Alejandro: 3&#215;3 km a ritmo objetivo con 3 min de trote entre bloques. Valentina: 2&#215;3 km. Ense&#241;a al cuerpo el ritmo exacto de la carrera y da el &#250;ltimo dato de calibraci&#243;n.</p>
+          <p><span class="key">Dom 23</span>Fondo 15 km con los <b>&#250;ltimos 5 km a ritmo de carrera</b>. Es el ensayo general: misma hora, mismo desayuno, misma ropa, mismos zapatos, y Valentina prueba <b>el gel del minuto 45</b>. Lo que no se prueba aqu&#237;, no se usa el 31.</p>
+          <p>El gimnasio ya baja: m&#225;ximo 3 sesiones y ninguna de pierna pesada despu&#233;s del mi&#233;rcoles 19.</p>
+        </div>
+
+        <div class="ph taper">
+          <div class="phh"><span class="pht">Semana 3 &#183; taper</span><span class="phd">24 &#8211; 31 ago</span></div>
+          <p><span class="key">Regla</span><b>Volumen a la mitad, intensidad corta intacta.</b> El taper no es descansar: es quitar volumen manteniendo un toque de ritmo para que las piernas no se duerman. Lo que se gana aqu&#237; no es forma &#8212; es acceso a la forma que ya tienen.</p>
+          <p><span class="key">Mar 25</span>&#218;ltima sesi&#243;n con ritmo: 5&#215;600 al ritmo de las series de siempre. Corta y f&#225;cil de recuperar.</p>
+          <p><span class="key">Mi&#233; 26</span><b>Se acaba la pierna.</b> Cero sentadillas, cero peso muerto, cero saltos hasta despu&#233;s de la carrera. Tren superior ligero si quieren, nada m&#225;s.</p>
+          <p><span class="key">Jue 27</span>Rodaje f&#225;cil de 6-7 km con <b>4 rectas de 100 m</b> al final (no sprints: solo soltar la zancada).</p>
+          <p><span class="key">Sáb 29</span>Trote muy suave de 20 min + 4 rectas. <b>Dom 30:</b> descanso total o 15 min de trote de piernas. Es v&#237;spera de carrera.</p>
+          <p><span class="key">Lun 31</span>Carrera.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="snum">03 &#183; EL RITMO, KIL&#211;METRO A KIL&#211;METRO</div>
+      <h2>Qu&#233; deber&#237;a marcar el reloj</h2>
+      <p class="sintro">Los dos planes salen <b>ligeramente m&#225;s lentos</b> de lo que apetece y terminan m&#225;s r&#225;pido. Se llama negative split y es la forma con la que casi todo el mundo corre su mejor tiempo. El error cl&#225;sico &#8212; salir eufórico con la manada &#8212; se paga siempre a partir del km 10.</p>
+
+      <div class="ptwrap">
+        <table class="pt">
+          <thead><tr><th>Km</th><th>Ale &#183; ritmo</th><th>Ale &#183; acumulado</th><th>Vale &#183; ritmo</th><th>Vale &#183; acumulado</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>5:28</td><td>5:28</td><td>6:20</td><td>6:20</td></tr>
+            <tr><td>2</td><td>5:28</td><td>10:56</td><td>6:20</td><td>12:40</td></tr>
+            <tr><td>3</td><td>5:28</td><td>16:24</td><td>6:20</td><td>19:00</td></tr>
+            <tr><td>4</td><td>5:28</td><td>21:52</td><td>6:20</td><td>25:20</td></tr>
+            <tr class="mark"><td>5</td><td>5:28</td><td><b>27:20</b></td><td>6:20</td><td><b>31:40</b></td></tr>
+            <tr><td>6</td><td>5:20</td><td>32:40</td><td>6:12</td><td>37:52</td></tr>
+            <tr><td>7</td><td>5:20</td><td>38:00</td><td>6:12</td><td>44:04</td></tr>
+            <tr><td>8</td><td>5:20</td><td>43:20</td><td>6:12</td><td>50:16</td></tr>
+            <tr><td>9</td><td>5:20</td><td>48:40</td><td>6:12</td><td>56:28</td></tr>
+            <tr class="mark"><td>10</td><td>5:20</td><td><b>54:00</b></td><td>6:12</td><td><b>1:02:40</b></td></tr>
+            <tr><td>11</td><td>5:12</td><td>59:12</td><td>6:04</td><td>1:08:44</td></tr>
+            <tr><td>12</td><td>5:12</td><td>1:04:24</td><td>6:04</td><td>1:14:48</td></tr>
+            <tr><td>13</td><td>5:12</td><td>1:09:36</td><td>6:04</td><td>1:20:52</td></tr>
+            <tr><td>14</td><td>5:12</td><td>1:14:48</td><td>6:04</td><td>1:26:56</td></tr>
+            <tr class="mark"><td>15</td><td>5:12</td><td><b>1:20:00</b></td><td>6:04</td><td><b>1:33:00</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note" style="margin-top:16px"><b>La regla de pulso, que manda sobre el reloj:</b> en los primeros 5 km, si la FC pasa de <b>160</b> (los dos), aflojan aunque el ritmo parezca lento &#8212; van demasiado r&#225;pido para el inicio. Del km 6 al 10: Alejandro 160-168, Valentina 162-168. Del 11 al 15: libre, hasta donde aguante. <b>Los &#250;ltimos 3 km son los &#250;nicos donde est&#225; permitido correr por sensaci&#243;n.</b></div>
+
+      <div class="note" style="margin-top:12px"><b>Alejandro, tu punto cr&#237;tico es el arranque.</b> Llevas tres sesiones registrando que los primeros 2 km te suben las pulsaciones y te molestan las tibias. En una carrera eso se multiplica: adrenalina + gente adelantando + salir en fr&#237;o. Tu calentamiento de 12 minutos no es opcional &#8212; es la diferencia entre correr tu carrera o la de los dem&#225;s.</div>
+    </div>
+
+    <div class="block">
+      <div class="snum">04 &#183; LA SEMANA DE CARRERA</div>
+      <h2>Checklist</h2>
+      <p class="sintro">Se guarda en este dispositivo &#8212; puedes ir marcando. Ninguno de estos puntos es entrenamiento: son las cosas que arruinan carreras que estaban ganadas.</p>
+
+      <div class="ckwhen">De lunes 24 a s&#225;bado 29</div>
+      <div class="ckl" id="cklRace">
+        <label class="ck"><input type="checkbox" data-ck="c1"><span class="cktx"><b>Dormir es el entrenamiento de esta semana.</b> Y ojo: las noches que m&#225;s pesan son la del <b>jueves y la del viernes</b>, no la v&#237;spera. Casi nadie duerme bien la noche antes de una carrera, y no pasa nada si las anteriores estuvieron bien.</span></label>
+        <label class="ck"><input type="checkbox" data-ck="c2"><span class="cktx"><b>Cero pierna desde el mi&#233;rcoles 26.</b> Sin sentadillas, peso muerto, saltos ni pliometr&#237;a. Las piernas necesitan estar vac&#237;as de agujetas, no fuertes.</span></label>
+        <label class="ck"><input type="checkbox" data-ck="c3"><span class="cktx"><b>Nada nuevo.</b> Ni zapatos, ni ropa, ni gel, ni desayuno, ni suplemento. Todo lo que se use el 31 tiene que haberse usado ya en el fondo del 23.</span></label>
+        <label class="ck"><input type="checkbox" data-ck="c4"><span class="cktx"><b>Confirmar la log&#237;stica</b>: hora exacta de largada, d&#243;nde se retira el kit, a qu&#233; hora hay que estar all&#237; y c&#243;mo llegan. Si la carrera es realmente el <b>lunes 31</b> (es d&#237;a laborable &#8212; conviene verificar que no sea el domingo 30), hay que resolver el permiso en el trabajo.</span></label>
+        <label class="ck"><input type="checkbox" data-ck="c5"><span class="cktx"><b>Uñas cortas, ropa lavada y sin costuras nuevas, vaselina donde roza.</b> Un 15K es tiempo suficiente para que una rozadura arruine los &#250;ltimos 5 km.</span></label>
+      </div>
+
+      <div class="ckwhen">Domingo 30 &#183; v&#237;spera</div>
+      <div class="ckl">
+        <label class="ck"><input type="checkbox" data-ck="d1"><span class="cktx"><b>Comer normal, un poco m&#225;s de carbohidrato, nada raro ni pesado.</b> No hace falta cargar pasta como para un marat&#243;n: 15K no vac&#237;a el dep&#243;sito.</span></label>
+        <label class="ck"><input type="checkbox" data-ck="d2"><span class="cktx"><b>Dejar todo preparado la noche antes</b>: n&#250;mero puesto en la camiseta, zapatos, reloj cargado, gel, llaves, agua. Cero decisiones a las 5 de la ma&#241;ana.</span></label>
+        <label class="ck"><input type="checkbox" data-ck="d3"><span class="cktx"><b>Hidratar durante todo el d&#237;a</b>, no de golpe en la noche. Y hoy no se entrena: descanso total o 15 min de trote muy suave.</span></label>
+      </div>
+
+      <div class="ckwhen">Lunes 31 &#183; el d&#237;a</div>
+      <div class="ckl">
+        <label class="ck"><input type="checkbox" data-ck="e1"><span class="cktx"><b>Desayuno 2,5-3 h antes</b>, exactamente el mismo del fondo del 23. Nada nuevo, nada de fibra extra, caf&#233; solo si ya lo toman antes de correr.</span></label>
+        <label class="ck"><input type="checkbox" data-ck="e2"><span class="cktx"><b>Calentamiento de 12 min terminando 10 min antes de la largada</b>: 8 min de trote suave subiendo poco a poco + la movilidad versi&#243;n calle + 3 rectas de 80 m al ritmo objetivo. <b>Alejandro: esto es lo m&#225;s importante de tu d&#237;a.</b></span></label>
+        <label class="ck"><input type="checkbox" data-ck="e3"><span class="cktx"><b>Colocarse atr&#225;s en la salida</b>, no adelante. Los primeros 500 m con gente van siempre 20-30 s/km m&#225;s r&#225;pido de lo que uno cree. Adelantar en el km 12 se siente much&#237;simo mejor que ser adelantado.</span></label>
+        <label class="ck"><input type="checkbox" data-ck="e4"><span class="cktx"><b>Beber en todos los puntos de agua desde el km 5</b>, aunque no haya sed. Caracas en agosto a las 7 de la ma&#241;ana ya pesa, y la deshidrataci&#243;n aparece como pulso alto antes que como sed.</span></label>
+        <label class="ck"><input type="checkbox" data-ck="e5"><span class="cktx"><b>Valentina: el gel en el minuto 45</b>, con agua. Con su antecedente de hambre en el minuto 30 de los rodajes largos, no es opcional.</span></label>
+        <label class="ck"><input type="checkbox" data-ck="e6"><span class="cktx"><b>Si algo va mal, el plan B es terminar bien, no abandonar el ritmo.</b> Si el km 8 se pone duro: bajar 10 s/km, respirar por la nariz 30 segundos y reenganchar. Casi todos los baches de un 15K duran menos de 2 km.</span></label>
+      </div>
+
+      <div class="note" style="margin-top:18px"><b>Y lo que no cambia:</b> movilidad antes de cada sesi&#243;n, estiramiento sostenido despu&#233;s, prehab de canilla dos veces por semana en las dos piernas, y drills los s&#225;bados hasta el 23 (el 29 ya no, esa semana es solo trote suave). Nada de esto se suspende por la carrera &#8212; es justamente lo que los va a llevar sanos hasta la salida.</div>
+    </div>
+
+  </section>
+
 
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
@@ -3931,6 +4179,7 @@
 
   // ---------- tabs router ----------
   var TABS = [
+    {id:"carrera", tab:"tab-carrera", panel:"panel-carrera"},
     {id:"semana", tab:"tab-semana", panel:"panel-semana"},
     {id:"ejercicios", tab:"tab-ejercicios", panel:"panel-ejercicios"},
     {id:"biblioteca", tab:"tab-biblioteca", panel:"panel-biblioteca"},
@@ -4093,6 +4342,38 @@
 
   // ---------- init from hash ----------
   var initial = (location.hash||"").replace("#","");
+
+  // ---------- carrera: cuenta regresiva + checklist ----------
+  var RACE_DATE = new Date(2026, 7, 31, 7, 0, 0); // 31-ago-2026 07:00 (mes 7 = agosto)
+  function renderRaceCountdown(){
+    var el = document.getElementById("rcDays");
+    var lab = document.getElementById("rcDaysLab");
+    if(!el) return;
+    var now = new Date();
+    var a = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var b = new Date(RACE_DATE.getFullYear(), RACE_DATE.getMonth(), RACE_DATE.getDate());
+    var d = Math.round((b - a) / 86400000);
+    if (d > 1){ el.textContent = d; lab.textContent = "dias para la carrera"; }
+    else if (d === 1){ el.textContent = "1"; lab.textContent = "dia \u2014 es manana"; }
+    else if (d === 0){ el.textContent = "HOY"; lab.textContent = "a correr"; }
+    else { el.textContent = Math.abs(d); lab.textContent = "dias desde la carrera"; }
+  }
+  function bindRaceChecklist(){
+    var boxes = document.querySelectorAll('#panel-carrera .ck input[data-ck]');
+    Array.prototype.forEach.call(boxes, function(b){
+      var key = "race_ck_" + b.getAttribute("data-ck");
+      var saved = null;
+      try{ saved = localStorage.getItem(key); }catch(e){}
+      if (saved === "1"){ b.checked = true; b.parentNode.classList.add("done"); }
+      b.addEventListener("change", function(){
+        if (b.checked){ b.parentNode.classList.add("done"); } else { b.parentNode.classList.remove("done"); }
+        try{ localStorage.setItem(key, b.checked ? "1" : "0"); }catch(e){}
+      });
+    });
+  }
+  renderRaceCountdown();
+  bindRaceChecklist();
+
   showTab(initial || "semana", {setHash:false, noScroll:true});
 })();
 </script>
