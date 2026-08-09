@@ -1070,6 +1070,20 @@
   .ckwhen{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);
     margin:16px 0 4px;font-weight:700}
 
+
+  .prof{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 16px 12px;margin-top:16px}
+  .prof svg{display:block;width:100%;height:132px}
+  @media(max-width:560px){.prof svg{height:104px}}
+  .proflab{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;
+    letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-top:6px}
+  .profnums{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:14px}
+  .pn{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:11px;padding:11px 13px}
+  .pn .pv{font-size:19px;font-weight:800;color:#fff;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .pn .pl{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:3px}
+  table.pt td.p-up{color:#f0993f} table.pt td.p-dn{color:#3fc48c} table.pt td.p-fl{color:rgba(255,255,255,.35)}
+  table.pt td.p-up,table.pt td.p-dn,table.pt td.p-fl{font-family:var(--mono);font-size:11.5px;text-align:left}
+  table.pt tr.hard td{background:rgba(240,102,79,.12)}
+  table.pt tr.hard td:first-child{color:#f0664f;font-weight:700}
 </style>
 
 <header class="hero">
@@ -1522,40 +1536,97 @@
     </div>
 
     <div class="block">
-      <div class="snum">03 &#183; EL RITMO, KIL&#211;METRO A KIL&#211;METRO</div>
+      <div class="snum">03 &#183; EL RECORRIDO</div>
+      <h2>Qu&#233; dice el trazado</h2>
+      <p class="sintro">Sale de la <b>Avenida R&#237;o de Janeiro, Las Mercedes</b>, y es un circuito de ida y vuelta por el este de Caracas. La buena noticia: es <b>muy plano</b>. La que hay que tener en cuenta: la &#250;nica cuesta de verdad est&#225; en el kil&#243;metro 14.</p>
+
+      <div class="prof">
+        <svg viewBox="0 0 760 120" preserveAspectRatio="none" role="img" aria-label="Perfil de elevaci&#243;n del recorrido">
+          <defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--amber)" stop-opacity=".55"/>
+            <stop offset="100%" stop-color="var(--amber)" stop-opacity="0"/>
+          </linearGradient></defs>
+          <line x1="52.2" y1="10" x2="52.2" y2="98" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                  <line x1="107.1" y1="10" x2="107.1" y2="98" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                  <line x1="154.2" y1="10" x2="154.2" y2="98" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                  <line x1="205.4" y1="10" x2="205.4" y2="98" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                  <line x1="254.8" y1="10" x2="254.8" y2="98" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                  <line x1="306.4" y1="10" x2="306.4" y2="98" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                  <line x1="355.2" y1="10" x2="355.2" y2="98" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                  <line x1="410.8" y1="10" x2="410.8" y2="98" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                  <line x1="456.8" y1="10" x2="456.8" y2="98" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                  <line x1="508.6" y1="10" x2="508.6" y2="98" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                  <line x1="558.2" y1="10" x2="558.2" y2="98" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                  <line x1="611.9" y1="10" x2="611.9" y2="98" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                  <line x1="668.6" y1="10" x2="668.6" y2="98" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                  <line x1="712.1" y1="10" x2="712.1" y2="98" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+          <polygon points="0,98 0.0,72.1 9.0,74.7 19.8,74.7 25.0,69.5 31.9,61.8 38.6,56.6 42.6,41.1 47.1,35.9 52.2,48.8 58.3,54.0 61.9,48.8 65.9,46.2 71.2,46.2 72.9,43.6 76.4,38.5 79.7,35.9 81.8,41.1 83.3,43.6 84.1,38.5 84.9,33.3 85.6,28.1 86.4,22.9 87.2,15.2 88.2,15.2 89.4,12.6 90.4,10.0 90.9,10.0 91.8,12.6 95.7,17.8 107.1,38.5 114.7,48.8 115.9,48.8 118.3,51.4 119.5,54.0 133.0,41.1 137.8,59.2 139.4,59.2 142.0,48.8 147.4,61.8 154.2,69.5 161.6,64.4 174.4,72.1 189.3,64.4 202.4,48.8 205.4,43.6 207.8,38.5 210.5,30.7 213.6,25.5 221.5,38.5 223.2,41.1 225.8,48.8 229.8,43.6 233.9,41.1 238.3,48.8 241.2,46.2 245.7,46.2 250.6,43.6 254.8,51.4 257.7,59.2 260.9,61.8 278.8,74.7 283.5,74.7 284.6,72.1 286.8,64.4 291.3,59.2 299.4,59.2 303.6,38.5 306.4,35.9 308.7,46.2 314.1,43.6 317.0,33.3 319.2,33.3 321.7,25.5 334.7,22.9 337.6,28.1 338.4,28.1 343.6,20.4 350.9,17.8 355.2,30.7 357.9,33.3 359.9,38.5 363.0,54.0 368.0,43.6 370.0,35.9 375.4,56.6 384.6,64.4 388.5,66.9 390.9,79.9 403.0,85.1 410.8,69.5 416.7,77.3 420.0,82.5 422.4,85.1 432.8,79.9 447.7,82.5 451.6,74.7 455.1,64.4 456.8,64.4 460.7,82.5 463.4,90.2 466.2,82.5 467.6,74.7 474.4,69.5 479.7,77.3 489.6,74.7 496.7,90.2 502.6,85.1 508.6,82.5 515.1,87.6 524.6,79.9 529.9,85.1 531.2,98.0 538.4,85.1 543.2,90.2 548.6,90.2 552.1,85.1 558.2,87.6 564.6,95.4 569.7,85.1 578.8,79.9 588.3,85.1 595.8,90.2 604.3,85.1 611.9,87.6 621.0,85.1 630.7,90.2 640.7,85.1 646.9,90.2 659.0,92.8 668.6,87.6 674.0,90.2 682.4,92.8 688.9,82.5 696.3,69.5 701.8,59.2 704.8,56.6 707.5,48.8 709.8,48.8 712.1,51.4 715.4,48.8 721.0,48.8 728.1,66.9 731.9,72.1 736.6,74.7 743.4,77.3 749.9,79.9 760.0,74.7 760,98" fill="url(#pg)" opacity=".38"/>
+          <polyline points="0.0,72.1 9.0,74.7 19.8,74.7 25.0,69.5 31.9,61.8 38.6,56.6 42.6,41.1 47.1,35.9 52.2,48.8 58.3,54.0 61.9,48.8 65.9,46.2 71.2,46.2 72.9,43.6 76.4,38.5 79.7,35.9 81.8,41.1 83.3,43.6 84.1,38.5 84.9,33.3 85.6,28.1 86.4,22.9 87.2,15.2 88.2,15.2 89.4,12.6 90.4,10.0 90.9,10.0 91.8,12.6 95.7,17.8 107.1,38.5 114.7,48.8 115.9,48.8 118.3,51.4 119.5,54.0 133.0,41.1 137.8,59.2 139.4,59.2 142.0,48.8 147.4,61.8 154.2,69.5 161.6,64.4 174.4,72.1 189.3,64.4 202.4,48.8 205.4,43.6 207.8,38.5 210.5,30.7 213.6,25.5 221.5,38.5 223.2,41.1 225.8,48.8 229.8,43.6 233.9,41.1 238.3,48.8 241.2,46.2 245.7,46.2 250.6,43.6 254.8,51.4 257.7,59.2 260.9,61.8 278.8,74.7 283.5,74.7 284.6,72.1 286.8,64.4 291.3,59.2 299.4,59.2 303.6,38.5 306.4,35.9 308.7,46.2 314.1,43.6 317.0,33.3 319.2,33.3 321.7,25.5 334.7,22.9 337.6,28.1 338.4,28.1 343.6,20.4 350.9,17.8 355.2,30.7 357.9,33.3 359.9,38.5 363.0,54.0 368.0,43.6 370.0,35.9 375.4,56.6 384.6,64.4 388.5,66.9 390.9,79.9 403.0,85.1 410.8,69.5 416.7,77.3 420.0,82.5 422.4,85.1 432.8,79.9 447.7,82.5 451.6,74.7 455.1,64.4 456.8,64.4 460.7,82.5 463.4,90.2 466.2,82.5 467.6,74.7 474.4,69.5 479.7,77.3 489.6,74.7 496.7,90.2 502.6,85.1 508.6,82.5 515.1,87.6 524.6,79.9 529.9,85.1 531.2,98.0 538.4,85.1 543.2,90.2 548.6,90.2 552.1,85.1 558.2,87.6 564.6,95.4 569.7,85.1 578.8,79.9 588.3,85.1 595.8,90.2 604.3,85.1 611.9,87.6 621.0,85.1 630.7,90.2 640.7,85.1 646.9,90.2 659.0,92.8 668.6,87.6 674.0,90.2 682.4,92.8 688.9,82.5 696.3,69.5 701.8,59.2 704.8,56.6 707.5,48.8 709.8,48.8 712.1,51.4 715.4,48.8 721.0,48.8 728.1,66.9 731.9,72.1 736.6,74.7 743.4,77.3 749.9,79.9 760.0,74.7" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        <div class="proflab"><span>Salida &#183; 850 m</span><span>km 8 &#183; el descenso</span><span>km 14 &#183; la cuesta</span><span>Meta &#183; 849 m</span></div>
+      </div>
+
+      <div class="profnums">
+        <div class="pn"><div class="pv">14,98 km</div><div class="pl">distancia real</div></div>
+        <div class="pn"><div class="pv">+129 m</div><div class="pl">desnivel positivo</div></div>
+        <div class="pn"><div class="pv">34 m</div><div class="pl">entre el punto m&#225;s alto y el m&#225;s bajo</div></div>
+        <div class="pn"><div class="pv">+19 s</div><div class="pl">lo que cuesta el desnivel en total</div></div>
+      </div>
+
+      <div class="note" style="margin-top:16px"><b>El desnivel no les va a costar la carrera.</b> Sube 129 m y baja 130 en 15 km, y termina a la misma altura donde empieza. Como las subidas cuestan m&#225;s de lo que las bajadas regalan, el saldo neto son unos <b>19 segundos</b> en toda la carrera &#8212; poco m&#225;s de un segundo por kil&#243;metro. Es un trazado r&#225;pido.</div>
+
+      <div class="note red" style="margin-top:12px"><b>Pero el km 14 s&#237; importa, y mucho.</b> Es la &#250;nica subida seria: <b>+14 m con pendiente media de 1,63%</b>, y cae justo cuando quedan dos kil&#243;metros y las piernas est&#225;n vac&#237;as. Ah&#237; se pierden entre 15 y 20 segundos <b>y est&#225; bien perderlos</b> &#8212; lo que no se puede es intentar mantener el ritmo a la fuerza, porque eso funde lo que queda. Se sube por esfuerzo, no por reloj, y se recupera en el 15 que baja hasta la meta.</div>
+
+      <div class="note go" style="margin-top:12px"><b>Y hay dos regalos:</b> el <b>km 8 baja 15 m</b> (es el kil&#243;metro m&#225;s r&#225;pido del d&#237;a, y llega en un buen momento: justo despu&#233;s de la mitad) y el <b>km 15 baja 9 m hasta la meta</b>. Los dos &#250;nicos sitios donde soltarse sin pensar.</div>
+
+      <div class="note" style="margin-top:12px"><b>Ojo con los primeros dos kil&#243;metros:</b> suben 13 m entre los dos. Es poco, pero coincide con el momento en que la adrenalina de la salida empuja a ir r&#225;pido. Si arrancan persiguiendo el ritmo objetivo en esa subida, van a llegar al km 3 con el pulso ya disparado. <b>El trazado est&#225; pidiendo exactamente lo mismo que la estrategia: salir controlados.</b></div>
+
+      <p style="margin-top:14px"><a href="https://www.plotaroute.com/routeprofile/1945653" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:12px;color:var(--amber);text-decoration:none;letter-spacing:.02em">Ver el recorrido completo en plotaroute &#8599;</a></p>
+    </div>
+
+    <div class="block">
+      <div class="snum">04 &#183; EL RITMO, KIL&#211;METRO A KIL&#211;METRO</div>
       <h2>Qu&#233; deber&#237;a marcar el reloj</h2>
-      <p class="sintro">Los dos planes salen <b>ligeramente m&#225;s lentos</b> de lo que apetece y terminan m&#225;s r&#225;pido. Se llama negative split y es la forma con la que casi todo el mundo corre su mejor tiempo. El error cl&#225;sico &#8212; salir eufórico con la manada &#8212; se paga siempre a partir del km 10.</p>
+      <p class="sintro">Estos ritmos <b>ya vienen ajustados al perfil real del recorrido</b>: cada kil&#243;metro tiene el suyo seg&#250;n si sube, baja o es llano, de forma que el <b>esfuerzo</b> sea parejo aunque el reloj var&#237;e. Los dos planes salen algo m&#225;s lentos de lo que apetece y terminan m&#225;s r&#225;pido &#8212; negative split, la forma con la que casi todo el mundo corre su mejor tiempo. El error cl&#225;sico, salir eufórico con la manada, se paga siempre a partir del km 10.</p>
 
       <div class="ptwrap">
         <table class="pt">
-          <thead><tr><th>Km</th><th>Ale &#183; ritmo</th><th>Ale &#183; acumulado</th><th>Vale &#183; ritmo</th><th>Vale &#183; acumulado</th></tr></thead>
+          <thead><tr><th>Km</th><th>Perfil</th><th>Ale &#183; ritmo</th><th>Ale &#183; acum.</th><th>Vale &#183; ritmo</th><th>Vale &#183; acum.</th></tr></thead>
           <tbody>
-            <tr><td>1</td><td>4:46</td><td>4:46</td><td>5:26</td><td>5:26</td></tr>
-            <tr><td>2</td><td>4:46</td><td>9:32</td><td>5:26</td><td>10:52</td></tr>
-            <tr><td>3</td><td>4:46</td><td>14:18</td><td>5:26</td><td>16:18</td></tr>
-            <tr><td>4</td><td>4:46</td><td>19:04</td><td>5:26</td><td>21:44</td></tr>
-            <tr class="mark"><td>5</td><td>4:46</td><td><b>23:50</b></td><td>5:26</td><td><b>27:10</b></td></tr>
-            <tr><td>6</td><td>4:40</td><td>28:30</td><td>5:20</td><td>32:30</td></tr>
-            <tr><td>7</td><td>4:40</td><td>33:10</td><td>5:20</td><td>37:50</td></tr>
-            <tr><td>8</td><td>4:40</td><td>37:50</td><td>5:20</td><td>43:10</td></tr>
-            <tr><td>9</td><td>4:40</td><td>42:30</td><td>5:20</td><td>48:30</td></tr>
-            <tr class="mark"><td>10</td><td>4:40</td><td><b>47:10</b></td><td>5:20</td><td><b>53:50</b></td></tr>
-            <tr><td>11</td><td>4:34</td><td>51:44</td><td>5:14</td><td>59:04</td></tr>
-            <tr><td>12</td><td>4:34</td><td>56:18</td><td>5:14</td><td>1:04:18</td></tr>
-            <tr><td>13</td><td>4:34</td><td>1:00:52</td><td>5:14</td><td>1:09:32</td></tr>
-            <tr><td>14</td><td>4:34</td><td>1:05:26</td><td>5:14</td><td>1:14:46</td></tr>
-            <tr class="mark"><td>15</td><td>4:34</td><td><b>1:10:00</b></td><td>5:14</td><td><b>1:20:00</b></td></tr>
+<tr><td>1</td><td class="p-up">&#9650; +9 m</td><td>4:55</td><td>4:55</td><td>5:35</td><td>5:35</td></tr>
+            <tr><td>2</td><td class="p-up">&#9650; +4 m</td><td>4:50</td><td>9:45</td><td>5:30</td><td>11:05</td></tr>
+            <tr><td>3</td><td class="p-dn">&#9660; &#8722;12 m</td><td>4:35</td><td>14:20</td><td>5:15</td><td>16:20</td></tr>
+            <tr><td>4</td><td class="p-up">&#9650; +10 m</td><td>4:55</td><td>19:15</td><td>5:40</td><td>22:00</td></tr>
+            <tr class="mark"><td>5</td><td class="p-fl">&#8212; &#8722;3 m</td><td>4:40</td><td><b>23:55</b></td><td>5:25</td><td><b>27:25</b></td></tr>
+            <tr><td>6</td><td class="p-up">&#9650; +6 m</td><td>4:45</td><td>28:40</td><td>5:25</td><td>32:50</td></tr>
+            <tr><td>7</td><td class="p-fl">&#8212; +2 m</td><td>4:40</td><td>33:20</td><td>5:20</td><td>38:10</td></tr>
+            <tr><td>8</td><td class="p-dn">&#9660; &#8722;15 m</td><td>4:30</td><td>37:50</td><td>5:05</td><td>43:15</td></tr>
+            <tr><td>9</td><td class="p-fl">&#8212; +2 m</td><td>4:40</td><td>42:30</td><td>5:20</td><td>48:35</td></tr>
+            <tr class="mark"><td>10</td><td class="p-dn">&#9660; &#8722;7 m</td><td>4:35</td><td><b>47:05</b></td><td>5:10</td><td><b>53:45</b></td></tr>
+            <tr><td>11</td><td class="p-fl">&#8212; &#8722;2 m</td><td>4:30</td><td>51:35</td><td>5:10</td><td>58:55</td></tr>
+            <tr><td>12</td><td class="p-fl">&#8212; 0 m</td><td>4:30</td><td>56:05</td><td>5:10</td><td>1:04:05</td></tr>
+            <tr><td>13</td><td class="p-fl">&#8212; 0 m</td><td>4:30</td><td>1:00:35</td><td>5:10</td><td>1:09:15</td></tr>
+            <tr class="hard"><td>14</td><td class="p-up">&#9650; +14 m</td><td>4:50</td><td>1:05:25</td><td>5:30</td><td>1:14:45</td></tr>
+            <tr class="mark"><td>15</td><td class="p-dn">&#9660; &#8722;9 m</td><td>4:25</td><td><b>1:09:50</b></td><td>5:05</td><td><b>1:19:50</b></td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="note" style="margin-top:16px"><b>La regla de pulso, que manda sobre el reloj.</b> Alejandro (FC m&#225;x 198): primeros 5 km <b>por debajo de 172</b>, del 6 al 10 entre <b>172 y 178</b>, del 11 al 15 libre. Valentina (FC m&#225;x 185): primeros 5 km <b>por debajo de 165</b>, del 6 al 10 entre <b>166 y 172</b> (su tempo lo sostuvo ah&#237;), del 11 al 15 libre. Si en el primer tramo el pulso se sale por arriba, aflojan aunque el ritmo parezca lento &#8212; van demasiado r&#225;pido para el inicio. <b>Los &#250;ltimos 3 km son los &#250;nicos donde est&#225; permitido correr por sensaci&#243;n.</b></div>
 
+      <div class="note" style="margin-top:16px"><b>El clima: 7 de la ma&#241;ana en Caracas, en agosto.</b> Es el mes m&#225;s lluvioso del a&#241;o &#8212; unos 21-22&#176;C a la hora de salida, pero con <b>humedad muy alta</b>, que es lo que de verdad pesa. Con un punto de roc&#237;o alrededor de 19&#176;C, las tablas de ajuste por calor dan un <b>3% m&#225;s lento</b>, que sobre estos objetivos ser&#237;an unos <b>2 minutos</b>.</div>
+
+      <div class="note go" style="margin-top:12px"><b>La buena noticia: ese 3% ya est&#225; dentro de sus n&#250;meros.</b> Todos sus entrenamientos se hacen en Caracas entre las 7:00 y las 7:30 de la ma&#241;ana, en agosto, con este mismo calor y esta misma humedad. El tempo de 5:30 de Valentina y el fondo de hoy se corrieron as&#237;. <b>Aplicarles otro 3% ser&#237;a contar el calor dos veces.</b> Sus objetivos se quedan como est&#225;n.</div>
+
+      <div class="note red" style="margin-top:12px"><b>Lo que s&#237; cambia la humedad es el margen de error.</b> Con el aire pesado, el pulso sube antes y la deriva card&#237;aca aparece m&#225;s temprano &#8212; salir 10 s/km demasiado r&#225;pido no cuesta 10 segundos, cuesta los &#250;ltimos 5 km. Por eso la regla de pulso manda sobre el reloj, y por eso hay que <b>beber en todos los puntos de agua desde el km 5</b> aunque no haya sed: en Caracas la deshidrataci&#243;n aparece como pulsaciones altas mucho antes que como sed.</div>
+
+      <div class="note" style="margin-top:12px"><b>Plan de contingencia, decidido antes de salir:</b> si el d&#237;a amanece con sol directo o el aire est&#225; especialmente pesado, se pasa al plan B <b>desde el kil&#243;metro 1</b>, no desde el 10 &#8212; Alejandro a 4:52 (1:13) y Valentina a 5:36 (1:24). Ajustar al principio cuesta un minuto; ajustar tarde cuesta cinco. Y si llueve, que en agosto es probable: el asfalto mojado no obliga a bajar el ritmo, pero s&#237; a no cortar curvas ni pisar l&#237;neas pintadas.</div>
+
       <div class="note" style="margin-top:12px"><b>Alejandro, tu punto cr&#237;tico es el arranque.</b> Llevas tres sesiones registrando que los primeros 2 km te suben las pulsaciones y te molestan las tibias. En una carrera eso se multiplica: adrenalina + gente adelantando + salir en fr&#237;o. Tu calentamiento de 12 minutos no es opcional &#8212; es la diferencia entre correr tu carrera o la de los dem&#225;s.</div>
     </div>
 
     <div class="block">
-      <div class="snum">04 &#183; LA SEMANA DE CARRERA</div>
+      <div class="snum">05 &#183; LA SEMANA DE CARRERA</div>
       <h2>Checklist</h2>
       <p class="sintro">Se guarda en este dispositivo &#8212; puedes ir marcando. Ninguno de estos puntos es entrenamiento: son las cosas que arruinan carreras que estaban ganadas.</p>
 
