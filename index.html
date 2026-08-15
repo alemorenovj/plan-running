@@ -1125,8 +1125,11 @@
     .perfcard{padding:20px 18px}
     .modbody{padding:2px 12px 14px 18px}
     /* carpeta de modulos */
-    .folderhead{padding:14px 15px;gap:11px}
-    .foldericon{width:30px;height:30px;border-radius:9px}
+    /* en movil la cabecera de la carpeta se apila: el contador baja a su propia linea */
+    .folderhead{padding:14px 15px;gap:11px;flex-wrap:wrap;align-items:flex-start}
+    .foldericon{width:30px;height:30px;border-radius:9px;margin-top:2px}
+    .folderchev{margin-top:6px}
+    .foldercount{order:4;flex:1 0 100%;text-align:left;padding-left:41px;margin-top:4px}
     .folderbody{padding:11px 7px 13px;gap:11px}
     .folderbody .modbody{padding:2px 10px 14px 13px}
     .lbody{padding:15px 13px 17px}
@@ -1970,7 +1973,7 @@ window.CLASE = Object.assign(window.CLASE || {}, {
 <div class="sumKey">Din&#225;mico antes, sostenido despu&#233;s. El calentamiento no es un tr&#225;mite: es lo que decide si los primeros dos kil&#243;metros los corres o los sufres.</div>
 
 <h4>La se&#241;al que ya les est&#225; hablando</h4>
-<div class="sumData"><b>Los dos reportan lo mismo: molestia en la tibia izquierda al inicio de las carreras, que cede al calentar.</b> Ale y Valentina, el mismo lado, el mismo momento. Que ceda al calentar es la pista principal &#8212; y son dos mensajes a la vez. El bueno: no parece una lesi&#243;n estructural, porque una fractura por estr&#233;s empeora conforme corres, no mejora. El malo: <b>est&#225;n arrancando en fr&#237;o y us&#225;ndo el primer kil&#243;metro como calentamiento</b>, que es justo el kil&#243;metro donde el tejido est&#225; menos preparado para absorber impacto. Ese patr&#243;n repetido es la antesala del s&#237;ndrome de estr&#233;s tibial medial.</div>
+<div class="sumData"><b>Los dos reportan lo mismo: molestia en la tibia izquierda al inicio de las carreras, que cede al calentar.</b> Alejandro y Valentina, el mismo lado, el mismo momento. Que ceda al calentar es la pista principal &#8212; y son dos mensajes a la vez. El bueno: no parece una lesi&#243;n estructural, porque una fractura por estr&#233;s empeora conforme corres, no mejora. El malo: <b>est&#225;n arrancando en fr&#237;o y us&#225;ndo el primer kil&#243;metro como calentamiento</b>, que es justo el kil&#243;metro donde el tejido est&#225; menos preparado para absorber impacto. Ese patr&#243;n repetido es la antesala del s&#237;ndrome de estr&#233;s tibial medial.</div>
 <p>Aqu&#237; hay que ser honesto con la evidencia: la revisi&#243;n sobre estr&#233;s tibial medial identifica como factores de riesgo el &#237;ndice de masa corporal, la ca&#237;da del navicular y el historial previo, y <b>descarta expl&#237;citamente el rango de dorsiflexi&#243;n como factor de riesgo</b>. O sea: la molestia de tibia no se resuelve solo estirando el tobillo. Se resuelve con progresi&#243;n de carga sensata, con tejido caliente antes de impactar, y con trabajo directo de tibial anterior y s&#243;leo.</p>
 
 <h4>El mecanismo: qu&#233; cambia en el cuerpo al calentar</h4>
@@ -2039,7 +2042,7 @@ window.CLASE = Object.assign(window.CLASE || {}, {
 <p>Y algo m&#225;s: <b>tener m&#225;s rango no siempre es mejor para correr</b>. La rigidez el&#225;stica del complejo pierna-tend&#243;n es parte de la econom&#237;a de carrera. El objetivo no es ser flexible como un gimnasta; es tener rango <i>suficiente y controlado</i> en tobillo, cadera y columna dorsal para que la zancada no tenga que compensar.</p>
 
 <h4>D&#243;nde encaja en la semana que ya tienen</h4>
-<div class="sumData"><b>Su semana real, para que la movilidad no compita con nada.</b> Martes y jueves corren <b>y</b> hacen fuerza, en sesiones separadas del d&#237;a (una en la ma&#241;ana o mediod&#237;a, otra en la tarde). Lunes, mi&#233;rcoles y viernes trabajan tren superior. S&#225;bado es t&#233;cnica y drills &#8212; algo que nunca hab&#237;an hecho antes de ago-2026. Domingo, el fondo. <b>Eso significa que la ventana de movilidad ya existe y est&#225; libre: lunes, mi&#233;rcoles y viernes las piernas no tienen carga.</b> Son los d&#237;as f&#225;ciles del modelo polarizado, y el trabajo de baja carga es exactamente lo que corresponde ah&#237;.</div>
+<div class="sumData"><b>La semana real de Alejandro y Valentina, para que la movilidad no compita con nada.</b> Martes y jueves corren <b>y</b> hacen fuerza, en sesiones separadas del d&#237;a (una en la ma&#241;ana o mediod&#237;a, otra en la tarde). Lunes, mi&#233;rcoles y viernes trabajan tren superior. S&#225;bado es t&#233;cnica y drills &#8212; algo que nunca hab&#237;an hecho antes de ago-2026. Domingo, el fondo. <b>Eso significa que la ventana de movilidad ya existe y est&#225; libre: lunes, mi&#233;rcoles y viernes las piernas no tienen carga.</b> Son los d&#237;as f&#225;ciles del modelo polarizado, y el trabajo de baja carga es exactamente lo que corresponde ah&#237;.</div>
 <p>Adem&#225;s hay una segunda ventana gratis: los martes y jueves, la fase de movilizar del calentamiento previo a correr. No hace falta inventar una sesi&#243;n nueva; hace falta enchufar 6-8 minutos en huecos que ya existen.</p>
 
 <div class="sumData"><b>Un aviso sobre el volumen de fuerza.</b> Valentina hizo <b>162 minutos de fuerza en una sola sesi&#243;n el 27-jul</b>, y <b>9 sesiones de fuerza (~13 h) entre el 21-jul y el 3-ago</b>. Con ese volumen, a&#241;adir m&#225;s minutos de gimnasio no es la jugada. La movilidad aqu&#237; debe ser corta y de baja carga &#8212; 8 minutos, no 40 &#8212; o se convierte en m&#225;s fatiga disfrazada de recuperaci&#243;n.</div>
@@ -2105,7 +2108,7 @@ window.CLASE = Object.assign(window.CLASE || {}, {
 <li>Mide del dedo gordo a la pared. <b>Referencia funcional: 10 cm.</b> Por debajo de eso hay trabajo pendiente. Compara siempre lado contra lado: <b>una diferencia mayor a 1.5 cm entre pies es m&#225;s significativa que el valor absoluto.</b></li>
 </ul>
 
-<div class="sumData"><b>Este es el dato que a ustedes les falta.</b> El dosier registra la molestia de tibia izquierda en Alejandro y Valentina, y molestias de Aquiles &#8212; pero <b>no existe ninguna medici&#243;n de dorsiflexi&#243;n de ninguno de los dos</b>. No la vamos a inventar. Lo honesto es decir qu&#233; hay que medir: <b>cent&#237;metros del test rodilla-a-la-pared en cada pie, para ambos, esta semana</b>, y repetir cada dos semanas. Sin ese n&#250;mero de partida no hay forma de saber si el trabajo de tobillo est&#225; haciendo algo o si el problema est&#225; en otro lado. Y hay una pista que refuerza la sospecha: la molestia est&#225; en el <b>lado izquierdo en los dos</b>, lo que hace especialmente valiosa la comparaci&#243;n izquierdo contra derecho.</div>
+<div class="sumData"><b>Este es el dato que a ustedes les falta.</b> El registro de julio y agosto anota la molestia de tibia izquierda en Alejandro y en Valentina &#8212; pero <b>no existe ninguna medici&#243;n de dorsiflexi&#243;n de ninguno de los dos</b>. No la vamos a inventar. Lo honesto es decir qu&#233; hay que medir: <b>cent&#237;metros del test rodilla-a-la-pared en cada pie, para ambos, esta semana</b>, y repetir cada dos semanas. Sin ese n&#250;mero de partida no hay forma de saber si el trabajo de tobillo est&#225; haciendo algo o si el problema est&#225; en otro lado. Y hay una pista que refuerza la sospecha: la molestia est&#225; en el <b>lado izquierdo en los dos</b>, lo que hace especialmente valiosa la comparaci&#243;n izquierdo contra derecho.</div>
 
 <div class="sumData"><b>Un vecino sospechoso: la cadencia de Valentina, 156 spm.</b> Una cadencia baja alarga la zancada y hace que el pie caiga m&#225;s adelante del centro de masa. Eso aumenta el tiempo de contacto y la demanda de dorsiflexi&#243;n en cada paso, y sube la carga de impacto sobre la tibia &#8212; justo su molestia. En su caso, subir la cadencia un 5-10% probablemente rinda m&#225;s que ganar grados de tobillo.</div>
 
@@ -2629,7 +2632,7 @@ window.CLASE = Object.assign(window.CLASE || {}, {
 
 <div class="sumData">Valentina reporta <b>carga en isquiotibiales y en el VMO</b> &#8212; exactamente los dos tejidos que estos dos ejercicios construyen. Pero el problema no es que le falte trabajo: es la forma. En 14 d&#237;as hizo <b>9 sesiones de fuerza que suman ~13 horas</b>, con una de <b>162 minutos el 27 de julio</b>. Una sesi&#243;n de corredora con sentadilla y peso muerto &#8212; 2 a 4 series de 4 a 6 repeticiones de cada uno, con calentamiento y accesorios &#8212; cabe holgadamente en <b>40 a 50 minutos</b>. Los 162 minutos del 27-jul son, en la mejor lectura, tres sesiones de corredora metidas en una; en la peor, dos horas de volumen que no construye lo que ella necesita y s&#237; compite con sus carreras.</div>
 
-<div class="sumData">Y hay una aplicaci&#243;n directa a la molestia que comparten: ambos sienten la <b>tibia izquierda al inicio de las carreras</b>. El peso muerto rumano y el trabajo exc&#233;ntrico de s&#243;leo cargan la cadena posterior y la unidad tobillo-pantorrilla, que es la que amortigua el aterrizaje antes de que la tibia lo absorba. Es prevenci&#243;n de canilla disfrazada de ejercicio de fuerza &#8212; y le toca a los dos, 2 veces por semana.</div>
+<div class="sumData">Y hay una aplicaci&#243;n directa a la molestia que comparten: Alejandro y Valentina sienten los dos la <b>tibia izquierda al inicio de las carreras</b>. El peso muerto rumano y el trabajo exc&#233;ntrico de s&#243;leo cargan la cadena posterior y la unidad tobillo-pantorrilla, que es la que amortigua el aterrizaje antes de que la tibia lo absorba. Es prevenci&#243;n de canilla disfrazada de ejercicio de fuerza &#8212; y le toca a los dos, 2 veces por semana.</div>
 
 <h4>La dosis, y por qu&#233; es tan peque&#241;a</h4>
 <ul>
@@ -3522,7 +3525,7 @@ window.CLASE = Object.assign(window.CLASE || {}, {
 <h4>La ma&#241;ana: la dosis que ya se est&#225;n tomando</h4>
 <p>La recomendaci&#243;n pr&#225;ctica es salir al exterior dentro de la primera hora tras despertar: <b>5-10 minutos si hay sol, 20-30 si est&#225; nublado</b>. El detalle que casi nadie sabe es la magnitud: un d&#237;a soleado da entre 10.000 y 100.000 lux; la misma luz vista desde dentro de la casa, a trav&#233;s de una ventana, cae a unos pocos cientos. La ventana no sirve. <b>Hay que salir.</b></p>
 
-<div class="sumData"><b>Aqu&#237; los dos ya ganan sin sab&#233;rselo.</b> Valentina sale a correr entre las <b>7:10 y las 7:30</b> al aire libre, y Alejandro entrena desde las <b>6:40</b>. Los dos reciben, sin proponerselo, exactamente la dosis de luz matutina que el consenso recomienda &#8212; y a la hora correcta, dentro de la primera hora despu&#233;s de despertar (ella se levanta 5:53, &#233;l 5:58).<br><br>El &#250;nico hueco identificable estaba en los d&#237;as de caminadora de Valentina, que perd&#237;an esa se&#241;al. Eso se cerr&#243; solo: <b>el 28-jul cambi&#243; de caminadora a calle</b>. En la misma ventana su VO2 m&#225;x estimado subi&#243; de <b>43,8 (28-jul) a 45,3 (4-ago)</b> &#8212; eso es un artefacto de medici&#243;n (Garmin solo estima bien al aire libre), no un efecto de la luz; pero el cambio de escenario s&#237; le devolvi&#243; la exposici&#243;n matutina.<br><br><b>Lo que no est&#225; medido es la otra mitad.</b> No hay ning&#250;n dato de lux nocturno en ninguno de los dos dispositivos: ni WHOOP ni Garmin miden luz ambiental. Para saber si la noche es un problema habr&#237;a que medirlo &#8212; con una app de luxometro del tel&#233;fono, apuntando al techo desde la cama, en las dos horas previas a dormir. Sin ese dato, cualquier afirmaci&#243;n sobre su exposici&#243;n nocturna ser&#237;a inventada.</div>
+<div class="sumData"><b>Valentina ya gana esta sin sab&#233;rselo.</b> Se levanta a las <b>5:53</b> y sus carreras salen entre las <b>7:00 y las 8:20</b>, al aire libre: recibe la dosis de luz matutina que el consenso recomienda, y a la hora correcta, dentro de la primera hora tras despertar.<br><br>En Alejandro esto <b>no se puede afirmar con lo que hay medido</b>. Se levanta a las <b>5:58</b> y su sesi&#243;n de la ma&#241;ana es fuerza, entre las <b>6:30 y las 7:00</b> &#8212; pero en ninguna parte del registro dice si esa hora transcurre bajo techo o al aire libre, y sus carreras son de tarde (18:00-18:45). <b>Eso es lo que hay que averiguar</b>: si entrena en interior, le faltan 5-10 minutos de calle al salir, y es gratis.<br><br>El &#250;nico hueco identificable en ella estaba en sus d&#237;as de caminadora, que perd&#237;an esa se&#241;al. Eso se cerr&#243; solo: <b>el 28-jul cambi&#243; de caminadora a calle</b>. En la misma ventana su VO2 m&#225;x estimado subi&#243; de <b>43,8 (28-jul) a 45,3 (4-ago)</b> &#8212; eso es un artefacto de medici&#243;n (Garmin solo estima bien al aire libre), no un efecto de la luz; pero el cambio de escenario s&#237; le devolvi&#243; la exposici&#243;n matutina.<br><br><b>Lo que no est&#225; medido es la otra mitad.</b> No hay ning&#250;n dato de lux nocturno en ninguno de los dos dispositivos: ni WHOOP ni Garmin miden luz ambiental. Para saber si la noche es un problema habr&#237;a que medirlo &#8212; con una app de luxometro del tel&#233;fono, apuntando al techo desde la cama, en las dos horas previas a dormir. Sin ese dato, cualquier afirmaci&#243;n sobre su exposici&#243;n nocturna ser&#237;a inventada.</div>
 
 <h4>La noche: el n&#250;mero es 10 lux</h4>
 <p>El consenso de <i>PLOS Biology</i> hizo algo poco frecuente: puso cifras en vez de consejos vagos. Para las <b>3 horas previas a dormir</b> recomienda un m&#225;ximo de unos <b>10 lux</b> medidos a la altura del ojo. Para el ambiente diurno en interiores, al menos 250 lux; para el exterior, cuanto m&#225;s mejor.</p>
@@ -3541,7 +3544,8 @@ window.CLASE = Object.assign(window.CLASE || {}, {
 
 <h4>Qu&#233; hacer con esto</h4>
 <ul>
-<li><b>Mantengan la carrera y la fuerza al aire libre por la ma&#241;ana.</b> Es la dosis que ya funciona; no la cambien por comodidad.</li>
+<li><b>Valentina: mantener las carreras de la ma&#241;ana al aire libre.</b> Es la dosis que ya le funciona; no la cambie por la caminadora.</li>
+<li><b>Alejandro: 5-10 minutos de calle al terminar la fuerza de las 6:30-7:00</b>, si esa sesi&#243;n es bajo techo. Es el hueco m&#225;s barato de tapar de toda la clase.</li>
 <li><b>Apaguen el techo a partir de las 20:30</b> y usen dos l&#225;mparas bajas y c&#225;lidas. Es el cambio de mayor retorno por menor esfuerzo de toda esta clase.</li>
 <li><b>Brillo del tel&#233;fono al m&#237;nimo</b> despu&#233;s de las 21:00, m&#225;s que activar el modo noche.</li>
 <li><b>Midan lo que no saben.</b> Una app de lux&#243;metro, tres noches, apuntando al techo desde la cama: si marca m&#225;s de 10-20 lux, ah&#237; hay trabajo.</li>
@@ -3680,7 +3684,7 @@ window.CLASE = Object.assign(window.CLASE || {}, {
 <p>Lo que s&#237; est&#225; bien documentado es el filtro de la <b>comodidad</b>: el zapato que te resulta c&#243;modo desde el primer minuto suele ser el que menos te obliga a compensar. No es un criterio pobre, es el mejor que tenemos.</p>
 
 <h4>Sus tibias, que es de lo que va esta clase</h4>
-<div class="sumData"><b>Los dos arrastran exactamente la misma molestia:</b> tibia izquierda al inicio de las carreras, <b>que cede al calentar</b>. Est&#225; registrada en Alejandro y en Valentina, en la misma pierna. En &#233;l aparece adem&#225;s anotada <b>tres sesiones seguidas</b> junto a "los primeros 2 km me suben las pulsaciones". Ese patr&#243;n &#8212; duele al arrancar, se va con el calor, vuelve al d&#237;a siguiente &#8212; es la firma cl&#225;sica del <b>estr&#233;s tibial temprano</b>, no la de un problema muscular. Y la revisi&#243;n de <i>Journal of Athletic Training</i> (2016) es clara en lo que m&#225;s pesa como factor de riesgo: <b>haber tenido el episodio antes</b>. Es decir: ya est&#225;n en el grupo de riesgo, los dos.</div>
+<div class="sumData"><b>Los dos arrastran exactamente la misma molestia:</b> tibia izquierda al inicio de las carreras, <b>que cede al calentar</b>. Est&#225; registrada en Alejandro y en Valentina, en la misma pierna y en el mismo momento de la sesi&#243;n. Ese patr&#243;n &#8212; duele al arrancar, se va con el calor, vuelve al d&#237;a siguiente &#8212; es la firma cl&#225;sica del <b>estr&#233;s tibial temprano</b>, no la de un problema muscular. Y la revisi&#243;n de <i>Journal of Athletic Training</i> (2016) es clara en lo que m&#225;s pesa como factor de riesgo: <b>haber tenido el episodio antes</b>. Es decir: ya est&#225;n en el grupo de riesgo, los dos.</div>
 <div class="sumData"><b>Y por eso el timing importa hoy:</b> faltan <b>16 d&#237;as</b> para el 15K de Hipereventos del <b>31 de agosto</b> (objetivos 1:10 y 1:20). Cambiar de drop ahora le entrega carga nueva justo al Aquiles, al s&#243;leo y a la tibia &#8212; las tres estructuras que ya est&#225;n habl&#225;ndoles. <b>La regla para estas dos semanas es una sola: cero zapatillas nuevas.</b> Lo que se use el 31 tiene que haberse usado ya en el fondo del 23 de agosto.</div>
 <div class="sumData"><b>Lo que falta medir, y es un hueco real:</b> en todo el registro de julio y agosto <b>no aparece ni una sola vez el modelo, el drop ni el kilometraje</b> de las zapatillas de ninguno de los dos. Se est&#225; hablando de molestias tibiales sin saber sobre qu&#233; geometr&#237;a est&#225;n corriendo. Son dos datos que se consiguen en cinco minutos: el drop viene en la ficha del fabricante, y los km se empiezan a contar hoy.</div>
 
@@ -3843,7 +3847,7 @@ window.CLASE = Object.assign(window.CLASE || {}, {
 <p><i>Un matiz que importa:</i> "ritmo parejo" no significa "n&#250;meros iguales en el reloj". En un recorrido con desnivel, mantener el esfuerzo parejo obliga a que el reloj var&#237;e. Ese es el criterio correcto.</p>
 
 <h4>El patr&#243;n de Valentina, medido</h4>
-<div class="sumData"><b>Sus 4&#215;600 fueron, el mismo d&#237;a, de 5:05 a 8:25.</b> Tres minutos y veinte segundos por kil&#243;metro de diferencia entre la primera repetici&#243;n y la &#250;ltima, en una sesi&#243;n que deber&#237;a tener las cuatro casi id&#233;nticas. No es falta de forma: <b>es una estrategia de reparto</b>. Sale muy por encima de lo que puede sostener, gasta la cuenta en la primera repetici&#243;n y las tres siguientes son la factura. Y esto no es un problema de series: es un ensayo de lo que va a pasar el 31 de agosto si sale con la manada. Su propia nota lo dice desde el otro lado: "cuesta la zona 4, el reloj me pasa de z2 a z3".</div>
+<div class="sumData"><b>Los 4&#215;600 de Valentina fueron, el mismo d&#237;a, de 5:05 a 8:25.</b> Tres minutos y veinte segundos por kil&#243;metro de diferencia entre la primera repetici&#243;n y la &#250;ltima, en una sesi&#243;n que deber&#237;a tener las cuatro casi id&#233;nticas. No es falta de forma: <b>es una estrategia de reparto</b>. Sale muy por encima de lo que puede sostener, gasta la cuenta en la primera repetici&#243;n y las tres siguientes son la factura. Y esto no es un problema de series: es un ensayo de lo que va a pasar el 31 de agosto si sale con la manada. Su propia nota lo dice desde el otro lado: "cuesta la zona 4, el reloj me pasa de z2 a z3".</div>
 <div class="sumData"><b>Su reparto de intensidades cuenta la misma historia:</b> del reporte anual salen un <b>34% del tiempo en Z4-Z5</b> y poca Z2 &#8212; lo contrario del 80/20. Alguien que entrena casi todo por encima de su umbral nunca aprende a reconocer d&#243;nde est&#225; ese umbral, porque no lo cruza: vive del otro lado. <b>El pacing no se improvisa el d&#237;a de la carrera; se calibra en los entrenamientos, y para calibrarlo hace falta tener sesiones f&#225;ciles de verdad.</b></div>
 
 <h4>El mismo ritmo no les cuesta lo mismo</h4>
@@ -3913,7 +3917,7 @@ window.CLASE = Object.assign(window.CLASE || {}, {
 </ul>
 
 <h4>El hambre del minuto 30 de Valentina</h4>
-<div class="sumData"><b>Est&#225; registrado como episodio: hambre en el minuto 30 del rodaje de 11,4 km, sin geles.</b> (En el registro, el &#250;nico rodaje de esa distancia es el de <b>11,40 km a 7:01/km con FC 151</b>.) Y ese dato es m&#225;s interesante de lo que parece, porque <b>a los 30 minutos es fisiol&#243;gicamente imposible haber vaciado el gluc&#243;geno</b>. Lo que produce esa sensaci&#243;n es otra cosa: casi siempre <b>salir con el dep&#243;sito bajo</b> &#8212; poco o ning&#250;n desayuno &#8212; o una glucemia que cae porque se comi&#243; algo dulce demasiado cerca de la salida. <b>El arreglo no es el gel: es el desayuno.</b> El gel viene despu&#233;s, como seguro.</div>
+<div class="sumData"><b>Valentina lo tiene registrado como episodio: hambre en el minuto 30 del rodaje de 11,4 km, sin geles.</b> (En el registro, el &#250;nico rodaje de esa distancia es el de <b>11,40 km a 7:01/km con FC 151</b>.) Y ese dato es m&#225;s interesante de lo que parece, porque <b>a los 30 minutos es fisiol&#243;gicamente imposible haber vaciado el gluc&#243;geno</b>. Lo que produce esa sensaci&#243;n es otra cosa: casi siempre <b>salir con el dep&#243;sito bajo</b> &#8212; poco o ning&#250;n desayuno &#8212; o una glucemia que cae porque se comi&#243; algo dulce demasiado cerca de la salida. <b>El arreglo no es el gel: es el desayuno.</b> El gel viene despu&#233;s, como seguro.</div>
 <div class="sumData"><b>Aun as&#237;, el gel del minuto 45 s&#237; va.</b> El plan de carrera lo fija expl&#237;citamente para ella, con agua, y tiene sentido por dos razones: a los <b>1:20</b> de carrera, un gel de ~25 g la deja justo dentro de la recomendaci&#243;n de 30 g/h para 1-2 h; y con un antecedente de hambre en el minuto 30, <b>el efecto sobre la cabeza vale tanto como el metab&#243;lico</b>. Para Alejandro, con <b>1:10</b> de carrera previsto, un gel es opcional &#8212; si lo usa, que sea el mismo que ya prob&#243;.</div>
 <div class="sumData"><b>La regla que hace que todo esto funcione, y que ellos ya tienen escrita:</b> "lo que no se pruebe el domingo 23, no se usa el 31". Ese fondo es el &#250;nico ensayo disponible: mismo desayuno, misma hora, mismo gel, misma agua. Un gel nuevo probado el d&#237;a de la carrera es la forma m&#225;s tonta de perder cinco minutos, porque el intestino tambi&#233;n se entrena y el suyo <b>hoy no tiene ning&#250;n gel entrenado</b>.</div>
 
@@ -4858,29 +4862,12 @@ window.CLASE = Object.assign(window.CLASE || {}, {
     return { done: done, total: m.temas.length };
   }
   function modCompleted(m){ var p = modProgress(m); return p.total > 0 && p.done === p.total; }
-  // v25: se elimino el bloqueo secuencial. Todos los modulos estan siempre abiertos.
+  // v25: se elimino el bloqueo secuencial. Todos los modulos y lecciones estan
+  // siempre accesibles; el progreso (marcado, % por modulo y global) no cambia.
+  // (se conservan como utilidades; ya nadie bloquea nada)
   function modUnlocked(){ return true; }
 
-  // ---- toast de desbloqueo ----
-  var toastWrap = document.createElement("div");
-  toastWrap.className = "toastwrap";
-  document.body.appendChild(toastWrap);
-  function showToast(html){
-    var el = document.createElement("div");
-    el.className = "toast";
-    el.setAttribute("role", "status");
-    el.innerHTML = html;
-    toastWrap.appendChild(el);
-    if (reduced()){
-      setTimeout(function(){ if (el.parentNode) el.parentNode.removeChild(el); }, 3200);
-    } else {
-      requestAnimationFrame(function(){ el.classList.add("show"); });
-      setTimeout(function(){
-        el.classList.remove("show");
-        setTimeout(function(){ if (el.parentNode) el.parentNode.removeChild(el); }, 400);
-      }, 3200);
-    }
-  }
+  // (v25: se retiro el toast de desbloqueo junto con el bloqueo secuencial)
 
   // ---- indicador de avance global ----
   var rutaEl = document.getElementById("ruta");
