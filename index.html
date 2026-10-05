@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<title>Plan de running v30 &#183; semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
+<title>Plan de running v31 &#183; semana, ejercicios, biblioteca, seguimiento, perfiles y quiz</title>
 <style>
   /* =========================================================
      v25 &#183; Noche grafito + &#225;mbar &#183; liquid glass (dark-only)
@@ -1061,6 +1061,39 @@
   .note .exlink,.dayclave .exlink{font-family:var(--body);font-style:normal;font-weight:500}
 
 
+
+  /* ---- bloque 01 Los focos (oct 2026) ---- */
+  .focigrid{display:grid;gap:12px;margin-top:4px}
+  @media(min-width:880px){.focigrid{grid-template-columns:repeat(3,1fr)}}
+  .focicard{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--rlg);
+    padding:18px 19px 17px 22px;
+    background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.055)}
+  .focicard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;z-index:2;background:var(--line2)}
+  .fc-daily::before{background:linear-gradient(180deg,var(--ind),rgba(138,164,255,.2))}
+  .fc-knee::before{background:linear-gradient(180deg,var(--red),rgba(244,112,90,.2))}
+  .fc-sh::before{background:linear-gradient(180deg,var(--cyan),rgba(79,208,230,.2))}
+  .fctag{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;
+    font-weight:700;padding:4px 9px;border-radius:999px;display:inline-block;line-height:1.25}
+  .ft-daily{background:var(--indsoft);color:var(--ind)}
+  .ft-knee{background:rgba(244,112,90,.14);color:var(--red)}
+  .ft-sh{background:rgba(79,208,230,.14);color:var(--cyan)}
+  .focicard h3{font-size:18px;font-weight:500;letter-spacing:-.02em;color:#fff;margin:10px 0 7px}
+  .focicard p{font-size:14px;color:var(--ink2);line-height:1.6;margin:0 0 10px}
+  .focicard p b{color:var(--ink);font-weight:600}
+  .focicard .exrow{display:flex;flex-wrap:wrap;gap:6px;margin:0}
+  .fcrule{font-size:13px;color:var(--ink3);border-top:1px dashed var(--line);padding-top:9px;margin:11px 0 0 !important}
+  .fcrule b{color:var(--ink2) !important}
+  .kdetails{margin-top:14px;border:1px solid var(--line);border-radius:var(--rmd);background:rgba(255,255,255,.025)}
+  .kdetails summary{cursor:pointer;padding:13px 16px;font-family:var(--mono);font-size:10.5px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--red);font-weight:700;list-style:none}
+  .kdetails summary::-webkit-details-marker{display:none}
+  .kdetails summary::before{content:"+  "}
+  .kdetails[open] summary::before{content:"\2212  "}
+  .kdetails .kdbody{padding:2px 16px 16px}
+  .drow.sh{background:rgba(79,208,230,.07);border-color:rgba(79,208,230,.18)}
+  .drow.sh .dk{color:var(--cyan)}
+
   /* ---- bloque de rodilla de Valentina (oct 2026) ---- */
   .kneeblock{border-radius:var(--rlg);padding:22px 24px;margin-top:0}
   .vpill{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9.5px;
@@ -1322,7 +1355,7 @@
       </div>
       <div class="hstat">
         <svg viewBox="0 0 20 20" fill="rgba(255,255,255,.6)" aria-hidden="true"><rect x="1" y="1" width="2.5" height="2.5"/><rect x="8.75" y="1" width="2.5" height="2.5"/><rect x="16.5" y="1" width="2.5" height="2.5"/><rect x="4.875" y="8.75" width="2.5" height="2.5"/><rect x="12.625" y="8.75" width="2.5" height="2.5"/><rect x="1" y="16.5" width="2.5" height="2.5"/><rect x="8.75" y="16.5" width="2.5" height="2.5"/><rect x="16.5" y="16.5" width="2.5" height="2.5"/></svg>
-        <span class="hsv">42 ejercicios</span>
+        <span class="hsv">44 ejercicios</span>
         <span class="hsl">Con ficha y video</span>
       </div>
       <div class="hstat">
@@ -1358,131 +1391,96 @@
   <section class="panel" id="panel-semana" role="tabpanel" aria-labelledby="tab-semana" tabindex="-1">
 
     <div class="block">
-      <div class="snum">01 &#183; LA REGLA</div>
-      <h2>Un d&#237;a, una rutina</h2>
-      <p class="sintro">Antes hab&#237;a una &#8220;movilidad diaria&#8221; y adem&#225;s rutinas pre-carrera y pre-fuerza, y no quedaba claro cu&#225;l tocaba el martes. Se acab&#243;: <b>cada d&#237;a tiene UNA sola rutina</b>, ya decidida abajo.</p>
-      <div class="reglabox">
-        <div class="rgitem">
-          <span class="rgk k-run">Corres<br>o pierna</span>
-          <p><b>D&#237;a que corres o haces pierna</b> &#8594; movilidad <b>din&#225;mica corta ANTES de cada sesi&#243;n</b> (prepara sin apagar la fuerza) y estiramiento sostenido DESPU&#201;S. Si el d&#237;a tiene dos sesiones, cada una lleva la suya &#8212; no hay una movilidad extra suelta.</p>
+      <div class="snum">01 &#183; LOS FOCOS <span class="newbadge">Oct 2026</span></div>
+      <h2>Lo diario y los dos focos</h2>
+      <p class="sintro">El entrenamiento lo pone el coach y no se toca. Esto es lo de alrededor, en tres piezas: un h&#225;bito diario en casa y dos focos del momento &#8212; la rodilla de Valentina y el hombro de los dos. Cada d&#237;a de abajo ya lo trae repartido.</p>
+      <div class="focigrid">
+
+        <div class="focicard fc-daily">
+          <span class="fctag ft-daily">Diario &#183; ambos</span>
+          <h3>5 min en casa</h3>
+          <p>Rango activo que <b>vive de la frecuencia</b>, a cualquier hora del d&#237;a:</p>
+          <div class="exrow">
+            <button class="exlink" data-ex="hip-cars" type="button">CARs de cadera</button>
+            <button class="exlink" data-ex="hombro-cars" type="button">CARs de hombro</button>
+            <button class="exlink" data-ex="toracica-ext" type="button">Extensi&#243;n tor&#225;cica</button>
+            <button class="exlink" data-ex="pie-corto" type="button">Pie corto</button>
+          </div>
+          <p class="fcrule">3&#8211;5 vueltas lentas por lado, 8 del rodillo, 3&#215;10 por pie. Todo junto cabe en 5 minutos.</p>
         </div>
-        <div class="rgitem">
-          <span class="rgk k-up">Tren<br>superior</span>
-          <p><b>D&#237;a de tren superior</b> &#8594; ah&#237; va la <b>movilidad completa de 10 min</b> (la larga, con estiramiento sostenido). Es lo que ya vienen haciendo &#8212; ahora es oficial y no se duplica.</p>
+
+        <div class="focicard fc-knee">
+          <span class="fctag ft-knee">Rodilla &#183; solo Valentina</span>
+          <h3>4 min diarios + 2 d&#237;as fuertes</h3>
+          <p>El n&#250;cleo va <b>todos los d&#237;as en casa</b>; la fuerza, lunes y viernes (ya est&#225; en su d&#237;a):</p>
+          <div class="exrow">
+            <button class="exlink" data-ex="quad-set" type="button">Isom&#233;trico 10&#215;10 s</button>
+            <button class="exlink" data-ex="rotula-mov" type="button">R&#243;tula 1 min</button>
+            <button class="exlink" data-ex="rodilla-rango" type="button">Tal&#243;n 2&#215;15</button>
+          </div>
+          <p class="fcrule"><b>La regla:</b> dolor m&#225;ximo 3 de 10, y la ma&#241;ana siguiente decide si se sube o se repite. Si se queda en 3 o menos, <b>se sigue corriendo</b>.</p>
         </div>
-        <div class="rgitem">
-          <span class="rgk k-2ses">Dos<br>sesiones</span>
-          <p><b>Martes y jueves entrenan dos veces</b> (fuerza y carrera en momentos distintos del d&#237;a). Deja <b>6 h o m&#225;s</b> entre ambas y pon la sesi&#243;n de calidad cuando est&#233;s m&#225;s fresco.</p>
+
+        <div class="focicard fc-sh">
+          <span class="fctag ft-sh">Hombro &#183; ambos</span>
+          <h3>Sin minutos nuevos</h3>
+          <p>Los CARs van en el diario, el calentamiento de lun/mi&#233;/vie <b>ya es</b> el trabajo de hombro, y esos d&#237;as la sesi&#243;n se cierra colgados de la barra:</p>
+          <div class="exrow">
+            <button class="exlink" data-ex="hombro-cars" type="button">CARs de hombro</button>
+            <button class="exlink" data-ex="cuelgue-barra" type="button">Cuelgue de barra</button>
+            <button class="exlink" data-ex="wall-slide" type="button">Deslizamiento en pared</button>
+          </div>
+          <p class="fcrule">Rango activo diario + descompresi&#243;n 3&#215;/semana. Nada que a&#241;adir los d&#237;as de correr.</p>
         </div>
+
       </div>
-      <div class="note" style="margin-top:16px">Regla de oro: din&#225;mico antes, sostenido despu&#233;s. Nunca estiramiento est&#225;tico largo antes de correr o de cargar.</div>
-      <div class="note ind" style="margin-top:11px"><b>D&#243;nde se hace cada cosa.</b> Las carreras son <b>en la calle</b>: ah&#237; no hay piso donde tumbarse ni bandas, as&#237; que <b>todo lo que rodea a una carrera est&#225; escrito para hacerse de pie</b>, como mucho apoyando una mano en un poste o el pie en un bordillo. Lo que necesita suelo o banda &#8212; 90/90, couch completo, ci&#225;tico tumbado, monster walk &#8212; vive en los <b>d&#237;as de gimnasio</b> (lun/mi&#233;/vie y el bloque de pierna de mar/jue) o en casa. Cada ficha que tiene versi&#243;n de calle la trae explicada al final.</div>
+
+      <details class="kdetails">
+        <summary>Rodilla &#183; &#191;d&#243;nde le duele? &#183; se&#241;ales de m&#233;dico &#183; qu&#233; cambia al correr</summary>
+        <div class="kdbody">
+          <p class="sintro" style="margin-bottom:0">No todas las rodillas duelen por lo mismo. Que se toque la rodilla con un dedo y busque el punto &#8212; los tres casos comparten el mismo n&#250;cleo (gl&#250;teo + cu&#225;driceps + isom&#233;tricos) y solo cambia el acento.</p>
+          <div class="kcases">
+            <div class="kcase">
+              <span class="kk">Caso A &#183; delante</span>
+              <h4>Alrededor o detr&#225;s de la r&#243;tula</h4>
+              <p>El m&#225;s com&#250;n: molesta al bajar escaleras, en cuclillas y al levantarse tras estar sentada. Acento en el <b>gl&#250;teo y el control de la bajada</b>.</p>
+              <div class="exrow">
+                <button class="exlink" data-ex="wall-sit" type="button">Sentadilla isom&#233;trica</button>
+                <button class="exlink" data-ex="step-down" type="button">Bajada de escal&#243;n</button>
+              </div>
+            </div>
+            <div class="kcase">
+              <span class="kk">Caso B &#183; por fuera</span>
+              <h4>Cara externa, encima de la rodilla</h4>
+              <p>Aparece siempre al mismo minuto de correr y empeora en bajada y peralte. Es la cintilla. Acento en el <b>gl&#250;teo medio</b>; estirarla sola no lo resuelve.</p>
+              <div class="exrow">
+                <button class="exlink" data-ex="abduccion-lado" type="button">Abducci&#243;n de cadera</button>
+                <button class="exlink" data-ex="tfl-estiro" type="button">Estiramiento de cintilla</button>
+              </div>
+            </div>
+            <div class="kcase">
+              <span class="kk">Caso C &#183; debajo</span>
+              <h4>En el tend&#243;n, bajo la r&#243;tula</h4>
+              <p>Un punto exacto se&#241;alable con el dedo; duele al arrancar y mejora al calentar. Acento en <b>isom&#233;tricos largos</b>; los saltos salen hasta que ceda.</p>
+              <div class="exrow">
+                <button class="exlink" data-ex="quad-set" type="button">Isom&#233;trico de cu&#225;driceps</button>
+                <button class="exlink" data-ex="wall-sit" type="button">Sentadilla isom&#233;trica</button>
+              </div>
+            </div>
+          </div>
+          <div class="alertbox">
+            <div class="alerth">Con cualquiera de estas, al m&#233;dico antes de seguir</div>
+            <p>Se hincha &#183; se bloquea o &#171;se va&#187; al apoyar &#183; duele de noche o no deja caminar &#183; apareci&#243; de golpe con un giro o chasquido &#183; tres semanas haciendo esto bien y sigue igual. Esto es carga progresiva, no un diagn&#243;stico.</p>
+          </div>
+          <div class="note" style="margin-top:14px"><b>Mientras duela, al correr:</b> cadencia +5% (pasos m&#225;s cortos descargan la r&#243;tula) &#183; fuera bajadas pronunciadas y el borde inclinado de la calle &#183; escaleras con pasos cortos &#183; y las dos primeras semanas todo suave &#8212; la bajada de escal&#243;n se deja fuera si bajar es justo lo que duele.</div>
+        </div>
+      </details>
     </div>
 
     <div class="block">
-      <div class="snum">01b &#183; NUEVO CICLO <span class="newbadge">Sep 2026</span></div>
-      <h2>Los tres de todos los d&#237;as</h2>
-      <p class="sintro">Despu&#233;s del 15K el proyecto cambia de fase: ya no hay fecha que defender, as&#237; que la movilidad sube un escal&#243;n &#8212; <b>de ganar rango a controlarlo en movimiento</b>, que es lo que se siente al correr suelto. Estos tres no dependen de qu&#233; sesi&#243;n toque hoy: van solos, en cualquier momento del d&#237;a, y son los que m&#225;s se notan &#8212; <b>viven de la frecuencia</b>. <b>Los tres se hacen en casa</b> (el del rodillo y el del pie lo piden), no antes de salir a correr. Todo lo dem&#225;s rota por d&#237;a.</p>
-      <div class="cadbox">
-        <div class="cadchips">
-          <button class="exlink" data-ex="hip-cars" type="button">CARs de cadera</button>
-          <button class="exlink" data-ex="toracica-ext" type="button">Extensi&#243;n tor&#225;cica</button>
-          <button class="exlink" data-ex="pie-corto" type="button">Pie corto</button>
-        </div>
-        <p style="margin-top:12px"><b>CARs de cadera</b> &#8212; 3&#8211;5 vueltas por lado, lent&#237;simas. Es el de &#171;soltar&#187; por excelencia: mantiene el rango que ganan con los estiramientos. &#183; <b>Extensi&#243;n tor&#225;cica</b> &#8212; 8 repeticiones sobre el rodillo; devuelve lo que quitan las horas sentado y le da aire al braceo y a la respiraci&#243;n. &#183; <b>Pie corto</b> &#8212; 3&#215;10 por pie, descalzos; es la &#250;nica pieza del cuerpo que este proyecto no hab&#237;a tocado, y es la primera que toca el suelo.</p>
-        <p style="margin-top:10px"><b>El resto rota por d&#237;a, con tema propio</b> &#8212; porque la movilidad larga no hace falta repetirla entera todos los d&#237;as, pero s&#237; hace falta que a lo largo de la semana pasen por todo el cuerpo: <b>lunes cadera</b> &#183; <b>mi&#233;rcoles columna y t&#243;rax</b> &#183; <b>viernes tobillo, pie y cadena posterior</b> &#183; <b>s&#225;bado cadena completa</b> con el tejido caliente de los drills. Antes de correr y antes de la pierna manda la especificidad, no la variedad: ah&#237; va siempre lo mismo porque tiene que preparar el gesto.</p>
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="snum">01c &#183; RODILLA DE VALENTINA <span class="newbadge">Oct 2026</span></div>
-      <h2>El apartado de la rodilla</h2>
-      <p class="sintro">Valentina tiene dolor de rodilla y hay movimientos que le cuestan. Esto es un bloque <b>solo para ella</b>, montado encima de la semana que ya hacen, sin tocar nada de lo de Alejandro: cuatro minutos diarios de rango en casa, <b>dos dosis de fuerza en los d&#237;as de gimnasio (lunes y viernes)</b> y una de movimiento el mi&#233;rcoles. Los d&#237;as que corre no se le a&#241;ade carga: solo un isom&#233;trico corto antes de salir.</p>
-
-      <div class="alertbox">
-        <div class="alerth">Antes que nada &#183; esto no es un diagn&#243;stico</div>
-        <p>Lo que hay abajo es <b>carga progresiva y movilidad</b>: lo que cubre la mayor&#237;a de los dolores de rodilla del corredor y lo que de todas formas le conviene tener fuerte. <b>No sustituye a que la vea un fisio o un traumat&#243;logo</b>, y con cualquiera de estas se&#241;ales eso va primero:</p>
-        <ul>
-          <li><b>Se hincha</b> &#8212; de golpe o cada vez que corre.</li>
-          <li><b>Se bloquea, se traba o se &#171;va&#187;</b> (sensaci&#243;n de fallo al apoyar el peso).</li>
-          <li><b>Duele de noche</b> o no deja apoyar la pierna al caminar.</li>
-          <li>Apareci&#243; <b>de golpe</b> con un giro, un golpe o un chasquido.</li>
-          <li>Tres semanas haciendo esto bien y <b>sigue igual o peor</b>.</li>
-        </ul>
-      </div>
-
-      <h3 style="font-size:19px;font-weight:400;letter-spacing:-.025em;margin:26px 0 8px">Primero: &#191;d&#243;nde duele exactamente?</h3>
-      <p class="sintro" style="margin-bottom:0">No todas las rodillas duelen por lo mismo y el acento del ejercicio cambia seg&#250;n el sitio. Que se toque la rodilla con un dedo y busque el punto. <b>Los tres casos comparten el mismo n&#250;cleo</b> &#8212; gl&#250;teo, cu&#225;driceps e isom&#233;tricos &#8212; y se diferencian solo en lo que se a&#241;ade y en lo que se quita de sus carreras.</p>
-      <div class="kcases">
-        <div class="kcase">
-          <span class="kk">Caso A &#183; delante</span>
-          <h4>Alrededor o detr&#225;s de la r&#243;tula</h4>
-          <p>El m&#225;s com&#250;n con diferencia, y el que m&#225;s encaja con <b>&#171;le cuesta ciertos movimientos&#187;</b>: molesta al bajar escaleras, en cuclillas y al levantarse despu&#233;s de estar mucho rato sentada. Es la llamada rodilla de corredor. El acento va en el <b>gl&#250;teo y en el control de la bajada</b>, no en estirar.</p>
-          <div class="exrow">
-            <button class="exlink" data-ex="wall-sit" type="button">Sentadilla isom&#233;trica</button>
-            <button class="exlink" data-ex="step-down" type="button">Bajada de escal&#243;n</button>
-            <button class="exlink" data-ex="abduccion-lado" type="button">Abducci&#243;n de cadera</button>
-            <button class="exlink" data-ex="puente-unipodal" type="button">Puente a una pierna</button>
-          </div>
-        </div>
-        <div class="kcase">
-          <span class="kk">Caso B &#183; por fuera</span>
-          <h4>Cara externa, justo encima de la rodilla</h4>
-          <p>La pista es que <b>aparece siempre al mismo minuto</b> de correr, empeora en bajada y en la acera inclinada, y al parar se va sola. Es la cintilla iliotibial. El acento va en el <b>gl&#250;teo medio</b> y en quitarle bajadas y peralte: la cintilla casi no se estira, as&#237; que estirarla sola no lo resuelve.</p>
-          <div class="exrow">
-            <button class="exlink" data-ex="abduccion-lado" type="button">Abducci&#243;n de cadera</button>
-            <button class="exlink" data-ex="puente-unipodal" type="button">Puente a una pierna</button>
-            <button class="exlink" data-ex="tfl-estiro" type="button">Estiramiento de cintilla</button>
-            <button class="exlink" data-ex="monster" type="button">Monster walk</button>
-          </div>
-        </div>
-        <div class="kcase">
-          <span class="kk">Caso C &#183; debajo</span>
-          <h4>En el tend&#243;n, bajo la r&#243;tula</h4>
-          <p>La pista: <b>un punto exacto que puede se&#241;alar con el dedo</b>, duele al arrancar, mejora al calentar y vuelve peor al d&#237;a siguiente de saltar. Es el tend&#243;n rotuliano. El acento va en <b>isom&#233;tricos largos y carga lenta</b>; los saltos y los pliom&#233;tricos salen hasta que deje de doler.</p>
-          <div class="exrow">
-            <button class="exlink" data-ex="quad-set" type="button">Isom&#233;trico de cu&#225;driceps</button>
-            <button class="exlink" data-ex="wall-sit" type="button">Sentadilla isom&#233;trica</button>
-            <button class="exlink" data-ex="step-down" type="button">Bajada de escal&#243;n</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="foco" style="margin-top:18px">
-        <div class="fh"><span class="ft">La regla que manda</span></div>
-        <p><b>Durante el ejercicio, el dolor no pasa de 3 sobre 10. Y la prueba de verdad es la ma&#241;ana siguiente.</b> Si amanece igual o mejor, la dosis fue correcta. Si amanece peor, fue demasiado: se baja el rango o las repeticiones, <b>no se abandona el bloque</b>. El dolor que sube y baja dentro de ese margen es normal en una rodilla que se est&#225; cargando; el que escala d&#237;a tras d&#237;a no. Esa es la &#250;nica se&#241;al que decide si se progresa esta semana o se repite la anterior.</p>
-      </div>
-
-      <h3 style="font-size:19px;font-weight:400;letter-spacing:-.025em;margin:26px 0 8px">Lo que cambia en sus carreras mientras duela</h3>
-      <p class="sintro" style="margin-bottom:0">El plan de carrera lo pone su coach y no se toca. Esto es lo otro &#8212; lo que no est&#225; en ning&#250;n plan y s&#237; decide c&#243;mo llega la rodilla a la semana siguiente.</p>
-      <div class="kweek">
-        <div class="kwrow"><div class="kwd">1 &#183; Cadencia</div><div class="kwv"><b>Subir su cadencia un 5%.</b> Pasos m&#225;s cortos y m&#225;s r&#225;pidos acortan la sobrezancada y bajan la carga sobre la r&#243;tula <b>sin correr m&#225;s lento</b>. Es el ajuste con mejor relaci&#243;n esfuerzo-efecto que existe para esto, y ya est&#225; explicado con metr&#243;nomo en la pesta&#241;a Ejercicios.</div></div>
-        <div class="kwrow"><div class="kwd">2 &#183; Terreno</div><div class="kwv"><b>Fuera las bajadas pronunciadas y el peralte.</b> Bajar cuesta es lo que m&#225;s carga la r&#243;tula y la cintilla. Y correr siempre por el mismo borde inclinado de la calle hace que una pierna trabaje como si fuera m&#225;s corta: <b>cambiar de lado</b> o buscar el centro.</div></div>
-        <div class="kwrow"><div class="kwd">3 &#183; No parar</div><div class="kwv"><b>Si el dolor se queda en 3 o menos y no amanece peor, correr no se la est&#225; da&#241;ando.</b> Antes de quitar d&#237;as, recortar kil&#243;metros o bajar el ritmo. Parar del todo apaga el cu&#225;driceps y la rodilla vuelve m&#225;s d&#233;bil de lo que se fue.</div></div>
-        <div class="kwrow"><div class="kwd">4 &#183; Escaleras</div><div class="kwv"><b>Bajar con pasos cortos y sin dejarse caer.</b> Es el gesto que m&#225;s duele en el caso A &#8212; y es, a prop&#243;sito, el ejercicio: la bajada de escal&#243;n es exactamente eso hecho despacio y mirando la rodilla.</div></div>
-      </div>
-
-      <h3 style="font-size:19px;font-weight:400;letter-spacing:-.025em;margin:26px 0 8px">C&#243;mo le queda la semana</h3>
-      <p class="sintro" style="margin-bottom:0">Las dos dosis fuertes caen <b>lunes y viernes</b>, igual que la prehab de canilla y por el mismo motivo: son d&#237;as de tren superior, as&#237; que la pierna est&#225; libre y no le roban nada al martes ni al jueves. Y en el gimnasio s&#237; hay piso, que es lo que estos ejercicios piden.</p>
-      <div class="kweek">
-        <div class="kwrow core"><div class="kwd">Todos los d&#237;as<span class="dur">4 min &#183; casa</span></div><div class="kwv"><b>El n&#250;cleo.</b> <button class="exlink" data-ex="quad-set" type="button">Isom&#233;trico de cu&#225;driceps</button> 10&#215;10 s &#183; <button class="exlink" data-ex="rotula-mov" type="button">Movilizaci&#243;n de la r&#243;tula</button> 1 min por rodilla &#183; <button class="exlink" data-ex="rodilla-rango" type="button">Deslizamiento de tal&#243;n</button> 2&#215;15. Es lo que menos cuesta y lo que m&#225;s cambia, porque <b>vive de la frecuencia</b> &#8212; igual que los tres de todos los d&#237;as.</div></div>
-        <div class="kwrow hot"><div class="kwd">Lunes<span class="dur">10 min &#183; gym</span></div><div class="kwv"><b>Bloque fuerte &#183; dosis 1 de 2.</b> <button class="exlink" data-ex="abduccion-lado" type="button">Abducci&#243;n de cadera</button> 3&#215;12/lado &#183; <button class="exlink" data-ex="puente-unipodal" type="button">Puente a una pierna</button> 3&#215;8/lado &#183; <button class="exlink" data-ex="step-down" type="button">Bajada de escal&#243;n</button> 3&#215;6/lado (10-15 cm) &#183; <button class="exlink" data-ex="wall-sit" type="button">Sentadilla isom&#233;trica</button> 3&#215;45 s.</div></div>
-        <div class="kwrow"><div class="kwd">Martes<span class="dur">2 min</span></div><div class="kwv"><b>Solo activaci&#243;n antes de correr:</b> <button class="exlink" data-ex="wall-sit" type="button">sentadilla isom&#233;trica</button> 2&#215;30 s contra un muro o un poste. En el bloque de pierna, baja solo hasta el rango que no duela.</div></div>
-        <div class="kwrow hot"><div class="kwd">Mi&#233;rcoles<span class="dur">8 min &#183; gym</span></div><div class="kwv"><b>Rango y tejido, sin fuerza.</b> <button class="exlink" data-ex="rotula-mov" type="button">Movilizaci&#243;n de la r&#243;tula</button> 2 min por rodilla &#183; <button class="exlink" data-ex="rodilla-rango" type="button">Deslizamiento de tal&#243;n</button> 2&#215;15 &#183; <button class="exlink" data-ex="tfl-estiro" type="button">Estiramiento de cintilla</button> 2&#215;30 s/lado &#183; rodillo en cu&#225;driceps y cara externa del muslo, 60 s.</div></div>
-        <div class="kwrow"><div class="kwd">Jueves<span class="dur">2 min</span></div><div class="kwv">Igual que el martes: <button class="exlink" data-ex="wall-sit" type="button">sentadilla isom&#233;trica</button> 2&#215;30 s antes del tempo y nada m&#225;s.</div></div>
-        <div class="kwrow hot"><div class="kwd">Viernes<span class="dur">10 min &#183; gym</span></div><div class="kwv"><b>Bloque fuerte &#183; dosis 2 de 2.</b> El mismo del lunes, un escal&#243;n por encima si la ma&#241;ana responde: <button class="exlink" data-ex="step-down" type="button">bajada de escal&#243;n</button> a 20 cm o 3&#215;8 &#183; <button class="exlink" data-ex="wall-sit" type="button">isom&#233;trica</button> 4&#215;45 s &#183; <button class="exlink" data-ex="puente-unipodal" type="button">puente</button> con pausa de 2 s arriba.</div></div>
-        <div class="kwrow"><div class="kwd">S&#225;bado<span class="dur">&#8212;</span></div><div class="kwv">Nada de rodilla aparte. En los drills, los de impacto (<button class="exlink" data-ex="bskip" type="button">B-skip</button>, <button class="exlink" data-ex="talones" type="button">talones al gl&#250;teo</button>) solo si no molestan; si molestan, los cambia por <button class="exlink" data-ex="ankling" type="button">ankling</button> y <button class="exlink" data-ex="carioca" type="button">carioca</button>, que piden lo mismo con menos carga.</div></div>
-        <div class="kwrow"><div class="kwd">Domingo<span class="dur">5 min &#183; casa</span></div><div class="kwv">Al llegar del fondo, solo lo descargado: <button class="exlink" data-ex="quad-set" type="button">isom&#233;trico de cu&#225;driceps</button> 10&#215;10 s &#183; <button class="exlink" data-ex="rodilla-rango" type="button">deslizamiento de tal&#243;n</button> 2&#215;15 &#183; <button class="exlink" data-ex="rotula-mov" type="button">movilizaci&#243;n de la r&#243;tula</button> 1 min. <b>Nada de fuerza despu&#233;s del fondo.</b></div></div>
-      </div>
-
-      <div class="note" style="margin-top:16px"><b>Las dos fases.</b> Las dos primeras semanas el bloque va completo pero suave: isom&#233;tricos, rango y gl&#250;teo, y la <b>bajada de escal&#243;n se deja fuera si bajar es justo lo que le duele</b> &#8212; se entra por el isom&#233;trico, que no mueve la rodilla. De la tercera semana en adelante, si la ma&#241;ana siguiente responde bien, sube el escal&#243;n y sube la isom&#233;trica. <b>La progresi&#243;n la marca el despertar, no el calendario.</b></div>
-      <div class="note ind" style="margin-top:11px"><b>Y lo que no cambia.</b> Todo lo que ella ya hace sigue igual: los tres de todos los d&#237;as, la movilidad larga de lun/mi&#233;/vie, la prehab de canilla y los drills del s&#225;bado. Este bloque se suma, no sustituye &#8212; y varias piezas se solapan a prop&#243;sito (<button class="exlink" data-ex="monster" type="button">monster walk</button>, <button class="exlink" data-ex="plancha-lateral" type="button">plancha lateral</button> y <button class="exlink" data-ex="hip-airplane" type="button">hip airplane</button> ya estaban trabajando el mismo gl&#250;teo medio).</div>
-    </div>
-
-    <div class="block">
-      <div class="snum">02 &#183; ESTA SEMANA</div>
-      <h2>D&#237;a a d&#237;a</h2>
-      <p class="sintro">Su semana real: martes intervalos, jueves tempo, domingo fondo (tirada larga); pierna el martes y el jueves, tren superior lun/mi&#233;/vie. Toca cualquier ejercicio para ver su ficha.</p>
+      <div class="snum">02 &#183; D&#205;A A D&#205;A</div>
+      <h2>La semana, ya resuelta</h2>
+      <p class="sintro">Martes intervalos, jueves tempo, domingo fondo; pierna mar/jue y tren superior lun/mi&#233;/vie. <b>Cada d&#237;a trae una sola rutina ya decidida</b> &#8212; martes y jueves son dos sesiones con 6 h o m&#225;s entre ellas. En la calle todo va de pie (cada ficha trae su variante). Toca cualquier ejercicio para ver su ficha.</p>
       <div class="daygrid">
 
         <article class="day t-suave">
@@ -1496,8 +1494,9 @@
               <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv">Tren superior + <b>prehab de canilla (dosis 1 de 2)</b>: <button class="exlink" data-ex="tibial-anterior" type="button">Tibial anterior</button> 2&#215;15 &#183; <button class="exlink" data-ex="pantorrilla-recta" type="button">Pantorrilla recta</button> 2&#215;12 lento &#183; <button class="exlink" data-ex="monster" type="button">Monster walk</button> 2&#215;15 &#183; <button class="exlink" data-ex="plancha-lateral" type="button">Plancha lateral</button> 2&#215;20s/lado.</div></div>
               <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">10 min</span></div><div class="dv"><b>Bloque CADERA</b> &#8212; <button class="exlink" data-ex="noventa" type="button">90/90 de cadera</button> 2&#215;8/lado &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> 2&#215;45s/lado &#183; <button class="exlink" data-ex="hip-airplane" type="button">Hip airplane</button> 5/lado &#183; <button class="exlink" data-ex="swings" type="button">Leg swings</button> 15/lado. <i>Hoy toca cadera; el mi&#233;rcoles columna y el viernes tobillo y pie.</i></div></div>
             </div>
-            <div class="drow knee kneesolo"><div class="dk">Rodilla<span class="dur">V &#183; 10 min</span></div><div class="dv"><span class="vpill">Solo Valentina</span> <b>Bloque fuerte de rodilla, dosis 1 de 2</b> &#8212; <button class="exlink" data-ex="abduccion-lado" type="button">Abducci&#243;n de cadera</button> 3&#215;12/lado &#183; <button class="exlink" data-ex="puente-unipodal" type="button">Puente a una pierna</button> 3&#215;8/lado &#183; <button class="exlink" data-ex="step-down" type="button">Bajada de escal&#243;n</button> 3&#215;6/lado &#183; <button class="exlink" data-ex="wall-sit" type="button">Sentadilla isom&#233;trica</button> 3&#215;45 s. Va despu&#233;s del tren superior: aqu&#237; hay piso y la pierna est&#225; fresca.</div></div>
-            <p class="dayclave">Aqu&#237; vive la movilidad larga. La prehab es de baja carga: no le roba nada a la pierna del martes. <b>Empuje</b> (pecho, hombro) y <b>tir&#243;n</b> (espalda) cargan el hombro desde lados opuestos: este calentamiento prepara los dos y despierta el manguito rotador antes de que llegue el peso.</p>
+            <div class="drow sh"><div class="dk">Hombro</div><div class="dv">El calentamiento de arriba ya es el trabajo de hombro. Al terminar la sesi&#243;n: <button class="exlink" data-ex="cuelgue-barra" type="button">Cuelgue de barra</button> 3&#215;20&#8211;30 s &#8212; descompresi&#243;n y rango completo, con el tejido caliente.</div></div>
+            <div class="drow knee"><div class="dk">Rodilla<span class="dur">V &#183; 10 min</span></div><div class="dv"><span class="vpill">Solo Valentina</span> <b>Bloque fuerte 1 de 2</b> &#8212; <button class="exlink" data-ex="abduccion-lado" type="button">Abducci&#243;n</button> 3&#215;12/lado &#183; <button class="exlink" data-ex="puente-unipodal" type="button">Puente a una pierna</button> 3&#215;8/lado &#183; <button class="exlink" data-ex="step-down" type="button">Bajada de escal&#243;n</button> 3&#215;6/lado &#183; <button class="exlink" data-ex="wall-sit" type="button">Isom&#233;trica</button> 3&#215;45 s.</div></div>
+            <p class="dayclave">Aqu&#237; vive la movilidad larga. La prehab es de baja carga: no le roba nada a la pierna del martes.</p>
           </div>
         </article>
 
@@ -1528,7 +1527,7 @@
               </div>
 
             </div>
-            <div class="drow knee kneesolo"><div class="dk">Rodilla<span class="dur">V &#183; 2 min</span></div><div class="dv"><span class="vpill">Solo Valentina</span> <b>Antes de correr:</b> <button class="exlink" data-ex="wall-sit" type="button">sentadilla isom&#233;trica</button> 2&#215;30 s contra un muro o un poste &#8212; el isom&#233;trico baja el dolor y despierta el cu&#225;driceps antes de los intervalos. <b>En el bloque de pierna:</b> baja solo hasta el rango que no duela; nada de saltos si el dolor est&#225; debajo de la r&#243;tula.</div></div>
+            <div class="drow knee"><div class="dk">Rodilla<span class="dur">V &#183; 2 min</span></div><div class="dv"><span class="vpill">Solo Valentina</span> Antes de correr: <button class="exlink" data-ex="wall-sit" type="button">Sentadilla isom&#233;trica</button> 2&#215;30 s. En la pierna, solo el rango que no duela.</div></div>
             <p class="dayclave">Al ser dos sesiones separadas, cada una lleva su propio calentamiento corto &#8212; no hay una movilidad extra suelta. <b>Deja al menos 6 h entre las dos</b> y pon la de calidad cuando est&#233;s m&#225;s fresco. Si la fuerza va primero, ese d&#237;a evita los RM y la pliometr&#237;a: fue justo lo que tumb&#243; el tempo del jueves pasado.</p>
           </div>
         </article>
@@ -1544,8 +1543,9 @@
               <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv">Tren superior. Pierna, nada pesado &#8212; hoy se recupera del martes.</div></div>
               <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">12 min</span></div><div class="dv"><b>Bloque COLUMNA Y T&#211;RAX</b> (encaja con el d&#237;a de tren superior) &#8212; <button class="exlink" data-ex="toracica-ext" type="button">Extensi&#243;n tor&#225;cica sobre rodillo</button> 3&#215;8 subiendo el rodillo un nivel cada serie &#183; <button class="exlink" data-ex="wgs" type="button">World&#39;s Greatest Stretch</button> 5/lado &#183; foam roll de canilla, pantorrilla, isquios y VMO. <i>La rotaci&#243;n tor&#225;cica y las pasadas de hombro ya fueron en el calentamiento; aqu&#237; toca la extensi&#243;n, que es la que no hacen nunca.</i></div></div>
             </div>
-            <div class="drow knee kneesolo"><div class="dk">Rodilla<span class="dur">V &#183; 8 min</span></div><div class="dv"><span class="vpill">Solo Valentina</span> <b>Bloque de rango y tejido</b> &#8212; <button class="exlink" data-ex="rotula-mov" type="button">Movilizaci&#243;n de la r&#243;tula</button> 2 min por rodilla &#183; <button class="exlink" data-ex="rodilla-rango" type="button">Deslizamiento de tal&#243;n</button> 2&#215;15 &#183; <button class="exlink" data-ex="tfl-estiro" type="button">Estiramiento de cintilla</button> 2&#215;30 s/lado &#183; rodillo en cu&#225;driceps y cara externa, 60 s. <i>Hoy no hay fuerza de rodilla: toca recuperar movimiento.</i></div></div>
-            <p class="dayclave">El foam roll de hoy apunta justo a lo que se les carga: canilla y pantorrilla (Ale y Vale), isquios y VMO (Vale). <b>Empuje</b> (pecho, hombro) y <b>tir&#243;n</b> (espalda) cargan el hombro desde lados opuestos: este calentamiento prepara los dos y despierta el manguito rotador antes de que llegue el peso.</p>
+            <div class="drow sh"><div class="dk">Hombro</div><div class="dv">El calentamiento de arriba ya es el trabajo de hombro. Al terminar la sesi&#243;n: <button class="exlink" data-ex="cuelgue-barra" type="button">Cuelgue de barra</button> 3&#215;20&#8211;30 s &#8212; descompresi&#243;n y rango completo, con el tejido caliente.</div></div>
+            <div class="drow knee"><div class="dk">Rodilla<span class="dur">V &#183; 8 min</span></div><div class="dv"><span class="vpill">Solo Valentina</span> <b>Rango y tejido</b> &#8212; <button class="exlink" data-ex="rotula-mov" type="button">R&#243;tula</button> 2 min/rodilla &#183; <button class="exlink" data-ex="rodilla-rango" type="button">Tal&#243;n</button> 2&#215;15 &#183; <button class="exlink" data-ex="tfl-estiro" type="button">Cintilla</button> 2&#215;30 s/lado &#183; rodillo 60 s.</div></div>
+            <p class="dayclave">El foam roll de hoy apunta justo a lo que se les carga: canilla y pantorrilla (Ale y Vale), isquios y VMO (Vale).</p>
           </div>
         </article>
 
@@ -1576,7 +1576,7 @@
               </div>
 
             </div>
-            <div class="drow knee kneesolo"><div class="dk">Rodilla<span class="dur">V &#183; 2 min</span></div><div class="dv"><span class="vpill">Solo Valentina</span> Igual que el martes: <button class="exlink" data-ex="wall-sit" type="button">sentadilla isom&#233;trica</button> 2&#215;30 s antes del tempo, y en la pierna solo el rango que no duela.</div></div>
+            <div class="drow knee"><div class="dk">Rodilla<span class="dur">V &#183; 2 min</span></div><div class="dv"><span class="vpill">Solo Valentina</span> Igual que el martes: <button class="exlink" data-ex="wall-sit" type="button">isom&#233;trica</button> 2&#215;30 s antes del tempo.</div></div>
             <p class="dayclave">Mismo criterio que el martes: 6 h de separaci&#243;n y la calidad con piernas frescas. El tempo pide entrar progresivo; si la fuerza fue antes, baja la carga y olvida los m&#225;ximos.</p>
           </div>
         </article>
@@ -1592,8 +1592,9 @@
               <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv">Tren superior + <b>prehab de canilla (dosis 2 de 2)</b>: <button class="exlink" data-ex="tibial-anterior" type="button">Tibial anterior</button> 2&#215;15 &#183; <button class="exlink" data-ex="pantorrilla-flex" type="button">Pantorrilla rodilla flexionada</button> 2&#215;12 lento &#183; <button class="exlink" data-ex="rdl" type="button">RDL a una pierna</button> 2&#215;8/pierna ligero &#183; <button class="exlink" data-ex="plancha-lateral" type="button">Plancha lateral</button> 2&#215;20s/lado.</div></div>
               <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">10 min</span></div><div class="dv"><b>Bloque TOBILLO, PIE Y CADENA POSTERIOR</b> (d&#237;a de gimnasio: aqu&#237; s&#237; hay piso) &#8212; <button class="exlink" data-ex="ankle-rocks" type="button">Ankle rocks</button> en media rodilla, 10/lado en las 3 direcciones &#183; <button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button> 2&#215;10/lado (una vez al mes, m&#237;danlo: meta &#8805;10 cm) &#183; <button class="exlink" data-ex="pie-corto" type="button">Pie corto</button> 3&#215;10 descalzos, de pie y luego a una pierna &#183; <button class="exlink" data-ex="ciatico-slide" type="button">Deslizamiento del ci&#225;tico</button> tumbado, 10/lado. <i>El d&#237;a que ataca lo que a los dos les molesta al arrancar &#8212; y el &#250;nico donde estas versiones completas s&#237; se pueden hacer.</i></div></div>
             </div>
-            <div class="drow knee kneesolo"><div class="dk">Rodilla<span class="dur">V &#183; 10 min</span></div><div class="dv"><span class="vpill">Solo Valentina</span> <b>Bloque fuerte de rodilla, dosis 2 de 2</b> &#8212; el mismo del lunes, un escal&#243;n por encima si la ma&#241;ana respondi&#243; bien: <button class="exlink" data-ex="abduccion-lado" type="button">Abducci&#243;n</button> 3&#215;12/lado &#183; <button class="exlink" data-ex="puente-unipodal" type="button">Puente</button> 3&#215;8/lado con pausa de 2 s &#183; <button class="exlink" data-ex="step-down" type="button">Bajada de escal&#243;n</button> 3&#215;8/lado o a 20 cm &#183; <button class="exlink" data-ex="wall-sit" type="button">Isom&#233;trica</button> 4&#215;45 s.</div></div>
-            <p class="dayclave">Con esta queda cerrada la dosis de 2&#215;/semana de prehab de canilla &#8212; la molestia de tibia que sienten al arrancar. <b>Empuje</b> (pecho, hombro) y <b>tir&#243;n</b> (espalda) cargan el hombro desde lados opuestos: este calentamiento prepara los dos y despierta el manguito rotador antes de que llegue el peso.</p>
+            <div class="drow sh"><div class="dk">Hombro</div><div class="dv">El calentamiento de arriba ya es el trabajo de hombro. Al terminar la sesi&#243;n: <button class="exlink" data-ex="cuelgue-barra" type="button">Cuelgue de barra</button> 3&#215;20&#8211;30 s &#8212; descompresi&#243;n y rango completo, con el tejido caliente.</div></div>
+            <div class="drow knee"><div class="dk">Rodilla<span class="dur">V &#183; 10 min</span></div><div class="dv"><span class="vpill">Solo Valentina</span> <b>Bloque fuerte 2 de 2</b> &#8212; el del lunes, un escal&#243;n arriba si la ma&#241;ana respondi&#243;: <button class="exlink" data-ex="step-down" type="button">bajada</button> a 20 cm &#183; <button class="exlink" data-ex="wall-sit" type="button">isom&#233;trica</button> 4&#215;45 s &#183; <button class="exlink" data-ex="puente-unipodal" type="button">puente</button> con pausa de 2 s.</div></div>
+            <p class="dayclave">Con esta queda cerrada la dosis de 2&#215;/semana de prehab de canilla &#8212; la molestia de tibia que sienten al arrancar.</p>
           </div>
         </article>
 
@@ -1608,7 +1609,7 @@
               <div class="drow main"><div class="dk">Sesi&#243;n<span class="dur">20&#8211;25 min</span></div><div class="dv"><b>El d&#237;a de los drills.</b> Aprenderlos con calidad, no cansarse. Arranquen con <button class="exlink" data-ex="braceo" type="button">Braceo sentado</button> 3&#215;20 s. Luego, 2 series de ~20 m de cada uno, caminando de vuelta: <button class="exlink" data-ex="ankling" type="button">Ankling</button> &#183; <button class="exlink" data-ex="askip" type="button">A-skip</button> &#183; <button class="exlink" data-ex="bskip" type="button">B-skip</button> &#183; <button class="exlink" data-ex="rodillas-altas" type="button">Rodillas altas</button> &#183; <button class="exlink" data-ex="talones" type="button">Talones al gl&#250;teo</button> &#183; <button class="exlink" data-ex="piernas-rectas" type="button">Piernas rectas</button> &#183; <button class="exlink" data-ex="carioca" type="button">Carioca</button>. Cerrar con 4 <button class="exlink" data-ex="zancadas" type="button">Zancadas</button> progresivas.</div></div>
               <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">10 min</span></div><div class="dv"><b>Bloque CADENA COMPLETA</b> (con el tejido caliente de los drills, <b>todo de pie</b>) &#8212; <button class="exlink" data-ex="cosaca" type="button">Sentadilla cosaca</button> 6/lado &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> de pie 45s/lado &#183; <button class="exlink" data-ex="swings" type="button">Leg swings</button> 15/lado &#183; <button class="exlink" data-ex="pie-corto" type="button">Pie corto</button> 3&#215;10 a una pierna, apoyados en algo.</div></div>
             </div>
-            <div class="drow knee kneesolo"><div class="dk">Rodilla<span class="dur">V</span></div><div class="dv"><span class="vpill">Solo Valentina</span> Nada de rodilla aparte hoy. En los drills, los de impacto (<button class="exlink" data-ex="bskip" type="button">B-skip</button>, <button class="exlink" data-ex="talones" type="button">talones al gl&#250;teo</button>) solo si no molestan; si molestan, los cambia por <button class="exlink" data-ex="ankling" type="button">ankling</button> y <button class="exlink" data-ex="carioca" type="button">carioca</button>, que piden lo mismo con menos carga.</div></div>
+            <div class="drow knee"><div class="dk">Rodilla<span class="dur">V</span></div><div class="dv"><span class="vpill">Solo Valentina</span> Drills de impacto (<button class="exlink" data-ex="bskip" type="button">B-skip</button>, <button class="exlink" data-ex="talones" type="button">talones</button>) solo si no molestan; si molestan &#8594; <button class="exlink" data-ex="ankling" type="button">ankling</button> y <button class="exlink" data-ex="carioca" type="button">carioca</button>.</div></div>
             <p class="dayclave">Es el d&#237;a ideal: piernas frescas (viernes fue tren superior) y sin sesi&#243;n de calidad compitiendo. H&#225;ganlos con calidad y sin buscar fatiga &#8212; ma&#241;ana es el fondo. Cuando ya los dominen, se reducen a 5 min dentro del calentamiento del martes y jueves. <b>Empiecen por el braceo sentado:</b> es el patr&#243;n m&#225;s f&#225;cil de sentir y el que luego marca el ritmo de todo lo dem&#225;s.</p>
           </div>
         </article>
@@ -1624,7 +1625,7 @@
               <div class="drow main"><div class="dk">Sesi&#243;n</div><div class="dv"><b>Fondo: la tirada larga de la semana.</b> Arranca MUY suave los primeros 10 min y sost&#233;n ritmo conversable (zona 2). <b>Si pasa de 60&#8211;75 min, lleven geles</b>: 30&#8211;60 g de carbohidrato por hora, desde temprano.</div></div>
               <div class="drow mob"><div class="dk">Despu&#233;s<span class="dur">12 min</span></div><div class="dv"><b>Bloque POST-FONDO &#183; en la calle, al terminar</b> (5 min, de pie) &#8212; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> de pie 45s/lado &#183; pantorrilla contra un poste 30s/lado &#183; <button class="exlink" data-ex="ciatico-slide" type="button">Deslizamiento del ci&#225;tico</button> <b>de pie</b>, tal&#243;n en un bordillo, 10/lado. <b>Y al llegar a casa</b> (7 min, en el piso) &#8212; <button class="exlink" data-ex="noventa" type="button">90/90 de cadera</button> 2&#215;8/lado &#183; <button class="exlink" data-ex="couch" type="button">Couch stretch</button> completo contra la pared. <i>El d&#237;a de m&#225;s kil&#243;metros cierra por la cadena posterior.</i></div></div>
             </div>
-            <div class="drow knee kneesolo"><div class="dk">Rodilla<span class="dur">V &#183; 5 min</span></div><div class="dv"><span class="vpill">Solo Valentina</span> Al llegar a casa, solo lo descargado: <button class="exlink" data-ex="quad-set" type="button">Isom&#233;trico de cu&#225;driceps</button> 10&#215;10 s &#183; <button class="exlink" data-ex="rodilla-rango" type="button">Deslizamiento de tal&#243;n</button> 2&#215;15 &#183; <button class="exlink" data-ex="rotula-mov" type="button">Movilizaci&#243;n de la r&#243;tula</button> 1 min. <b>Nada de fuerza despu&#233;s del fondo.</b></div></div>
+            <div class="drow knee"><div class="dk">Rodilla<span class="dur">V &#183; 5 min</span></div><div class="dv"><span class="vpill">Solo Valentina</span> Al llegar: <button class="exlink" data-ex="quad-set" type="button">isom&#233;trico</button> 10&#215;10 s &#183; <button class="exlink" data-ex="rodilla-rango" type="button">tal&#243;n</button> 2&#215;15 &#183; <button class="exlink" data-ex="rotula-mov" type="button">r&#243;tula</button> 1 min. Nada de fuerza tras el fondo.</div></div>
             <p class="dayclave">El post-fondo es el mejor momento de la semana para la movilidad larga: tejido caliente. Y ojo con el combustible &#8212; Valentina sinti&#243; hambre al minuto 30 del rodaje de 11.4k sin geles; eso se arregla comiendo antes de vaciarse, no despu&#233;s.</p>
           </div>
         </article>
@@ -1632,41 +1633,13 @@
       </div>
     </div>
 
-    <div class="block">
-      <div class="snum">03 &#183; FOCO</div>
-      <h2>Las 2 cosas que mueven la aguja esta semana</h2>
-      <p class="sintro">Si esta semana solo pueden sostener dos cosas nuevas, que sean estas.</p>
-      <div class="foco">
-        <div class="fh"><span class="ft">Foco 1</span><span class="newbadge">Nuevo</span></div>
-        <p><b>Los drills, el s&#225;bado.</b> Nunca los han hecho y son la v&#237;a m&#225;s directa a la t&#233;cnica que buscan. S&#225;bado, con piernas frescas, 20&#8211;25 min de calidad. Luego pasan a ser 5 min del calentamiento de mar/jue.</p>
-        <div class="exrow">
-          <button class="exlink" data-ex="ankling" type="button">Ankling</button>
-          <button class="exlink" data-ex="askip" type="button">A-skip</button>
-          <button class="exlink" data-ex="bskip" type="button">B-skip</button>
-          <button class="exlink" data-ex="talones" type="button">Talones al gl&#250;teo</button>
-          <button class="exlink" data-ex="carioca" type="button">Carioca</button>
-        </div>
-      </div>
-      <div class="foco">
-        <div class="fh"><span class="ft">Foco 2</span></div>
-        <p><b>Prehab de canilla, 2&#215; (lunes y viernes).</b> Tibial anterior + exc&#233;ntricos de pantorrilla. Va en los d&#237;as de tren superior para no competir con la pierna del martes y jueves.</p>
-        <div class="exrow">
-          <button class="exlink" data-ex="tibial-anterior" type="button">Tibial anterior</button>
-          <button class="exlink" data-ex="pantorrilla-recta" type="button">Pantorrilla recta</button>
-          <button class="exlink" data-ex="pantorrilla-flex" type="button">Pantorrilla rodilla flexionada</button>
-        </div>
-      </div>
-      <div class="note" style="margin-top:18px">Una vez al mes: medir cadencia y re-test de dorsiflexi&#243;n (<button class="exlink" data-ex="rodilla-pared" type="button">Rodilla a la pared</button>, cm hasta la pared con el tal&#243;n pegado).</div>
-    </div>
-
-
   </section>
 
   <!-- ================= PESTA&#209;A 2: EJERCICIOS ================= -->
   <section class="panel hide" id="panel-ejercicios" role="tabpanel" aria-labelledby="tab-ejercicios" tabindex="-1">
-    <div class="snum">LOS 42 EJERCICIOS</div>
+    <div class="snum">LOS 44 EJERCICIOS</div>
     <h2>El cat&#225;logo, con secuencia y porqu&#233;</h2>
-    <p class="sintro">Diecinueve de movilidad, catorce de prevenci&#243;n y nueve drills de carrera &#8212; con <b>ocho nuevos (oct-2026) del bloque de rodilla de Valentina</b> y los siete de movilidad de sep-2026 que subieron el escal&#243;n de ganar rango a controlarlo en movimiento. Toca cualquiera para abrir su ficha: secuencia del movimiento, c&#243;mo se hace, claves, errores y por qu&#233; funciona.</p>
+    <p class="sintro">Veinti&#250;n ejercicios de movilidad, catorce de prevenci&#243;n y nueve drills de carrera &#8212; con <b>diez nuevos (oct-2026): el bloque de rodilla de Valentina y el foco de hombro</b>. Toca cualquiera para abrir su ficha: secuencia del movimiento, c&#243;mo se hace, claves, errores y por qu&#233; funciona.</p>
 
     <div class="cadbox">
       <div class="eyebrow cadeye">Antes de empezar</div>
@@ -1737,7 +1710,7 @@
 
   <footer>
     <p class="disc">No es consejo m&#233;dico ni un plan individualizado. Ante dolor o molestia, consulten a un profesional; cualquier cambio grande, coord&#237;nenlo con su coach.</p>
-    <div class="mono">PLAN &#183; RUNNING &#183; V25 &#183; AGO 2026</div>
+    <div class="mono">PLAN &#183; RUNNING &#183; V31 &#183; OCT 2026</div>
   </footer>
 
 </div>
@@ -3861,7 +3834,7 @@ window.CLASE = Object.assign(window.CLASE || {}, {
   var BASE = 'stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"';
   function svg(inner){ return '<svg viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" '+BASE+'>'+inner+'</svg>'; }
 
-  // ---------- exercise data (42) ----------
+  // ---------- exercise data (44) ----------
   var EX = [
     { id:"rodilla-pared", g:"mob", name:"Rodilla a la pared", dose:"2x10/lado &#183; diario", when:"Diario", tema:"tema4",
       frames:[
@@ -4333,6 +4306,30 @@ window.CLASE = Object.assign(window.CLASE || {}, {
       errors:["Arquear la lumbar para subir m&#225;s alto.","Dejar caer la pelvis del lado de la pierna libre."],
       calle:"No tiene versi&#243;n de calle: necesita suelo. <b>Va en los d&#237;as de gimnasio (lunes y viernes) o en casa.</b> Si no hay piso, el sustituto m&#225;s cercano es el peso muerto a una pierna sin carga.",
       why:"El gl&#250;teo mayor es el motor de la extensi&#243;n de cadera y el principal apoyo de la zancada; cuando no empuja, el trabajo lo asumen el cu&#225;driceps y los isquios, y la rodilla acaba pagando. A una pierna aparece adem&#225;s la prueba que importa: si la pelvis se cae del lado libre, hay un d&#233;ficit de control de cadera &#8212; el mismo que deja caer la rodilla hacia dentro al correr. Entrena y mide a la vez." }
+,
+    { id:"hombro-cars", g:"mob", nuevo:true, name:"CARs de hombro (rotaciones articulares)", dose:"3/lado &#183; diario", when:"Diario &#183; junto a los CARs de cadera", tema:"tema6",
+      frames:[
+        {c:"1. De pie, brazo estirado. Sube lento al frente", s:'<line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="52" cy="18" r="6"/><path d="M52 24 L52 54"/><path d="M52 54 L44 82"/><path d="M52 54 L62 82"/><path d="M52 30 L34 38"/><path d="M52 30 L76 24"/><path d="M80 20 L84 12" stroke="var(--ind)"/><path d="M80 10 L86 10 L86 16" stroke="var(--ind)"/>'},
+        {c:"2. Junto a la oreja y sigue hacia atr&#225;s, girando la palma", s:'<line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="52" cy="20" r="6"/><path d="M52 26 L52 56"/><path d="M52 56 L44 82"/><path d="M52 56 L62 82"/><path d="M52 32 L34 40"/><path d="M52 32 L56 8"/><path d="M62 10 A26 26 0 0 1 74 28" stroke="var(--ind)" stroke-dasharray="3 4"/><path d="M72 20 L75 30 L66 28" stroke="var(--ind)"/>'},
+        {c:"3. Completa el c&#237;rculo por detr&#225;s, sin mover el tronco", s:'<line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="52" cy="18" r="6"/><path d="M52 24 L52 54"/><path d="M52 54 L44 82"/><path d="M52 54 L62 82"/><path d="M52 30 L34 38"/><path d="M52 30 L72 44"/><path d="M76 36 A22 22 0 0 1 64 52" stroke="var(--ind)" stroke-dasharray="3 4"/><path d="M68 46 L62 54 L72 56" stroke="var(--ind)"/><path d="M40 12 L64 12" stroke="var(--line2)" stroke-dasharray="3 3"/>'}
+      ],
+      steps:["De pie, con el cuerpo firme y el brazo estirado al lado del cuerpo.","S&#250;belo al frente, lent&#237;simo, hasta llevarlo junto a la oreja.","Desde arriba, gira la palma hacia afuera y sigue el c&#237;rculo hacia atr&#225;s, todo lo que d&#233; sin mover el tronco.","Cierra el c&#237;rculo abajo y haz el recorrido inverso.","Cada vuelta dura 8&#8211;10 segundos. Tres por lado."],
+      keys:["Es el espejo de los CARs de cadera: lent&#237;simo y con tensi&#243;n, como empujando contra algo.","El tronco y las costillas NO acompa&#241;an: solo se mueve el hombro.","Si en un tramo el hombro &#171;salta&#187; o cruje suave, pasa por ah&#237; m&#225;s lento, no m&#225;s r&#225;pido."],
+      errors:["Arquear la espalda para fingir m&#225;s rango.","Hacerlo r&#225;pido y con impulso (deja de servir)."],
+      calle:"Va perfecto en cualquier parte: de pie, sin material. Si lo hacen antes de correr, una vuelta por lado basta como chequeo.",
+      why:"El mismo principio que los CARs de cadera: rango ACTIVO en el recorrido completo, que es lo que mantiene el hombro libre con horas de escritorio y 3 d&#237;as de empuje y tir&#243;n por semana. Un hombro que rota bien deja al t&#243;rax abrirse &#8212; y eso alimenta el braceo y la respiraci&#243;n que ya trabajan en la Biblioteca." },
+
+    { id:"cuelgue-barra", g:"mob", nuevo:true, name:"Cuelgue de barra (dead hang)", dose:"3&#215;20&#8211;30 s &#183; lun/mi&#233;/vie", when:"Al cerrar el tren superior", tema:"tema6",
+      frames:[
+        {c:"1. Agarra la barra al ancho de hombros", s:'<line x1="20" y1="12" x2="100" y2="12" stroke="var(--line2)" stroke-width="4"/><line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="60" cy="34" r="6"/><path d="M60 40 L60 62"/><path d="M60 62 L54 82"/><path d="M60 62 L66 82"/><path d="M58 44 L48 14"/><path d="M62 44 L72 14"/>'},
+        {c:"2. Pies fuera del suelo, hombros sueltos", s:'<line x1="20" y1="12" x2="100" y2="12" stroke="var(--line2)" stroke-width="4"/><line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="60" cy="36" r="6"/><path d="M60 42 L60 64"/><path d="M60 64 L56 76"/><path d="M60 64 L64 76"/><path d="M58 46 L48 14"/><path d="M62 46 L72 14"/><path d="M84 50 L84 64" stroke="var(--ind)"/><path d="M80 58 L84 66 L88 58" stroke="var(--ind)"/>'},
+        {c:"3. 20&#8211;30 s respirando. Baja con control", s:'<line x1="20" y1="12" x2="100" y2="12" stroke="var(--line2)" stroke-width="4"/><line x1="14" y1="82" x2="106" y2="82" stroke="var(--line2)" stroke-width="2"/><circle cx="60" cy="36" r="6"/><path d="M60 42 L60 64"/><path d="M60 64 L56 76"/><path d="M60 64 L64 76"/><path d="M58 46 L48 14"/><path d="M62 46 L72 14"/><text x="82" y="40" font-size="10" fill="var(--ind)" stroke="none" font-family="monospace">30 s</text>'}
+      ],
+      steps:["Agarra la barra con las manos al ancho de los hombros, palmas al frente.","Despega los pies y d&#233;jate colgar con los brazos estirados.","Suelta los hombros: deja que suban hacia las orejas &#8212; ah&#237; est&#225; la descompresi&#243;n.","Respira normal 20&#8211;30 segundos.","Baja apoyando los pies con control, no soltando de golpe. Tres veces."],
+      keys:["Es un cuelgue PASIVO: no hay que apretar nada m&#225;s que las manos.","Si el agarre no aguanta 20 s, apoya las puntas de los pies en el suelo o en un banco y quita solo parte del peso.","El mejor momento es al final de la sesi&#243;n, con el hombro caliente."],
+      errors:["Encoger los hombros activamente peleando contra el cuelgue.","Soltarse de golpe desde arriba."],
+      calle:"Necesita una barra &#8212; por eso va en el gimnasio. Si en la ruta hay barras de parque, vale exactamente igual.",
+      why:"Colgarse estira a la vez dorsal, pecho y c&#225;psula del hombro bajo tracci&#243;n suave, y es de las pocas posiciones donde el hombro pasa por su rango completo de flexi&#243;n con carga. Tres d&#237;as de empuje y tir&#243;n por semana acortan justo esa cadena; 60&#8211;90 segundos repartidos al final la devuelven &#8212; y de regalo entrenan el agarre." }
   ];
 
   var EXMAP = {};
@@ -4382,7 +4379,9 @@ window.CLASE = Object.assign(window.CLASE || {}, {
     "wall-sit":"https://www.youtube.com/watch?v=k9Zh5LCpyPE",
     "step-down":"https://www.youtube.com/watch?v=X0QRvoKJEkc",
     "abduccion-lado":"https://www.youtube.com/watch?v=dILxTvY88uI",
-    "puente-unipodal":"https://www.youtube.com/watch?v=S0oUDi076k8"
+    "puente-unipodal":"https://www.youtube.com/watch?v=S0oUDi076k8",
+    "hombro-cars":"https://www.youtube.com/watch?v=TyODHkhimjo",
+    "cuelgue-barra":"https://www.youtube.com/watch?v=PORNGj-x4Ao"
   };
   function ytHref(id){
     return YT[id] || "https://www.youtube.com";
